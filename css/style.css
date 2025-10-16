@@ -207,7 +207,7 @@ body::before {
 /* ================================================================
    PC版（768px以上・横長画面） - 横3段レイアウト
    ================================================================ */
-@media (min-width: 768px) and (orientation: landscape) {
+@media (min-width: 768px) {
     #app {
         flex-direction: row;
         min-height: 100vh;
