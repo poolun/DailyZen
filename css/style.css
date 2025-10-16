@@ -185,13 +185,6 @@ body::before {
     #info-container #sekki-block {
         white-space: nowrap; /* 改行を防ぐ */
     }
-    
-    /* モバイル版での禅語表示エリアの中央揃え */
-    #zen-word-display {
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
 }
 
 #zengo {
@@ -288,9 +281,6 @@ body::before {
     #kakejiku-container {
         order: 2;
         height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         /* background-size: 380px 1000px; */
     }
 
