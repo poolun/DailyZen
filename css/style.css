@@ -207,7 +207,7 @@ body::before {
 /* ================================================================
    PC版（768px以上・横長画面） - 横3段レイアウト
    ================================================================ */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (orientation: landscape) {
     #app {
         flex-direction: row;
         min-height: 100vh;
@@ -281,7 +281,6 @@ body::before {
     #kakejiku-container {
         order: 2;
         height: 100vh;
-        flex: 1;
         /* background-size: 380px 1000px; */
     }
 
