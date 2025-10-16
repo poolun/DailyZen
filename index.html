@@ -4,222 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DailyZen - 日々是好日</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;400;600&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Noto Serif JP', serif;
-            background: linear-gradient(135deg, #f8f6f0 0%, #e8e2d4 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem;
-            color: #2c2c2c;
-        }
-        
-        .container {
-            max-width: 800px;
-            width: 100%;
-            text-align: center;
-        }
-        
-        .main-title {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #1a1a1a;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-bottom: 3rem;
-            color: #4a4a4a;
-            line-height: 1.6;
-        }
-        
-        .zen-calendar {
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            padding: 3rem;
-            margin: 2rem 0;
-            border: 3px solid #d4af37;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .zen-calendar::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23f0f0f0"/></svg>') repeat;
-            opacity: 0.3;
-            z-index: 0;
-        }
-        
-        .zen-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .date-info {
-            margin-bottom: 2rem;
-        }
-        
-        .current-date {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-        
-        .season {
-            font-size: 1rem;
-            color: #8b6914;
-            font-weight: 400;
-        }
-        
-        .zen-word {
-            writing-mode: vertical-rl;
-            text-orientation: upright;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: linear-gradient(to bottom, #fafafa, #f0f0f0);
-            border: 2px solid #d4af37;
-            border-radius: 10px;
-            max-width: 200px;
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .zen-phrase {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 1rem;
-        }
-        
-        .zen-reading {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 1rem;
-        }
-        
-        .zen-meaning {
-            writing-mode: horizontal-tb;
-            text-orientation: mixed;
-            font-size: 1rem;
-            color: #4a4a4a;
-            line-height: 1.6;
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: #f9f9f9;
-            border-radius: 8px;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .feature {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border-left: 4px solid #d4af37;
-        }
-        
-        .feature-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #1a1a1a;
-        }
-        
-        .feature-desc {
-            font-size: 1rem;
-            color: #555;
-            line-height: 1.6;
-        }
-        
-        .emoji {
-            font-size: 1.5rem;
-            margin-right: 0.5rem;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1 class="main-title">DailyZen - 日々是好日</h1>
-        
-        <p class="subtitle">
-            <strong>これは、忙しい毎日に、あなたの頭と心を整える真理と静寂の禅の日めくりカレンダーです。</strong><br>
-            毎朝、穏やかな水墨画の背景と掛け軸に示された禅語が、あなたの一日を静かに支えます。
-        </p>
-        
-        <div class="zen-calendar">
-            <div class="zen-content">
-                <div class="date-info">
-                    <div class="current-date">2025年10月15日</div>
-                    <div class="season">秋分</div>
+    <div id="app">
+        <div id="info-container">
+            <div id="date-block">
+                <p id="date-info"></p>
+            </div>
+            <div id="sekki-block">
+                <p id="sekki-info"></p>
+            </div>
+        </div>
+
+        <div id="kakejiku-container">
+            <div id="zen-word-display">
+                <div id="reading-block" class="vertical-text">
+                    <p id="reading"></p>
                 </div>
-                
-                <div class="zen-word">
-                    <div class="zen-phrase">一期一会</div>
-                    <div class="zen-reading">いちごいちえ</div>
-                </div>
-                
-                <div class="zen-meaning">
-                    人との出会いは二度とない貴重なもの。この瞬間、この出会いを大切にし、
-                    心を込めて接することの大切さを教えてくれる禅の言葉です。
+                <div id="zengo-block" class="vertical-text">
+                    <p id="zengo"></p>
                 </div>
             </div>
         </div>
-        
-        <div class="features">
-            <div class="feature">
-                <h3 class="feature-title">
-                    <span class="emoji">✨</span>今日の一語
-                </h3>
-                <p class="feature-desc">
-                    心を整える禅語とその読み方、現代的な解説を縦書きで表示。
-                </p>
-            </div>
-            
-            <div class="feature">
-                <h3 class="feature-title">
-                    <span class="emoji">🎋</span>和の静謐なデザイン
-                </h3>
-                <p class="feature-desc">
-                    掛け軸をモチーフにしたレイアウトと、美しい二十四節気（季節の表示）で、日本の情緒を表現。
-                </p>
-            </div>
-            
-            <div class="feature">
-                <h3 class="feature-title">
-                    <span class="emoji">🧘</span>ミニマルな構成
-                </h3>
-                <p class="feature-desc">
-                    シンプルで集中できるインターフェース。
-                </p>
+
+        <div id="meaning-container">
+            <div id="meaning-paper">
+                <p id="meaning"></p>
             </div>
         </div>
+
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
