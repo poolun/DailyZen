@@ -283,8 +283,24 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
-// アプリケーション起動
-renderDailyZen();
+// DOMとコンテンツの読み込み完了を待ってからアプリケーション起動
+document.addEventListener('DOMContentLoaded', async () => {
+    await renderDailyZen();
+    
+    // 強制的にレイアウト再計算を発生させる
+    const appElement = document.getElementById('app');
+    appElement.offsetHeight; // 強制リフロー
+    
+    // 読み込み完了後にフェードイン表示
+    appElement.classList.add('loaded');
+    
+    // さらに念のため、少し遅延させてからもう一度リフローを実行
+    setTimeout(() => {
+        appElement.style.transform = 'translateZ(0)'; // GPU加速を有効化
+        appElement.offsetHeight; // 再度強制リフロー
+        appElement.style.transform = '';
+    }, 50);
+});
 
 // リサイズ時にレスポンシブな表示を再適用
 window.addEventListener('resize', () => {
