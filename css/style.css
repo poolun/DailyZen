@@ -142,7 +142,10 @@ body::before {
     align-items: center;
     flex: 1;
     min-height: 60vh;
-    width: 320px;
+    width: 50vw;
+    max-width: 400px;
+    min-width: 280px;
+    height: 80vh;
     background-image: url('../images/kakejiku_base.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -158,6 +161,9 @@ body::before {
 
 /* 説明文エリア */
 #meaning-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #meaning-paper {
@@ -280,8 +286,10 @@ body::before {
     /* 掛け軸コンテナ (中央) */
     #kakejiku-container {
         order: 2;
-        height: 100vh;
-        /* background-size: 380px 1000px; */
+        width: 40vw;
+        max-width: 450px;
+        min-width: 320px;
+        height: 90vh;
     }
 
     /* 解説コンテナ (左側) */
@@ -300,41 +308,4 @@ body::before {
     }
 }
 
-/* ================================================================
-   低解像度対応 - ズーム縮小で見切れ防止
-   ================================================================ */
-/* モバイル（W858 H1560など）とPC両対応 */
-@media (max-height: 1560px) {
-    #app {
-        transform: scale(0.9);
-        transform-origin: top center;
-    }
-}
 
-@media (max-height: 1080px) {
-    #app {
-        transform: scale(0.85);
-        transform-origin: top center;
-    }
-}
-
-@media (max-height: 900px) {
-    #app {
-        transform: scale(0.7);
-        transform-origin: top center;
-    }
-}
-
-@media (max-height: 768px) {
-    #app {
-        transform: scale(0.65);
-        transform-origin: top center;
-    }
-}
-
-@media (max-height: 600px) {
-    #app {
-        transform: scale(0.6);
-        transform-origin: top center;
-    }
-}
