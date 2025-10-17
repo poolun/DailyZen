@@ -170,7 +170,7 @@ body::before {
 }
 
 /* ================================================================
-   モバイル版専用（767px以下） - 年月日と節気を2行表示
+   モバイル版専用（767px以下） - 年月日と節気を2行表示 + 説明文非表示
    ================================================================ */
 @media (max-width: 767px) {
     #info-container {
@@ -184,6 +184,25 @@ body::before {
     
     #info-container #sekki-block {
         white-space: nowrap; /* 改行を防ぐ */
+    }
+    
+    /* モバイルでは説明文を非表示 */
+    #meaning-container {
+        display: none;
+    }
+    
+    /* 掛け軸をタップ可能にするスタイル */
+    #kakejiku-container {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    
+    #kakejiku-container:hover {
+        transform: scale(1.02);
+    }
+    
+    #kakejiku-container:active {
+        transform: scale(0.98);
     }
 }
 
@@ -298,4 +317,105 @@ body::before {
         writing-mode: vertical-rl;
         text-orientation: mixed;
     }
+}
+
+/* ================================================================
+   モバイル版専用 - モーダル表示機能
+   ================================================================ */
+
+/* モーダル背景 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* モーダル表示状態 */
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* モーダルコンテンツ */
+.modal-content {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 80vw;
+    max-width: 400px;
+    max-height: 70vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(50px);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+/* モーダル表示時のアニメーション */
+.modal-overlay.show .modal-content {
+    transform: translateY(0);
+}
+
+/* モーダル内のテキスト */
+.modal-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-family: var(--meaning-font);
+    color: var(--meaning-color);
+    text-align: left;
+}
+
+/* 閉じるボタン */
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--meaning-color);
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.modal-close:hover {
+    background-color: #f0f0f0;
+}
+
+/* タップインジケーター */
+@media (max-width: 767px) {
+    #kakejiku-container::after {
+        content: '📱 タップして詳細を表示';
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.9);
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        color: var(--zen-color);
+        animation: pulse 2s infinite;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
 }
