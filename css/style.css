@@ -351,7 +351,7 @@ body::before {
 /* iPhone用のモーダル幅設定 */
 @media (max-width: 767px) {
     .modal-content {
-        width: 50vw;
+        width: 50％;
         max-width: none;
     }
 }
