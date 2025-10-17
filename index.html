@@ -1,56 +1,427 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DailyZen - 日々是好日</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon.ico">
-    <link rel="icon" type="image/x-icon" sizes="512x512" href="images/favicon512.ico">
-    <link rel="apple-touch-icon" sizes="512x512" href="images/favicon512.ico">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
-        <div id="info-container">
-            <div id="date-block">
-                <p id="date-info"></p>
-            </div>
-            <div id="sekki-block">
-                <p id="sekki-info"></p>
-            </div>
-        </div>
+/* ================================================================
+   共通設定 - CSS変数・基本スタイル・全画面共通要素
+   ================================================================ */
 
-        <div id="kakejiku-container">
-            <div id="zen-word-display">
-                <div id="reading-block" class="vertical-text">
-                    <p id="reading"></p>
-                </div>
-                <div id="zengo-block" class="vertical-text">
-                    <p id="zengo"></p>
-                </div>
-            </div>
-                <div id="tap-hint" class="tap-hint">📱 タップして言葉の意味を見る</div>
-        </div>
-        <div id="meaning-container">
-            <div id="meaning-paper">
-                <p id="meaning"></p>
-            </div>
-        </div>
+:root {
+    --bg-color: #f0efef;
+    --text-color: #333;
+    --white: #ffffff;
+    --zen-font: 'Zen Antique', 'Hiragino Mincho Pro W6', 'Hiragino Mincho ProN W6', 'Yu Mincho Demibold', 'Noto Serif JP', serif;
+    --meaning-font: 'Hiragino Mincho Pro W6','Noto Serif JP', 'Kosugi Maru', serif;
+    --zen-color: #004073; /* 禅語の色 */
+    --meaning-color: #666666; /* 説明文の色 */
+    --meaning-font-size: 2rem; 
+}
 
-    </div>
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    font-family: var(--meaning-font);
+    color: var(--text-color);
+    min-height: 100vh;
+}
 
-    <!-- モーダル表示エリア -->
-    <div id="modal-overlay" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close" id="modal-close">×</button>
-            <div class="modal-text" id="modal-meaning"></div>
-        </div>
-    </div>
+/* 背景画像の設定 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/zen_background.png');
+    background-size: auto 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.8;
+    z-index: -1;
+}
 
-    <script src="js/script.js"></script>
-</body>
-</html>
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    padding: 0;
+}
+
+/* 禅語と読みを内包するコンテナ */
+#zen-word-display {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 1.65rem 0 0 0; 
+}
+
+#zengo {
+    font-family: var(--zen-font);
+    font-size: 3.25rem; 
+    color: var(--zen-color); 
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.5rem;
+    font-weight: 300;
+}
+
+#reading-block {
+    margin: 0;
+    padding: 0;
+}
+
+#reading {
+    font-family: var(--meaning-font);
+    font-size: 1.6rem; 
+    color: #666666; 
+    margin: 0;
+    padding: 0;
+}
+
+#meaning {
+    color: var(--meaning-color);
+    margin: 0;
+    padding: 0; 
+}
+
+/* ================================================================
+   モバイル版（デフォルト） - 縦3段レイアウト
+   ================================================================ */
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* 年月日と節気のコンテナ */
+#info-container{
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center; 
+    padding-top: 0; 
+}
+
+#info-container * {
+    margin: 0;
+    padding: 0;
+}
+
+#info-container p{
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.175em;
+  margin:0;
+  padding:0;}
+
+/* 年月日ブロック（横書き）*/
+#info-container #date-block{
+    display: block;
+    white-space: pre-line;
+    text-align: center;
+}
+
+/* 節気ブロック（横書き）*/
+#info-container #sekki-block{
+    display: block;
+    white-space: pre-line;
+    text-align: center;
+}
+
+/* 中央の掛け軸と禅語 */
+#kakejiku-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    min-height: 60vh;
+    width: 320px;
+    background-image: url('../images/kakejiku_base.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#kakejiku-base {
+    position: absolute;
+    width: auto;
+    height: 100vh;
+    object-fit: contain;
+}
+
+/* 説明文エリア */
+#meaning-container {
+}
+
+#meaning-paper {
+    font-size: 1.35rem;
+    background: var(--white);
+    box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4); 
+    height: 100%;
+    width: auto;
+    padding: 1em; 
+}
+
+/* ================================================================
+   モバイル版専用（767px以下） - 年月日と節気を2行表示 + 説明文非表示
+   ================================================================ */
+@media (max-width: 767px) {
+    #info-container {
+        flex-direction: column !important;
+        gap: 0.5rem;
+    }
+    
+    #info-container #date-block {
+        white-space: nowrap; /* 改行を防ぐ */
+    }
+    
+    #info-container #sekki-block {
+        white-space: nowrap; /* 改行を防ぐ */
+    }
+    
+    /* モバイルでは説明文を非表示 */
+    #meaning-container {
+        display: none;
+    }
+    
+    /* 掛け軸をタップ可能にするスタイル */
+    #kakejiku-container {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    
+    #kakejiku-container:hover {
+        transform: scale(1.02);
+    }
+    
+    #kakejiku-container:active {
+        transform: scale(0.98);
+    }
+}
+
+#zengo {
+    font-family: var(--zen-font);
+    font-size: 2.8rem; 
+    color: var(--zen-color); 
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.5rem;
+    font-weight: 300;
+}
+
+#reading {
+    font-family: var(--meaning-font);
+    font-size: 1rem; 
+    color: #666666; 
+    margin: 0;
+    padding: 0;
+}
+/* ================================================================
+   PC版（768px以上・横長画面） - 横3段レイアウト
+   ================================================================ */
+@media (min-width: 768px) and (orientation: landscape) {
+    #app {
+        flex-direction: row;
+        min-height: 100vh;
+        max-width: 1122px;
+        margin: 0 auto;
+        gap: 0; 
+        padding: 20px; 
+    }
+
+    /* 日付情報コンテナ (右側) - 縦書きレイアウト */
+    #info-container {
+        order: 3;
+        width: 180px; 
+        height: 90vh;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row; 
+        justify-content: flex-start; 
+        align-items: flex-start;
+        gap: 0.17em;
+    }
+    
+    /* 表示順序（右から：年月日, 節気）*/
+    #date-block {
+        order: 2;
+        flex-shrink: 0;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    #sekki-block {
+        order: 1;
+        flex-shrink: 0;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        height: 100%;
+        position: relative;
+    }
+
+    /* 日付・節気ブロック内のテキストスタイル */
+    #date-block p {
+        margin: 0;
+        line-height: 1.5;
+        font-size: 2.0rem; 
+        font-weight: bold;
+        text-align: start;
+        vertical-align: top;
+        font-family: var(--meaning-font);
+        letter-spacing: 0.35rem;
+    }
+
+   #sekki-block p {
+        margin: 0;
+        line-height: 1.5;
+        font-size: 2.0rem; 
+        font-weight: bold;
+        text-align: start;
+        font-family: var(--meaning-font);
+        letter-spacing: 0.35rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    /* 掛け軸コンテナ (中央) */
+    #kakejiku-container {
+        order: 2;
+        height: 100vh;
+        /* background-size: 380px 1000px; */
+    }
+
+    /* 解説コンテナ (左側) */
+    #meaning-container {
+        order: 1;
+        height: 60vh; 
+        align-self: center; 
+    }
+    
+    #meaning-paper {
+        line-height: 2.0;
+        font-size: var(--meaning-font-size); 
+        text-align: left;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+}
+
+/* ================================================================
+   モバイル版専用 - モーダル表示機能
+   ================================================================ */
+
+/* モーダル背景 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* モーダル表示状態 */
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* モーダルコンテンツ */
+.modal-content {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 80vw;
+    max-width: 400px;
+    max-height: 70vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(50px);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+/* モーダル表示時のアニメーション */
+.modal-overlay.show .modal-content {
+    transform: translateY(0);
+}
+
+/* モーダル内のテキスト */
+.modal-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-family: var(--meaning-font);
+    color: var(--meaning-color);
+    text-align: left;
+}
+
+/* 閉じるボタン */
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--meaning-color);
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.modal-close:hover {
+    background-color: #f0f0f0;
+}
+
+/* タップヒント要素 */
+.tap-hint {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .tap-hint {
+        display: block;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.9);
+        padding: 6px 12px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        color: var(--zen-color);
+        white-space: nowrap;
+        z-index: 10;
+        animation: pulse 2s infinite;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
