@@ -6,8 +6,9 @@
     --bg-color: #f0efef;
     --text-color: #333;
     --white: #ffffff;
-    --zen-font: 'Zen Antique', 'Hiragino Mincho Pro W6', 'Hiragino Mincho ProN W6', 'Yu Mincho Demibold', 'Noto Serif JP', serif;
-    --meaning-font: 'Hiragino Mincho Pro W6','Noto Serif JP', 'Kosugi Maru', serif;
+    /* システム標準フォントでテスト */
+    --zen-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --meaning-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     --zen-color: #004073; /* 禅語の色 */
     --meaning-color: #666666; /* 説明文の色 */
     --meaning-font-size: 2rem;
