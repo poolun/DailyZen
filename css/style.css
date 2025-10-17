@@ -353,15 +353,16 @@ body::before {
     .modal-content {
         width: 80vw;
         max-width: none;
-        max-height: 60vh;
+        max-height: 30vh;
     }
     
     /* iPhoneでは横書きに変更 */
     .modal-text {
         writing-mode: horizontal-tb;
         text-orientation: mixed;
-        font-size: 1.2rem;
+        font-size: 2.4rem;
         line-height: 1.8;
+        text-align: left;
     }
 }
 
