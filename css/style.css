@@ -57,7 +57,7 @@ body::before {
 
 #zengo {
     font-family: var(--zen-font);
-    font-size: 4vw; /* 元3.25rem相当 */
+    font-size: 3.25rem; /* 固定サイズに戻す */
     font-weight: 900; /* Extra Bold（最大級の太さ） */
     color: var(--zen-color);
     margin: 0;
@@ -72,7 +72,7 @@ body::before {
 
 #reading {
     font-family: var(--meaning-font);
-    font-size: 2vw; /* 元1.6rem相当 */
+    font-size: 1.6rem; /* 固定サイズに戻す */
     font-weight: bold; /* Windows互換性のためboldを使用 */
     color: #666666;
     margin: 0;
