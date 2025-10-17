@@ -95,6 +95,13 @@ body::before {
     box-sizing: border-box;
     min-height: 100vh;
     padding: 1rem;
+    /* 強制描画でレイアウト安定化 */
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* WebKit描画最適化 */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 /* 年月日と節気のコンテナ */
@@ -179,20 +186,28 @@ body::before {
    モバイル版専用 - iPhone・iPad対応
    ================================================================ */
 
-/* iPhone専用（480px以下） - 全体1.3倍拡大・センタリング */
+/* iPhone専用（480px以下） - 全体1.2倍拡大・センタリング */
 @media (max-width: 480px) {
     #app {
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 1.5rem !important;
-        transform: scale(1.3) !important;
-        transform-origin: center center !important;
-        padding: 0.5rem !important;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.8rem;
+        transform: scale(1.2);
+        transform-origin: center center;
+        padding: 0.8rem;
+        /* 強制再描画で位置ずれ防止 */
+        width: 100%;
+        height: 100vh;
+        position: relative;
     }
     
     #info-container {
-        flex-direction: column !important;
-        gap: 0.5rem;
+        flex-direction: column;
+        gap: 0.3rem;
+        order: 1;
+        flex-shrink: 0;
+        width: 100%;
+        text-align: center;
     }
     
     #info-container #date-block {
@@ -204,22 +219,33 @@ body::before {
     }
     
     #kakejiku-container {
-        width: 60vw !important;
-        height: 70vh !important;
+        width: 52vw;
+        height: 58vh;
+        order: 2;
+        flex: 0 0 auto;
+    }
+    
+    #meaning-container {
+        order: 3;
+        display: none;
     }
 }
 
 /* iPad縦向き専用（481px～767px） - 1列レイアウト・90%サイズ */
 @media (min-width: 481px) and (max-width: 767px) {
     #app {
-        justify-content: space-evenly !important;
-        gap: 1rem !important;
-        transform: none !important;
-        padding: 1rem !important;
+        justify-content: space-evenly;
+        gap: 1rem;
+        transform: none;
+        padding: 1rem;
+        /* 強制再描画で初期表示位置ずれ防止 */
+        width: 100%;
+        height: 100vh;
+        position: relative;
     }
     
     #info-container {
-        flex-direction: row !important;
+        flex-direction: row;
         gap: 2rem;
     }
     
@@ -232,13 +258,18 @@ body::before {
     }
     
     #kakejiku-container {
-        width: 45vw !important;
-        height: 60vh !important;
+        width: 45vw;
+        height: 60vh;
+    }
+    
+    #zen-word-display {
+        justify-content: center;
+        align-items: center;
     }
     
     #meaning-paper {
-        font-size: 1.2rem !important;
-        padding: 0.8em !important;
+        font-size: 1.2rem;
+        padding: 0.8em;
     }
 }
 
@@ -304,9 +335,9 @@ body::before {
 /* iPhone専用 - モーダルサイズ調整 */
 @media (max-width: 480px) {
     .modal-content {
-        width: 48vw !important;
-        height: 25rem !important;
-        padding: 1.5rem !important;
+        width: 48vw;
+        height: 25rem;
+        padding: 1.5rem;
     }
 }
 
