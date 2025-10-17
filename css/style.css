@@ -11,7 +11,7 @@
     --meaning-font: 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'Yu Mincho', 'YuMincho', serif;
     --zen-color: #004073; /* 禅語の色 */
     --meaning-color: #666666; /* 説明文の色 */
-    --meaning-font-size: 1.7vw; /* ビューポート単位に統一 */
+    --meaning-font-size: 2rem; /* 固定サイズに戻す */
 }
 
 body {
@@ -123,7 +123,7 @@ body::before {
 }
 
 #info-container p{
-  font-size: 1.8vw; /* 元1.4rem相当 */
+  font-size: 1.4rem; /* 固定サイズに戻す */
   font-weight: bold;
   letter-spacing: 0.175em;
   margin:0;
@@ -176,7 +176,7 @@ body::before {
 }
 
 #meaning-paper {
-    font-size: 1.7vw; /* 元1.35rem相当 */
+    font-size: 1.35rem; /* 固定サイズに戻す */
     background: var(--white);
     box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4);
     height: 100%;
@@ -437,7 +437,7 @@ body::before {
     #date-block p {
         margin: 0;
         line-height: 1.5;
-        font-size: 1.8vw; /* PC版も統一 */
+        font-size: 2.0rem; /* 固定サイズに戻す */
         font-weight: bold;
         text-align: start;
         vertical-align: top;
@@ -448,7 +448,7 @@ body::before {
    #sekki-block p {
         margin: 0;
         line-height: 1.5;
-        font-size: 1.8vw; /* PC版も統一 */
+        font-size: 2.0rem; /* 固定サイズに戻す */
         font-weight: bold;
         text-align: start;
         font-family: var(--meaning-font);
