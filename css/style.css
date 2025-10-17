@@ -366,12 +366,16 @@ body::before {
     border-radius: 8px;
     width: 80vw;
     max-width: 400px;
-    max-height: 70vh;
+    max-height: 35vh;
     overflow-y: auto;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     transform: translateY(50px);
     transition: transform 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 上揃え */
+    align-items: flex-end; /* 右揃え */
 }
 
 /* モーダル表示時のアニメーション */
@@ -381,11 +385,13 @@ body::before {
 
 /* モーダル内のテキスト */
 .modal-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-size: 2rem;
+    line-height: 2;
     font-family: var(--meaning-font);
     color: var(--meaning-color);
-    text-align: left;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    align-self: flex-end; /* 親の右端に揃える */
 }
 
 /* 閉じるボタン */
