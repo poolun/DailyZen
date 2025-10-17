@@ -409,7 +409,7 @@ body::before {
     /* 日付・節気ブロック内のテキストスタイル */
     #date-block p {
         margin: 0;
-        line-height: 1;
+        line-height: 1.5;
         font-size: 2.0rem; 
         font-weight: bold;
         text-align: start;
@@ -420,7 +420,7 @@ body::before {
 
    #sekki-block p {
         margin: 0;
-        line-height: 1;
+        line-height: 1.5;
         font-size: 2.0rem; 
         font-weight: bold;
         text-align: start;
@@ -434,8 +434,7 @@ body::before {
     /* 掛け軸コンテナ (中央) */
     #kakejiku-container {
         order: 2;
-        height: 100vh;
-        /* background-size: 380px 1000px; */
+        height: 90vh;
     }
 
     /* 解説コンテナ (左側) */
