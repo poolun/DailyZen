@@ -309,9 +309,9 @@ function setupModal() {
     const modalClose = document.getElementById('modal-close');
     const modalMeaning = document.getElementById('modal-meaning');
     
-    // モバイル版での掛け軸タップ時にモーダル表示
+    // モバイル・タブレット版での掛け軸タップ時にモーダル表示
     kakejikuContainer.addEventListener('click', () => {
-        if (window.matchMedia("(max-width: 767px)").matches) {
+        if (window.matchMedia("(max-width: 1023px)").matches) {
             const meaningText = document.getElementById('meaning').textContent;
             modalMeaning.textContent = meaningText;
             modalOverlay.classList.add('show');
