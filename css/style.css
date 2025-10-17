@@ -246,9 +246,9 @@ body::before {
 }
 
 /* ================================================================
-   iPad横向き版（768px以上1200px未満・横向き画面） - 画面内収納優先
+   iPad横向き版（1024px以上1200px未満・横向き画面） - 画面内収納優先
    ================================================================ */
-@media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) {
+@media (min-width: 1024px) and (max-width: 1199px) and (orientation: landscape) {
     #app {
         flex-direction: row;
         height: 100vh;
@@ -354,9 +354,9 @@ body::before {
 }
 
 /* ================================================================
-   PC版（1200px以上・横長画面） - 横3段レイアウト
+   PC版（768px以上・横長画面） - 横3段レイアウト
    ================================================================ */
-@media (min-width: 1200px) and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: landscape) {
     #app {
         flex-direction: row;
         min-height: 100vh;
