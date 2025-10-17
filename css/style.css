@@ -401,9 +401,9 @@ body::before {
 /* タップインジケーター */
 @media (max-width: 767px) {
     #kakejiku-container::after {
-        content: '📱 タップして詳細を表示';
+        content: '📱 タップして言葉の意味を見る';
         position: absolute;
-        bottom: 10px;
+        bottom: 70px;
         left: 50%;
         transform: translateX(-50%);
         background: rgba(255, 255, 255, 0.9);
