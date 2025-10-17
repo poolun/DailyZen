@@ -283,24 +283,37 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
-// フォント読み込み完了を待ってからアプリケーション起動
+// システム標準フォントテスト版
 document.addEventListener('DOMContentLoaded', async () => {
-    // 読み込み中状態を設定（背景画像 + 読み込み中メッセージを表示）
-    document.body.classList.add('loading');
-    
-    // 全フォントの読み込み完了を待つ
-    await document.fonts.ready;
-    
-    // フォント読み込み完了後にコンテンツをレンダリング
+    // システムフォントなので即座にレンダリング
     await renderDailyZen();
     
-    // 読み込み完了状態に変更
-    document.body.classList.remove('loading');
+    // フォント読み込み完了状態に設定
     document.getElementById('app').classList.add('fonts-loaded');
     
     // モーダル機能を初期化
     setupModal();
 });
+
+// 強制再描画函数
+function forceReflow() {
+    const app = document.getElementById('app');
+    const zenWordDisplay = document.getElementById('zen-word-display');
+    
+    // 強制的にレイアウト再計算を実行
+    if (app) {
+        app.offsetHeight;
+        app.style.transform = 'translateZ(0)';
+    }
+    
+    if (zenWordDisplay) {
+        zenWordDisplay.offsetHeight;
+        // 一時的にvisibilityをhiddenにしてから戻す（再描画強制）
+        zenWordDisplay.style.visibility = 'hidden';
+        zenWordDisplay.offsetHeight; // 強制レンダリング
+        zenWordDisplay.style.visibility = 'visible';
+    }
+}
 
 // モーダル表示機能
 function setupModal() {
@@ -321,6 +334,10 @@ function setupModal() {
     // モーダルを閉じる
     function closeModal() {
         modalOverlay.classList.remove('show');
+        // モーダル閉じる時も再描画実行（位置ずれ修正）
+        setTimeout(() => {
+            forceReflow();
+        }, 300); // アニメーション完了後
     }
     
     modalClose.addEventListener('click', closeModal);
