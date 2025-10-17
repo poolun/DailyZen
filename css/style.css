@@ -213,6 +213,11 @@ body::before {
     #zen-word-display {
         padding: 1rem 0 0 0 !important;
         justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        position: relative !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
     }
     
     #meaning-container {
@@ -313,6 +318,15 @@ body::before {
     position: relative;
 }
 
+/* iPhone専用 - モーダルサイズ調整 */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 80vw !important;
+        height: 25rem !important;
+        padding: 1.5rem !important;
+    }
+}
+
 /* モーダル表示時のアニメーション */
 .modal-overlay.show .modal-content {
     transform: translateY(0);
@@ -324,9 +338,14 @@ body::before {
     line-height: 2.0;
     font-family: var(--meaning-font);
     color: var(--meaning-color);
-    text-align: left;
+    text-align: center;
     writing-mode: vertical-rl;
     text-orientation: mixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 /* 閉じるボタン */
