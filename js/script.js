@@ -358,22 +358,15 @@ function setupModal() {
     const modalClose = document.getElementById('modal-close');
     const modalMeaning = document.getElementById('modal-meaning');
     
-
-    // 説明文が非表示の時はモーダル表示（モバイル・PC正方形両方）
-    function shouldShowModal() {
-        const meaningContainer = document.getElementById('meaning-container');
-        return window.getComputedStyle(meaningContainer).display === 'none';
-    }
-
-    function showModal() {
-        if (shouldShowModal()) {
+    // 縦長（モバイル）時のみ掛け軸クリックでモーダル表示
+    kakejikuContainer.addEventListener('click', () => {
+        const isPortraitMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
+        if (isPortraitMobile) {
             const meaningText = document.getElementById('meaning').textContent;
             modalMeaning.textContent = meaningText;
             modalOverlay.classList.add('show');
         }
-    }
-
-    kakejikuContainer.addEventListener('click', showModal);
+    });
     
     // モーダルを閉じる
     function closeModal() {
