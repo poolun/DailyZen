@@ -1,5 +1,41 @@
 // js/script.js
 
+// ページキャッシュクリア機能
+function clearPageCache() {
+    // ブラウザキャッシュを強制リロード
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            registrations.forEach(function(registration) {
+                registration.unregister();
+            });
+        });
+    }
+    
+    // キャッシュストレージをクリア
+    if ('caches' in window) {
+        caches.keys().then(function(names) {
+            names.forEach(function(name) {
+                caches.delete(name);
+            });
+        });
+    }
+    
+    // セッションストレージとローカルストレージをクリア
+    sessionStorage.clear();
+    localStorage.clear();
+    
+    // 強制リロード
+    location.reload(true);
+}
+
+// Ctrl+Shift+R でキャッシュクリア
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.shiftKey && e.key === 'R') {
+        e.preventDefault();
+        clearPageCache();
+    }
+});
+
 // 漢数字変換マップ
 const KANSUJI_MAP = {
     '0': '〇', '1': '一', '2': '二', '3': '三', '4': '四', '5': '五',
