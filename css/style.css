@@ -58,12 +58,11 @@ body::before {
 #zengo {
     font-family: var(--zen-font);
     font-size: 3.25rem;
-    font-weight: 100;
+    font-weight: 700; /* ボールドレベルに変更 */
     color: var(--zen-color);
     margin: 0;
     padding: 0;
     letter-spacing: 0.5rem;
-    font-weight: 300;
 }
 
 #reading-block {
@@ -279,12 +278,11 @@ body::before {
 #zengo {
     font-family: var(--zen-font);
     font-size: 2.8rem;
-    font-weight: 100;
+    font-weight: 700; /* ボールドレベルに統一 */
     color: var(--zen-color);
     margin: 0;
     padding: 0;
     letter-spacing: 0.5rem;
-    font-weight: 300;
 }
 
 #reading {
