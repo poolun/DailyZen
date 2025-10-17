@@ -90,12 +90,11 @@ body::before {
 #app {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
     min-height: 100vh;
     padding: 1rem;
-    gap: 1rem;
 }
 
 /* 年月日と節気のコンテナ */
@@ -106,8 +105,7 @@ body::before {
     flex-direction: row; 
     justify-content: center; 
     align-items: center; 
-    padding-top: 0;
-    flex-shrink: 0;
+    padding-top: 0; 
 }
 
 #info-container * {
@@ -143,14 +141,12 @@ body::before {
     justify-content: center;
     align-items: center;
     flex: 1;
-    min-height: 50vh;
-    max-height: 70vh;
+    min-height: 60vh;
     width: 320px;
     background-image: url('../images/kakejiku_base.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    flex-shrink: 0;
 }
 
 #kakejiku-base {
@@ -162,7 +158,6 @@ body::before {
 
 /* 説明文エリア */
 #meaning-container {
-    flex-shrink: 0;
 }
 
 #meaning-paper {
@@ -361,7 +356,7 @@ body::before {
 /* ================================================================
    PC版（1200px以上・横長画面） - 横3段レイアウト
    ================================================================ */
-@media (min-width: 1200px) and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: landscape) {
     #app {
         flex-direction: row;
         min-height: 100vh;
@@ -434,7 +429,8 @@ body::before {
     /* 掛け軸コンテナ (中央) */
     #kakejiku-container {
         order: 2;
-        height: 90vh;
+        height: 100vh;
+        /* background-size: 380px 1000px; */
     }
 
     /* 解説コンテナ (左側) */
