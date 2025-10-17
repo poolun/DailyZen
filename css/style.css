@@ -73,7 +73,7 @@ body::before {
 #reading {
     font-family: var(--meaning-font);
     font-size: 1.6rem;
-    font-weight: 700; /* 太字に変更 */
+    font-weight: bold; /* Windows互換性のためboldを使用 */
     color: #666666;
     margin: 0;
     padding: 0;
@@ -278,7 +278,7 @@ body::before {
 #reading {
     font-family: var(--meaning-font);
     font-size: 1rem;
-    font-weight: 700; /* 太字に統一 */
+    font-weight: bold; /* Windows互換性のためboldを使用 */
     color: #666666;
     margin: 0;
     padding: 0;
