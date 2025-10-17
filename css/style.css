@@ -90,11 +90,12 @@ body::before {
 #app {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     box-sizing: border-box;
     min-height: 100vh;
     padding: 1rem;
+    gap: 2rem;
 }
 
 /* 年月日と節気のコンテナ */
@@ -188,7 +189,7 @@ body::before {
     
     /* モバイルでは説明文を非表示 */
     #meaning-container {
-        display: none;
+        display: none !important;
     }
     
     /* 掛け軸をタップ可能にするスタイル */
@@ -223,10 +224,134 @@ body::before {
     margin: 0;
     padding: 0;
 }
+
 /* ================================================================
-   PC版（768px以上・横長画面） - 横3段レイアウト
+   iPad縦向き版（768px以上・縦向き画面） - 縦3段レイアウト調整
    ================================================================ */
-@media (min-width: 768px) and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: portrait) {
+    #app {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    #kakejiku-container {
+        flex: 0;
+        min-height: 50vh;
+    }
+}
+
+/* ================================================================
+   iPad横向き版（768px以上1200px未満・横向き画面） - 画面内収納優先
+   ================================================================ */
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) {
+    #app {
+        flex-direction: row;
+        height: 100vh;
+        max-height: 100vh;
+        max-width: 1024px;
+        margin: 0 auto;
+        gap: 1rem;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* 日付情報コンテナ (右側) */
+    #info-container {
+        order: 3;
+        width: 120px;
+        height: 100%;
+        max-height: calc(100vh - 20px);
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0.15em;
+    }
+    
+    /* 表示順序（右から：年月日, 節気）*/
+    #date-block {
+        order: 2;
+        flex-shrink: 0;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    #sekki-block {
+        order: 1;
+        flex-shrink: 0;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        height: 100%;
+        position: relative;
+    }
+
+    /* 日付・節気ブロック内のテキストスタイル */
+    #date-block p {
+        margin: 0;
+        line-height: 1.4;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: start;
+        vertical-align: top;
+        font-family: var(--meaning-font);
+        letter-spacing: 0.2rem;
+    }
+
+    #sekki-block p {
+        margin: 0;
+        line-height: 1.4;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: start;
+        font-family: var(--meaning-font);
+        letter-spacing: 0.2rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    /* 掛け軸コンテナ (中央) */
+    #kakejiku-container {
+        order: 2;
+        height: 100%;
+        max-height: calc(100vh - 20px);
+        width: auto;
+        flex: 0 0 auto;
+    }
+
+    /* 解説コンテナ (左側) */
+    #meaning-container {
+        order: 1;
+        height: 100%;
+        max-height: calc(100vh - 20px);
+        align-self: center;
+        flex: 1;
+        min-width: 200px;
+    }
+    
+    #meaning-paper {
+        line-height: 1.8;
+        font-size: 1.4rem;
+        text-align: left;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        height: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+}
+
+/* ================================================================
+   PC版（1200px以上・横長画面） - 横3段レイアウト
+   ================================================================ */
+@media (min-width: 1200px) and (orientation: landscape) {
     #app {
         flex-direction: row;
         min-height: 100vh;
