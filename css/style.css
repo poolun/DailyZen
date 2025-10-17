@@ -356,13 +356,13 @@ body::before {
         max-height: 30vh;
     }
     
-    /* iPhoneでは横書きに変更 */
+    /* iPhoneでも縦書きに変更（PC版と同様） */
     .modal-text {
-        writing-mode: horizontal-tb;
+        writing-mode: vertical-rl;
         text-orientation: mixed;
         font-size: 2.4rem;
         line-height: 1.8;
-        text-align: left;
+        text-align: start;
     }
 }
 
