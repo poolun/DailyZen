@@ -6,12 +6,11 @@
     --bg-color: #f0efef;
     --text-color: #333;
     --white: #ffffff;
-    /* システム標準明朝体フォントを整理 */
-    --zen-font: 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'Yu Mincho', 'YuMincho', serif;
-    --meaning-font: 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'Yu Mincho', 'YuMincho', serif;
+    --zen-font: 'Zen Antique', 'Hiragino Mincho Pro W6', 'Hiragino Mincho ProN W6', 'Yu Mincho Demibold', 'Noto Serif JP', serif;
+    --meaning-font: 'Hiragino Mincho Pro W6','Noto Serif JP', 'Kosugi Maru', serif;
     --zen-color: #004073; /* 禅語の色 */
     --meaning-color: #666666; /* 説明文の色 */
-    --meaning-font-size: 2rem; /* 固定サイズに戻す */
+    --meaning-font-size: 2rem;
 }
 
 body {
@@ -57,8 +56,8 @@ body::before {
 
 #zengo {
     font-family: var(--zen-font);
-    font-size: 3.25rem; /* 固定サイズに戻す */
-    font-weight: 900; /* Extra Bold（最大級の太さ） */
+    font-size: 3.25rem;
+    font-weight: 300; /* 元の軽いウェイトに戻す */
     color: var(--zen-color);
     margin: 0;
     padding: 0;
@@ -72,8 +71,8 @@ body::before {
 
 #reading {
     font-family: var(--meaning-font);
-    font-size: 1.6rem; /* 固定サイズに戻す */
-    font-weight: bold; /* Windows互換性のためboldを使用 */
+    font-size: 1.6rem;
+    font-weight: normal; /* 元の標準ウェイトに戻す */
     color: #666666;
     margin: 0;
     padding: 0;
