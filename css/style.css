@@ -370,7 +370,7 @@ body::before {
         text-orientation: mixed;
         font-size: 2rem;
         line-height: 2;
-        text-align: right;
+        text-align: start;
         margin: 0;
         padding: 0;
     }
