@@ -57,7 +57,7 @@ body::before {
 
 #zengo {
     font-family: var(--zen-font);
-    font-size: 3.25rem;
+    font-size: 6vw; /* ビューポート幅に応じて拡縮 */
     font-weight: 900; /* Extra Bold（最大級の太さ） */
     color: var(--zen-color);
     margin: 0;
@@ -72,7 +72,7 @@ body::before {
 
 #reading {
     font-family: var(--meaning-font);
-    font-size: 1.6rem;
+    font-size: 3vw; /* ビューポート幅に応じて拡縮 */
     font-weight: bold; /* Windows互換性のためboldを使用 */
     color: #666666;
     margin: 0;
@@ -123,7 +123,7 @@ body::before {
 }
 
 #info-container p{
-  font-size: 1.4rem;
+  font-size: 2.5vw; /* ビューポート幅に応じて拡縮 */
   font-weight: bold;
   letter-spacing: 0.175em;
   margin:0;
@@ -176,7 +176,7 @@ body::before {
 }
 
 #meaning-paper {
-    font-size: 1.35rem;
+    font-size: 2vw; /* ビューポート幅に応じて拡縮 */
     background: var(--white);
     box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4);
     height: 100%;
@@ -277,7 +277,7 @@ body::before {
 
 #reading {
     font-family: var(--meaning-font);
-    font-size: 1rem;
+    font-size: 3vw; /* ビューポート幅に応じて拡縮（統一） */
     font-weight: bold; /* Windows互換性のためboldを使用 */
     color: #666666;
     margin: 0;
