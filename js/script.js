@@ -304,13 +304,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // モーダル表示機能
 function setupModal() {
-    const meaningContainer = document.getElementById('meaning-container');
+    const kakejikuContainer = document.getElementById('kakejiku-container');
     const modalOverlay = document.getElementById('modal-overlay');
     const modalClose = document.getElementById('modal-close');
     const modalMeaning = document.getElementById('modal-meaning');
     
-    // モバイル版でのタップ時にモーダル表示
-    meaningContainer.addEventListener('click', () => {
+    // モバイル版での掛け軸タップ時にモーダル表示
+    kakejikuContainer.addEventListener('click', () => {
         if (window.matchMedia("(max-width: 767px)").matches) {
             const meaningText = document.getElementById('meaning').textContent;
             modalMeaning.textContent = meaningText;
