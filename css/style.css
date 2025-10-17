@@ -259,6 +259,115 @@ body::before {
     margin: 0;
     padding: 0;
 }
+
+/* ================================================================
+   モバイル版専用 - モーダル表示機能
+   ================================================================ */
+
+/* モーダル背景 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* モーダル表示状態 */
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* モーダルコンテンツ */
+.modal-content {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(50px);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+/* モーダル表示時のアニメーション */
+.modal-overlay.show .modal-content {
+    transform: translateY(0);
+}
+
+/* モーダル内のテキスト（PC版と同じフォントサイズ） */
+.modal-text {
+    font-size: 2rem;
+    line-height: 2.0;
+    font-family: var(--meaning-font);
+    color: var(--meaning-color);
+    text-align: left;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+/* 閉じるボタン */
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--meaning-color);
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.modal-close:hover {
+    background-color: #f0f0f0;
+}
+
+/* モバイル版でのタップヒント表示 */
+@media (max-width: 767px) {
+    #meaning-container {
+        cursor: pointer;
+        position: relative;
+    }
+    
+    #meaning-container::after {
+        content: 'タップして詳細を表示';
+        position: absolute;
+        bottom: -1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8rem;
+        color: var(--meaning-color);
+        opacity: 0.7;
+        white-space: nowrap;
+    }
+    
+    #meaning-paper {
+        transition: transform 0.2s ease;
+    }
+    
+    #meaning-container:active #meaning-paper {
+        transform: scale(0.98);
+    }
+}
+
 /* ================================================================
    PC版（768px以上） - 横3段レイアウト
    ================================================================ */
