@@ -179,55 +179,33 @@ body::before {
    モバイル版専用 - iPhone・iPad対応
    ================================================================ */
 
-/* iPhone専用（480px以下） - 全体1.2倍拡大・センタリング */
+/* iPhone専用（480px以下） - 全体1.3倍拡大・センタリング */
 @media (max-width: 480px) {
     #app {
-        justify-content: space-between !important;
+        justify-content: center !important;
         align-items: center !important;
-        gap: 0.8rem !important;
-        transform: scale(1.1) !important;
+        gap: 1.5rem !important;
+        transform: scale(1.3) !important;
         transform-origin: center center !important;
         padding: 0.5rem !important;
     }
     
     #info-container {
         flex-direction: column !important;
-        gap: 0.3rem;
-        order: 1 !important;
-        width: 100% !important;
-        flex-shrink: 0 !important;
+        gap: 0.5rem;
     }
     
     #info-container #date-block {
         white-space: nowrap;
-        font-size: 1.1rem !important;
     }
     
     #info-container #sekki-block {
         white-space: nowrap;
-        font-size: 1.1rem !important;
     }
     
     #kakejiku-container {
-        width: 45vw !important;
-        height: 50vh !important;
-        order: 2 !important;
-        flex: 0 0 auto !important;
-    }
-    
-    #zen-word-display {
-        padding: 0.5rem 0 0 0 !important;
-        justify-content: center !important;
-        align-items: center !important;
-        width: 100% !important;
-        position: relative !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-    }
-    
-    #meaning-container {
-        order: 3 !important;
-        display: none !important;
+        width: 60vw !important;
+        height: 70vh !important;
     }
 }
 
@@ -326,7 +304,7 @@ body::before {
 /* iPhone専用 - モーダルサイズ調整 */
 @media (max-width: 480px) {
     .modal-content {
-        width: 80vw !important;
+        width: 48vw !important;
         height: 25rem !important;
         padding: 1.5rem !important;
     }
