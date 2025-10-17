@@ -306,7 +306,7 @@ body::before {
 /* モバイル（W858 H1560など）とPC両対応 */
 @media (max-height: 1560px) {
     #app {
-        transform: scale(0.8);
+        transform: scale(0.9);
         transform-origin: top center;
     }
 }
