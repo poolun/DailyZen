@@ -10,7 +10,7 @@
     --meaning-font: 'Hiragino Mincho Pro W6','Noto Serif JP', 'Kosugi Maru', serif;
     --zen-color: #004073; /* 禅語の色 */
     --meaning-color: #666666; /* 説明文の色 */
-    --meaning-font-size: 2rem; 
+    --meaning-font-size: 2rem;
 }
 
 body {
@@ -48,16 +48,16 @@ body::before {
 #zen-word-display {
     position: relative;
     display: flex;
-    flex-direction: row-reverse; 
-    justify-content: center; 
-    align-items: center; 
-    padding: 1.65rem 0 0 0; 
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 1.65rem 0 0 0;
 }
 
 #zengo {
     font-family: var(--zen-font);
-    font-size: 3.25rem; 
-    color: var(--zen-color); 
+    font-size: 3.25rem;
+    color: var(--zen-color);
     margin: 0;
     padding: 0;
     letter-spacing: 0.5rem;
@@ -71,8 +71,8 @@ body::before {
 
 #reading {
     font-family: var(--meaning-font);
-    font-size: 1.6rem; 
-    color: #666666; 
+    font-size: 1.6rem;
+    color: #666666;
     margin: 0;
     padding: 0;
 }
@@ -80,7 +80,7 @@ body::before {
 #meaning {
     color: var(--meaning-color);
     margin: 0;
-    padding: 0; 
+    padding: 0;
 }
 
 /* ================================================================
@@ -102,10 +102,10 @@ body::before {
     display: flex;
     gap: 1rem;
     position: relative;
-    flex-direction: row; 
-    justify-content: center; 
-    align-items: center; 
-    padding-top: 0; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
 }
 
 #info-container * {
@@ -163,10 +163,10 @@ body::before {
 #meaning-paper {
     font-size: 1.35rem;
     background: var(--white);
-    box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4); 
+    box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4);
     height: 100%;
     width: auto;
-    padding: 1em; 
+    padding: 1em;
 }
 
 /* ================================================================
@@ -189,8 +189,8 @@ body::before {
 
 #zengo {
     font-family: var(--zen-font);
-    font-size: 2.8rem; 
-    color: var(--zen-color); 
+    font-size: 2.8rem;
+    color: var(--zen-color);
     margin: 0;
     padding: 0;
     letter-spacing: 0.5rem;
@@ -199,34 +199,34 @@ body::before {
 
 #reading {
     font-family: var(--meaning-font);
-    font-size: 1rem; 
-    color: #666666; 
+    font-size: 1rem;
+    color: #666666;
     margin: 0;
     padding: 0;
 }
 /* ================================================================
-   PC版（768px以上・横長画面） - 横3段レイアウト
+   PC版（768px以上） - 横3段レイアウト
    ================================================================ */
-@media (min-width: 768px) and (orientation: landscape) {
+@media (min-width: 768px) {
     #app {
         flex-direction: row;
         min-height: 100vh;
         max-width: 1122px;
         margin: 0 auto;
-        gap: 0; 
-        padding: 20px; 
+        gap: 0;
+        padding: 20px;
     }
 
     /* 日付情報コンテナ (右側) - 縦書きレイアウト */
     #info-container {
         order: 3;
-        width: 180px; 
+        width: 180px;
         height: 90vh;
         padding: 0;
         margin: 0;
         display: flex;
-        flex-direction: row; 
-        justify-content: flex-start; 
+        flex-direction: row;
+        justify-content: flex-start;
         align-items: flex-start;
         gap: 0.17em;
     }
@@ -256,7 +256,7 @@ body::before {
     #date-block p {
         margin: 0;
         line-height: 1.5;
-        font-size: 2.0rem; 
+        font-size: 2.0rem;
         font-weight: bold;
         text-align: start;
         vertical-align: top;
@@ -267,7 +267,7 @@ body::before {
    #sekki-block p {
         margin: 0;
         line-height: 1.5;
-        font-size: 2.0rem; 
+        font-size: 2.0rem;
         font-weight: bold;
         text-align: start;
         font-family: var(--meaning-font);
@@ -287,15 +287,46 @@ body::before {
     /* 解説コンテナ (左側) */
     #meaning-container {
         order: 1;
-        height: 60vh; 
-        align-self: center; 
+        height: 60vh;
+        align-self: center;
     }
     
     #meaning-paper {
         line-height: 2.0;
-        font-size: var(--meaning-font-size); 
+        font-size: var(--meaning-font-size);
         text-align: left;
         writing-mode: vertical-rl;
         text-orientation: mixed;
+    }
+}
+
+/* ================================================================
+   低解像度対応（1080px以下） - ズーム縮小で見切れ防止
+   ================================================================ */
+@media (max-height: 1080px) {
+    #app {
+        transform: scale(0.9);
+        transform-origin: top center;
+    }
+}
+
+@media (max-height: 900px) {
+    #app {
+        transform: scale(0.8);
+        transform-origin: top center;
+    }
+}
+
+@media (max-height: 768px) {
+    #app {
+        transform: scale(0.7);
+        transform-origin: top center;
+    }
+}
+
+@media (max-height: 600px) {
+    #app {
+        transform: scale(0.6);
+        transform-origin: top center;
     }
 }
