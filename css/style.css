@@ -6,9 +6,9 @@
     --bg-color: #f0efef;
     --text-color: #333;
     --white: #ffffff;
-    /* システム標準明朝体フォントでテスト */
-    --zen-font: 'Hiragino Mincho W6', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho Pro', serif;
-    --meaning-font: 'Hiragino Mincho W6', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho Pro', serif;
+    /* ヒラギノ明朝 W6 を全体に適用 */
+    --zen-font: 'Hiragino Mincho Pro W6', 'Hiragino Mincho ProN W6', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho Pro', serif;
+    --meaning-font: 'Hiragino Mincho Pro W6', 'Hiragino Mincho ProN W6', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho Pro', serif;
     --zen-color: #004073; /* 禅語の色 */
     --meaning-color: #666666; /* 説明文の色 */
     --meaning-font-size: 2rem;
