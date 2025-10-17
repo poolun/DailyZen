@@ -10,7 +10,7 @@
     --meaning-font: 'Hiragino Mincho Pro W6','Noto Serif JP', 'Kosugi Maru', serif;
     --zen-color: #004073; /* 禅語の色 */
     --meaning-color: #666666; /* 説明文の色 */
-    --meaning-font-size: 2rem;
+    --meaning-font-size: 2rem; 
 }
 
 body {
@@ -48,20 +48,20 @@ body::before {
 #zen-word-display {
     position: relative;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-    padding: 1.65rem 0 0 0;
+    flex-direction: row-reverse; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 1.65rem 0 0 0; 
 }
 
 #zengo {
     font-family: var(--zen-font);
-    font-size: 3.25rem;
-    font-weight: 300; /* 元の軽いウェイトに戻す */
-    color: var(--zen-color);
+    font-size: 3.25rem; 
+    color: var(--zen-color); 
     margin: 0;
     padding: 0;
     letter-spacing: 0.5rem;
+    font-weight: 300;
 }
 
 #reading-block {
@@ -71,9 +71,8 @@ body::before {
 
 #reading {
     font-family: var(--meaning-font);
-    font-size: 1.6rem;
-    font-weight: normal; /* 元の標準ウェイトに戻す */
-    color: #666666;
+    font-size: 1.6rem; 
+    color: #666666; 
     margin: 0;
     padding: 0;
 }
@@ -81,7 +80,7 @@ body::before {
 #meaning {
     color: var(--meaning-color);
     margin: 0;
-    padding: 0;
+    padding: 0; 
 }
 
 /* ================================================================
@@ -96,13 +95,6 @@ body::before {
     box-sizing: border-box;
     min-height: 100vh;
     padding: 1rem;
-    /* 強制描画でレイアウト安定化 */
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    /* WebKit描画最適化 */
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
 }
 
 /* 年月日と節気のコンテナ */
@@ -110,10 +102,10 @@ body::before {
     display: flex;
     gap: 1rem;
     position: relative;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-top: 0;
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center; 
+    padding-top: 0; 
 }
 
 #info-container * {
@@ -122,7 +114,7 @@ body::before {
 }
 
 #info-container p{
-  font-size: 1.4rem; /* 固定サイズに戻す */
+  font-size: 1.4rem;
   font-weight: bold;
   letter-spacing: 0.175em;
   margin:0;
@@ -150,10 +142,7 @@ body::before {
     align-items: center;
     flex: 1;
     min-height: 60vh;
-    width: 50vw;
-    max-width: 400px;
-    min-width: 280px;
-    height: 80vh;
+    width: 320px;
     background-image: url('../images/kakejiku_base.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -169,244 +158,75 @@ body::before {
 
 /* 説明文エリア */
 #meaning-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #meaning-paper {
-    font-size: 1.35rem; /* 固定サイズに戻す */
+    font-size: 1.35rem;
     background: var(--white);
-    box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4);
+    box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4); 
     height: 100%;
     width: auto;
-    padding: 1em;
+    padding: 1em; 
 }
 
 /* ================================================================
-   モバイル版専用 - iPhone・iPad対応
+   モバイル版専用（767px以下） - 年月日と節気を2行表示
    ================================================================ */
-
-/* iPhone専用（480px以下） - 全体1.2倍拡大・センタリング */
-@media (max-width: 480px) {
-    #app {
-        justify-content: space-between;
-        align-items: center;
-        gap: 0.8rem;
-        transform: scale(1.2);
-        transform-origin: center center;
-        padding: 0.8rem;
-        /* 強制再描画で位置ずれ防止 */
-        width: 100%;
-        height: 100vh;
-        position: relative;
-    }
-    
-    #info-container {
-        flex-direction: column;
-        gap: 0.3rem;
-        order: 1;
-        flex-shrink: 0;
-        width: 100%;
-        text-align: center;
-    }
-    
-    #info-container #date-block {
-        white-space: nowrap;
-    }
-    
-    #info-container #sekki-block {
-        white-space: nowrap;
-    }
-    
-    #kakejiku-container {
-        width: 52vw;
-        height: 58vh;
-        order: 2;
-        flex: 0 0 auto;
-    }
-    
-    #meaning-container {
-        order: 3;
-        display: none;
-    }
-}
-
-/* iPad縦向き専用（481px～767px） - 1列レイアウト・90%サイズ */
-@media (min-width: 481px) and (max-width: 767px) {
-    #app {
-        justify-content: space-evenly;
-        gap: 1rem;
-        transform: none;
-        padding: 1rem;
-        /* 強制再描画で初期表示位置ずれ防止 */
-        width: 100%;
-        height: 100vh;
-        position: relative;
-    }
-    
-    #info-container {
-        flex-direction: row;
-        gap: 2rem;
-    }
-    
-    #info-container #date-block {
-        white-space: nowrap;
-    }
-    
-    #info-container #sekki-block {
-        white-space: nowrap;
-    }
-    
-    #kakejiku-container {
-        width: 45vw;
-        height: 60vh;
-    }
-    
-    #zen-word-display {
-        justify-content: center;
-        align-items: center;
-    }
-    
-    #meaning-paper {
-        font-size: 1.2rem;
-        padding: 0.8em;
-    }
-}
-
-
-
-/* ================================================================
-   モバイル版専用 - モーダル表示機能
-   ================================================================ */
-
-/* モーダル背景 */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-/* モーダル表示状態 */
-.modal-overlay.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* モーダルコンテンツ */
-.modal-content {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 8px;
-    width: 51vw;
-    height: 20rem;
-    overflow-y: auto;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    transform: translateY(50px);
-    transition: transform 0.3s ease;
-    position: relative;
-}
-
-/* iPhone専用 - モーダルサイズ調整 */
-@media (max-width: 480px) {
-    .modal-content {
-        width: 48vw;
-        height: 25rem;
-        padding: 1.5rem;
-    }
-}
-
-/* モーダル表示時のアニメーション */
-.modal-overlay.show .modal-content {
-    transform: translateY(0);
-}
-
-/* モーダル内のテキスト（PC版と同じフォントサイズ） */
-.modal-text {
-    font-size: 2rem;
-    line-height: 2.0;
-    font-family: var(--meaning-font);
-    color: var(--meaning-color);
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: center;
-    margin: 0 auto;
-}
-
-/* 閉じるボタン */
-.modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--meaning-color);
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background-color 0.2s ease;
-}
-
-.modal-close:hover {
-    background-color: #f0f0f0;
-}
-
-/* モバイル版でのタップ機能 */
 @media (max-width: 767px) {
-    #kakejiku-container {
-        cursor: pointer;
-        position: relative;
+    #info-container {
+        flex-direction: column !important;
+        gap: 0.5rem;
     }
     
-    #kakejiku-container:active {
-        transform: scale(0.98);
-        transition: transform 0.1s ease;
+    #info-container #date-block {
+        white-space: nowrap; /* 改行を防ぐ */
+    }
+    
+    #info-container #sekki-block {
+        white-space: nowrap; /* 改行を防ぐ */
     }
 }
 
+#zengo {
+    font-family: var(--zen-font);
+    font-size: 2.8rem; 
+    color: var(--zen-color); 
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.5rem;
+    font-weight: 300;
+}
+
+#reading {
+    font-family: var(--meaning-font);
+    font-size: 1rem; 
+    color: #666666; 
+    margin: 0;
+    padding: 0;
+}
 /* ================================================================
-   PC版（768px以上） - 横3段レイアウト
+   PC版（768px以上・横長画面） - 横3段レイアウト
    ================================================================ */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (orientation: landscape) {
     #app {
         flex-direction: row;
         min-height: 100vh;
         max-width: 1122px;
         margin: 0 auto;
-        gap: 20px;
-        padding: 20px;
+        gap: 0; 
+        padding: 20px; 
     }
 
     /* 日付情報コンテナ (右側) - 縦書きレイアウト */
     #info-container {
         order: 3;
-        width: 180px;
+        width: 180px; 
         height: 90vh;
         padding: 0;
         margin: 0;
         display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
+        flex-direction: row; 
+        justify-content: flex-start; 
         align-items: flex-start;
         gap: 0.17em;
     }
@@ -436,7 +256,7 @@ body::before {
     #date-block p {
         margin: 0;
         line-height: 1.5;
-        font-size: 2.0rem; /* 固定サイズに戻す */
+        font-size: 2.0rem; 
         font-weight: bold;
         text-align: start;
         vertical-align: top;
@@ -447,7 +267,7 @@ body::before {
    #sekki-block p {
         margin: 0;
         line-height: 1.5;
-        font-size: 2.0rem; /* 固定サイズに戻す */
+        font-size: 2.0rem; 
         font-weight: bold;
         text-align: start;
         font-family: var(--meaning-font);
@@ -460,22 +280,20 @@ body::before {
     /* 掛け軸コンテナ (中央) */
     #kakejiku-container {
         order: 2;
-        width: 40vw;
-        max-width: 450px;
-        min-width: 320px;
-        height: 90vh;
+        height: 100vh;
+        /* background-size: 380px 1000px; */
     }
 
     /* 解説コンテナ (左側) */
     #meaning-container {
         order: 1;
-        height: 60vh;
-        align-self: center;
+        height: 60vh; 
+        align-self: center; 
     }
     
     #meaning-paper {
         line-height: 2.0;
-        font-size: var(--meaning-font-size);
+        font-size: var(--meaning-font-size); 
         text-align: left;
         writing-mode: vertical-rl;
         text-orientation: mixed;
