@@ -283,24 +283,60 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
-// DOMとコンテンツの読み込み完了を待ってからアプリケーション起動
+// フォント読み込み完了を待ってからアプリケーション起動
 document.addEventListener('DOMContentLoaded', async () => {
+    // 読み込み中状態を設定（背景画像 + 読み込み中メッセージを表示）
+    document.body.classList.add('loading');
+    
+    // 全フォントの読み込み完了を待つ
+    await document.fonts.ready;
+    
+    // フォント読み込み完了後にコンテンツをレンダリング
     await renderDailyZen();
     
-    // 強制的にレイアウト再計算を発生させる
-    const appElement = document.getElementById('app');
-    appElement.offsetHeight; // 強制リフロー
+    // 読み込み完了状態に変更
+    document.body.classList.remove('loading');
+    document.getElementById('app').classList.add('fonts-loaded');
     
-    // 読み込み完了後にフェードイン表示
-    appElement.classList.add('loaded');
-    
-    // さらに念のため、少し遅延させてからもう一度リフローを実行
-    setTimeout(() => {
-        appElement.style.transform = 'translateZ(0)'; // GPU加速を有効化
-        appElement.offsetHeight; // 再度強制リフロー
-        appElement.style.transform = '';
-    }, 50);
+    // モーダル機能を初期化
+    setupModal();
 });
+
+// モーダル表示機能
+function setupModal() {
+    const meaningContainer = document.getElementById('meaning-container');
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalClose = document.getElementById('modal-close');
+    const modalMeaning = document.getElementById('modal-meaning');
+    
+    // モバイル版でのタップ時にモーダル表示
+    meaningContainer.addEventListener('click', () => {
+        if (window.matchMedia("(max-width: 767px)").matches) {
+            const meaningText = document.getElementById('meaning').textContent;
+            modalMeaning.textContent = meaningText;
+            modalOverlay.classList.add('show');
+        }
+    });
+    
+    // モーダルを閉じる
+    function closeModal() {
+        modalOverlay.classList.remove('show');
+    }
+    
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+    
+    // Escキーでモーダルを閉じる
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+}
 
 // リサイズ時にレスポンシブな表示を再適用
 window.addEventListener('resize', () => {
