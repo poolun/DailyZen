@@ -7,8 +7,8 @@
     --text-color: #333;
     --white: #ffffff;
     /* システム標準明朝体フォントでテスト */
-    --zen-font: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho Pro', serif;
-    --meaning-font: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho Pro', serif;
+    --zen-font: 'Hiragino Mincho W6', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho Pro', serif;
+    --meaning-font: 'Hiragino Mincho W6', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho Pro', serif;
     --zen-color: #004073; /* 禅語の色 */
     --meaning-color: #666666; /* 説明文の色 */
     --meaning-font-size: 2rem;
