@@ -292,7 +292,7 @@ body::before {
     background: var(--white);
     padding: 2rem;
     border-radius: 8px;
-    width: 85vw;
+    width: 51vw;
     height: 20rem;
     overflow-y: auto;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
