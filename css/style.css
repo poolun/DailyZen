@@ -348,6 +348,14 @@ body::before {
     position: relative;
 }
 
+/* iPhone用のモーダル幅設定 */
+@media (max-width: 767px) {
+    .modal-content {
+        width: 50vw;
+        max-width: none;
+    }
+}
+
 /* モーダル背景 - 上下左右中央 */
 .modal-overlay {
     position: fixed;
