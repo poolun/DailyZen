@@ -219,7 +219,7 @@ body::before {
         min-height: 100vh;
         max-width: 1122px;
         margin: 0 auto;
-        gap: 0;
+        gap: 20px;
         padding: 20px;
     }
 
