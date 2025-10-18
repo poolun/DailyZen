@@ -1,0 +1,25 @@
+/* デバイスと画面状態 */
+/* iPhone 縦 / モバイル縦 */,
+@media (max-width: 599px){
+
+}
+/* iPhone 横 / 小型横長 */
+@media (min-width: 600px) and (orientation: landscape){
+    #info-container #date-block {
+        white-space: normal; /* 改行 */
+    }
+}
+/* iPad 縦 / タブレット縦 */
+@media (min-width: 768px) and (orientation: portrait){
+
+}
+/* iPad 横 / タブレット横 */
+@media (min-width: 1024px) and (orientation: landscape){
+    #info-container #date-block {
+        white-space: normal; /* 改行 */
+    }
+}
+/* PC / デスクトップ標準 */
+@media (min-width: 1280px){
+
+}
