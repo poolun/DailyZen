@@ -5,9 +5,108 @@
 }
 /* iPhone 横 / 小型横長 */
 @media (min-width: 600px) and (orientation: landscape){
-    #info-container #date-block {
-        white-space: normal; /* 改行 */
+    *{
+      font-size : 2rem;
     }
+    #info-container * {
+      white-space: normal; /* 改行 */
+    }
+
+        #app {
+        flex-direction: row;
+        min-height: 100vh;
+        /* max-width: 1122px; */
+        margin: 0 auto;
+        gap: 0;
+        padding: 20px;
+    }
+
+    /* 日付情報コンテナ (右側) - 縦書きレイアウト */
+    #info-container {
+        order: 3;
+        width: 180px;
+        height: 90vh;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0.17em;
+    }
+    
+    /* 表示順序（右から：年月日, 節気）*/
+    #date-block {
+        order: 2;
+        flex-shrink: 0;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    #sekki-block {
+        order: 1;
+        flex-shrink: 0;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        height: 100%;
+        position: relative;
+    }
+
+    /* 日付・節気ブロック内のテキストスタイル */
+    #date-block p {
+        margin: 0;
+        line-height: 1.5;
+        font-size: 2.0rem;
+        font-weight: bold;
+        text-align: start;
+        vertical-align: top;
+        font-family: var(--meaning-font);
+        letter-spacing: 0rem;
+    }
+
+   #sekki-block p {
+        margin: 0;
+        line-height: 1.5;
+        font-size: 2.0rem;
+        font-weight: bold;
+        text-align: start;
+        vertical-align: top;
+        letter-spacing: 0rem;
+        position: absolute;
+        /* bottom: 0;
+        right: 0; */
+    }
+
+    /* 掛け軸コンテナ (中央) */
+    #kakejiku-container {
+        order: 2;
+        height: 98vh;
+        /* background-size: 380px 1000px; */
+    }
+
+    p#zengo{
+      font-size: 2.4rem;
+    }
+
+    /* 解説コンテナ (左側) */
+    #meaning-container {
+        order: 1;
+        height: 60vh;
+        align-self: center;
+    }
+    
+    #meaning-paper {
+        line-height: 1.25;
+        font-size: var(--meaning-font-size);
+        text-align: left;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+
 }
 /* iPad 縦 / タブレット縦 */
 @media (min-width: 768px) and (orientation: portrait){
