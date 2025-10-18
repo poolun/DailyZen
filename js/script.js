@@ -1,5 +1,6 @@
-// クリックイベント用カウンタ
+// クリックイベント用カウンタとフラグ
 let kakejikuClickCount = 0;
+let skipNextUserTap = false;
 // Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
 function fireResizeAndClickEvents() {
     setTimeout(() => {
@@ -20,6 +21,8 @@ function fireResizeAndClickEvents() {
 function debugSimulateKakejikuClick() {
     const kakejiku = document.getElementById('kakejiku-container');
     if (kakejiku) {
+        // 擬似クリック時は次の本当のタップもスキップするフラグを立てる
+        skipNextUserTap = true;
         const evt = new MouseEvent('click', { bubbles: true, cancelable: true, view: window });
         kakejiku.dispatchEvent(evt);
     }
@@ -28,8 +31,9 @@ function debugSimulateKakejikuClick() {
 
 // ページキャッシュクリア機能
 function clearPageCache() {
-    // クリックカウンタをリセット
+    // クリックカウンタとフラグをリセット
     kakejikuClickCount = 0;
+    skipNextUserTap = false;
     // ブラウザキャッシュを強制リロード
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
@@ -389,6 +393,11 @@ function setupModal() {
     kakejikuContainer.addEventListener('click', () => {
         kakejikuClickCount++;
         const isPortraitMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
+        // 擬似クリック後の最初の本当のタップもスキップ
+        if (skipNextUserTap) {
+            skipNextUserTap = false;
+            return;
+        }
         // 初回クリック時（カウンタがゼロの時）はモーダルを表示しない
         if (isPortraitMobile && kakejikuClickCount > 1) {
             const meaningText = document.getElementById('meaning').textContent;
