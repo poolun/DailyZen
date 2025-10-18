@@ -1,17 +1,18 @@
 /* iPhone/iPad横向き時のPC風レイアウト強制用 */
 .landscape-pc-mode #app {
     flex-direction: row !important;
-    min-height: 100vh;
+    min-height: 0;
     max-width: 1122px;
     margin: 0 auto;
     gap: 0;
     padding: 20px;
+    align-items: stretch;
 }
 
 .landscape-pc-mode #info-container {
     order: 3;
     width: 180px;
-    height: 90vh;
+    height: 100vh;
     padding: 0;
     margin: 0;
     display: flex;
@@ -33,7 +34,7 @@
 .landscape-pc-mode #meaning-container {
     display: flex !important;
     flex-direction: column;
-    order: 1;
+    order: 3;
     height: 60vh;
     align-self: center;
 }
@@ -49,6 +50,10 @@
 .landscape-pc-mode #kakejiku-container {
     order: 2;
     height: 100vh;
+    min-width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /* ================================================================
    共通設定 - CSS変数・基本スタイル・全画面共通要素
