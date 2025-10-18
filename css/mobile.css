@@ -13,13 +13,13 @@
     }
 
         #app {
-        flex-direction: row;
-        min-height: 100vh;
-        /* max-width: 1122px; */
-        margin: 0 auto;
-        gap: 0;
-        padding: 20px;
-    }
+            flex-direction: row;
+            min-height: 100vh;
+            /* max-width: 1122px; */
+            margin: 0 auto;
+            gap: 24px; /* 3ブロック間の余白を追加 */
+            padding: 20px;
+        }
 
     /* 日付情報コンテナ (右側) - 縦書きレイアウト */
     #info-container {
@@ -85,6 +85,9 @@
     #kakejiku-container {
         order: 2;
         height: 98vh;
+        min-width: 220px;
+        max-width: 260px;
+        flex-shrink: 0;
         /* background-size: 380px 1000px; */
     }
 
@@ -96,7 +99,13 @@
     #meaning-container {
         order: 1;
         height: 60vh;
-        align-self: center;
+        min-width: 180px;
+        max-width: 220px;
+        align-self: flex-start;
+        margin-top: 0;
+        z-index: 1;
+        background: rgba(255,255,255,0.85);
+        box-shadow: 0 0 8px 0 rgba(0,0,0,0.04);
     }
     
     #meaning-paper {
