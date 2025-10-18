@@ -16,21 +16,6 @@ function forceKakejikuResize() {
 // 擬似クリック判定用フラグ
 let isSimulatedClick = false;
 // Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
-function fireResizeAndClickEvents() {
-    setTimeout(() => {
-        const originalWidth = window.innerWidth;
-        const originalHeight = window.innerHeight;
-        try {
-            window.resizeTo(originalWidth + 10, originalHeight + 10);
-            setTimeout(() => {
-                window.resizeTo(originalWidth, originalHeight);
-            }, 50);
-        } catch (e) {
-            window.dispatchEvent(new Event('resize'));
-        }
-        debugSimulateKakejikuClick();
-    }, 100);
-}
 // 擬似的にkakejiku-containerをクリックするデバッグ関数
 function debugSimulateKakejikuClick() {
     const kakejiku = document.getElementById('kakejiku-container');
@@ -66,8 +51,12 @@ function clearPageCache() {
     sessionStorage.clear();
     localStorage.clear();
 
-    // リロード直前にリサイズ＆クリックイベントを発火
-    fireResizeAndClickEvents();
+    // Appleデバイスごとに分岐
+    if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+        debugSimulateKakejikuClick();
+    } else if (/Macintosh/.test(navigator.userAgent)) {
+        forceKakejikuResize();
+    }
 
     // 強制リロード（無効化）
     // location.reload(true); // ←リロードはしません
@@ -370,9 +359,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     await renderDailyZen();
     document.getElementById('app').classList.add('fonts-loaded');
     setupModal();
-    fireResizeAndClickEvents();
-    // Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
-    forceKakejikuResize();
+    // Appleデバイスごとに分岐
+    if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+        debugSimulateKakejikuClick();
+    } else if (/Macintosh/.test(navigator.userAgent)) {
+        forceKakejikuResize();
+    }
 });
 
 // 強制再描画函数
