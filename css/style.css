@@ -243,13 +243,14 @@ body::before {
 }
 
 /* ================================================================
-   PC版（768px以上・横長画面） - 横3段レイアウト
+   PC版（横長画面） - 横3段レイアウト
    ================================================================ */
-@media (min-width: 600px) and (orientation: landscape) {
+@media (orientation: landscape) {
+/* @media (min-width: 600px) and (orientation: landscape) { */
     #app {
         flex-direction: row;
         min-height: 100vh;
-        max-width: 1122px;
+        /* max-width: 1122px; */
         margin: 0 auto;
         gap: 0;
         padding: 20px;
