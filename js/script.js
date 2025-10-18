@@ -3,6 +3,11 @@ window.addEventListener('pageshow', function(e) {
     // Safari/iOSのキャッシュ復元やリロード時にも必ず再描画対策を実行
     fireResizeAndClickEvents();
     forceKakejikuResize();
+    // 1秒以上ドラッグしてから放した場合にも確実に再描画対策
+    setTimeout(() => {
+        fireResizeAndClickEvents();
+        forceKakejikuResize();
+    }, 1200);
 });
 // Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
 function forceKakejikuResize() {
