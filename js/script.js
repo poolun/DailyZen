@@ -1,3 +1,9 @@
+// iPhoneでリロード（ドラッグ）時にも不具合対策を実行
+window.addEventListener('pageshow', function(e) {
+    // Safari/iOSのキャッシュ復元やリロード時にも必ず再描画対策を実行
+    fireResizeAndClickEvents();
+    forceKakejikuResize();
+});
 // Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
 function forceKakejikuResize() {
     const originalWidth = window.innerWidth;
