@@ -1,6 +1,5 @@
-// クリックイベント用カウンタとフラグ
-let kakejikuClickCount = 1; // 初回表示時と同じく1で開始
-let skipNextUserTap = true; // 初回もリロード直後も必ず最初のタップをスキップ
+// 擬似クリック判定用フラグ
+let isSimulatedClick = false;
 // Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
 function fireResizeAndClickEvents() {
     setTimeout(() => {
@@ -21,8 +20,7 @@ function fireResizeAndClickEvents() {
 function debugSimulateKakejikuClick() {
     const kakejiku = document.getElementById('kakejiku-container');
     if (kakejiku) {
-        // 擬似クリック時は次の本当のタップもスキップするフラグを立てる
-        skipNextUserTap = true;
+        isSimulatedClick = true;
         const evt = new MouseEvent('click', { bubbles: true, cancelable: true, view: window });
         kakejiku.dispatchEvent(evt);
     }
@@ -31,9 +29,6 @@ function debugSimulateKakejikuClick() {
 
 // ページキャッシュクリア機能
 function clearPageCache() {
-    // クリックカウンタとフラグをリセット（初回表示と同じ値に）
-    kakejikuClickCount = 1;
-    skipNextUserTap = true;
     // ブラウザキャッシュを強制リロード
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
@@ -61,6 +56,7 @@ function clearPageCache() {
 
     // 強制リロード（無効化）
     // location.reload(true); // ←リロードはしません
+// ← 余分な閉じカッコ削除
 }
 
 // Ctrl+Shift+R でキャッシュクリア
@@ -391,18 +387,21 @@ function setupModal() {
     
     // 縦長（モバイル）時のみ掛け軸クリックでモーダル表示
     kakejikuContainer.addEventListener('click', () => {
-        kakejikuClickCount++;
         const isPortraitMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
-        // 擬似クリック後の最初の本当のタップもスキップ
-        if (skipNextUserTap) {
-            skipNextUserTap = false;
+        if (isSimulatedClick) {
+            isSimulatedClick = false;
             return;
         }
-        // 初回クリック時（カウンタがゼロの時）はモーダルを表示しない
-        if (isPortraitMobile && kakejikuClickCount > 1) {
-            const meaningText = document.getElementById('meaning').textContent;
-            modalMeaning.textContent = meaningText;
-            modalOverlay.classList.add('show');
+        if (isPortraitMobile) {
+            if (modalOverlay.classList.contains('show')) {
+                // すでに開いていれば閉じる
+                modalOverlay.classList.remove('show');
+            } else {
+                // 閉じていれば開く
+                const meaningText = document.getElementById('meaning').textContent;
+                modalMeaning.textContent = meaningText;
+                modalOverlay.classList.add('show');
+            }
         }
     });
     
