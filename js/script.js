@@ -1,57 +1,28 @@
-// Mac/iOSレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
-// iOSプルダウンリロードやキャッシュ復元時にも再描画対策を追加
-window.addEventListener('pageshow', function(e) {
-    // Safari/iOSのキャッシュ復元やリロード時にも必ず再描画対策を実行
-    fireResizeAndClickEvents();
-    forceKakejikuResize();
-    // 1秒以上ドラッグしてから放した場合にも確実に再描画対策
-    setTimeout(() => {
-        fireResizeAndClickEvents();
-        forceKakejikuResize();
-    }, 1200);
-});
+// --- デバイス判定 ---
+function isIOS() {
+    return /iP(hone|ad|od)/.test(navigator.userAgent);
+}
+function isMac() {
+    return /Macintosh/.test(navigator.userAgent);
+}
 
-// タブ復帰や画面再表示時にも再描画対策
-document.addEventListener('visibilitychange', function() {
-    if (document.visibilityState === 'visible') {
-        fireResizeAndClickEvents();
-        forceKakejikuResize();
-    }
-});
-function forceKakejikuResize() {
+// --- リサイズ処理（Mac専用） ---
+function macKakejikuResize() {
     const originalWidth = window.innerWidth;
     const originalHeight = window.innerHeight;
-    // 20px以上大きくリサイズ
     try {
         window.resizeTo(originalWidth + 40, originalHeight + 40);
         setTimeout(() => {
             window.resizeTo(originalWidth, originalHeight);
         }, 100);
     } catch (e) {
-        // resizeToが使えない場合はresizeイベントのみ発火
         window.dispatchEvent(new Event('resize'));
     }
 }
-// 擬似クリック判定用フラグ
+
+// --- 擬似クリック処理（iOS専用） ---
 let isSimulatedClick = false;
-// Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
-function fireResizeAndClickEvents() {
-    setTimeout(() => {
-        const originalWidth = window.innerWidth;
-        const originalHeight = window.innerHeight;
-        try {
-            window.resizeTo(originalWidth + 10, originalHeight + 10);
-            setTimeout(() => {
-                window.resizeTo(originalWidth, originalHeight);
-            }, 50);
-        } catch (e) {
-            window.dispatchEvent(new Event('resize'));
-        }
-        debugSimulateKakejikuClick();
-    }, 100);
-}
-// 擬似的にkakejiku-containerをクリックするデバッグ関数
-function debugSimulateKakejikuClick() {
+function iosSimulateKakejikuClick() {
     const kakejiku = document.getElementById('kakejiku-container');
     if (kakejiku) {
         isSimulatedClick = true;
@@ -59,6 +30,26 @@ function debugSimulateKakejikuClick() {
         kakejiku.dispatchEvent(evt);
     }
 }
+
+// --- ページ表示・復帰時の処理 ---
+function handleKakejikuFix() {
+    if (isIOS()) {
+        iosSimulateKakejikuClick();
+    } else if (isMac()) {
+        macKakejikuResize();
+    }
+}
+
+window.addEventListener('pageshow', function() {
+    handleKakejikuFix();
+    setTimeout(handleKakejikuFix, 1200);
+});
+
+document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'visible') {
+        handleKakejikuFix();
+    }
+});
 // js/script.js
 
 // ページキャッシュクリア機能
