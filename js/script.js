@@ -1,5 +1,41 @@
 // js/script.js
 
+// ページキャッシュクリア機能
+function clearPageCache() {
+    // ブラウザキャッシュを強制リロード
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            registrations.forEach(function(registration) {
+                registration.unregister();
+            });
+        });
+    }
+    
+    // キャッシュストレージをクリア
+    if ('caches' in window) {
+        caches.keys().then(function(names) {
+            names.forEach(function(name) {
+                caches.delete(name);
+            });
+        });
+    }
+    
+    // セッションストレージとローカルストレージをクリア
+    sessionStorage.clear();
+    localStorage.clear();
+    
+    // 強制リロード
+    location.reload(true);
+}
+
+// Ctrl+Shift+R でキャッシュクリア
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.shiftKey && e.key === 'R') {
+        e.preventDefault();
+        clearPageCache();
+    }
+});
+
 // 漢数字変換マップ
 const KANSUJI_MAP = {
     '0': '〇', '1': '一', '2': '二', '3': '三', '4': '四', '5': '五',
@@ -283,8 +319,81 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
-// アプリケーション起動
-renderDailyZen();
+// システム標準フォントテスト版
+document.addEventListener('DOMContentLoaded', async () => {
+    // システムフォントなので即座にレンダリング
+    await renderDailyZen();
+
+    // フォント読み込み完了状態に設定
+    document.getElementById('app').classList.add('fonts-loaded');
+
+    // モーダル機能を初期化
+    setupModal();
+
+    // Appleデバイスの再描画バグ対策: 初回表示時にresizeイベントを擬似的に発火
+    window.dispatchEvent(new Event('resize'));
+});
+
+// 強制再描画函数
+function forceReflow() {
+    const app = document.getElementById('app');
+    const zenWordDisplay = document.getElementById('zen-word-display');
+    
+    // 強制的にレイアウト再計算を実行
+    if (app) {
+        app.offsetHeight;
+        app.style.transform = 'translateZ(0)';
+    }
+    
+    if (zenWordDisplay) {
+        zenWordDisplay.offsetHeight;
+        // 一時的にvisibilityをhiddenにしてから戻す（再描画強制）
+        zenWordDisplay.style.visibility = 'hidden';
+        zenWordDisplay.offsetHeight; // 強制レンダリング
+        zenWordDisplay.style.visibility = 'visible';
+    }
+}
+
+// モーダル表示機能
+function setupModal() {
+    const kakejikuContainer = document.getElementById('kakejiku-container');
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalClose = document.getElementById('modal-close');
+    const modalMeaning = document.getElementById('modal-meaning');
+    
+    // 縦長（モバイル）時のみ掛け軸クリックでモーダル表示
+    kakejikuContainer.addEventListener('click', () => {
+        const isPortraitMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
+        if (isPortraitMobile) {
+            const meaningText = document.getElementById('meaning').textContent;
+            modalMeaning.textContent = meaningText;
+            modalOverlay.classList.add('show');
+        }
+    });
+    
+    // モーダルを閉じる
+    function closeModal() {
+        modalOverlay.classList.remove('show');
+        // モーダル閉じる時も再描画実行（位置ずれ修正）
+        setTimeout(() => {
+            forceReflow();
+        }, 300); // アニメーション完了後
+    }
+    
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+    
+    // Escキーでモーダルを閉じる
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+}
 
 // リサイズ時にレスポンシブな表示を再適用
 window.addEventListener('resize', () => {
