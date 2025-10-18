@@ -1,23 +1,4 @@
-// Mac/iOSレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
-// iOSプルダウンリロードやキャッシュ復元時にも再描画対策を追加
-window.addEventListener('pageshow', function(e) {
-    // Safari/iOSのキャッシュ復元やリロード時にも必ず再描画対策を実行
-    fireResizeAndClickEvents();
-    forceKakejikuResize();
-    // 1秒以上ドラッグしてから放した場合にも確実に再描画対策
-    setTimeout(() => {
-        fireResizeAndClickEvents();
-        forceKakejikuResize();
-    }, 1200);
-});
-
-// タブ復帰や画面再表示時にも再描画対策
-document.addEventListener('visibilitychange', function() {
-    if (document.visibilityState === 'visible') {
-        fireResizeAndClickEvents();
-        forceKakejikuResize();
-    }
-});
+// Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
 function forceKakejikuResize() {
     const originalWidth = window.innerWidth;
     const originalHeight = window.innerHeight;
@@ -384,7 +365,7 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
-// システム標準フォントテスト版
+// ページ読み込み時の初期化（表示・フォント・モーダル・レイアウト修正）
 document.addEventListener('DOMContentLoaded', async () => {
     await renderDailyZen();
     document.getElementById('app').classList.add('fonts-loaded');
