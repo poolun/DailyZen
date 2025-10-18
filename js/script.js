@@ -392,18 +392,19 @@ function applyLandscapeZoom() {
     // iPhone/iPad横向き判定
     const isiOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
     const isIPhoneLandscape = isiOS && isLandscape;
-    // iPhone横向きのみPC風＋ズーム
     if (isIPhoneLandscape) {
-        const scale = window.innerHeight / minHeight;
-        body.style.transformOrigin = 'top left';
-        body.style.transform = `scale(${scale})`;
-        body.style.width = `${100 / scale}%`;
-        body.style.height = `${100 / scale}%`;
+        // まずPC風レイアウトを適用
         if (app) app.classList.add('landscape-pc-mode');
         if (dateEl) dateEl.style.writingMode = 'vertical-rl';
         if (sekkiEl) sekkiEl.style.writingMode = 'vertical-rl';
         if (meaningEl) meaningEl.style.display = '';
         if (modalOverlay) modalOverlay.classList.remove('show');
+        // PCレイアウト後に縮小
+        const scale = window.innerHeight / minHeight;
+        body.style.transformOrigin = 'top left';
+        body.style.transform = `scale(${scale})`;
+        body.style.width = `${100 / scale}%`;
+        body.style.height = `${100 / scale}%`;
     } else {
         // PCやタブレット等はフレキシブル（縮小解除）
         body.style.transform = '';
