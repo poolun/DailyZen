@@ -90,11 +90,11 @@ function clearPageCache() {
     localStorage.clear();
 
     // Appleデバイスごとに分岐
-    if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
-        debugSimulateKakejikuClick();
-    } else if (/Macintosh/.test(navigator.userAgent)) {
-        forceKakejikuResize();
-    }
+        if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+            debugSimulateKakejikuClick();
+        } else if (/Macintosh/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
+            forceKakejikuResize();
+        }
     // Safari表示バグ対策
     if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
         forSafariAppearance();
@@ -401,11 +401,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('app').classList.add('fonts-loaded');
     setupModal();
     // Appleデバイスごとに分岐
-    if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
-        debugSimulateKakejikuClick();
-    } else if (/Macintosh/.test(navigator.userAgent)) {
-        forceKakejikuResize();
-    }
+        if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+            debugSimulateKakejikuClick();
+        } else if (/Macintosh/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
+            forceKakejikuResize();
+        }
         // Safari表示バグ対策
     if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
         forSafariAppearance();
