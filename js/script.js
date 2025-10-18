@@ -377,28 +377,52 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // 横長表示で高さが1156px以下ならbody全体をズームで縮小する
+// レスポンシブ対応: PCはフレキシブル、モバイル横向きのみ縮小＋PC風
 function applyLandscapeZoom() {
-    const minHeight = 1156;
+    const minHeight = 640;
+    const minAspect = 2.0;
     const isLandscape = window.innerWidth > window.innerHeight;
+    const aspect = window.innerWidth / window.innerHeight;
     const body = document.body;
-    if (isLandscape && window.innerHeight < minHeight) {
+    const app = document.getElementById('app');
+    const dateEl = document.getElementById('date-info');
+    const sekkiEl = document.getElementById('sekki-info');
+    const meaningEl = document.getElementById('meaning');
+    const modalOverlay = document.getElementById('modal-overlay');
+    // iPhone/iPad横向き判定
+    const isiOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+    const isIPhoneLandscape = isiOS && isLandscape;
+    // iPhone横向きのみPC風＋ズーム
+    if (isIPhoneLandscape) {
         const scale = window.innerHeight / minHeight;
         body.style.transformOrigin = 'top left';
         body.style.transform = `scale(${scale})`;
         body.style.width = `${100 / scale}%`;
         body.style.height = `${100 / scale}%`;
+        if (app) app.classList.add('landscape-pc-mode');
+        if (dateEl) dateEl.style.writingMode = 'vertical-rl';
+        if (sekkiEl) sekkiEl.style.writingMode = 'vertical-rl';
+        if (meaningEl) meaningEl.style.display = '';
+        if (modalOverlay) modalOverlay.classList.remove('show');
     } else {
+        // PCやタブレット等はフレキシブル（縮小解除）
         body.style.transform = '';
         body.style.width = '';
         body.style.height = '';
+        if (app) app.classList.remove('landscape-pc-mode');
+        if (dateEl) dateEl.style.writingMode = '';
+        if (sekkiEl) sekkiEl.style.writingMode = '';
+        if (meaningEl) meaningEl.style.display = '';
     }
 }
 
+// 極端な横長（iPhone横向き等）でPCモード風に縦書き・説明常時表示・全体縮小
 // リサイズ時にもズーム処理を適用
 window.addEventListener('resize', () => {
     applyLandscapeZoom();
     if (debugMode) {
         renderDebugZen(debugIndex);
+    const isLandscapeExtreme = window.innerWidth > window.innerHeight && (window.innerWidth / window.innerHeight > 2.0 || window.innerHeight < 640);
     } else {
         renderDailyZen();
     }
