@@ -93,7 +93,7 @@ function clearPageCache() {
         if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
             debugSimulateKakejikuClick();
         } else if (/Macintosh/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
-            forceKakejikuResize();
+            forMacAppearance();
         }
     // Safari表示バグ対策
     if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
             debugSimulateKakejikuClick();
         } else if (/Macintosh/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
-            forceKakejikuResize();
+            forMacAppearance();
         }
         // Safari表示バグ対策
     if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
