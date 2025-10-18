@@ -389,8 +389,11 @@ function applyLandscapeZoom() {
     const sekkiEl = document.getElementById('sekki-info');
     const meaningEl = document.getElementById('meaning');
     const modalOverlay = document.getElementById('modal-overlay');
-    // モバイル横向き（幅1200px未満）だけ縮小
-    if (isLandscape && (window.innerHeight < minHeight || aspect > minAspect) && window.innerWidth < 1200) {
+    // iPhone/iPad横向き判定
+    const isiOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+    const isIPhoneLandscape = isiOS && isLandscape;
+    // iPhone横向きのみPC風＋ズーム
+    if (isIPhoneLandscape) {
         const scale = window.innerHeight / minHeight;
         body.style.transformOrigin = 'top left';
         body.style.transform = `scale(${scale})`;
