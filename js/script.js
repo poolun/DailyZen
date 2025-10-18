@@ -1,3 +1,5 @@
+// クリックイベント用カウンタ
+let kakejikuClickCount = 0;
 // Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
 function fireResizeAndClickEvents() {
     setTimeout(() => {
@@ -26,6 +28,8 @@ function debugSimulateKakejikuClick() {
 
 // ページキャッシュクリア機能
 function clearPageCache() {
+    // クリックカウンタをリセット
+    kakejikuClickCount = 0;
     // ブラウザキャッシュを強制リロード
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
@@ -383,8 +387,10 @@ function setupModal() {
     
     // 縦長（モバイル）時のみ掛け軸クリックでモーダル表示
     kakejikuContainer.addEventListener('click', () => {
+        kakejikuClickCount++;
         const isPortraitMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
-        if (isPortraitMobile) {
+        // 初回クリック時（カウンタがゼロの時）はモーダルを表示しない
+        if (isPortraitMobile && kakejikuClickCount > 1) {
             const meaningText = document.getElementById('meaning').textContent;
             modalMeaning.textContent = meaningText;
             modalOverlay.classList.add('show');
