@@ -1,4 +1,23 @@
-// Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
+// Mac/iOSレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
+// iOSプルダウンリロードやキャッシュ復元時にも再描画対策を追加
+window.addEventListener('pageshow', function(e) {
+    // Safari/iOSのキャッシュ復元やリロード時にも必ず再描画対策を実行
+    fireResizeAndClickEvents();
+    forceKakejikuResize();
+    // 1秒以上ドラッグしてから放した場合にも確実に再描画対策
+    setTimeout(() => {
+        fireResizeAndClickEvents();
+        forceKakejikuResize();
+    }, 1200);
+});
+
+// タブ復帰や画面再表示時にも再描画対策
+document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'visible') {
+        fireResizeAndClickEvents();
+        forceKakejikuResize();
+    }
+});
 function forceKakejikuResize() {
     const originalWidth = window.innerWidth;
     const originalHeight = window.innerHeight;
