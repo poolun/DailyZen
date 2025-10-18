@@ -169,6 +169,8 @@ body::before {
 }
 
 /* 説明文エリア */
+#meaning-container {
+}
 
 #meaning-paper {
     font-size: 1.35rem;
@@ -187,24 +189,30 @@ body::before {
         flex-direction: column !important;
         gap: 0.5rem;
     }
+    
     #info-container #date-block {
         white-space: nowrap; /* 改行を防ぐ */
     }
+    
     #info-container #sekki-block {
         white-space: nowrap; /* 改行を防ぐ */
     }
-    /* モバイルでは説明文を非表示。ただし.landscape-iphone-mode時は表示 */
-    body:not(.landscape-iphone-mode) #meaning-container {
+    
+    /* モバイルでは説明文を非表示 */
+    #meaning-container {
         display: none !important;
     }
+    
     /* 掛け軸をタップ可能にするスタイル */
     #kakejiku-container {
         cursor: pointer;
         transition: transform 0.2s ease;
     }
+    
     #kakejiku-container:hover {
         transform: scale(1.02);
     }
+    
     #kakejiku-container:active {
         transform: scale(0.98);
     }
@@ -237,7 +245,7 @@ body::before {
 /* ================================================================
    PC版（768px以上・横長画面） - 横3段レイアウト
    ================================================================ */
-@media (min-width: 768px) and (orientation: landscape) {
+@media (min-width: 600px) and (orientation: landscape) {
     #app {
         flex-direction: row;
         min-height: 100vh;
