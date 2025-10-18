@@ -384,7 +384,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
     forceKakejikuResize();
     // 横長表示で高さが1156px以下なら全体をズームで縮小
-    applyLandscapeZoom();
+    // applyLandscapeZoom();
 });
 
 // 横長表示で高さが1156px以下ならbody全体をズームで縮小する
@@ -431,7 +431,7 @@ function applyLandscapeZoom() {
 // 極端な横長（iPhone横向き等）でPCモード風に縦書き・説明常時表示・全体縮小
 // リサイズ時にもズーム処理を適用
 window.addEventListener('resize', () => {
-    applyLandscapeZoom();
+    // applyLandscapeZoom();
     if (debugMode) {
         renderDebugZen(debugIndex);
     const isLandscapeExtreme = window.innerWidth > window.innerHeight && (window.innerWidth / window.innerHeight > 2.0 || window.innerHeight < 640);
