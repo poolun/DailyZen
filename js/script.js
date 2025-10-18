@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const originalWidth = window.innerWidth;
     const originalHeight = window.innerHeight;
     try {
-        window.resizeTo(originalWidth + 1, originalHeight);
+        window.resizeTo(originalWidth + 1, originalHeight + 1);
         setTimeout(() => {
             window.resizeTo(originalWidth, originalHeight);
         }, 50);
