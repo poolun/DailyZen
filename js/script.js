@@ -131,7 +131,7 @@ function clearPageCache() {
     // Appleデバイスごとに分岐
         if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
             debugSimulateKakejikuClick();
-        } else if (/Macintosh/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
+        } else if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
             forMacAppearance();
         }
     // Safari表示バグ対策
@@ -442,13 +442,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Appleデバイスごとに分岐
         if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
             debugSimulateKakejikuClick();
-        } else if (/Macintosh/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
+        } else if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
             forMacAppearance();
         }
         // Safari表示バグ対策
-    if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
-        forSafariAppearance();
-    }
+        if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
+            forSafariAppearance();
+        }
 });
 
 // 強制再描画函数
