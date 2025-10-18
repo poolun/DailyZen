@@ -54,6 +54,10 @@
         text-orientation: upright;
         height: 100%;
         position: relative;
+        display: flex;
+        align-items: center; /* 縦方向中央揃え */
+        justify-content: center;
+        white-space: nowrap; /* 改行禁止 */
     }
 
     /* 日付・節気ブロック内のテキストスタイル */
