@@ -1,3 +1,11 @@
+// 擬似的にkakejiku-containerをクリックするデバッグ関数
+function debugSimulateKakejikuClick() {
+    const kakejiku = document.getElementById('kakejiku-container');
+    if (kakejiku) {
+        const evt = new MouseEvent('click', { bubbles: true, cancelable: true, view: window });
+        kakejiku.dispatchEvent(evt);
+    }
+}
 // js/script.js
 
 // ページキャッシュクリア機能
@@ -342,6 +350,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         // resizeToが使えない場合はresizeイベントのみ発火
         window.dispatchEvent(new Event('resize'));
     }
+
+    // デバッグ用：初回表示時に擬似クリックを実行
+    debugSimulateKakejikuClick();
 });
 
 // 強制再描画函数
