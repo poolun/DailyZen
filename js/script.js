@@ -76,11 +76,14 @@ function clearPageCache() {
     sessionStorage.clear();
     localStorage.clear();
 
-    // （不要なリサイズ＆クリックイベント発火の呼び出しを削除）
-
+    // PCならリサイズ、iOSならクリック
+    if (isIOS()) {
+        iosSimulateKakejikuClick();
+    } else if (isMac()) {
+        macKakejikuResize();
+    }
     // 強制リロード（無効化）
     // location.reload(true); // ←リロードはしません
-// ← 余分な閉じカッコ削除
 }
 
 // Ctrl+Shift+R でキャッシュクリア
@@ -379,7 +382,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     await renderDailyZen();
     document.getElementById('app').classList.add('fonts-loaded');
     setupModal();
-    fireResizeAndClickEvents();
     // Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
     forceKakejikuResize();
 });
