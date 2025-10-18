@@ -1,3 +1,8 @@
+// スマホの縦横切り替え時にもレイアウト修正（不具合防止）
+window.addEventListener('orientationchange', function() {
+    fireResizeAndClickEvents();
+    forceKakejikuResize();
+});
 // Mac/iOSレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
 // iOSプルダウンリロードやキャッシュ復元時にも再描画対策を追加
 window.addEventListener('pageshow', function(e) {
