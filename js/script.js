@@ -1,28 +1,57 @@
-// --- デバイス判定 ---
-function isIOS() {
-    return /iP(hone|ad|od)/.test(navigator.userAgent);
-}
-function isMac() {
-    return /Macintosh/.test(navigator.userAgent);
-}
+// Mac/iOSレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
+// iOSプルダウンリロードやキャッシュ復元時にも再描画対策を追加
+window.addEventListener('pageshow', function(e) {
+    // Safari/iOSのキャッシュ復元やリロード時にも必ず再描画対策を実行
+    fireResizeAndClickEvents();
+    forceKakejikuResize();
+    // 1秒以上ドラッグしてから放した場合にも確実に再描画対策
+    setTimeout(() => {
+        fireResizeAndClickEvents();
+        forceKakejikuResize();
+    }, 1200);
+});
 
-// --- リサイズ処理（Mac専用） ---
-function macKakejikuResize() {
+// タブ復帰や画面再表示時にも再描画対策
+document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'visible') {
+        fireResizeAndClickEvents();
+        forceKakejikuResize();
+    }
+});
+function forceKakejikuResize() {
     const originalWidth = window.innerWidth;
     const originalHeight = window.innerHeight;
+    // 20px以上大きくリサイズ
     try {
         window.resizeTo(originalWidth + 40, originalHeight + 40);
         setTimeout(() => {
             window.resizeTo(originalWidth, originalHeight);
         }, 100);
     } catch (e) {
+        // resizeToが使えない場合はresizeイベントのみ発火
         window.dispatchEvent(new Event('resize'));
     }
 }
-
-// --- 擬似クリック処理（iOS専用） ---
+// 擬似クリック判定用フラグ
 let isSimulatedClick = false;
-function iosSimulateKakejikuClick() {
+// Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
+function fireResizeAndClickEvents() {
+    setTimeout(() => {
+        const originalWidth = window.innerWidth;
+        const originalHeight = window.innerHeight;
+        try {
+            window.resizeTo(originalWidth + 10, originalHeight + 10);
+            setTimeout(() => {
+                window.resizeTo(originalWidth, originalHeight);
+            }, 50);
+        } catch (e) {
+            window.dispatchEvent(new Event('resize'));
+        }
+        debugSimulateKakejikuClick();
+    }, 100);
+}
+// 擬似的にkakejiku-containerをクリックするデバッグ関数
+function debugSimulateKakejikuClick() {
     const kakejiku = document.getElementById('kakejiku-container');
     if (kakejiku) {
         isSimulatedClick = true;
@@ -30,26 +59,6 @@ function iosSimulateKakejikuClick() {
         kakejiku.dispatchEvent(evt);
     }
 }
-
-// --- ページ表示・復帰時の処理 ---
-function handleKakejikuFix() {
-    if (isIOS()) {
-        iosSimulateKakejikuClick();
-    } else if (isMac()) {
-        macKakejikuResize();
-    }
-}
-
-window.addEventListener('pageshow', function() {
-    handleKakejikuFix();
-    setTimeout(handleKakejikuFix, 1200);
-});
-
-document.addEventListener('visibilitychange', function() {
-    if (document.visibilityState === 'visible') {
-        handleKakejikuFix();
-    }
-});
 // js/script.js
 
 // ページキャッシュクリア機能
@@ -76,14 +85,12 @@ function clearPageCache() {
     sessionStorage.clear();
     localStorage.clear();
 
-    // PCならリサイズ、iOSならクリック
-    if (isIOS()) {
-        iosSimulateKakejikuClick();
-    } else if (isMac()) {
-        macKakejikuResize();
-    }
+    // リロード直前にリサイズ＆クリックイベントを発火
+    fireResizeAndClickEvents();
+
     // 強制リロード（無効化）
     // location.reload(true); // ←リロードはしません
+// ← 余分な閉じカッコ削除
 }
 
 // Ctrl+Shift+R でキャッシュクリア
@@ -382,8 +389,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     await renderDailyZen();
     document.getElementById('app').classList.add('fonts-loaded');
     setupModal();
+    fireResizeAndClickEvents();
     // Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
-    // 未定義関数呼び出しを削除済み
+    forceKakejikuResize();
 });
 
 // 強制再描画函数
@@ -458,9 +466,7 @@ function setupModal() {
 }
 
 // リサイズ時にレスポンシブな表示を再適用
-// リサイズイベント発火時に日本語でログを出す
 window.addEventListener('resize', () => {
-    console.log('リサイズイベントが起きました');
     if (debugMode) {
         renderDebugZen(debugIndex);
     } else {
