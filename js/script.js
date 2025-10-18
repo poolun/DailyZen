@@ -13,6 +13,45 @@ function forceKakejikuResize() {
         window.dispatchEvent(new Event('resize'));
     }
 }
+
+// Mac Chrome表示バグ対策: 強制リフロー・GPUレイヤー・visibility・opacityハック
+function forMacAppearance() {
+    const app = document.getElementById('app');
+    const zenWordDisplay = document.getElementById('zen-word-display');
+    // 1. 強制リフロー
+    if (app) {
+        app.offsetHeight;
+        app.style.transform = 'translateZ(0)';
+        app.style.willChange = 'transform';
+    }
+    if (zenWordDisplay) {
+        zenWordDisplay.offsetHeight;
+        zenWordDisplay.style.visibility = 'hidden';
+        zenWordDisplay.offsetHeight;
+        zenWordDisplay.style.visibility = 'visible';
+        zenWordDisplay.style.willChange = 'transform';
+    }
+    // 2. setTimeout/animationFrame遅延
+    setTimeout(() => {
+        if (app) app.style.opacity = '0.99';
+        requestAnimationFrame(() => {
+            if (app) app.style.opacity = '1';
+        });
+    }, 50);
+    // 3. CSSアニメーションで再描画（例: 一瞬だけ色変更）
+    if (app) {
+        app.style.transition = 'background-color 0.2s';
+        app.style.backgroundColor = '#f0f0f0';
+        setTimeout(() => {
+            app.style.backgroundColor = '';
+        }, 200);
+    }
+    // 4. window.scrollTo(0,1)で一瞬スクロール
+    window.scrollTo(0, 1);
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 100);
+}
 // 擬似クリック判定用フラグ
 let isSimulatedClick = false;
 // Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
