@@ -1,6 +1,6 @@
 // クリックイベント用カウンタとフラグ
-let kakejikuClickCount = 0;
-let skipNextUserTap = false;
+let kakejikuClickCount = 1; // 初回表示時と同じく1で開始
+let skipNextUserTap = true; // 初回もリロード直後も必ず最初のタップをスキップ
 // Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
 function fireResizeAndClickEvents() {
     setTimeout(() => {
@@ -31,9 +31,9 @@ function debugSimulateKakejikuClick() {
 
 // ページキャッシュクリア機能
 function clearPageCache() {
-    // クリックカウンタとフラグをリセット
-    kakejikuClickCount = 0;
-    skipNextUserTap = false;
+    // クリックカウンタとフラグをリセット（初回表示と同じ値に）
+    kakejikuClickCount = 1;
+    skipNextUserTap = true;
     // ブラウザキャッシュを強制リロード
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
