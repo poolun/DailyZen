@@ -1,7 +1,41 @@
+// Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
+function forceKakejikuResize() {
+    const originalWidth = window.innerWidth;
+    const originalHeight = window.innerHeight;
+    // 20px以上大きくリサイズ
+    try {
+        window.resizeTo(originalWidth + 40, originalHeight + 40);
+        setTimeout(() => {
+            window.resizeTo(originalWidth, originalHeight);
+        }, 100);
+    } catch (e) {
+        // resizeToが使えない場合はresizeイベントのみ発火
+        window.dispatchEvent(new Event('resize'));
+    }
+}
+// 擬似クリック判定用フラグ
+let isSimulatedClick = false;
+// Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
+function fireResizeAndClickEvents() {
+    setTimeout(() => {
+        const originalWidth = window.innerWidth;
+        const originalHeight = window.innerHeight;
+        try {
+            window.resizeTo(originalWidth + 10, originalHeight + 10);
+            setTimeout(() => {
+                window.resizeTo(originalWidth, originalHeight);
+            }, 50);
+        } catch (e) {
+            window.dispatchEvent(new Event('resize'));
+        }
+        debugSimulateKakejikuClick();
+    }, 100);
+}
 // 擬似的にkakejiku-containerをクリックするデバッグ関数
 function debugSimulateKakejikuClick() {
     const kakejiku = document.getElementById('kakejiku-container');
     if (kakejiku) {
+        isSimulatedClick = true;
         const evt = new MouseEvent('click', { bubbles: true, cancelable: true, view: window });
         kakejiku.dispatchEvent(evt);
     }
@@ -31,9 +65,13 @@ function clearPageCache() {
     // セッションストレージとローカルストレージをクリア
     sessionStorage.clear();
     localStorage.clear();
-    
+
+    // リロード直前にリサイズ＆クリックイベントを発火
+    fireResizeAndClickEvents();
+
     // 強制リロード（無効化）
     // location.reload(true); // ←リロードはしません
+// ← 余分な閉じカッコ削除
 }
 
 // Ctrl+Shift+R でキャッシュクリア
@@ -327,34 +365,43 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
-// システム標準フォントテスト版
 document.addEventListener('DOMContentLoaded', async () => {
-    // システムフォントなので即座にレンダリング
     await renderDailyZen();
-
-    // フォント読み込み完了状態に設定
     document.getElementById('app').classList.add('fonts-loaded');
-
-    // モーダル機能を初期化
     setupModal();
+    fireResizeAndClickEvents();
+    // Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
+    forceKakejikuResize();
+    // 横長表示で高さが1156px以下なら全体をズームで縮小
+    applyLandscapeZoom();
+});
 
-    // 描画完了後にイベントを遅延発火（100ms後）
-    setTimeout(() => {
-        // Appleデバイスの再描画バグ対策: windowサイズを1pxだけ変更して戻す
-        const originalWidth = window.innerWidth;
-        const originalHeight = window.innerHeight;
-        try {
-            window.resizeTo(originalWidth + 10, originalHeight + 10);
-            setTimeout(() => {
-                window.resizeTo(originalWidth, originalHeight);
-            }, 50);
-        } catch (e) {
-            // resizeToが使えない場合はresizeイベントのみ発火
-            window.dispatchEvent(new Event('resize'));
-        }
-        // デバッグ用：描画完了後に擬似クリックを実行
-        debugSimulateKakejikuClick();
-    }, 100);
+// 横長表示で高さが1156px以下ならbody全体をズームで縮小する
+function applyLandscapeZoom() {
+    const minHeight = 1156;
+    const isLandscape = window.innerWidth > window.innerHeight;
+    const body = document.body;
+    if (isLandscape && window.innerHeight < minHeight) {
+        const scale = window.innerHeight / minHeight;
+        body.style.transformOrigin = 'top left';
+        body.style.transform = `scale(${scale})`;
+        body.style.width = `${100 / scale}%`;
+        body.style.height = `${100 / scale}%`;
+    } else {
+        body.style.transform = '';
+        body.style.width = '';
+        body.style.height = '';
+    }
+}
+
+// リサイズ時にもズーム処理を適用
+window.addEventListener('resize', () => {
+    applyLandscapeZoom();
+    if (debugMode) {
+        renderDebugZen(debugIndex);
+    } else {
+        renderDailyZen();
+    }
 });
 
 // 強制再描画函数
@@ -387,10 +434,20 @@ function setupModal() {
     // 縦長（モバイル）時のみ掛け軸クリックでモーダル表示
     kakejikuContainer.addEventListener('click', () => {
         const isPortraitMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
+        if (isSimulatedClick) {
+            isSimulatedClick = false;
+            return;
+        }
         if (isPortraitMobile) {
-            const meaningText = document.getElementById('meaning').textContent;
-            modalMeaning.textContent = meaningText;
-            modalOverlay.classList.add('show');
+            if (modalOverlay.classList.contains('show')) {
+                // すでに開いていれば閉じる
+                modalOverlay.classList.remove('show');
+            } else {
+                // 閉じていれば開く
+                const meaningText = document.getElementById('meaning').textContent;
+                modalMeaning.textContent = meaningText;
+                modalOverlay.classList.add('show');
+            }
         }
     });
     
