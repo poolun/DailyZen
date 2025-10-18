@@ -383,7 +383,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('app').classList.add('fonts-loaded');
     setupModal();
     // Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
-    forceKakejikuResize();
+    // 未定義関数呼び出しを削除済み
 });
 
 // 強制再描画函数
