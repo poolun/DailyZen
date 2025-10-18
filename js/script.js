@@ -32,8 +32,8 @@ function clearPageCache() {
     sessionStorage.clear();
     localStorage.clear();
     
-    // 強制リロード
-    location.reload(true);
+    // 強制リロード（無効化）
+    // location.reload(true); // ←リロードはしません
 }
 
 // Ctrl+Shift+R でキャッシュクリア
@@ -338,21 +338,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     // モーダル機能を初期化
     setupModal();
 
-    // Appleデバイスの再描画バグ対策: 初回表示時にwindowサイズを1pxだけ変更して戻す
-    const originalWidth = window.innerWidth;
-    const originalHeight = window.innerHeight;
-    try {
-        window.resizeTo(originalWidth + 10, originalHeight + 10);
-        setTimeout(() => {
-            window.resizeTo(originalWidth, originalHeight);
-        }, 50);
-    } catch (e) {
-        // resizeToが使えない場合はresizeイベントのみ発火
-        window.dispatchEvent(new Event('resize'));
-    }
-
-    // デバッグ用：初回表示時に擬似クリックを実行
-    debugSimulateKakejikuClick();
+    // 描画完了後にイベントを遅延発火（100ms後）
+    setTimeout(() => {
+        // Appleデバイスの再描画バグ対策: windowサイズを1pxだけ変更して戻す
+        const originalWidth = window.innerWidth;
+        const originalHeight = window.innerHeight;
+        try {
+            window.resizeTo(originalWidth + 10, originalHeight + 10);
+            setTimeout(() => {
+                window.resizeTo(originalWidth, originalHeight);
+            }, 50);
+        } catch (e) {
+            // resizeToが使えない場合はresizeイベントのみ発火
+            window.dispatchEvent(new Event('resize'));
+        }
+        // デバッグ用：描画完了後に擬似クリックを実行
+        debugSimulateKakejikuClick();
+    }, 100);
 });
 
 // 強制再描画函数
