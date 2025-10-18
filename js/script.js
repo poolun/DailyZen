@@ -1,3 +1,14 @@
+// Macレイアウトバグ対策: 掛け軸エリアを一瞬だけスケールして再レイアウトを強制
+function forceKakejikuReflow() {
+    const kakejiku = document.getElementById('kakejiku-container');
+    if (kakejiku) {
+        kakejiku.style.transform = 'scale(1.001)';
+        // 1フレーム後に元に戻す
+        requestAnimationFrame(() => {
+            kakejiku.style.transform = 'scale(1)';
+        });
+    }
+}
 // 擬似クリック判定用フラグ
 let isSimulatedClick = false;
 // Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
@@ -356,6 +367,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('app').classList.add('fonts-loaded');
     setupModal();
     fireResizeAndClickEvents();
+    // Macレイアウトバグ対策を初回描画後に実行
+    forceKakejikuReflow();
 });
 
 // 強制再描画函数
