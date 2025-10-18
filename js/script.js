@@ -1,3 +1,27 @@
+// Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
+function fireResizeAndClickEvents() {
+    setTimeout(() => {
+        const originalWidth = window.innerWidth;
+        const originalHeight = window.innerHeight;
+        try {
+            window.resizeTo(originalWidth + 10, originalHeight + 10);
+            setTimeout(() => {
+                window.resizeTo(originalWidth, originalHeight);
+            }, 50);
+        } catch (e) {
+            window.dispatchEvent(new Event('resize'));
+        }
+        debugSimulateKakejikuClick();
+    }, 100);
+}
+// 擬似的にkakejiku-containerをクリックするデバッグ関数
+function debugSimulateKakejikuClick() {
+    const kakejiku = document.getElementById('kakejiku-container');
+    if (kakejiku) {
+        const evt = new MouseEvent('click', { bubbles: true, cancelable: true, view: window });
+        kakejiku.dispatchEvent(evt);
+    }
+}
 // js/script.js
 
 // ページキャッシュクリア機能
@@ -23,9 +47,12 @@ function clearPageCache() {
     // セッションストレージとローカルストレージをクリア
     sessionStorage.clear();
     localStorage.clear();
-    
-    // 強制リロード
-    location.reload(true);
+
+    // リロード直前にリサイズ＆クリックイベントを発火
+    fireResizeAndClickEvents();
+
+    // 強制リロード（無効化）
+    // location.reload(true); // ←リロードはしません
 }
 
 // Ctrl+Shift+R でキャッシュクリア
@@ -321,14 +348,10 @@ document.addEventListener('keydown', async (event) => {
 
 // システム標準フォントテスト版
 document.addEventListener('DOMContentLoaded', async () => {
-    // システムフォントなので即座にレンダリング
     await renderDailyZen();
-    
-    // フォント読み込み完了状態に設定
     document.getElementById('app').classList.add('fonts-loaded');
-    
-    // モーダル機能を初期化
     setupModal();
+    fireResizeAndClickEvents();
 });
 
 // 強制再描画函数
