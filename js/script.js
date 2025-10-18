@@ -26,6 +26,44 @@ function debugSimulateKakejikuClick() {
     }
 }
 // js/script.js
+// Safari表示バグ対策: 強制再描画・リフロー・CSSハックをまとめて実行
+function forSafariAppearance() {
+    const app = document.getElementById('app');
+    const zenWordDisplay = document.getElementById('zen-word-display');
+    // 1. 強制リフロー
+    if (app) {
+        app.offsetHeight;
+        app.style.transform = 'translateZ(0)';
+        app.style.willChange = 'transform';
+    }
+    if (zenWordDisplay) {
+        zenWordDisplay.offsetHeight;
+        zenWordDisplay.style.visibility = 'hidden';
+        zenWordDisplay.offsetHeight;
+        zenWordDisplay.style.visibility = 'visible';
+        zenWordDisplay.style.willChange = 'transform';
+    }
+    // 2. setTimeout/animationFrame遅延
+    setTimeout(() => {
+        if (app) app.style.opacity = '0.99';
+        requestAnimationFrame(() => {
+            if (app) app.style.opacity = '1';
+        });
+    }, 50);
+    // 3. CSSアニメーションで再描画（例: 一瞬だけ色変更）
+    if (app) {
+        app.style.transition = 'background-color 0.2s';
+        app.style.backgroundColor = '#f8f8f8';
+        setTimeout(() => {
+            app.style.backgroundColor = '';
+        }, 200);
+    }
+    // 4. window.scrollTo(0,1)で一瞬スクロール
+    window.scrollTo(0, 1);
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 100);
+}
 
 // ページキャッシュクリア機能
 function clearPageCache() {
@@ -57,7 +95,10 @@ function clearPageCache() {
     } else if (/Macintosh/.test(navigator.userAgent)) {
         forceKakejikuResize();
     }
-
+    // Safari表示バグ対策
+    if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
+        forSafariAppearance();
+    }
     // 強制リロード（無効化）
     // location.reload(true); // ←リロードはしません
 // ← 余分な閉じカッコ削除
@@ -364,6 +405,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         debugSimulateKakejikuClick();
     } else if (/Macintosh/.test(navigator.userAgent)) {
         forceKakejikuResize();
+    }
+        // Safari表示バグ対策
+    if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
+        forSafariAppearance();
     }
 });
 
