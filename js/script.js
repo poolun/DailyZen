@@ -330,8 +330,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     // モーダル機能を初期化
     setupModal();
 
-    // Appleデバイスの再描画バグ対策: 初回表示時にresizeイベントを擬似的に発火
-    window.dispatchEvent(new Event('resize'));
+    // Appleデバイスの再描画バグ対策: 初回表示時にwindowサイズを1pxだけ変更して戻す
+    const originalWidth = window.innerWidth;
+    const originalHeight = window.innerHeight;
+    try {
+        window.resizeTo(originalWidth + 1, originalHeight);
+        setTimeout(() => {
+            window.resizeTo(originalWidth, originalHeight);
+        }, 50);
+    } catch (e) {
+        // resizeToが使えない場合はresizeイベントのみ発火
+        window.dispatchEvent(new Event('resize'));
+    }
 });
 
 // 強制再描画函数
