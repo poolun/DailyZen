@@ -10,7 +10,7 @@
     --meaning-font: 'Hiragino Mincho Pro W6','Noto Serif JP', 'Kosugi Maru', serif;
     --zen-color: #004073; /* 禅語の色 */
     --meaning-color: #666666; /* 説明文の色 */
-    --meaning-font-size: 2rem; 
+    --meaning-font-size: 2rem;
 }
 
 body {
@@ -38,26 +38,30 @@ body::before {
     z-index: -1;
 }
 
-.vertical-text {
+/* .vertical-text {
     writing-mode: vertical-rl;
     text-orientation: upright;
     padding: 0;
-}
+} */
 
 /* 禅語と読みを内包するコンテナ */
 #zen-word-display {
     position: relative;
+    display: -webkit-flex;
     display: flex;
-    flex-direction: row-reverse; 
-    justify-content: center; 
-    align-items: center; 
-    padding: 1.65rem 0 0 0; 
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 1.65rem 0 0 0;
 }
 
 #zengo {
     font-family: var(--zen-font);
-    font-size: 3.25rem; 
-    color: var(--zen-color); 
+    font-size: 3.25rem;
+    color: var(--zen-color);
     margin: 0;
     padding: 0;
     letter-spacing: 0.5rem;
@@ -71,16 +75,24 @@ body::before {
 
 #reading {
     font-family: var(--meaning-font);
-    font-size: 1.6rem; 
-    color: #666666; 
+    font-size: 1.6rem;
+    color: #666666;
     margin: 0;
+    padding: 0;
+}
+
+#reading-block, #zengo-block {
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    text-orientation: upright;
+    -webkit-text-orientation: upright;
     padding: 0;
 }
 
 #meaning {
     color: var(--meaning-color);
     margin: 0;
-    padding: 0; 
+    padding: 0;
 }
 
 /* ================================================================
@@ -102,10 +114,10 @@ body::before {
     display: flex;
     gap: 1rem;
     position: relative;
-    flex-direction: row; 
-    justify-content: center; 
-    align-items: center; 
-    padding-top: 0; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
 }
 
 #info-container * {
@@ -163,14 +175,14 @@ body::before {
 #meaning-paper {
     font-size: 1.35rem;
     background: var(--white);
-    box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4); 
+    box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4);
     height: 100%;
     width: auto;
-    padding: 1em; 
+    padding: 1em;
 }
 
 /* ================================================================
-   モバイル版専用（767px以下） - 年月日と節気を2行表示
+   モバイル版専用（767px以下） - 年月日と節気を2行表示 + 説明文非表示
    ================================================================ */
 @media (max-width: 767px) {
     #info-container {
@@ -186,18 +198,30 @@ body::before {
         white-space: nowrap; /* 改行を防ぐ */
     }
     
-    /* モバイル版での禅語表示エリアの中央揃え */
-    #zen-word-display {
-        justify-content: center;
-        align-items: center;
-        width: 100%;
+    /* モバイルでは説明文を非表示 */
+    #meaning-container {
+        display: none !important;
+    }
+    
+    /* 掛け軸をタップ可能にするスタイル */
+    #kakejiku-container {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    
+    #kakejiku-container:hover {
+        transform: scale(1.02);
+    }
+    
+    #kakejiku-container:active {
+        transform: scale(0.98);
     }
 }
 
 #zengo {
     font-family: var(--zen-font);
-    font-size: 2.8rem; 
-    color: var(--zen-color); 
+    font-size: 2.8rem;
+    color: var(--zen-color);
     margin: 0;
     padding: 0;
     letter-spacing: 0.5rem;
@@ -206,11 +230,18 @@ body::before {
 
 #reading {
     font-family: var(--meaning-font);
-    font-size: 1rem; 
-    color: #666666; 
+    font-size: 1rem;
+    color: #666666;
     margin: 0;
     padding: 0;
 }
+
+#reading-block, #zengo-block {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    padding: 0;
+}
+
 /* ================================================================
    PC版（768px以上・横長画面） - 横3段レイアウト
    ================================================================ */
@@ -220,20 +251,20 @@ body::before {
         min-height: 100vh;
         max-width: 1122px;
         margin: 0 auto;
-        gap: 0; 
-        padding: 20px; 
+        gap: 0;
+        padding: 20px;
     }
 
     /* 日付情報コンテナ (右側) - 縦書きレイアウト */
     #info-container {
         order: 3;
-        width: 180px; 
+        width: 180px;
         height: 90vh;
         padding: 0;
         margin: 0;
         display: flex;
-        flex-direction: row; 
-        justify-content: flex-start; 
+        flex-direction: row;
+        justify-content: flex-start;
         align-items: flex-start;
         gap: 0.17em;
     }
@@ -263,7 +294,7 @@ body::before {
     #date-block p {
         margin: 0;
         line-height: 1.5;
-        font-size: 2.0rem; 
+        font-size: 2.0rem;
         font-weight: bold;
         text-align: start;
         vertical-align: top;
@@ -274,7 +305,7 @@ body::before {
    #sekki-block p {
         margin: 0;
         line-height: 1.5;
-        font-size: 2.0rem; 
+        font-size: 2.0rem;
         font-weight: bold;
         text-align: start;
         font-family: var(--meaning-font);
@@ -288,24 +319,134 @@ body::before {
     #kakejiku-container {
         order: 2;
         height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         /* background-size: 380px 1000px; */
     }
 
     /* 解説コンテナ (左側) */
     #meaning-container {
         order: 1;
-        height: 60vh; 
-        align-self: center; 
+        height: 60vh;
+        align-self: center;
     }
     
     #meaning-paper {
         line-height: 2.0;
-        font-size: var(--meaning-font-size); 
+        font-size: var(--meaning-font-size);
         text-align: left;
         writing-mode: vertical-rl;
         text-orientation: mixed;
     }
+}
+
+/* ================================================================
+   モバイル版専用 - モーダル表示機能
+   ================================================================ */
+
+/* モーダル背景 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* モーダル表示状態 */
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* モーダルコンテンツ */
+.modal-content {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 80vw;
+    max-width: 400px;
+    max-height: 35vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(50px);
+    transition: transform 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 上揃え */
+    align-items: flex-end; /* 右揃え */
+}
+
+/* モーダル表示時のアニメーション */
+.modal-overlay.show .modal-content {
+    transform: translateY(0);
+}
+
+/* モーダル内のテキスト */
+.modal-text {
+    font-size: 2rem;
+    line-height: 2;
+    font-family: var(--meaning-font);
+    color: var(--meaning-color);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    align-self: flex-end; /* 親の右端に揃える */
+}
+
+/* 閉じるボタン */
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--meaning-color);
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.modal-close:hover {
+    background-color: #f0f0f0;
+}
+
+/* タップヒント要素 */
+.tap-hint {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .tap-hint {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.9);
+        padding: 6px 12px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        color: var(--zen-color);
+        white-space: nowrap;
+        z-index: 10;
+        animation: pulse 2s infinite;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
 }
