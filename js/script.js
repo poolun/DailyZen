@@ -76,8 +76,7 @@ function clearPageCache() {
     sessionStorage.clear();
     localStorage.clear();
 
-    // リロード直前にリサイズ＆クリックイベントを発火
-    fireResizeAndClickEvents();
+    // （不要なリサイズ＆クリックイベント発火の呼び出しを削除）
 
     // 強制リロード（無効化）
     // location.reload(true); // ←リロードはしません
@@ -457,7 +456,9 @@ function setupModal() {
 }
 
 // リサイズ時にレスポンシブな表示を再適用
+// リサイズイベント発火時に日本語でログを出す
 window.addEventListener('resize', () => {
+    console.log('リサイズイベントが起きました');
     if (debugMode) {
         renderDebugZen(debugIndex);
     } else {
