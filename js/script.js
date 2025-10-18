@@ -365,7 +365,7 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
-// システム標準フォントテスト版
+// ページ読み込み時の初期化（表示・フォント・モーダル・レイアウト修正）
 document.addEventListener('DOMContentLoaded', async () => {
     await renderDailyZen();
     document.getElementById('app').classList.add('fonts-loaded');
