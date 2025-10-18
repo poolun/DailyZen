@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DailyZen - 日々是好日</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
-        <div id="info-container">
-            <div id="date-block">
-                <p id="date-info"></p>
-            </div>
-            <div id="sekki-block">
-                <p id="sekki-info"></p>
-            </div>
-        </div>
-
-        <div id="kakejiku-container">
-            <div id="zen-word-display">
-                <div id="reading-block" class="vertical-text">
-                    <p id="reading"></p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="これは、忙しい毎日に、あなたの頭と心を整える真理と静寂の禅の日めくりカレンダーです。">
+        <title>DailyZen - 日々是好日</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon.ico">
+        <link rel="icon" type="image/x-icon" sizes="512x512" href="images/favicon512.ico">
+        <link rel="apple-touch-icon" sizes="512x512" href="images/favicon512.ico">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app">
+            <div id="info-container">
+                <div id="date-block">
+                    <p id="date-info"></p>
                 </div>
-                <div id="zengo-block" class="vertical-text">
-                    <p id="zengo"></p>
+                <div id="sekki-block">
+                    <p id="sekki-info"></p>
                 </div>
             </div>
-        </div>
-
-        <div id="meaning-container">
-            <div id="meaning-paper">
-                <p id="meaning"></p>
+            <div id="kakejiku-container">
+                <div id="zen-word-display">
+                    <div id="reading-block">
+                        <p id="reading"></p>
+                    </div>
+                    <div id="zengo-block">
+                        <p id="zengo"></p>
+                    </div>
+                </div>
+            </div>
+            <div id="meaning-container">
+                <div id="meaning-paper">
+                    <p id="meaning"></p>
+                </div>
             </div>
         </div>
-
-    </div>
-    <script src="js/script.js"></script>
-</body>
+        <!-- モーダル表示エリア -->
+        <div id="modal-overlay" class="modal-overlay">
+            <div class="modal-content">
+                <button class="modal-close" id="modal-close">×</button>
+                <div class="modal-text" id="modal-meaning"></div>
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
 </html>
