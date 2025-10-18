@@ -1,12 +1,16 @@
-// Macレイアウトバグ対策: 掛け軸エリアを一瞬だけスケールして再レイアウトを強制
-function forceKakejikuReflow() {
-    const kakejiku = document.getElementById('kakejiku-container');
-    if (kakejiku) {
-        kakejiku.style.transform = 'scale(1.001)';
-        // 1フレーム後に元に戻す
-        requestAnimationFrame(() => {
-            kakejiku.style.transform = 'scale(1)';
-        });
+// Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
+function forceKakejikuResize() {
+    const originalWidth = window.innerWidth;
+    const originalHeight = window.innerHeight;
+    // 20px以上大きくリサイズ
+    try {
+        window.resizeTo(originalWidth + 40, originalHeight + 40);
+        setTimeout(() => {
+            window.resizeTo(originalWidth, originalHeight);
+        }, 100);
+    } catch (e) {
+        // resizeToが使えない場合はresizeイベントのみ発火
+        window.dispatchEvent(new Event('resize'));
     }
 }
 // 擬似クリック判定用フラグ
@@ -367,8 +371,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('app').classList.add('fonts-loaded');
     setupModal();
     fireResizeAndClickEvents();
-    // Macレイアウトバグ対策を初回描画後に実行
-    forceKakejikuReflow();
+    // Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
+    forceKakejikuResize();
 });
 
 // 強制再描画函数
