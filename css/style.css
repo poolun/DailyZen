@@ -1,3 +1,55 @@
+/* iPhone/iPad横向き時のPC風レイアウト強制用 */
+.landscape-pc-mode #app {
+    flex-direction: row !important;
+    min-height: 100vh;
+    max-width: 1122px;
+    margin: 0 auto;
+    gap: 0;
+    padding: 20px;
+}
+
+.landscape-pc-mode #info-container {
+    order: 3;
+    width: 180px;
+    height: 90vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.17em;
+}
+
+.landscape-pc-mode #date-block, .landscape-pc-mode #sekki-block {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.landscape-pc-mode #meaning-container {
+    display: flex !important;
+    flex-direction: column;
+    order: 1;
+    height: 60vh;
+    align-self: center;
+}
+
+.landscape-pc-mode #meaning-paper {
+    line-height: 2.0;
+    font-size: var(--meaning-font-size);
+    text-align: left;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.landscape-pc-mode #kakejiku-container {
+    order: 2;
+    height: 100vh;
+}
 /* ================================================================
    共通設定 - CSS変数・基本スタイル・全画面共通要素
    ================================================================ */
@@ -169,8 +221,6 @@ body::before {
 }
 
 /* 説明文エリア */
-#meaning-container {
-}
 
 #meaning-paper {
     font-size: 1.35rem;
@@ -189,30 +239,24 @@ body::before {
         flex-direction: column !important;
         gap: 0.5rem;
     }
-    
     #info-container #date-block {
         white-space: nowrap; /* 改行を防ぐ */
     }
-    
     #info-container #sekki-block {
         white-space: nowrap; /* 改行を防ぐ */
     }
-    
-    /* モバイルでは説明文を非表示 */
-    #meaning-container {
+    /* モバイルでは説明文を非表示。ただし.landscape-pc-mode時は表示 */
+    body:not(.landscape-pc-mode) #meaning-container {
         display: none !important;
     }
-    
     /* 掛け軸をタップ可能にするスタイル */
     #kakejiku-container {
         cursor: pointer;
         transition: transform 0.2s ease;
     }
-    
     #kakejiku-container:hover {
         transform: scale(1.02);
     }
-    
     #kakejiku-container:active {
         transform: scale(0.98);
     }
