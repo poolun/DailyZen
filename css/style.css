@@ -47,9 +47,13 @@ body::before {
 /* 禅語と読みを内包するコンテナ */
 #zen-word-display {
     position: relative;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: row-reverse;
     flex-direction: row-reverse;
+    -webkit-justify-content: center;
     justify-content: center;
+    -webkit-align-items: center;
     align-items: center;
     padding: 1.65rem 0 0 0;
 }
@@ -79,7 +83,9 @@ body::before {
 
 #reading-block, #zengo-block {
     writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
     text-orientation: upright;
+    -webkit-text-orientation: upright;
     padding: 0;
 }
 
