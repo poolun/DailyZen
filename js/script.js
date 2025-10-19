@@ -1,3 +1,9 @@
+// iPhone横向き時、Safariのみサファリハック自動実行
+window.addEventListener('orientationchange', () => {
+    if (/iP(hone|ad|od)/.test(navigator.userAgent) && /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
+        forSafariAppearance();
+    }
+
 // Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
 function forceKakejikuResize() {
     const originalWidth = window.innerWidth;
@@ -434,6 +440,7 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', async () => {
 // ページ読み込み時の初期化（表示・フォント・モーダル・レイアウト修正）
 document.addEventListener('DOMContentLoaded', async () => {
     await renderDailyZen();
