@@ -87,6 +87,24 @@
    iPhone横向き専用（max-width: 900px）
    ================================================================ */
 @media (orientation: landscape) and (max-width: 900px) {
+    /* --- 年月日と節気の間を0.5rem --- */
+    #info-container {
+        gap: 0.5rem !important;
+        margin-right: 0 !important;
+    }
+    /* --- インフォエリアと掛け軸エリアの間をゼロ --- */
+    #kakejiku-container {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    /* --- 節気を上揃え・改行なし --- */
+    #sekki-block {
+        align-items: flex-start !important;
+    }
+    #sekki-block p {
+        white-space: nowrap !important;
+        align-items: flex-start !important;
+    }
     /* --- iPhone横向き: 節気を上揃え・改行なし・文字1.75em --- */
     #sekki-block p {
         font-size: 1.75em !important;
