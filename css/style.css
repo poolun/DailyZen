@@ -86,7 +86,7 @@
 /* ================================================================
    iPhone横向き専用（max-width: 900px）
    ================================================================ */
-@media (orientation: landscape) and (max-width: 900px) and (max-height: 500px) {
+@media (orientation: landscape) and (max-width: 900px) {
     #app {
         flex-direction: row;
         flex-wrap: wrap;
@@ -95,8 +95,28 @@
         justify-content: center;
         align-items: flex-start;
         min-height: 100vh;
-        height: auto;
+        height: 100vh;
         box-sizing: border-box;
+    }
+    #info-container {
+        margin-right: 4px;
+        margin-left: 0;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        gap: 0.5em !important;
+    }
+    #date-block, #sekki-block {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+    }
+    #kakejiku-container {
+        margin-left: 4px;
+        margin-right: 4px;
+    }
     }
     #kakejiku-container {
         order: 2;
