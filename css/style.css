@@ -88,34 +88,48 @@
    ================================================================ */
 @media (orientation: landscape) and (max-width: 900px) {
     #app {
+        display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
-        gap: 8px;
-        padding: 4vw 2vw;
-        justify-content: center;
-        align-items: flex-start;
-        min-height: 100vh;
         height: 100vh;
+        min-height: 100vh;
         box-sizing: border-box;
+        gap: 4px;
+        padding: 2vw 1vw;
+        justify-content: flex-start;
+        align-items: stretch;
     }
     #info-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0.5em;
         margin-right: 4px;
         margin-left: 0;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        justify-content: flex-start !important;
-        gap: 0.5em !important;
+        flex-shrink: 0;
     }
     #date-block, #sekki-block {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        justify-content: flex-start !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
     }
     #kakejiku-container {
         margin-left: 4px;
         margin-right: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    #meaning-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-grow: 1;
+        min-width: 0;
+        overflow: auto;
     }
     }
     #kakejiku-container {
@@ -410,9 +424,7 @@ body::before {
         line-height: 1.5 !important;
         font-size: 0.75em !important;
     }
-}
-    font-weight: 300;
-}
+    }
 
 #reading {
     font-family: var(--meaning-font);
@@ -420,13 +432,13 @@ body::before {
     color: #666666;
     margin: 0;
     padding: 0;
-}
+ 
 
 #reading-block, #zengo-block {
     writing-mode: vertical-rl;
     text-orientation: upright;
     padding: 0;
-}
+ 
 
 /* ================================================================
    PC版（横長画面） - 横3段レイアウト
@@ -523,7 +535,7 @@ body::before {
         writing-mode: vertical-rl;
         text-orientation: mixed;
     }
-}
+ 
 
 /* ================================================================
    モバイル版専用 - モーダル表示機能
