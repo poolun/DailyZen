@@ -1,7 +1,7 @@
 /* ================================================================
      iPhone横向き専用（W2622xH1206想定・比率指定）
      ================================================================ */
-@media (orientation: landscape) and (min-aspect-ratio: 2/1) and (max-aspect-ratio: 2.3/1) {
+@media (orientation: landscape) and (min-aspect-ratio: 2/1) and (max-aspect-ratio: 2.3/1) and (hover: none) and (pointer: coarse) {
     body {
         padding: 20px 0;
         box-sizing: border-box;
@@ -40,22 +40,22 @@
         justify-content: flex-start;
         width: 100%;
     }
-            #date-block p, #sekki-block p {
-                font-size: 2.75vw; /* 72px/2622px ≒ 2.75vw */
-                line-height: 1.1;
-                margin: 0;
-                padding: 0;
-                white-space: nowrap;
-                text-align: end;
-                vertical-align: top;
-            }
-            #reading {
-                font-size: 2.29vw; /* 60px/2622px ≒ 2.29vw */
-                line-height: 1.1;
-                margin: 0;
-                padding: 0;
-            }
-        #kakejiku-container {
+    #date-block p, #sekki-block p {
+        font-size: 2.75vw; /* 72px/2622px ≒ 2.75vw */
+        line-height: 1.1;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        text-align: end;
+        vertical-align: top;
+    }
+    #reading {
+        font-size: 2.29vw; /* 60px/2622px ≒ 2.29vw */
+        line-height: 1.1;
+        margin: 0;
+        padding: 0;
+    }
+    #kakejiku-container {
         order: 2;
         width: 272px;
         height: 658px;
@@ -83,14 +83,14 @@
         align-items: center;
         justify-content: center;
     }
-            #zengo {
-                font-size: 4.27vw; /* 112px/2622px ≒ 4.27vw */
-                line-height: 1.1;
-                margin: 0;
-                padding: 0;
-                letter-spacing: 0.1em;
-                font-weight: 300;
-            }
+    #zengo {
+        font-size: 4.27vw; /* 112px/2622px ≒ 4.27vw */
+        line-height: 1.1;
+        margin: 0;
+        padding: 0;
+        letter-spacing: 0.1em;
+        font-weight: 300;
+    }
     #meaning-container {
         order: 1;
         display: flex;
@@ -105,18 +105,18 @@
         z-index: 10;
         overflow: visible;
     }
-            #meaning-paper {
-                font-size: 2.75vw; /* 72px/2622px ≒ 2.75vw */
-                line-height: 4.58vw; /* 120px/2622px ≒ 4.58vw */
-                padding: 0;
-                background: none;
-                box-shadow: none;
-                width: auto;
-                min-width: 200px;
-                max-width: 600px;
-                height: auto;
-                box-sizing: border-box;
-            }
+    #meaning-paper {
+        font-size: 2.75vw; /* 72px/2622px ≒ 2.75vw */
+        line-height: 4.58vw; /* 120px/2622px ≒ 4.58vw */
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        width: auto;
+        min-width: 200px;
+        max-width: 600px;
+        height: auto;
+        box-sizing: border-box;
+    }
 }
 /* ================================================================
     共通設定 - CSS変数・基本スタイル・全画面共通要素
