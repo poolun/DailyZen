@@ -15,30 +15,57 @@
 /* iPhone横向き専用: 掛け軸・説明・日付ブロックの重なり防止 */
 @media (orientation: landscape) and (max-width: 900px) {
     #app {
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 8px;
-        padding: 8px 2vw;
+        padding: 4vw 2vw;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 0;
+        height: auto;
+        box-sizing: border-box;
     }
     #kakejiku-container {
-        width: 60vw;
-        min-width: 220px;
-        max-width: 340px;
+        order: 2;
+        width: 54vw;
+        min-width: 180px;
+        max-width: 320px;
         margin-left: auto;
         margin-right: auto;
+        flex-shrink: 0;
+        height: auto;
+        background-size: contain;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     #meaning-container {
-        min-width: 100px;
-        max-width: 28vw;
+        order: 1;
+        min-width: 90px;
+        max-width: 26vw;
         margin-left: 0.5rem;
         flex-grow: 0;
         flex-shrink: 1;
         align-items: flex-end;
         justify-content: flex-end;
+        display: flex;
+        height: auto;
+        z-index: 10;
     }
     #info-container {
-        width: 80px;
-        min-width: 60px;
-        max-width: 18vw;
+        order: 3;
+        width: 70px;
+        min-width: 50px;
+        max-width: 16vw;
+        height: auto;
+        z-index: 30;
     }
+    #date-block p, #sekki-block p {
+        font-size: 1.2rem;
+        white-space: normal;
+    }
+}
 }
 
 body {
