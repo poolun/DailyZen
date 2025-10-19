@@ -440,8 +440,21 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', async () => {
+// iPhone横向き専用クラス付与関数
+function updateIphoneLandscapeClass() {
+    const isiPhone = /iP(hone|ad|od)/.test(navigator.userAgent);
+    const isLandscape = window.matchMedia('(orientation: landscape)').matches;
+    if (isiPhone && isLandscape) {
+        document.body.classList.add('iphone-landscape');
+    } else {
+        document.body.classList.remove('iphone-landscape');
+    }
+}
+
 // ページ読み込み時の初期化（表示・フォント・モーダル・レイアウト修正）
 document.addEventListener('DOMContentLoaded', async () => {
+    updateIphoneLandscapeClass();
     await renderDailyZen();
     document.getElementById('app').classList.add('fonts-loaded');
     setupModal();
@@ -456,6 +469,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         forSafariAppearance();
     }
 });
+
+// 画面回転・リサイズ時にもiPhone横向きクラスを更新
+window.addEventListener('orientationchange', updateIphoneLandscapeClass);
+window.addEventListener('resize', updateIphoneLandscapeClass);
 
 // 強制再描画函数
 function forceReflow() {
