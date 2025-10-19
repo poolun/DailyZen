@@ -452,107 +452,95 @@ body::before {
     50% { opacity: 1; }
 }
 
-/* ================================================================
+/* /* ================================================================
    PC版（横長画面） - 横3段レイアウト
-   （iPhone横向きで掛け軸と説明文が重なる問題を解消するための修正）
+   （iPhone横向きで掛け軸と説明文が重なる問題を解消するための最終修正）
    ================================================================ */
 @media (orientation: landscape) {
     #app {
         flex-direction: row;
-        /* 要素間の隙間を強制的に確保 */
-        gap: 40px; /* ★隙間を増やして重なりを防止 */
-        /* コンテナ全体の配置は左寄せから中央寄せに変更（もし必要であれば） */
-        justify-content: center; /* ★横向き時に中央配置を優先 */
-        align-items: center; /* 垂直方向も中央に */
+        /* 要素間の隙間は重なり防止のため最小限の20pxに戻します。 */
+        gap: 20px; 
+        justify-content: space-between; /* ★スペースを均等に配分 */
+        align-items: center; 
         min-height: 100vh;
-        width: 100%; /* 全幅を使用 */
+        width: 100%;
         box-sizing: border-box;
-        padding: 20px;
+        padding: 20px 1rem; /* 左右の余白を確保 */
+        z-index: 1;
+        position: relative; /* 子要素のZ-indexの基準 */
     }
 
     /* 日付情報コンテナ (右側) - 縦書きレイアウト */
     #info-container {
         order: 3;
-        /* 幅を固定し、Flexアイテムとして縮小しない */
-        width: 120px; /* ★幅を少し狭めても良いか確認（文字サイズによる） */
-        flex-shrink: 0; 
+        width: 120px; 
+        flex-shrink: 0;
         height: 90vh;
-        padding: 0;
-        margin: 0;
-        flex-direction: row; /* 内部の日付・節気は縦書きだが、コンテナは横並び */
-        justify-content: flex-end; /* 右端に寄せる */
-        align-items: flex-start;
+        z-index: 30; /* ★最も手前に表示 */
+        
+        /* 縦書きの文字が途中で切れないよう、ここで nowrap を解除 */
+        white-space: normal !important; 
     }
     
     /* 日付・節気ブロック内のテキストスタイル */
-    #date-block p {
-        /* フォントサイズを小さくして、info-containerの幅に収めることも検討 */
+    #date-block p, #sekki-block p {
         font-size: 1.8rem;
-    }
-
-   #sekki-block p {
-        font-size: 1.8rem;
+        /* nowrap の設定を削除し、縦書きに従って改行を許可 */
+        white-space: normal; 
     }
 
     /* 掛け軸コンテナ (中央) */
     #kakejiku-container {
         order: 2;
-        /* 幅を固定 */
-        width: 350px; /* ★掛け軸の幅を明確に固定 */
-        flex-shrink: 0; /* 縮小させない */
-        height: 90vh; /* 縦幅も調整 */
+        width: 380px; /* ★幅を固定 */
+        flex-shrink: 0;
+        height: 90vh;
         background-size: contain; 
+        z-index: 20; /* ★中央に配置 */
         
-        /* 中央揃えの核心的な修正 */
-        /* Flexアイテムとして中央に配置するためのマージン設定は不要（#appのjustify-content: centerで処理） */
+        /* 中央に寄せるための調整（他の要素に押されないようにマージンをオートに設定） */
+        margin-left: auto;
+        margin-right: auto;
     }
 
     /* 解説コンテナ (左側) */
     #meaning-container {
         order: 1;
-        /* 幅を固定、またはFlexでスペースを割り当て */
-        width: 300px; /* ★説明ブロックの最大幅を固定 */
+        width: auto; /* 内容に応じて幅を自動調整 */
         flex-shrink: 0; 
-        flex-grow: 0; /* 伸びないようにする */
+        flex-grow: 1; /* 残りスペースを使うが、内容は右寄せで重なりを防止 */
+        min-width: 150px;
         height: 60vh;
         align-self: center;
+        z-index: 10; /* ★最も奥に配置 */
+
+        /* 説明ブロック全体を左から離す */
+        margin-left: 1rem; /* ★左側のマージンを1remに設定 */
+        
+        /* Flexboxの設定で、内容を右側に寄せることで、左寄せの掛け軸との重なりを回避 */
+        display: flex;
+        justify-content: flex-end; 
+        align-items: center;
     }
     
     #meaning-paper {
-        /* 説明ブロックの内容を親の左端に寄せる */
-        align-self: flex-start; 
-        
-        /* 縦書きの幅を明確にし、重なりを防ぐ */
-        width: 100%; 
+        /* 説明文の紙ブロック自体は、縦書きの開始点（右側）に寄せて配置 */
+        align-self: center;
+        width: auto;
         line-height: 2.0;
         font-size: var(--meaning-font-size);
         writing-mode: vertical-rl;
         text-orientation: mixed;
         box-sizing: border-box;
+        
+        /* 説明文の余白を適切に設定 */
+        padding: 1em;
     }
     
-    /* ----------------------------------------------------------------- */
-    /* ここから下は、前の回答では省略されていたが、重なりの原因になりそうな箇所の修正 */
-
-    /* 説明ブロックの縦書きテキストの開始位置を左端に明確に設定 */
-    #meaning-paper {
-        /* writing-mode: vertical-rl; の場合、テキストは右から左に流れるため、
-           親要素内で左に寄せるために `align-self: flex-start`を設定しています。
-           もし左端から開始しない場合は、以下を試してください */
-        /* text-align: right; */
-    }
-
-    /* flex-direction: row のとき、#meaning-container の内容が左に寄るように調整 */
-    #meaning-container {
-        display: flex; /* ★追記: 子要素をFlexで管理 */
-        justify-content: flex-end; /* ★追記: 子要素である #meaning-paper を右（つまり縦書きの開始位置）に寄せる */
-        align-items: center;
-        height: 60vh;
-    }
-    
-    #meaning-paper {
-        /* #meaning-container の右寄せ設定により、縦書きが左に寄るのを防ぐ */
-        align-self: center;
-        width: auto; /* 内容に応じて幅を調整 */
+    /* 禅語と読みを内包するコンテナ (kakejiku-containerの子要素) */
+    #zen-word-display {
+        /* 中央揃えを維持 */
+        justify-content: center;
     }
 }
