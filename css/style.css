@@ -12,6 +12,34 @@
     --meaning-color: #666666; /* 説明文の色 */
     --meaning-font-size: 2rem;
 }
+/* iPhone横向き専用: 掛け軸・説明・日付ブロックの重なり防止 */
+@media (orientation: landscape) and (max-width: 900px) {
+    #app {
+        gap: 8px;
+        padding: 8px 2vw;
+    }
+    #kakejiku-container {
+        width: 60vw;
+        min-width: 220px;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #meaning-container {
+        min-width: 100px;
+        max-width: 28vw;
+        margin-left: 0.5rem;
+        flex-grow: 0;
+        flex-shrink: 1;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    #info-container {
+        width: 80px;
+        min-width: 60px;
+        max-width: 18vw;
+    }
+}
 
 body {
     margin: 0;
