@@ -457,6 +457,10 @@ body::before {
    （iPhone横向きで掛け軸と説明文が重なる問題を解消するための最終修正）
    ================================================================ */
 @media (orientation: landscape) {
+    body *{
+      padding: 0;
+      margin: 0;
+    }
     #app {
         flex-direction: row;
         /* 要素間の隙間は重なり防止のため最小限の20pxに戻します。 */
