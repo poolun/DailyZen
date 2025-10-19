@@ -184,7 +184,7 @@ body::before {
 /* ================================================================
    モバイル版専用（767px以下） - 年月日と節気を2行表示 + 説明文非表示
    ================================================================ */
-@media (max-width: 767px) {
+@media (max-width: 600px) {
     #info-container {
         flex-direction: column !important;
         gap: 0.5rem;
@@ -243,13 +243,14 @@ body::before {
 }
 
 /* ================================================================
-   PC版（768px以上・横長画面） - 横3段レイアウト
+   PC版（横長画面） - 横3段レイアウト
    ================================================================ */
-@media (min-width: 768px) and (orientation: landscape) {
+@media (orientation: landscape) {
+/* @media (min-width: 600px) and (orientation: landscape) { */
     #app {
         flex-direction: row;
         min-height: 100vh;
-        max-width: 1122px;
+        /* max-width: 1122px; */
         margin: 0 auto;
         gap: 0;
         padding: 20px;
@@ -449,4 +450,78 @@ body::before {
 @keyframes pulse {
     0%, 100% { opacity: 0.7; }
     50% { opacity: 1; }
+}
+
+/* ================================================================
+   PC版（横長画面） - 横3段レイアウトの調整（iPhone横向き対応）
+   ================================================================ */
+/* 既存の @media (orientation: landscape) { ... } を利用・調整 */
+@media (orientation: landscape) {
+/* @media (min-width: 600px) and (orientation: landscape) { の場合、既に画面幅の条件を満たすため、orientationのみで調整します。 */
+    #app {
+        flex-direction: row;
+        min-height: 100vh;
+        /* max-width: 1122px; */ /* 不要ならコメントアウトのまま */
+        margin: 0 auto;
+        /* 要素間の隙間を適切に設定 */
+        gap: 30px; /* ★調整ポイント1: 要素間に適切な隙間を設ける */
+        padding: 20px;
+    }
+
+    /* 日付情報コンテナ (右側) - 縦書きレイアウト */
+    #info-container {
+        order: 3;
+        /* 幅を固定または最小限に設定し、内容を保持 */
+        width: 150px; /* ★調整ポイント2: 日付ブロックの幅を固定 */
+        height: 90vh;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0.17em;
+    }
+
+    /* 掛け軸コンテナ (中央) */
+    #kakejiku-container {
+        order: 2;
+        /* 画面中央で、左右のブロックにスペースを譲る */
+        flex-shrink: 0; /* 縮小しない */
+        width: 380px; /* ★調整ポイント3: 掛け軸の幅を固定または最大値を設定 */
+        height: 100vh;
+        background-size: contain; /* サイズ調整が適切であれば維持 */
+    }
+
+    /* 解説コンテナ (左側) */
+    #meaning-container {
+        order: 1;
+        /* 残りのスペースを柔軟に使うか、最小幅を設定 */
+        flex-grow: 1; /* ★調整ポイント4: 残りのスペースを使う */
+        min-width: 150px; /* 最小幅を確保 */
+        height: 60vh;
+        align-self: center;
+        /* 左寄せに変更。flex-direction: row の #app 内で左端へ */
+        justify-content: flex-start;
+    }
+    
+    #meaning-paper {
+        line-height: 2.0;
+        font-size: var(--meaning-font-size);
+        text-align: left;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        /* 紙の背景ブロックを左寄せにするため、flexコンテナ内の要素として調整 */
+        align-self: flex-start; 
+        box-sizing: border-box; /* paddingを含めたサイズ計算 */
+        height: 100%; /* 親要素に合わせる */
+        /* width: auto; を維持するか、最小値を設定 */
+        width: auto;
+    }
+
+    /* 禅語と読みを内包するコンテナ (kakejiku-containerの子要素) */
+    #zen-word-display {
+        /* 中央揃えを維持 */
+        justify-content: center;
+    }
 }
