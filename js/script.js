@@ -1,3 +1,9 @@
+// iPhone横向き時、Safariのみサファリハック自動実行
+window.addEventListener('orientationchange', () => {
+    if (/iP(hone|ad|od)/.test(navigator.userAgent) && /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
+        forSafariAppearance();
+    }
+});
 // Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
 function forceKakejikuResize() {
     const originalWidth = window.innerWidth;
@@ -13,24 +19,48 @@ function forceKakejikuResize() {
         window.dispatchEvent(new Event('resize'));
     }
 }
+
+// Mac Chrome表示バグ対策: 強制リフロー・GPUレイヤー・visibility・opacityハック
+function forMacAppearance() {
+    const app = document.getElementById('app');
+    const zenWordDisplay = document.getElementById('zen-word-display');
+    // 1. 強制リフロー
+    if (app) {
+        app.offsetHeight;
+        app.style.transform = 'translateZ(0)';
+        app.style.willChange = 'transform';
+    }
+    if (zenWordDisplay) {
+        zenWordDisplay.offsetHeight;
+        zenWordDisplay.style.visibility = 'hidden';
+        zenWordDisplay.offsetHeight;
+        zenWordDisplay.style.visibility = 'visible';
+        zenWordDisplay.style.willChange = 'transform';
+    }
+    // 2. setTimeout/animationFrame遅延
+    setTimeout(() => {
+        if (app) app.style.opacity = '0.99';
+        requestAnimationFrame(() => {
+            if (app) app.style.opacity = '1';
+        });
+    }, 50);
+    // 3. CSSアニメーションで再描画（例: 一瞬だけ色変更）
+    if (app) {
+        app.style.transition = 'background-color 0.2s';
+        app.style.backgroundColor = '#f0f0f0';
+        setTimeout(() => {
+            app.style.backgroundColor = '';
+        }, 200);
+    }
+    // 4. window.scrollTo(0,1)で一瞬スクロール
+    window.scrollTo(0, 1);
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 100);
+}
 // 擬似クリック判定用フラグ
 let isSimulatedClick = false;
 // Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
-function fireResizeAndClickEvents() {
-    setTimeout(() => {
-        const originalWidth = window.innerWidth;
-        const originalHeight = window.innerHeight;
-        try {
-            window.resizeTo(originalWidth + 10, originalHeight + 10);
-            setTimeout(() => {
-                window.resizeTo(originalWidth, originalHeight);
-            }, 50);
-        } catch (e) {
-            window.dispatchEvent(new Event('resize'));
-        }
-        debugSimulateKakejikuClick();
-    }, 100);
-}
 // 擬似的にkakejiku-containerをクリックするデバッグ関数
 function debugSimulateKakejikuClick() {
     const kakejiku = document.getElementById('kakejiku-container');
@@ -41,6 +71,44 @@ function debugSimulateKakejikuClick() {
     }
 }
 // js/script.js
+// Safari表示バグ対策: 強制再描画・リフロー・CSSハックをまとめて実行
+function forSafariAppearance() {
+    const app = document.getElementById('app');
+    const zenWordDisplay = document.getElementById('zen-word-display');
+    // 1. 強制リフロー
+    if (app) {
+        app.offsetHeight;
+        app.style.transform = 'translateZ(0)';
+        app.style.willChange = 'transform';
+    }
+    if (zenWordDisplay) {
+        zenWordDisplay.offsetHeight;
+        zenWordDisplay.style.visibility = 'hidden';
+        zenWordDisplay.offsetHeight;
+        zenWordDisplay.style.visibility = 'visible';
+        zenWordDisplay.style.willChange = 'transform';
+    }
+    // 2. setTimeout/animationFrame遅延
+    setTimeout(() => {
+        if (app) app.style.opacity = '0.99';
+        requestAnimationFrame(() => {
+            if (app) app.style.opacity = '1';
+        });
+    }, 50);
+    // 3. CSSアニメーションで再描画（例: 一瞬だけ色変更）
+    if (app) {
+        app.style.transition = 'background-color 0.2s';
+        app.style.backgroundColor = '#f8f8f8';
+        setTimeout(() => {
+            app.style.backgroundColor = '';
+        }, 200);
+    }
+    // 4. window.scrollTo(0,1)で一瞬スクロール
+    window.scrollTo(0, 1);
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 100);
+}
 
 // ページキャッシュクリア機能
 function clearPageCache() {
@@ -66,9 +134,16 @@ function clearPageCache() {
     sessionStorage.clear();
     localStorage.clear();
 
-    // リロード直前にリサイズ＆クリックイベントを発火
-    fireResizeAndClickEvents();
-
+    // Appleデバイスごとに分岐
+        if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+            debugSimulateKakejikuClick();
+        } else if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
+            forMacAppearance();
+        }
+    // Safari表示バグ対策
+    if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
+        forSafariAppearance();
+    }
     // 強制リロード（無効化）
     // location.reload(true); // ←リロードはしません
 // ← 余分な閉じカッコ削除
@@ -365,42 +440,20 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
+// ページ読み込み時の初期化（表示・フォント・モーダル・レイアウト修正）
 document.addEventListener('DOMContentLoaded', async () => {
     await renderDailyZen();
     document.getElementById('app').classList.add('fonts-loaded');
     setupModal();
-    fireResizeAndClickEvents();
-    // Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
-    forceKakejikuResize();
-    // 横長表示で高さが1156px以下なら全体をズームで縮小
-    applyLandscapeZoom();
-});
-
-// 横長表示で高さが1156px以下ならbody全体をズームで縮小する
-function applyLandscapeZoom() {
-    const minHeight = 1156;
-    const isLandscape = window.innerWidth > window.innerHeight;
-    const body = document.body;
-    if (isLandscape && window.innerHeight < minHeight) {
-        const scale = window.innerHeight / minHeight;
-        body.style.transformOrigin = 'top left';
-        body.style.transform = `scale(${scale})`;
-        body.style.width = `${100 / scale}%`;
-        body.style.height = `${100 / scale}%`;
-    } else {
-        body.style.transform = '';
-        body.style.width = '';
-        body.style.height = '';
+    // Appleデバイスごとに分岐
+    if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+        debugSimulateKakejikuClick();
+    } else if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
+        forMacAppearance();
     }
-}
-
-// リサイズ時にもズーム処理を適用
-window.addEventListener('resize', () => {
-    applyLandscapeZoom();
-    if (debugMode) {
-        renderDebugZen(debugIndex);
-    } else {
-        renderDailyZen();
+    // Safari表示バグ対策
+    if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
+        forSafariAppearance();
     }
 });
 
