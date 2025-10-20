@@ -485,4 +485,16 @@ body::before {
     width: 100vw;
     height: 100vh;
    }
+   #meaning-container {
+        height: 12rem;
+        width: auto;
+        margin:auto;
+      }
+   #meaning-container #mieaning-paper{
+        padding:0.5rem; }
+
+   #meaning-container * p{
+        font-size:1.35rem;
+      line-height:1.5;
+    }
 }
