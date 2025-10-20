@@ -474,6 +474,7 @@ body::before {
 /*20251020*/
 /* bodyにis-overflowingが付与されたとき、#appコンテナ全体を縮小 */
 @media screen and (orientation: landscape) and (min-aspect-ratio: 4/3) {
+   #app{
     /* 縮小比率を調整し、画面に収まるようにスケールダウン */
     transform: scale(0.8); /* 縮小率を調整してください */
     transform-origin: top center; /* 縮小の基準を上端中央にする */
@@ -483,4 +484,5 @@ body::before {
     box-sizing: border-box;
     width: 100vw;
     height: 100vh;
+   }
 }
