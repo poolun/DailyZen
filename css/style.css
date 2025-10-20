@@ -462,15 +462,12 @@ body::before {
 /* bodyにis-overflowingが付与されたとき、#appコンテナ全体を縮小 */
 @media screen and (orientation: landscape) and (min-aspect-ratio: 4/3) {
    #app{
-    /* 縮小比率を調整し、画面に収まるようにスケールダウン */
-    transform: scale(0.8); /* 縮小率を調整してください */
-    transform-origin: top center; /* 縮小の基準を上端中央にする */
-    /* 縮小によって生じた余白を埋めるための調整 */
-    margin: 0 auto;
-    padding:20px;
-    box-sizing: border-box;
-    width: 100vw;
-    height: 100vh;
+transform: scale(0.85);
+    transform-origin: top center;
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
    }
    #meaning-container {
         height: 12rem;
