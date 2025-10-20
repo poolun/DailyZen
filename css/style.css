@@ -466,9 +466,16 @@ body::before {
     
     /* 縮小によって生じた余白を埋めるための調整 */
     margin: 0 auto;
+    box-sizing: border-box;
+    #info-container * p{
+      font-size:1rem;
+    }
+    #mieaning-paper{
+      padding:0.5rem; }
+    #mieaning * p{
+      font-size:1rem; }
     /* width: 100vw; */
     /* height: 100vh; */
-    box-sizing: border-box;
 }
 
 
