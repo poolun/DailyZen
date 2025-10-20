@@ -530,3 +530,49 @@ window.addEventListener('resize', () => {
         renderDailyZen();
     }
 });
+// 画面の見切れをチェックして調整する関数 (既存のもの)
+function checkVerticalOverflow() {
+    const content = document.body;
+    const windowHeight = window.innerHeight; 
+    const contentHeight = content.scrollHeight; 
+
+    if (contentHeight > windowHeight) {
+        content.classList.add('is-overflowing');
+    } else {
+        content.classList.remove('is-overflowing');
+    }
+}
+
+// ----------------------------------------------------
+// ★ ここから新しいコード ★
+
+// 処理の集中を防ぐための遅延（Debounce）関数
+function debounce(func, wait) {
+    let timeout;
+    return function() {
+        const context = this;
+        const args = arguments;
+        const later = function() {
+            timeout = null;
+            func.apply(context, args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait); // waitミリ秒後に実行
+    };
+}
+
+// 実行を遅延させるラッパー関数 (300ミリ秒の遅延を設定)
+const debouncedCheck = debounce(checkVerticalOverflow, 300);
+
+
+// 実行トリガーを 'resize' から 'orientationchange' に変更し、loadイベントも残す
+window.addEventListener('load', checkVerticalOverflow);
+
+// ★ モバイルデバイスの向き変更時のみ実行する ★
+// ※ PCのブラウザではこのイベントは発生しません
+if ('onorientationchange' in window) {
+    window.addEventListener('orientationchange', debouncedCheck);
+} else {
+    // orientationchangeがないPC/一部タブレットでは、resizeを使うが遅延させる
+    window.addEventListener('resize', debouncedCheck);
+}
