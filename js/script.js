@@ -1,19 +1,3 @@
-// Macレイアウトバグ対策: 20px以上大きくリサイズしてから元に戻す
-function forceKakejikuResize() {
-    const originalWidth = window.innerWidth;
-    const originalHeight = window.innerHeight;
-    // 20px以上大きくリサイズ
-    try {
-        window.resizeTo(originalWidth + 40, originalHeight + 40);
-        setTimeout(() => {
-            window.resizeTo(originalWidth, originalHeight);
-        }, 100);
-    } catch (e) {
-        // resizeToが使えない場合はresizeイベントのみ発火
-        window.dispatchEvent(new Event('resize'));
-    }
-}
-
 // Mac Chrome表示バグ対策: 強制リフロー・GPUレイヤー・visibility・opacityハック
 function forMacAppearance() {
     const app = document.getElementById('app');
