@@ -283,12 +283,14 @@ body::before {
     }
 
     #sekki-block {
+        display: flex;
         order: 1;
         flex-shrink: 0;
         writing-mode: vertical-rl;
         text-orientation: upright;
         height: 100%;
         position: relative;
+
     }
 
     /* 日付・節気ブロック内のテキストスタイル */
@@ -450,4 +452,21 @@ body::before {
 @keyframes pulse {
     0%, 100% { opacity: 0.7; }
     50% { opacity: 1; }
+}
+/*251020*/
+/* デフォルトのモバイル表示（767px以下）やPC表示（768px以上）の設定をここに記述 */
+
+/* 縦方向に見切れが発生したときに適用するクラス */
+.is-overflowing .content-wrapper {
+    /* 縮小比率を調整し、画面に収まるようにスケールダウン */
+    transform: scale(0.85); /* 例: 85%に縮小 */
+    transform-origin: top center; /* 縮小の基準を上端中央にする */
+    width: calc(100% / 0.85); /* 縮小を見越して幅を広げる（オプション） */
+}
+
+/* 768px以上のPC表示時のみ、この処理を行う */
+@media screen and (min-width: 768px) {
+    .is-overflowing body {
+        /* 必要に応じて、body全体の幅を調整 */
+    }
 }
