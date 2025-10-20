@@ -457,27 +457,12 @@ body::before {
     /* 縮小比率を調整し、画面に収まるようにスケールダウン */
     transform: scale(0.8); /* 縮小率を調整してください */
     transform-origin: top right; /* 縮小の基準を上端中央にする */
-    
     /* 縮小によって生じた余白を埋めるための調整 */
     margin: 0 auto;
+    padding:20px;
     box-sizing: border-box;
-        #info-container * p{
-          font-size:1rem;
-          font-style:bold;
-        }
-        #meaning-container {
-          height: 80vh;
-          width: auto;
-          margin:20px;
-        }
-        #meaning-container #mieaning-paper{
-          padding:0.5rem; }
-        #meaning-container * p{
-          font-size:1.35rem;
-        line-height:1.35;
-       }
-    /* width: 100vw; */
-    /* height: 100vh; */
+    width: 100vw;
+    height: 100vh;
 }
 
 /*20251020*/
@@ -487,16 +472,6 @@ body::before {
 
 /* 画面のアスペクト比が4:3以上の場合に適用 */
 @media screen and (min-aspect-ratio: 4/3) and (orientation: landscape)  {
-/* bodyにis-overflowingが付与されたとき、#appコンテナ全体を縮小 */
-  .is-overflowing #app {
-      /* 縮小比率を調整し、画面に収まるようにスケールダウン */
-      transform: scale(0.8); /* 縮小率を調整してください */
-      transform-origin: top right; /* 縮小の基準を上端中央にする */
-      
-      /* 縮小によって生じた余白を埋めるための調整 */
-      margin: 0 auto;
-      box-sizing: border-box;
-
 
           #info-container * p{
             font-size:1rem;
@@ -519,8 +494,4 @@ body::before {
             font-size:1.35rem;
           line-height:1.5;
         }
-      /* width: 100vw; */
-      /* height: 100vh; */
   }
-
-}
