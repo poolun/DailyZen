@@ -492,7 +492,7 @@ body::before {
 /* ---------------------------------------------------------------- */
 
 /* 画面のアスペクト比が4:3以上の場合に適用 */
-@media screen and (min-aspect-ratio: 4/3) {
+@media screen and (min-aspect-ratio: 4/3) and (orientation: landscape)  {
 /* bodyにis-overflowingが付与されたとき、#appコンテナ全体を縮小 */
   .is-overflowing #app {
       /* 縮小比率を調整し、画面に収まるようにスケールダウン */
