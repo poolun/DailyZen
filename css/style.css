@@ -117,15 +117,11 @@ body::before {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 0;
-}
-
-#info-container * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 
-#info-container p{
+#info-container * p{
   font-size: 1.4rem;
   font-weight: bold;
   letter-spacing: 0.175em;
@@ -170,6 +166,7 @@ body::before {
 
 /* 説明文エリア */
 #meaning-container {
+  margin: 0 auto;
 }
 
 #meaning-paper {
@@ -190,14 +187,11 @@ body::before {
         gap: 0.5rem;
     }
     
-    #info-container #date-block {
+      #info-container * p{
+        font-size:1.2rem;
+        font-style:bold;
         white-space: nowrap; /* 改行を防ぐ */
-    }
-    
-    #info-container #sekki-block {
-        white-space: nowrap; /* 改行を防ぐ */
-    }
-    
+      }
     /* モバイルでは説明文を非表示 */
     #meaning-container {
         display: none !important;
@@ -502,20 +496,28 @@ body::before {
       /* 縮小によって生じた余白を埋めるための調整 */
       margin: 0 auto;
       box-sizing: border-box;
+
+
           #info-container * p{
             font-size:1rem;
             font-style:bold;
           }
-          #meaning-container {
+
+          #kakejiku-container {
             height: 80vh;
+            margin: auto;
+          }
+
+          #meaning-container {
+            height: 12rem;
             width: auto;
-            margin:20px;
+            margin:auto;
           }
           #meaning-container #mieaning-paper{
             padding:0.5rem; }
           #meaning-container * p{
             font-size:1.35rem;
-          line-height:1.35;
+          line-height:1.5;
         }
       /* width: 100vw; */
       /* height: 100vh; */
