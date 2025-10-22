@@ -2,6 +2,7 @@
 function forMacAppearance() {
     const app = document.getElementById('app');
     const zenWordDisplay = document.getElementById('zen-word-display');
+    const meaningContainer = document.getElementById('meaning-container');
     // 1. 強制リフロー
     if (app) {
         app.offsetHeight;
@@ -14,6 +15,13 @@ function forMacAppearance() {
         zenWordDisplay.offsetHeight;
         zenWordDisplay.style.visibility = 'visible';
         zenWordDisplay.style.willChange = 'transform';
+    }
+    if (meaningContainer) {
+        meaningContainer.offsetHeight;
+        meaningContainer.style.visibility = 'hidden';
+        meaningContainer.offsetHeight;
+        meaningContainer.style.visibility = 'visible';
+        meaningContainer.style.transform = 'translateZ(0)';
     }
     // 2. setTimeout/animationFrame遅延
     setTimeout(() => {
@@ -53,6 +61,8 @@ function debugSimulateKakejikuClick() {
 function forSafariAppearance() {
     const app = document.getElementById('app');
     const zenWordDisplay = document.getElementById('zen-word-display');
+    const meaningContainer = document.getElementById('meaning-container');
+    
     // 1. 強制リフロー
     if (app) {
         app.offsetHeight;
@@ -66,6 +76,15 @@ function forSafariAppearance() {
         zenWordDisplay.style.visibility = 'visible';
         zenWordDisplay.style.willChange = 'transform';
     }
+    // 説明エリアの幅不具合対策
+    if (meaningContainer) {
+        meaningContainer.offsetHeight;
+        meaningContainer.style.visibility = 'hidden';
+        meaningContainer.offsetHeight;
+        meaningContainer.style.visibility = 'visible';
+        meaningContainer.style.transform = 'translateZ(0)';
+    }
+    
     // 2. setTimeout/animationFrame遅延
     setTimeout(() => {
         if (app) app.style.opacity = '0.99';
@@ -423,8 +442,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     await renderDailyZen();
     document.getElementById('app').classList.add('fonts-loaded');
     setupModal();
-    // 初回スケーリング適用
-    scaleToHeight();
+    // 初回ズーム適用
+    applyZoom();
     // Appleデバイスごとに分岐
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
         debugSimulateKakejikuClick();
@@ -515,36 +534,39 @@ window.addEventListener('resize', () => {
     } else {
         renderDailyZen();
     }
-    // スケーリングを再計算
-    scaleToHeight();
+    // ズームを再計算
+    applyZoom();
 });
 
 /**
- * ウィンドウ高さを基準に縦方向で全体をスケールする
- * デザイン基準は H = 739px
+ * W980×H739 の固定デザインをウィンドウサイズに合わせてズームイン・ズームアウト
+ * デスクトップ（横長画面）のみで適用
  */
-function scaleToHeight() {
+function applyZoom() {
     const wrapper = document.getElementById('scale-wrapper');
     if (!wrapper) return;
 
-    const designHeight = 739; // px
-    const windowHeight = window.innerHeight;
-    // 縦基準のスケール係数
-    let scale = windowHeight / designHeight;
-
-    // 横幅が足りない場合は横幅基準で縮小（あくまで最大でフィットさせるため）
-    const designWidth = 980;
-    const windowWidth = window.innerWidth;
-    const widthScale = windowWidth / designWidth;
-
-    // 縦基準を優先するが、横が足りない場合は横基準を使って縮小
-    if (widthScale < scale) {
-        scale = widthScale;
+    // モバイル（縦長）ではズーム無効化
+    const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+    
+    if (!isLandscape || !isDesktop) {
+        wrapper.style.transform = ''; // スケールをリセット
+        return;
     }
 
-    // 最小縮小率を設定（過度の拡大を防ぐ）
-    const maxScale = 1.2; // optional: allow slight upscale
-    if (scale > maxScale) scale = maxScale;
+    const designWidth = 980;
+    const designHeight = 739;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
 
+    // ウィンドウサイズに対するスケール係数を計算（縦横比を保持）
+    const scaleX = windowWidth / designWidth;
+    const scaleY = windowHeight / designHeight;
+    
+    // 小さい方のスケールを採用（はみ出さないように）
+    const scale = Math.min(scaleX, scaleY);
+
+    // transform でズーム適用（中央基準で既に配置済み）
     wrapper.style.transform = `scale(${scale})`;
 }
