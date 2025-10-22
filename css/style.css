@@ -536,13 +536,13 @@ iPhone横向き対応
         text-orientation: mixed;
     }
     #app{
-      flex-direction: row;
-      gap: 0;
-      padding: 20px;
       transform: scale(0.8);
       transform-origin: top center;
       margin: 0 auto;
       width: 90vw;
       height: 90vh;
+      flex-direction: row;
+      gap: 0;
+      padding: 20px;
       box-sizing: border-box;}
     }
