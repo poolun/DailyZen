@@ -144,12 +144,9 @@ body::before {
 }
 
 #sekki-block {
-    /* 末尾（ボトムに揃う行） */
+    /* デフォルトの配置（上から始まる行） */
     flex-grow: 0; /* 必要なスペース以上は伸びない */
-    margin-top: auto; /* #date-block の後に自動マージンを設定し、可能な限り下端に押しやる */
-    /* または align-self: flex-end; を使用する方法も考えられますが、
-       flex-direction: column; で縦書きの場合、
-       justify-content: flex-start; の状態で下端に持っていくには margin: auto; が効果的です。*/
+    align-self: flex-start; /* 縦書きの上端に揃える */
 }
 
 /* 子要素内の <p> 要素の設定 */
