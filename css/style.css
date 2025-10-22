@@ -113,48 +113,32 @@ body::before {
         font-size:1.35rem;
         letter-spacing: 0rem;
       }
-   #info-container {
-    /* 親要素をフレックスコンテナにし、縦書き（右から左）を指定 */
-    display: flex;
-    writing-mode: vertical-rl;
-    
-    /* 縦書きの時に子要素を上から下へ（つまり、通常の横書きの左から右に相当）並べる */
-    flex-direction: column; 
-    
-    /* 子要素を縦方向に配置する際、
-       #date-block p は先頭（この場合、縦書きの上）から、
-       #sekki-block p は末尾（この場合、縦書きの下）に揃えるために、
-       justify-content: space-between; が適していますが、
-       特定の子要素を個別に上下に揃えるには flex-start と flex-end を使用します。
-       ここでは、flex-startに設定し、子要素側で調整します。*/
-    justify-content: flex-start; /* 縦方向の開始位置から配置 */
-    
-    /* 横書きにおける align-items の役割。
-       この縦書き（vertical-rl + flex-direction: column）の構成では、
-       子要素内のテキストの並び（横方向）には影響しますが、
-       このプロパティで個別に上下端に配置する設定は行いません。*/
-    /* align-items: stretch; または flex-start; など */
+#info-container {
+    /* 主軸（縦方向）の開始位置（上端）から子要素を配置するよう明示的に指定 */
+    justify-content: flex-start; 
 }
 
-/* 子要素 #date-block と #sekki-block の設定 */
-#date-block {
-    /* デフォルトの配置（上から始まる行） */
-    flex-grow: 0; /* 必要なスペース以上は伸びない */
-    align-self: flex-start; /* 縦書きの上端に揃える */
-}
-
+/* #date-block と #sekki-block の両方を上揃えにする */
+#date-block,
 #sekki-block {
-    /* デフォルトの配置（上から始まる行） */
-    flex-grow: 0; /* 必要なスペース以上は伸びない */
-    align-self: flex-start; /* 縦書きの上端に揃える */
+    /*
+     * 個別にflex-startを設定し、上揃えを確実にする。
+     * 親要素の justify-content と合わせて、上端に配置される。
+     */
+    align-self: flex-start; 
+    
+    /*
+     * 前回の下揃えに使用した可能性のある margin: auto; 
+     * やその他の予期せぬマージンをリセットし、連続して配置されるようにする
+     */
+    margin: 0; 
+    padding: 0;
 }
 
-/* 子要素内の <p> 要素の設定 */
 #date-block p,
 #sekki-block p {
-    white-space: nowrap; /* 文章改行なし */
-    /* 必要に応じて、このp要素内のテキストも縦書きにする場合は writing-mode: vertical-rl; を追加 */
-    writing-mode: vertical-rl; 
+    /* 前回の要望通り、文章の改行なしを維持 */
+    white-space: nowrap; 
 }
 }
 /* ================================================================ */
