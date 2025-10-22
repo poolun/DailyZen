@@ -24,7 +24,7 @@ body {
 
 /* スケーリングラッパーの基準サイズ（デザイン基準: W980 x H739 固定） */
 /* デスクトップ（横長画面）のみで固定サイズとズーム適用 */
-@media (orientation: landscape) and (min-width: 768px) {
+@media (orientation: landscape) {
     #scale-wrapper {
         width: 980px;
         height: 739px;
@@ -273,8 +273,7 @@ body::before {
 /* ================================================================
    PC版（横長画面） - 横3段レイアウト
    ================================================================ */
-@media (orientation: landscape) and (min-width: 768px) {
-/* @media (min-width: 600px) and (orientation: landscape) { */
+@media (orientation: landscape) {
     #app {
         flex-direction: row;
         /* 親要素（#scale-wrapper）の高さを使う */
@@ -386,10 +385,13 @@ body::before {
 }
 
 /* デスクトップ幅では body のスクロールを抑制し、コンテナ内部で必要に応じてスクロールできるようにする */
-@media (min-width: 768px) and (orientation: landscape) {
+@media (orientation: landscape) {
     html, body {
         height: 100%;
         overflow: hidden; /* ページ全体のスクロールバーを出さない */
+        display: flex;
+        justify-content: center; /* 横方向中央配置 */
+        align-items: flex-start; /* 上寄せ */
     }
 
     /* デスクトップでの高さ固定とスクロールバー非表示設定 */
@@ -409,6 +411,13 @@ body::before {
         scrollbar-width: none; /* Firefox */
     }
     #info-container::-webkit-scrollbar { display: none; } /* WebKit */
+}
+
+/* スマホ横長表示の時、説明エリアの高さを90vhに */
+@media (orientation: landscape) and (max-width: 900px) {
+    #meaning-container {
+        height: 90vh !important;
+    }
 }
 
 /* ================================================================
