@@ -423,6 +423,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     await renderDailyZen();
     document.getElementById('app').classList.add('fonts-loaded');
     setupModal();
+    // 初回スケーリング適用
+    scaleToHeight();
     // Appleデバイスごとに分岐
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
         debugSimulateKakejikuClick();
@@ -513,4 +515,36 @@ window.addEventListener('resize', () => {
     } else {
         renderDailyZen();
     }
+    // スケーリングを再計算
+    scaleToHeight();
 });
+
+/**
+ * ウィンドウ高さを基準に縦方向で全体をスケールする
+ * デザイン基準は H = 739px
+ */
+function scaleToHeight() {
+    const wrapper = document.getElementById('scale-wrapper');
+    if (!wrapper) return;
+
+    const designHeight = 739; // px
+    const windowHeight = window.innerHeight;
+    // 縦基準のスケール係数
+    let scale = windowHeight / designHeight;
+
+    // 横幅が足りない場合は横幅基準で縮小（あくまで最大でフィットさせるため）
+    const designWidth = 980;
+    const windowWidth = window.innerWidth;
+    const widthScale = windowWidth / designWidth;
+
+    // 縦基準を優先するが、横が足りない場合は横基準を使って縮小
+    if (widthScale < scale) {
+        scale = widthScale;
+    }
+
+    // 最小縮小率を設定（過度の拡大を防ぐ）
+    const maxScale = 1.2; // optional: allow slight upscale
+    if (scale > maxScale) scale = maxScale;
+
+    wrapper.style.transform = `scale(${scale})`;
+}
