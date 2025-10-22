@@ -454,9 +454,6 @@ iPhone横向き対応
 /* -------------------------------------------------------- */
 /* @media (orientation: landscape) and (max-height: 450px) { */
 @media screen and (orientation: landscape) and (min-aspect-ratio: 4/3) {
-    #info-container * {font-size:1.35rem;}
-    #meaning-container * {font-size:1.35rem;}
-
     /* 日付情報コンテナ (右側) - 縦書きレイアウト */
     #info-container {
         order: 3;
@@ -504,8 +501,8 @@ iPhone横向き対応
     /* 日付・節気ブロック内のテキストスタイル */
     #date-block p {
         margin: 0;
-        line-height: 1.5;
-        font-size: 1.4rem;
+        line-height: 1.25;
+        font-size: 1.35rem;
         font-weight: bold;
         text-align: start;
         vertical-align: top;
@@ -516,14 +513,15 @@ iPhone横向き対応
 
    #sekki-block p {
         margin: 0;
-        line-height: 1.5;
-        font-size: 1.4rem;
+        line-height: 1.25;
+        font-size: 1.35rem;
         font-weight: bold;
         text-align: start;
         vertical-align: top;
         font-family: var(--meaning-font);
         letter-spacing: 0.35rem;
         white-space: nowrap;
+        bottom:auto;
     }
 
     /* 掛け軸コンテナ (中央) */
