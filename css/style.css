@@ -454,6 +454,9 @@ iPhone横向き対応
 /* -------------------------------------------------------- */
 @media (orientation: landscape) and (max-height: 450px) {
 
+    #info-container * {font-size:1.35rem;}
+    #meaning-container * {font-size:1.35rem;}
+
     /* 日付情報コンテナ (右側) - 縦書きレイアウト */
     #info-container {
         order: 3;
@@ -467,7 +470,7 @@ iPhone横向き対応
         align-items: flex-start;
         gap: 0.17em;
     }
-    
+
     /* 表示順序（右から：年月日, 節気）*/
     #date-block {
         order: 2;
