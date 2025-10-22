@@ -10,7 +10,7 @@
     --meaning-font: 'Hiragino Mincho Pro W6','Noto Serif JP', 'Kosugi Maru', serif;
     --zen-color: #004073; /* 禅語の色 */
     --meaning-color: #666666; /* 説明文の色 */
-    --meaning-font-size: 2rem;
+    --meaning-font-size: 1.75rem;
 }
 
 body {
@@ -22,21 +22,24 @@ body {
     min-height: 100vh;
 }
 
-/* スケーリングラッパーの基準サイズ（デザイン基準: W980 x H739） */
-#scale-wrapper {
-    width: 980px;
-    height: 739px;
-    margin: 0 auto; /* 横中央 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform-origin: top center; /* 縦基準でスケール */
-}
-
-/* 基礎レイアウト (#app) はラッパー内でそのまま表示される */
-#app {
-    width: 980px;
-    height: 739px;
+/* スケーリングラッパーの基準サイズ（デザイン基準: W980 x H739 固定） */
+/* デスクトップ（横長画面）のみで固定サイズとズーム適用 */
+@media (orientation: landscape) and (min-width: 768px) {
+    #scale-wrapper {
+        width: 980px;
+        height: 739px;
+        margin: 0 auto; /* 横中央 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform-origin: top center; /* 縦基準でスケール */
+    }
+    
+    /* 基礎レイアウト (#app) はラッパー内で固定サイズ */
+    #app {
+        width: 980px;
+        height: 739px;
+    }
 }
 
 /* グローバルにボックスサイズを border-box に統一（高さ計算を安定させるため） */
@@ -78,6 +81,8 @@ body::before {
     -webkit-align-items: center;
     align-items: center;
     padding: 1.65rem 0 0 0;
+    /* #kakejiku-container に対して最大54%の高さに制限 */
+    max-height: 54%;
 }
 
 #zengo {
@@ -127,7 +132,7 @@ body::before {
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    min-height: 100vh;
+    min-height: 100vh; /* モバイル用：画面全体に表示 */
     padding: 1rem;
 }
 
@@ -186,8 +191,7 @@ body::before {
 #kakejiku-base {
     position: absolute;
     width: auto;
-    /* コンテナの高さに合わせる（親を100%にする修正と合わせる） */
-    height: 100%;
+    height: 100vh; /* モバイル用に戻す */
     object-fit: contain;
 }
 
@@ -199,7 +203,7 @@ body::before {
 #meaning-paper {
     font-size: 1.35rem;
     background: var(--white);
-    box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4);
+    box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4); /* ドロップシャドウ復活 */
     height: 100%;
     width: auto;
     padding: 1em;
@@ -269,11 +273,11 @@ body::before {
 /* ================================================================
    PC版（横長画面） - 横3段レイアウト
    ================================================================ */
-@media (orientation: landscape) {
+@media (orientation: landscape) and (min-width: 768px) {
 /* @media (min-width: 600px) and (orientation: landscape) { */
     #app {
         flex-direction: row;
-        /* 親要素（html/body）を100%にし、#app は親高さを使う。padding を含めて高さ計算するため box-sizing は global で設定済み */
+        /* 親要素（#scale-wrapper）の高さを使う */
         height: 100%;
         /* max-width: 1122px; */
         margin: 0 auto;
@@ -356,6 +360,10 @@ body::before {
         /* 説明は縦書きで高さを制限するが、親の高さ内に収まるようにする */
         max-height: 100%;
         align-self: center;
+        /* WebKit（Safari）対策：初期表示で幅が1文字分になる不具合を修正 */
+        min-width: 0;
+        -webkit-flex-shrink: 1;
+        flex-shrink: 1;
     }
     
     #meaning-paper {
@@ -363,20 +371,25 @@ body::before {
         font-size: var(--meaning-font-size);
         text-align: left;
         writing-mode: vertical-rl;
+        -webkit-writing-mode: vertical-rl; /* WebKit対応 */
         text-orientation: mixed;
+        -webkit-text-orientation: mixed; /* WebKit対応 */
+        /* WebKit（Safari）対策：縦書き時の幅計算を強制 */
+        width: auto;
+        min-width: fit-content;
+        -webkit-min-width: -webkit-fit-content;
+        /* 背景とシャドウ */
+        background: var(--white);
+        box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4);
+        padding: 1em;
     }
 }
 
 /* デスクトップ幅では body のスクロールを抑制し、コンテナ内部で必要に応じてスクロールできるようにする */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (orientation: landscape) {
     html, body {
         height: 100%;
         overflow: hidden; /* ページ全体のスクロールバーを出さない */
-    }
-
-    /* 必要なら内部でスクロール可能にする（例：意味表示など） */
-    #meaning-container, #info-container {
-        overflow: auto;
     }
 
     /* デスクトップでの高さ固定とスクロールバー非表示設定 */
@@ -385,6 +398,7 @@ body::before {
         overflow: auto;
         -ms-overflow-style: none; /* IE/Edge */
         scrollbar-width: none; /* Firefox */
+        padding: 0.5rem; /* シャドウ用のスペース確保 */
     }
     #meaning-container::-webkit-scrollbar { display: none; } /* WebKit */
 
@@ -450,7 +464,7 @@ body::before {
 
 /* モーダル内のテキスト */
 .modal-text {
-    font-size: 2rem;
+    font-size: 1.35rem;
     line-height: 2;
     font-family: var(--meaning-font);
     color: var(--meaning-color);
