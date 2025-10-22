@@ -95,10 +95,10 @@ iPhone横向き対応
 /* @media (orientation: landscape) and (max-height: 450px) and (min-aspect-ratio: 4/3){ */
 /* @media screen and (orientation: landscape) and (min-aspect-ratio: 4/3) { */
       #app{
-      transform: scale(0.7);
+      transform: scale(0.5);
       transform-origin: top center;
-      width: 100vw;
-      height: 100vh;
+      /* width: 100vw;
+      height: 100vh; */
       flex-direction: row;
       gap: 0;
       padding: 20px;
