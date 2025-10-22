@@ -527,7 +527,7 @@ body::before {
         animation: pulse 2s infinite;
     }
 }
-
+/*正常表示用のアニメ*/
 @keyframes pulse {
     0%, 100% { opacity: 0.7; }
     50% { opacity: 1; }
