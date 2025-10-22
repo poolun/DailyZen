@@ -479,14 +479,14 @@ body::before {
 
 /*20251020*/
 /* bodyにis-overflowingが付与されたとき、#appコンテナ全体を縮小 */
-@media screen and (orientation: landscape) and (min-aspect-ratio: 4/3) {
+@media screen and (orientation: landscape) and (min-aspect-ratio: 16/9) {
    #app{
-transform: scale(0.85);
-    transform-origin: top center;
-    margin: 0 auto;
-    width: 100vw;
-    height: 100vh;
-    box-sizing: border-box;
+        transform: scale(0.75);
+        transform-origin: top center;
+        margin: 0 auto;
+        width: 100vw;
+        height: 100vh;
+        box-sizing: border-box;
    }
    #meaning-container {
         height: 12rem;
