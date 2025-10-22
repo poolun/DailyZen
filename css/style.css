@@ -501,3 +501,10 @@ transform: scale(0.85);
       line-height:1.5;
     }
 }
+
+/* 画面のアスペクト比が4:3以上の場合に適用 */
+@media screen and (orientation: landscape) and (min-aspect-ratio: 16/10) {
+  #app{
+    height: 70vh;
+  }
+}
