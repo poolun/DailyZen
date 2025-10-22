@@ -540,7 +540,7 @@ window.addEventListener('resize', () => {
 
 /**
  * W980×H739 の固定デザインをウィンドウサイズに合わせてズームイン・ズームアウト
- * デスクトップ（横長画面）のみで適用
+ * 横長画面（landscape）のみで適用
  */
 function applyZoom() {
     const wrapper = document.getElementById('scale-wrapper');
@@ -548,9 +548,8 @@ function applyZoom() {
 
     // モバイル（縦長）ではズーム無効化
     const isLandscape = window.matchMedia("(orientation: landscape)").matches;
-    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
     
-    if (!isLandscape || !isDesktop) {
+    if (!isLandscape) {
         wrapper.style.transform = ''; // スケールをリセット
         return;
     }
