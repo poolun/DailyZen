@@ -535,7 +535,7 @@ iPhone横向き対応
         writing-mode: vertical-rl;
         text-orientation: mixed;
     }
-    #app{
+    /* #app{
       transform: scale(0.7);
       transform-origin: top center;
       width: 80vw;
@@ -544,5 +544,5 @@ iPhone横向き対応
       gap: 0;
       padding: 20px;
       box-sizing: border-box;
-    }
+    } */
 }
