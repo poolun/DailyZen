@@ -69,7 +69,6 @@ body::before {
 #reading {
     font-family: var(--meaning-font);
     font-size: 1.6rem;
-    line-height: 1.15;
     color: #666666;
     margin: 0;
     padding: 0;
@@ -86,8 +85,8 @@ body::before {
 
 #meaning {
     color: var(--meaning-color);
-    /* margin: 0;
-    padding: 0; */
+    margin: 0;
+    padding: 0;
 }
 
 /* ================================================================
@@ -120,13 +119,12 @@ body::before {
     padding: 0;
 }
 
-#info-container div p{
-  font-size: 1.25rem;
+#info-container p{
+  font-size: 1.4rem;
   font-weight: bold;
   letter-spacing: 0.175em;
   margin:0;
-  padding:0;
-}
+  padding:0;}
 
 /* 年月日ブロック（横書き）*/
 #info-container #date-block{
