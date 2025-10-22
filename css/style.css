@@ -91,8 +91,8 @@ body::before {
 /* -------------------------------------------------------- */
 iPhone横向き対応
 /* -------------------------------------------------------- */
-/* @media (orientation: landscape) and (max-height: 450px) { */
-@media (orientation: landscape) and (max-height: 450px) and (min-aspect-ratio: 4/3){
+@media (orientation: landscape) and (max-height: 450px) {
+/* @media (orientation: landscape) and (max-height: 450px) and (min-aspect-ratio: 4/3){ */
 /* @media screen and (orientation: landscape) and (min-aspect-ratio: 4/3) { */
       #app{
       transform: scale(0.7);
