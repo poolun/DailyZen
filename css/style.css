@@ -95,7 +95,7 @@ body::before {
     padding: 0;
 }
 /* ================================================================ */
-/* 画面のアスペクト比が4:3以上の場合に適用 */
+/* iPhone横置きの場合に適用 */
 @media (orientation: landscape) and (max-height: 450px) {
    #app {
        /* 縮小比率を調整し、画面に収まるようにスケールダウン */
@@ -108,6 +108,13 @@ body::before {
        width: 100vw;
        height: 100vh;
    }
+    #info-container div p{
+        font-size:1.35rem;
+        font-style:bold;
+        text-align: start;
+        vertical-align: top;
+        letter-spacing: 0rem;
+      }
 }
 /* ================================================================ */
 /* ================================================================
