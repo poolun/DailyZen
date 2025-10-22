@@ -96,7 +96,7 @@ body::before {
 }
 /* ================================================================ */
 /* iPhone横置きの場合に適用 */
-@media (orientation: landscape) and (max-height: 450px) {
+@media screen and (orientation: landscape) and (min-aspect-ratio: 4/3) {
    #app {
        /* 縮小比率を調整し、画面に収まるようにスケールダウン */
        transform: scale(0.5); /* 縮小率を調整してください */
@@ -110,9 +110,6 @@ body::before {
    }
     #info-container div p{
         font-size:1.35rem;
-        font-style:bold;
-        text-align: start;
-        vertical-align: top;
         letter-spacing: 0rem;
       }
 }
