@@ -1,5 +1,6 @@
-/* ===============================================================
-   共通設定 - CSS変数・基本スタイル・全画面共通要素============================================================ */
+/* ================================================================
+   共通設定 - CSS変数・基本スタイル・全画面共通要素
+   ================================================================ */
 
 :root {
     --bg-color: #f0efef;
@@ -36,6 +37,12 @@ body::before {
     opacity: 0.8;
     z-index: -1;
 }
+
+/* .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    padding: 0;
+} */
 
 /* 禅語と読みを内包するコンテナ */
 #zen-word-display {
@@ -79,7 +86,6 @@ body::before {
     -webkit-writing-mode: vertical-rl;
     text-orientation: upright;
     -webkit-text-orientation: upright;
-    margin: 0;
     padding: 0;
 }
 
@@ -88,111 +94,7 @@ body::before {
     margin: 0;
     padding: 0;
 }
-/* -------------------------------------------------------- */
-iPhone横向き対応
-/* -------------------------------------------------------- */
-@media (orientation: landscape) and (max-height: 450px) {
-/* @media (orientation: landscape) and (max-height: 450px) and (min-aspect-ratio: 4/3){ */
-/* @media screen and (orientation: landscape) and (min-aspect-ratio: 4/3) { */
-      #app{
-      transform: scale(0.5);
-      transform-origin: top center;
-      /* width: 100vw;
-      height: 100vh; */
-      flex-direction: row;
-      gap: 0;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-    /* 日付情報コンテナ (右側) - 縦書きレイアウト */
-    #info-container {
-        order: 3;
-        width: 5rem;
-        height: 90vh;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: 0.17em;
-    }
 
-    /* 表示順序（右から：年月日, 節気）*/
-    #date-block {
-        order: 2;
-        flex-shrink: 0;
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        height: 100%;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-    }
-
-    #sekki-block {
-        order: 1;
-        display: flex;
-        flex-shrink: 0;
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        height: 100%;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-shrink: 0;
-        position: relative;
-    }
-
-    /* 日付・節気ブロック内のテキストスタイル */
-    #date-block p {
-        margin: 0;
-        line-height: 1.25;
-        font-size: 1.35rem;
-        font-weight: bold;
-        text-align: start;
-        vertical-align: top;
-        font-family: var(--meaning-font);
-        letter-spacing: 0.35rem;
-        white-space: nowrap;
-    }
-
-   #sekki-block p {
-        margin: 0;
-        line-height: 1.25;
-        font-size: 1.35rem;
-        font-weight: bold;
-        text-align: start;
-        vertical-align: top;
-        font-family: var(--meaning-font);
-        letter-spacing: 0.35rem;
-        white-space: nowrap;
-        bottom:auto;
-    }
-
-    /* 掛け軸コンテナ (中央) */
-    #kakejiku-container {
-        order: 2;
-        height: 100vh;
-        /* background-size: 380px 1000px; */
-    }
-
-    /* 解説コンテナ (左側) */
-    #meaning-container {
-        order: 1;
-        height: 60vh;
-        align-self: center;
-    }
-    
-    #meaning-paper {
-        line-height: 1.35;
-        font-size: var(--meaning-font-size);
-        text-align: left;
-        writing-mode: vertical-rl;
-        text-orientation: mixed;
-        padding:0.5rem;
-    }
-}
 /* ================================================================
    モバイル版（デフォルト） - 縦3段レイアウト
    ================================================================ */
@@ -357,7 +259,7 @@ iPhone横向き対応
     /* 日付情報コンテナ (右側) - 縦書きレイアウト */
     #info-container {
         order: 3;
-        width: 5rem;
+        width: 180px;
         height: 90vh;
         padding: 0;
         margin: 0;
@@ -382,19 +284,17 @@ iPhone横向き対応
 
     #sekki-block {
         order: 1;
-        display: flex;
         flex-shrink: 0;
         writing-mode: vertical-rl;
         text-orientation: upright;
         height: 100%;
         position: relative;
-
     }
 
     /* 日付・節気ブロック内のテキストスタイル */
     #date-block p {
         margin: 0;
-        /* line-height: 1.5; */
+        line-height: 1.5;
         font-size: 2.0rem;
         font-weight: bold;
         text-align: start;
@@ -405,7 +305,7 @@ iPhone横向き対応
 
    #sekki-block p {
         margin: 0;
-        /* line-height: 1.5; */
+        line-height: 1.5;
         font-size: 2.0rem;
         font-weight: bold;
         text-align: start;
