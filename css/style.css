@@ -22,6 +22,28 @@ body {
     min-height: 100vh;
 }
 
+/* スケーリングラッパーの基準サイズ（デザイン基準: W980 x H739） */
+#scale-wrapper {
+    width: 980px;
+    height: 739px;
+    margin: 0 auto; /* 横中央 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: top center; /* 縦基準でスケール */
+}
+
+/* 基礎レイアウト (#app) はラッパー内でそのまま表示される */
+#app {
+    width: 980px;
+    height: 739px;
+}
+
+/* グローバルにボックスサイズを border-box に統一（高さ計算を安定させるため） */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 /* 背景画像の設定 */
 body::before {
     content: '';
@@ -164,12 +186,14 @@ body::before {
 #kakejiku-base {
     position: absolute;
     width: auto;
-    height: 100vh;
+    /* コンテナの高さに合わせる（親を100%にする修正と合わせる） */
+    height: 100%;
     object-fit: contain;
 }
 
 /* 説明文エリア */
 #meaning-container {
+    display: block; /* デフォルト表示を明示（空のルールセットを避けるため） */
 }
 
 #meaning-paper {
@@ -249,7 +273,8 @@ body::before {
 /* @media (min-width: 600px) and (orientation: landscape) { */
     #app {
         flex-direction: row;
-        min-height: 100vh;
+        /* 親要素（html/body）を100%にし、#app は親高さを使う。padding を含めて高さ計算するため box-sizing は global で設定済み */
+        height: 100%;
         /* max-width: 1122px; */
         margin: 0 auto;
         gap: 0;
@@ -260,7 +285,8 @@ body::before {
     #info-container {
         order: 3;
         width: 180px;
-        height: 90vh;
+        /* 親の高さに合わせて収める（余白によるオーバーフローを防ぐ） */
+        height: 100%;
         padding: 0;
         margin: 0;
         display: flex;
@@ -319,14 +345,16 @@ body::before {
     /* 掛け軸コンテナ (中央) */
     #kakejiku-container {
         order: 2;
-        height: 100vh;
+        /* 親の高さにぴったり収める（padding を含めて計算される） */
+        height: 100%;
         /* background-size: 380px 1000px; */
     }
 
     /* 解説コンテナ (左側) */
     #meaning-container {
         order: 1;
-        height: 60vh;
+        /* 説明は縦書きで高さを制限するが、親の高さ内に収まるようにする */
+        max-height: 100%;
         align-self: center;
     }
     
@@ -337,6 +365,36 @@ body::before {
         writing-mode: vertical-rl;
         text-orientation: mixed;
     }
+}
+
+/* デスクトップ幅では body のスクロールを抑制し、コンテナ内部で必要に応じてスクロールできるようにする */
+@media (min-width: 768px) {
+    html, body {
+        height: 100%;
+        overflow: hidden; /* ページ全体のスクロールバーを出さない */
+    }
+
+    /* 必要なら内部でスクロール可能にする（例：意味表示など） */
+    #meaning-container, #info-container {
+        overflow: auto;
+    }
+
+    /* デスクトップでの高さ固定とスクロールバー非表示設定 */
+    #meaning-container {
+        height: 50vh; /* ユーザー指定：意味エリアを50vhに固定 */
+        overflow: auto;
+        -ms-overflow-style: none; /* IE/Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    #meaning-container::-webkit-scrollbar { display: none; } /* WebKit */
+
+    #info-container {
+        height: 80vh; /* ユーザー指定：情報エリアを80vhに固定 */
+        overflow: auto;
+        -ms-overflow-style: none; /* IE/Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    #info-container::-webkit-scrollbar { display: none; } /* WebKit */
 }
 
 /* ================================================================
