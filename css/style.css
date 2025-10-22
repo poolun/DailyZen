@@ -254,7 +254,7 @@ body::before {
     /* 日付情報コンテナ (右側) - 縦書きレイアウト */
     #info-container {
         order: 3;
-        width: auto;
+        width: 5rem;
         height: 90vh;
         padding: 0;
         margin: 0;
@@ -449,35 +449,102 @@ body::before {
     50% { opacity: 1; }
 }
 
-/* -------------------------------------------------------------- */
-
-
+/* -------------------------------------------------------- */
+iPhone横向き対応
+/* -------------------------------------------------------- */
 @media (orientation: landscape) and (max-height: 450px) {
-  #app{
-    transform: scale(0.75);
-    transform-origin: top center;
-    margin: 0 auto;
-    width: 100vw;
-    height: 100vh;
-    box-sizing: border-box;
 
-
-  #info-container div p{
-    font-size:1.35rem;
-    letter-spacing: 0rem;
-  }
-  #meaning-container {
-    height: 12rem;
-    width: auto;
-    margin:auto;
-  }
-  #meaning-container #meaning-paper{
-    padding:0.5rem;
-  }
-
-  #meaning-container * p{
-    font-size:1.35rem;
-    line-height:1.5;
-  }
+    /* 日付情報コンテナ (右側) - 縦書きレイアウト */
+    #info-container {
+        order: 3;
+        width: 5rem;
+        height: 90vh;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0.17em;
     }
-}
+    
+    /* 表示順序（右から：年月日, 節気）*/
+    #date-block {
+        order: 2;
+        flex-shrink: 0;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    #sekki-block {
+        order: 1;
+        display: flex;
+        flex-shrink: 0;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        height: 100%;
+        position: relative;
+
+    }
+
+    /* 日付・節気ブロック内のテキストスタイル */
+    #date-block p {
+        margin: 0;
+        /* line-height: 1.5; */
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-align: start;
+        vertical-align: top;
+        font-family: var(--meaning-font);
+        letter-spacing: 0.35rem;
+    }
+
+   #sekki-block p {
+        margin: 0;
+        /* line-height: 1.5; */
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-align: start;
+        vertical-align: top;
+        font-family: var(--meaning-font);
+        letter-spacing: 0.35rem;
+    }
+
+    /* 掛け軸コンテナ (中央) */
+    #kakejiku-container {
+        order: 2;
+        height: 100vh;
+        /* background-size: 380px 1000px; */
+    }
+
+    /* 解説コンテナ (左側) */
+    #meaning-container {
+        order: 1;
+        height: 60vh;
+        align-self: center;
+    }
+    
+    #meaning-paper {
+        line-height: 2.0;
+        font-size: var(--meaning-font-size);
+        text-align: left;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+    #app{
+      flex-direction: row;
+      min-height: 100vh;
+      margin: 0 auto;
+      gap: 0;
+      padding: 20px;
+      transform: scale(0.75);
+      transform-origin: top center;
+      margin: 0 auto;
+      width: 100vw;
+      height: 100vh;
+      box-sizing: border-box;}
+    }
