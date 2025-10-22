@@ -118,28 +118,10 @@ body::before {
     
     /* 縦書きのレイアウト修正 */
     #info-container {
-        display: flex;
-        writing-mode: vertical-rl; 
-        flex-direction: column; /* 縦書き（vertical-rl）で主軸を右→左（列の並び）にする */
-        
-        /* 1. 順番の修正: 主軸（右→左）の開始位置に要素を詰める */
-        justify-content: flex-start; 
-        
-        /* 2. 上揃えの修正: 交差軸（上→下）の開始位置に要素を揃える */
-        align-items: flex-start; 
     }
 
     #date-block,
     #sekki-block {
-        /* 意図しないマージンや配置をリセット */
-        margin: 0; 
-        padding: 0;
-        
-        /* #date-block pと#sekki-block pが2行に並ぶために、div自体は改行（列を形成）します */
-        flex-shrink: 0; /* 縮小させない */
-        
-        /* align-items: flex-start; で上揃えになるため、align-selfは不要ですが安全のために残します */
-        /* align-self: flex-start; */ 
     }
 
     #info-container div p{
