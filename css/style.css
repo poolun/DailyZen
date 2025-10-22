@@ -108,10 +108,57 @@ body::before {
        width: 100vw;
        height: 100vh;
    }
+   
     #info-container div p{
         font-size:1.35rem;
         letter-spacing: 0rem;
       }
+   #info-container {
+    /* 親要素をフレックスコンテナにし、縦書き（右から左）を指定 */
+    display: flex;
+    writing-mode: vertical-rl;
+    
+    /* 縦書きの時に子要素を上から下へ（つまり、通常の横書きの左から右に相当）並べる */
+    flex-direction: column; 
+    
+    /* 子要素を縦方向に配置する際、
+       #date-block p は先頭（この場合、縦書きの上）から、
+       #sekki-block p は末尾（この場合、縦書きの下）に揃えるために、
+       justify-content: space-between; が適していますが、
+       特定の子要素を個別に上下に揃えるには flex-start と flex-end を使用します。
+       ここでは、flex-startに設定し、子要素側で調整します。*/
+    justify-content: flex-start; /* 縦方向の開始位置から配置 */
+    
+    /* 横書きにおける align-items の役割。
+       この縦書き（vertical-rl + flex-direction: column）の構成では、
+       子要素内のテキストの並び（横方向）には影響しますが、
+       このプロパティで個別に上下端に配置する設定は行いません。*/
+    /* align-items: stretch; または flex-start; など */
+}
+
+/* 子要素 #date-block と #sekki-block の設定 */
+#date-block {
+    /* デフォルトの配置（上から始まる行） */
+    flex-grow: 0; /* 必要なスペース以上は伸びない */
+    align-self: flex-start; /* 縦書きの上端に揃える */
+}
+
+#sekki-block {
+    /* 末尾（ボトムに揃う行） */
+    flex-grow: 0; /* 必要なスペース以上は伸びない */
+    margin-top: auto; /* #date-block の後に自動マージンを設定し、可能な限り下端に押しやる */
+    /* または align-self: flex-end; を使用する方法も考えられますが、
+       flex-direction: column; で縦書きの場合、
+       justify-content: flex-start; の状態で下端に持っていくには margin: auto; が効果的です。*/
+}
+
+/* 子要素内の <p> 要素の設定 */
+#date-block p,
+#sekki-block p {
+    white-space: nowrap; /* 文章改行なし */
+    /* 必要に応じて、このp要素内のテキストも縦書きにする場合は writing-mode: vertical-rl; を追加 */
+    writing-mode: vertical-rl; 
+}
 }
 /* ================================================================ */
 /* ================================================================
