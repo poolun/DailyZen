@@ -97,49 +97,45 @@ body::before {
 /* ================================================================ */
 /* iPhone横置きの場合に適用 */
 @media screen and (orientation: landscape) and (min-aspect-ratio: 4/3) {
-   #app {
-       /* 縮小比率を調整し、画面に収まるようにスケールダウン */
-       transform: scale(0.5); /* 縮小率を調整してください */
-       transform-origin: top center; /* 縮小の基準を上端中央にする */
-       /* 縮小によって生じた余白を埋めるための調整 */
-       margin: 0 auto;
-       padding:20px;
-       box-sizing: border-box;
-       width: 100vw;
-       height: 100vh;
-   }
-   
-    #info-container div p{
-        font-size:1.35rem;
-        letter-spacing: 0rem;
-      }
-#info-container {
-    /* 主軸（縦方向）の開始位置（上端）から子要素を配置するよう明示的に指定 */
-    justify-content: flex-start; 
-}
-
-/* #date-block と #sekki-block の両方を上揃えにする */
-#date-block,
-#sekki-block {
-    /*
-     * 個別にflex-startを設定し、上揃えを確実にする。
-     * 親要素の justify-content と合わせて、上端に配置される。
-     */
-    align-self: flex-start; 
+   #app {
+       /* 縮小比率を調整し、画面に収まるようにスケールダウン */
+       transform: scale(0.5); /* 縮小率を調整してください */
+       transform-origin: top center; /* 縮小の基準を上端中央にする */
+       
+       /* ✨ 画面上端に固定し、レイアウトの流れから切り離す ✨ */
+       position: absolute; 
+       top: 0; 
+       
+       /* ✨ 高さをコンテンツのサイズに合わせることで、下に押し下がるのを防ぐ ✨ */
+       height: auto; 
+       
+       /* 不要な margin: auto を削除し、paddingなどを整理 */
+       margin: 0; 
+       padding: 20px;
+       box-sizing: border-box;
+       width: 100vw;
+   }
+   
+    /* 👇 #info-container の上揃え設定は、このままでOKです 👇 */
+    #info-container div p{
+        font-size:1.35rem;
+        letter-spacing: 0rem;
+      }
+    #info-container {
+        justify-content: flex-start; 
+    }
     
-    /*
-     * 前回の下揃えに使用した可能性のある margin: auto; 
-     * やその他の予期せぬマージンをリセットし、連続して配置されるようにする
-     */
-    margin: 0; 
-    padding: 0;
-}
-
-#date-block p,
-#sekki-block p {
-    /* 前回の要望通り、文章の改行なしを維持 */
-    white-space: nowrap; 
-}
+    #date-block,
+    #sekki-block {
+        align-self: flex-start; 
+        margin: 0; 
+        padding: 0;
+    }
+    
+    #date-block p,
+    #sekki-block p {
+        white-space: nowrap; 
+    }
 }
 /* ================================================================ */
 /* ================================================================
