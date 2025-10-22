@@ -97,44 +97,58 @@ body::before {
 /* ================================================================ */
 /* iPhone横置きの場合に適用 */
 @media screen and (orientation: landscape) and (min-aspect-ratio: 4/3) {
-   #app {
-       /* 縮小比率を調整し、画面に収まるようにスケールダウン */
-       transform: scale(0.5); /* 縮小率を調整してください */
-       transform-origin: top center; /* 縮小の基準を上端中央にする */
-       
-       /* ✨ 画面上端に固定し、レイアウトの流れから切り離す ✨ */
-       position: absolute; 
-       top: 0; 
-       
-       /* ✨ 高さをコンテンツのサイズに合わせることで、下に押し下がるのを防ぐ ✨ */
-       height: auto; 
-       
-       /* 不要な margin: auto を削除し、paddingなどを整理 */
-       margin: 0; 
-       padding: 20px;
-       box-sizing: border-box;
-       width: 100vw;
-   }
-   
-    /* 👇 #info-container の上揃え設定は、このままでOKです 👇 */
-    #info-container div p{
-        font-size:1.35rem;
-        letter-spacing: 0rem;
-      }
-    #info-container {
-        justify-content: flex-start; 
+    #app {
+        /* ✨ 画面が見切れる問題の修正 (1/3): 縮小後の要素を上端に固定する */
+        position: absolute; 
+        top: 0; 
+        
+        /* ✨ 画面が見切れる問題の修正 (2/3): 高さをコンテンツに合わせ、元の100vhを占有するのを防ぐ */
+        height: auto; 
+        
+        /* 縮小比率と基準点は維持 */
+        transform: scale(0.5); /* 縮小率を調整してください */
+        transform-origin: top center; 
+        
+        /* その他の調整 */
+        margin: 0; 
+        padding: 20px;
+        box-sizing: border-box;
+        width: 100vw;
     }
     
+    /* 縦書きのレイアウト修正 */
+    #info-container {
+        display: flex;
+        writing-mode: vertical-rl; 
+        flex-direction: column; /* 縦書き（vertical-rl）で主軸を右→左（列の並び）にする */
+        
+        /* 1. 順番の修正: 主軸（右→左）の開始位置に要素を詰める */
+        justify-content: flex-start; 
+        
+        /* 2. 上揃えの修正: 交差軸（上→下）の開始位置に要素を揃える */
+        align-items: flex-start; 
+    }
+
     #date-block,
     #sekki-block {
-        align-self: flex-start; 
-        margin: 0; 
-        padding: 0;
+        /* 意図しないマージンや配置をリセット */
+        margin: 0; 
+        padding: 0;
+        
+        /* #date-block pと#sekki-block pが2行に並ぶために、div自体は改行（列を形成）します */
+        flex-shrink: 0; /* 縮小させない */
+        
+        /* align-items: flex-start; で上揃えになるため、align-selfは不要ですが安全のために残します */
+        /* align-self: flex-start; */ 
     }
-    
-    #date-block p,
-    #sekki-block p {
-        white-space: nowrap; 
+
+    #info-container div p{
+        /* フォントサイズを維持 */
+        font-size:1.35rem;
+        letter-spacing: 0rem;
+        
+        /* 文章改行なしを維持 */
+        white-space: nowrap; 
     }
 }
 /* ================================================================ */
