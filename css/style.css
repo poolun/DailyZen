@@ -96,24 +96,10 @@ body::before {
 }
 /* ================================================================ */
 /* iPhone横置きの場合に適用 */
+/* ================================================================ */
 @media screen and (orientation: landscape) and (min-aspect-ratio: 4/3) {
     #app {
-        /* ✨ 画面が見切れる問題の修正 (1/3): 縮小後の要素を上端に固定する */
-        position: absolute; 
-        top: 0; 
-        
-        /* ✨ 画面が見切れる問題の修正 (2/3): 高さをコンテンツに合わせ、元の100vhを占有するのを防ぐ */
-        height: auto; 
-        
-        /* 縮小比率と基準点は維持 */
-        transform: scale(0.5); /* 縮小率を調整してください */
-        transform-origin: top center; 
-        
-        /* その他の調整 */
-        margin: 0; 
-        padding: 20px;
-        box-sizing: border-box;
-        width: 100vw;
+       
     }
     
     /* 縦書きのレイアウト修正 */
