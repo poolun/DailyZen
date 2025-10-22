@@ -537,14 +537,12 @@ iPhone横向き対応
     }
     #app{
       flex-direction: row;
-      min-height: 100vh;
-      margin: 0 auto;
       gap: 0;
       padding: 20px;
-      transform: scale(0.75);
+      transform: scale(0.8);
       transform-origin: top center;
       margin: 0 auto;
-      width: 100vw;
-      height: 100vh;
+      width: 90vw;
+      height: 90vh;
       box-sizing: border-box;}
     }
