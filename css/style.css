@@ -1,6 +1,5 @@
-/* ================================================================
-   共通設定 - CSS変数・基本スタイル・全画面共通要素
-   ================================================================ */
+/* ===============================================================
+   共通設定 - CSS変数・基本スタイル・全画面共通要素============================================================ */
 
 :root {
     --bg-color: #f0efef;
@@ -38,12 +37,6 @@ body::before {
     z-index: -1;
 }
 
-/* .vertical-text {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    padding: 0;
-} */
-
 /* 禅語と読みを内包するコンテナ */
 #zen-word-display {
     position: relative;
@@ -76,6 +69,7 @@ body::before {
 #reading {
     font-family: var(--meaning-font);
     font-size: 1.6rem;
+    line-height: 1.15;
     color: #666666;
     margin: 0;
     padding: 0;
@@ -86,13 +80,14 @@ body::before {
     -webkit-writing-mode: vertical-rl;
     text-orientation: upright;
     -webkit-text-orientation: upright;
+    margin: 0;
     padding: 0;
 }
 
 #meaning {
     color: var(--meaning-color);
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
 }
 
 /* ================================================================
@@ -125,12 +120,13 @@ body::before {
     padding: 0;
 }
 
-#info-container p{
-  font-size: 1.4rem;
+#info-container div p{
+  font-size: 1.25rem;
   font-weight: bold;
   letter-spacing: 0.175em;
   margin:0;
-  padding:0;}
+  padding:0;
+}
 
 /* 年月日ブロック（横書き）*/
 #info-container #date-block{
@@ -259,7 +255,7 @@ body::before {
     /* 日付情報コンテナ (右側) - 縦書きレイアウト */
     #info-container {
         order: 3;
-        width: 180px;
+        width: 5rem;
         height: 90vh;
         padding: 0;
         margin: 0;
@@ -284,17 +280,19 @@ body::before {
 
     #sekki-block {
         order: 1;
+        display: flex;
         flex-shrink: 0;
         writing-mode: vertical-rl;
         text-orientation: upright;
         height: 100%;
         position: relative;
+
     }
 
     /* 日付・節気ブロック内のテキストスタイル */
     #date-block p {
         margin: 0;
-        line-height: 1.5;
+        /* line-height: 1.5; */
         font-size: 2.0rem;
         font-weight: bold;
         text-align: start;
@@ -305,7 +303,7 @@ body::before {
 
    #sekki-block p {
         margin: 0;
-        line-height: 1.5;
+        /* line-height: 1.5; */
         font-size: 2.0rem;
         font-weight: bold;
         text-align: start;
