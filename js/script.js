@@ -488,14 +488,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             // 横向きフラグをクリア（縦→横の切り替えに備える）
             sessionStorage.removeItem('iphone_landscape_reloaded');
         }
-    }
-    
-    // Appleデバイスごとに分岐
-    if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
+    } else if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
+        // Mac Chrome対策
         forMacAppearance();
-    }
-    // Safari表示バグ対策
-    if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
+    } else if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
+        // Safari表示バグ対策（Mac Safariなど）
         forSafariAppearance();
     }
 });
