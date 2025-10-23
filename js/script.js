@@ -62,6 +62,7 @@ function forSafariAppearance() {
     const app = document.getElementById('app');
     const zenWordDisplay = document.getElementById('zen-word-display');
     const meaningContainer = document.getElementById('meaning-container');
+    const meaningPaper = document.getElementById('meaning-paper');
     
     // 1. 強制リフロー
     if (app) {
@@ -76,22 +77,42 @@ function forSafariAppearance() {
         zenWordDisplay.style.visibility = 'visible';
         zenWordDisplay.style.willChange = 'transform';
     }
-    // 説明エリアの幅不具合対策
+    // 説明エリアの幅不具合対策（より強力に）
     if (meaningContainer) {
         meaningContainer.offsetHeight;
         meaningContainer.style.visibility = 'hidden';
         meaningContainer.offsetHeight;
         meaningContainer.style.visibility = 'visible';
         meaningContainer.style.transform = 'translateZ(0)';
+        // 明示的に幅を再計算させる
+        meaningContainer.style.width = 'auto';
+        meaningContainer.offsetWidth;
+    }
+    if (meaningPaper) {
+        meaningPaper.offsetHeight;
+        meaningPaper.style.visibility = 'hidden';
+        meaningPaper.offsetHeight;
+        meaningPaper.style.visibility = 'visible';
+        meaningPaper.style.transform = 'translateZ(0)';
+        // 縦書き要素の幅を強制再計算
+        meaningPaper.style.minWidth = 'fit-content';
+        meaningPaper.offsetWidth;
     }
     
-    // 2. setTimeout/animationFrame遅延
+    // 2. setTimeout/animationFrame遅延（より長い遅延で確実に）
     setTimeout(() => {
         if (app) app.style.opacity = '0.99';
+        // 説明エリアをさらに遅延して再描画
+        if (meaningContainer) {
+            meaningContainer.style.display = 'none';
+            meaningContainer.offsetHeight;
+            meaningContainer.style.display = '';
+        }
         requestAnimationFrame(() => {
             if (app) app.style.opacity = '1';
         });
-    }, 50);
+    }, 100);
+    
     // 3. CSSアニメーションで再描画（例: 一瞬だけ色変更）
     if (app) {
         app.style.transition = 'background-color 0.2s';
@@ -444,10 +465,33 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupModal();
     // 初回ズーム適用
     applyZoom();
-    // Appleデバイスごとに分岐
+    
+    // iPhone横向き初回表示バグ対策: 一度だけリロード
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
-        debugSimulateKakejikuClick();
-    } else if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
+        const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+        if (isLandscape) {
+            // 横向きの場合、初回のみリロード
+            const hasReloaded = sessionStorage.getItem('iphone_landscape_reloaded');
+            if (!hasReloaded) {
+                // 初回表示時のみリロード
+                sessionStorage.setItem('iphone_landscape_reloaded', 'true');
+                setTimeout(() => {
+                    location.reload();
+                }, 100);
+                return; // リロード前に処理を中断
+            }
+            // リロード後はSafari対策を実行
+            forSafariAppearance();
+        } else {
+            // 縦向きの場合は従来のクリック処理
+            debugSimulateKakejikuClick();
+            // 横向きフラグをクリア（縦→横の切り替えに備える）
+            sessionStorage.removeItem('iphone_landscape_reloaded');
+        }
+    }
+    
+    // Appleデバイスごとに分岐
+    if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
         forMacAppearance();
     }
     // Safari表示バグ対策
