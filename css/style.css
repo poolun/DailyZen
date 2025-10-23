@@ -403,20 +403,17 @@ body::before {
         padding: 0.5rem; /* シャドウ用のスペース確保 */
     }
     #meaning-container::-webkit-scrollbar { display: none; } /* WebKit */
-
-    #info-container {
-        height: 80vh; /* ユーザー指定：情報エリアを80vhに固定 */
-        overflow: auto;
-        -ms-overflow-style: none; /* IE/Edge */
-        scrollbar-width: none; /* Firefox */
-    }
-    #info-container::-webkit-scrollbar { display: none; } /* WebKit */
 }
 
 /* スマホ横長表示の時、説明エリアの高さを90vhに */
 @media (orientation: landscape) and (max-width: 900px) {
     #meaning-container {
         height: 90vh !important;
+    }
+    
+    /* モーダルの高さを2.5倍に */
+    .modal-content {
+        max-height: 87.5vh !important; /* 35vh × 2.5 */
     }
 }
 
@@ -527,7 +524,7 @@ body::before {
         animation: pulse 2s infinite;
     }
 }
-/*正常表示用のアニメ*/
+
 @keyframes pulse {
     0%, 100% { opacity: 0.7; }
     50% { opacity: 1; }
