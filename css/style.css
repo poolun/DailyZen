@@ -359,10 +359,6 @@ body::before {
         /* 説明は縦書きで高さを制限するが、親の高さ内に収まるようにする */
         max-height: 100%;
         align-self: center;
-        /* WebKit（Safari）対策：初期表示で幅が1文字分になる不具合を修正 */
-        min-width: 0;
-        -webkit-flex-shrink: 1;
-        flex-shrink: 1;
     }
     
     #meaning-paper {
@@ -373,10 +369,6 @@ body::before {
         -webkit-writing-mode: vertical-rl; /* WebKit対応 */
         text-orientation: mixed;
         -webkit-text-orientation: mixed; /* WebKit対応 */
-        /* WebKit（Safari）対策：縦書き時の幅計算を強制 */
-        width: auto;
-        min-width: fit-content;
-        -webkit-min-width: -webkit-fit-content;
         /* 背景とシャドウ */
         background: var(--white);
         box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4);
