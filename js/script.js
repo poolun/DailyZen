@@ -64,7 +64,7 @@ function forSafariAppearance() {
     const meaningContainer = document.getElementById('meaning-container');
     const meaningPaper = document.getElementById('meaning-paper');
     
-    // 1. 強制リフロー
+    // 1. 強制リフロー（visibility切り替えなし）
     if (app) {
         app.offsetHeight;
         app.style.transform = 'translateZ(0)';
@@ -72,48 +72,19 @@ function forSafariAppearance() {
     }
     if (zenWordDisplay) {
         zenWordDisplay.offsetHeight;
-        zenWordDisplay.style.visibility = 'hidden';
-        zenWordDisplay.offsetHeight;
-        zenWordDisplay.style.visibility = 'visible';
         zenWordDisplay.style.willChange = 'transform';
     }
-    // 説明エリアの幅不具合対策
+    // 説明エリアは触らない（初回レンダリングが正しいため）
     if (meaningContainer) {
         meaningContainer.offsetHeight;
-        meaningContainer.style.visibility = 'hidden';
-        meaningContainer.offsetHeight;
-        meaningContainer.style.visibility = 'visible';
-        meaningContainer.style.transform = 'translateZ(0)';
     }
     if (meaningPaper) {
         meaningPaper.offsetHeight;
-        meaningPaper.style.visibility = 'hidden';
-        meaningPaper.offsetHeight;
-        meaningPaper.style.visibility = 'visible';
-        meaningPaper.style.transform = 'translateZ(0)';
     }
     
-    // 2. setTimeout/animationFrame遅延
-    setTimeout(() => {
-        if (app) app.style.opacity = '0.99';
-        requestAnimationFrame(() => {
-            if (app) app.style.opacity = '1';
-        });
-    }, 50);
-    
-    // 3. CSSアニメーションで再描画（例: 一瞬だけ色変更）
-    if (app) {
-        app.style.transition = 'background-color 0.2s';
-        app.style.backgroundColor = '#f8f8f8';
-        setTimeout(() => {
-            app.style.backgroundColor = '';
-        }, 200);
-    }
-    // 4. window.scrollTo(0,1)で一瞬スクロール
-    window.scrollTo(0, 1);
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-    }, 100);
+    // 2. setTimeout/animationFrame遅延は削除
+    // 3. CSSアニメーションも削除
+    // 4. スクロール処理も削除
 }
 
 // ページキャッシュクリア機能
