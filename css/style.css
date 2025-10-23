@@ -10,7 +10,7 @@
     --meaning-font: 'Hiragino Mincho Pro W6','Noto Serif JP', 'Kosugi Maru', serif;
     --zen-color: #004073; /* 禅語の色 */
     --meaning-color: #666666; /* 説明文の色 */
-    --meaning-font-size: 1.75rem;
+    --meaning-font-size: 1.5rem; /* 1.0rem × 2 = 2.0rem */
 }
 
 body {
@@ -26,7 +26,7 @@ body {
 /* デスクトップ（横長画面）のみで固定サイズとズーム適用 */
 @media (orientation: landscape) {
     #scale-wrapper {
-        width: 980px;
+        width: 1049px;
         height: 739px;
         margin: 0 auto; /* 横中央 */
         display: flex;
@@ -37,7 +37,7 @@ body {
     
     /* 基礎レイアウト (#app) はラッパー内で固定サイズ */
     #app {
-        width: 980px;
+        width: 1049px;
         height: 739px;
     }
 }
@@ -200,17 +200,24 @@ body::before {
 /* 説明文エリア */
 #meaning-container {
     display: block; /* デフォルト表示を明示（空のルールセットを避けるため） */
+    margin: 0;
 }
 
 #meaning-paper {
+margin: 0;
+padding:0;
+}
+
+#meaning{
+  color: var(--meaning-color);
     font-size: 1.35rem;
     background: var(--white);
     box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4); /* ドロップシャドウ復活 */
     height: 100%;
+    margin: 0;
     width: auto;
-    padding: 1em;
+    padding: 20px;
 }
-
 /* ================================================================
    モバイル版専用（縦長画面） - 年月日と節気を2行表示 + 説明文非表示
    ================================================================ */
@@ -256,6 +263,7 @@ body::before {
     padding: 0;
     letter-spacing: 0.5rem;
     font-weight: 300;
+    white-space: nowrap;
 }
 
 #reading {
@@ -281,17 +289,18 @@ body::before {
         /* 親要素（#scale-wrapper）の高さを使う */
         height: 100%;
         /* max-width: 1122px; */
-        margin: 60px auto 0; /* 上に60pxマージン、左右中央 */
-        /* 掛け軸を中央に配置 */
+        margin: 0 auto;
+        gap: 0;
+        padding: 20px;
+        /* 幅比率 30:40:30 の配分 */
         justify-content: center;
         align-items: center;
-        padding: 20px;
     }
 
     /* 日付情報コンテナ (右側) - 縦書きレイアウト */
     #info-container {
         order: 3;
-        width: 180px;
+        flex-basis: 30%; /* 30%幅 */
         /* 親の高さに合わせて収める（余白によるオーバーフローを防ぐ） */
         height: 100%;
         padding: 0;
@@ -354,24 +363,23 @@ body::before {
     /* 掛け軸コンテナ (中央) */
     #kakejiku-container {
         order: 2;
+        flex-basis: 40%; /* 40%幅 */
         /* 親の高さにぴったり収める（padding を含めて計算される） */
-        height: 100%;
-        /* 掛け軸の左右に均等なマージンを設定 */
-        margin-left: auto;
-        margin-right: auto;
-        /* background-size: 380px 1000px;*/
+        height: 100vh;
+        display: flex;
+        justify-content: center; /* 横方向中央揃え */
+        align-items: center; /* 縦方向中央揃え */
+        /* background-size: 380px 1000px; */
     }
 
     /* 解説コンテナ (左側) */
     #meaning-container {
         order: 1;
-        /* 説明は縦書きで高さを制限するが、親の高さ内に収まるようにする */
-        max-height: 100%;
+        flex-basis: 30%; /* 30%幅 */
         align-self: center;
-        /* WebKit（Safari）対策：初期表示で幅が1文字分になる不具合を修正 */
-        min-width: 0;
-        -webkit-flex-shrink: 1;
-        flex-shrink: 1;
+        display: flex;
+        justify-content: center; /* 横方向中央揃え */
+        align-items: center; /* 縦方向中央揃え */
     }
     
     #meaning-paper {
@@ -379,69 +387,42 @@ body::before {
         font-size: var(--meaning-font-size);
         text-align: left;
         writing-mode: vertical-rl;
-        -webkit-writing-mode: vertical-rl; /* WebKit対応 */
         text-orientation: mixed;
-        -webkit-text-orientation: mixed; /* WebKit対応 */
-        /* WebKit（Safari）対策：縦書き時の幅計算を強制 */
-        width: auto;
-        min-width: fit-content;
-        -webkit-min-width: -webkit-fit-content;
-        /* 背景とシャドウ */
-        background: var(--white);
-        box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4);
+        white-space: pre-wrap;
         padding: 1em;
     }
 }
 
 /* デスクトップ幅では body のスクロールを抑制し、コンテナ内部で必要に応じてスクロールできるようにする */
-@media (orientation: landscape) {
+@media (min-width: 768px) {
     html, body {
         height: 100%;
         overflow: hidden; /* ページ全体のスクロールバーを出さない */
-        display: flex;
-        justify-content: center; /* 横方向中央配置 */
-        align-items: flex-start; /* 上寄せ */
+    }
+
+    /* 必要なら内部でスクロール可能にする（例：意味表示など） */
+    #meaning-container, #info-container {
+        overflow: auto;
     }
 
     /* デスクトップでの高さ固定とスクロールバー非表示設定 */
     #meaning-container {
-        /* ⚠️ 固定値: vh単位だとズーム時にレイアウト崩れが発生するため、pxで固定 */
-        /* 計算式: 739px(デザイン高さ) × 0.5 = 370px (50vh相当) */
-        height: 370px;
-        width: 24rem; /* 文字サイズ基準で約6行分の幅 - 全文表示のため */
+        height: 60vh; /* 高さを60vhに変更 */
         overflow: auto;
         -ms-overflow-style: none; /* IE/Edge */
         scrollbar-width: none; /* Firefox */
+        /* 幅はリキッド（自動調整）にするため width 指定なし */
         padding: 0.5rem; /* シャドウ用のスペース確保 */
     }
     #meaning-container::-webkit-scrollbar { display: none; } /* WebKit */
 
     #info-container {
-        /* ⚠️ 固定値: vh単位だとズーム時にレイアウト崩れが発生するため、pxで固定 */
-        /* 計算式: 739px(デザイン高さ) × 1.0 = 739px (100%相当) */
-        height: 739px;
+        height: 80vh; /* ユーザー指定：情報エリアを80vhに固定 */
         overflow: auto;
         -ms-overflow-style: none; /* IE/Edge */
         scrollbar-width: none; /* Firefox */
     }
     #info-container::-webkit-scrollbar { display: none; } /* WebKit */
-}
-
-/* スマホ横長表示の時、説明エリアのサイズを調整 */
-@media (orientation: landscape) and (max-width: 900px) {
-    #meaning-container {
-        /* ⚠️ 固定値: vh単位だとズーム時にレイアウト崩れが発生するため、pxで固定 */
-        /* 計算式: 739px(デザイン高さ) × 0.8 = 591px (80vh相当) */
-        height: 591px !important;
-        width: 24rem !important; /* 文字サイズ基準で約6行分の幅 - 全文表示のため */
-    }
-    
-    /* モーダルの高さを2.5倍に */
-    .modal-content {
-        /* ⚠️ 固定値: vh単位だとズーム時にレイアウト崩れが発生するため、pxで固定 */
-        /* 計算式: 739px(デザイン高さ) × 0.875 = 647px (87.5vh相当) */
-        max-height: 647px !important;
-    }
 }
 
 /* ================================================================
@@ -497,13 +478,14 @@ body::before {
 
 /* モーダル内のテキスト */
 .modal-text {
-    font-size: 1.35rem;
-    line-height: 2;
+    font-size: 1.15rem;
+    line-height: 1.75;
     font-family: var(--meaning-font);
     color: var(--meaning-color);
     writing-mode: vertical-rl;
-    text-orientation: upright;
+    text-orientation: mixed; /* upright → mixed に変更（半角英数字を横向きに）*/
     align-self: flex-end; /* 親の右端に揃える */
+    white-space: pre-wrap; /* 改行を有効にする */
 }
 
 /* 閉じるボタン */
