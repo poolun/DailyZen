@@ -298,10 +298,21 @@ async function renderDailyZen() {
         readingEl.textContent = zenWord.reading;
         document.getElementById('zengo').textContent = zenWord.zengo;
         document.getElementById('meaning').textContent = zenWord.meaning;
+        
+        console.log('📝 Text inserted:', {
+            meaningLength: zenWord.meaning.length,
+            meaningPreview: zenWord.meaning.substring(0, 50) + '...'
+        });
+        
+        // テキスト挿入後に説明エリアの幅を再計算
+        recalculateMeaningWidth();
     } else {
         readingEl.textContent = "";
         document.getElementById('zengo').textContent = "エラー";
         document.getElementById('meaning').textContent = "データ読み込みに失敗しました。";
+        
+        // エラー時も幅を再計算
+        recalculateMeaningWidth();
     }
     
     // 日付と節気の表示を要素に直接設定
@@ -313,6 +324,69 @@ async function renderDailyZen() {
         // モバイル版: 改行文字で2行に分ける（dateInfoMobileを使用）
         dateEl.textContent = dateInfoMobile;
         sekkiEl.textContent = sekkiReading ? `${sekkiName}\n${sekkiReading}` : sekkiName;
+    }
+}
+
+// テキスト挿入後に説明エリアの幅を強制的に再計算する関数
+function recalculateMeaningWidth() {
+    const meaningContainer = document.getElementById('meaning-container');
+    const meaningPaper = document.getElementById('meaning-paper');
+    
+    if (!meaningContainer || !meaningPaper) return;
+    
+    // 横長画面(landscape)でのみ実行
+    const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+    if (!isLandscape) return;
+    
+    // Appleデバイスの判定
+    const isAppleDevice = /Macintosh|iPhone|iPad|iPod/.test(navigator.userAgent);
+    
+    // デバッグログ: 計算前の状態
+    console.log('=== recalculateMeaningWidth DEBUG ===');
+    console.log('🔍 Device:', isAppleDevice ? 'Apple' : 'Other');
+    console.log('📏 BEFORE - Container:', {
+        offsetWidth: meaningContainer.offsetWidth,
+        computedWidth: window.getComputedStyle(meaningContainer).width,
+        flexShrink: window.getComputedStyle(meaningContainer).flexShrink
+    });
+    console.log('📄 BEFORE - Paper:', {
+        offsetWidth: meaningPaper.offsetWidth,
+        computedWidth: window.getComputedStyle(meaningPaper).width,
+        writingMode: window.getComputedStyle(meaningPaper).writingMode
+    });
+    
+    if (isAppleDevice) {
+        // Appleデバイス: リセットせず、強制リフローのみ
+        meaningPaper.offsetWidth;
+        meaningContainer.offsetWidth;
+        meaningPaper.offsetHeight;
+        meaningContainer.offsetHeight;
+        
+        // 少し遅延して再確認
+        setTimeout(() => {
+            console.log('⏱️ AFTER 100ms - Container:', {
+                offsetWidth: meaningContainer.offsetWidth,
+                computedWidth: window.getComputedStyle(meaningContainer).width
+            });
+            console.log('⏱️ AFTER 100ms - Paper:', {
+                offsetWidth: meaningPaper.offsetWidth,
+                computedWidth: window.getComputedStyle(meaningPaper).width
+            });
+        }, 100);
+    } else {
+        // その他のデバイス: 強制リフロー + リセット
+        meaningPaper.offsetWidth;
+        meaningContainer.offsetWidth;
+        
+        requestAnimationFrame(() => {
+            meaningPaper.style.width = '';
+            meaningContainer.style.width = '';
+            
+            console.log('✅ AFTER RAF - Container:', {
+                offsetWidth: meaningContainer.offsetWidth,
+                computedWidth: window.getComputedStyle(meaningContainer).width
+            });
+        });
     }
 }
 
@@ -417,15 +491,9 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
-// ページ読み込み時の初期化（表示・フォント・モーダル・レイアウト修正）
+// ページ読み込み時の初期化(表示・フォント・モーダル・レイアウト修正)
 document.addEventListener('DOMContentLoaded', async () => {
-    await renderDailyZen();
-    document.getElementById('app').classList.add('fonts-loaded');
-    setupModal();
-    // 初回ズーム適用
-    applyZoom();
-    
-    // iPhone横向き初回表示バグ対策: 一度だけリロード
+    // iPhone横向き初回表示バグ対策: リロードチェックを最初に
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
         const isLandscape = window.matchMedia("(orientation: landscape)").matches;
         if (isLandscape) {
@@ -439,21 +507,23 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }, 100);
                 return; // リロード前に処理を中断
             }
-            // リロード後はSafari対策を実行
-            forSafariAppearance();
         } else {
-            // 縦向きの場合は従来のクリック処理
-            debugSimulateKakejikuClick();
-            // 横向きフラグをクリア（縦→横の切り替えに備える）
+            // 縦向きの場合はフラグをクリア
             sessionStorage.removeItem('iphone_landscape_reloaded');
         }
-    } else if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
-        // Mac Chrome対策
-        forMacAppearance();
-    } else if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
-        // Safari表示バグ対策（Mac Safariなど）
-        forSafariAppearance();
     }
+    
+    // ⚠️ キャッシュクリアは一旦無効化(無限リロード防止)
+    // clearPageCache();
+    
+    // コンテンツを描画
+    await renderDailyZen();
+    document.getElementById('app').classList.add('fonts-loaded');
+    setupModal();
+    // 初回ズーム適用
+    applyZoom();
+    
+    console.log('✅ DailyZen initialized');
 });
 
 // 強制再描画函数
