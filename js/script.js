@@ -297,11 +297,14 @@ async function renderDailyZen() {
     if (zenWord) {
         readingEl.textContent = zenWord.reading;
         document.getElementById('zengo').textContent = zenWord.zengo;
-        document.getElementById('meaning').textContent = zenWord.meaning;
+        
+        // 説明文に theme, meaning, source_person, source_text_en を追加（余計なスペース削除）
+        const fullMeaning = `【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}\n＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
+        document.getElementById('meaning').textContent = fullMeaning;
         
         console.log('📝 Text inserted:', {
-            meaningLength: zenWord.meaning.length,
-            meaningPreview: zenWord.meaning.substring(0, 50) + '...'
+            meaningLength: fullMeaning.length,
+            meaningPreview: fullMeaning.substring(0, 50) + '...'
         });
         
         // テキスト挿入後に説明エリアの幅を再計算
@@ -436,7 +439,10 @@ async function renderDebugZen(index) {
     if (zenWord) {
         readingEl.textContent = zenWord.reading;
         document.getElementById('zengo').textContent = zenWord.zengo;
-        document.getElementById('meaning').textContent = `[DEBUG ${index + 1}/${allZenWords.length}] ${zenWord.meaning}`;
+        
+        // デバッグモード用の表示も余計なスペース削除
+        const fullMeaning = `[DEBUG ${index + 1}/${allZenWords.length}]\n【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}\n＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
+        document.getElementById('meaning').textContent = fullMeaning;
     }
     
     // 日付と節気の表示
