@@ -77,16 +77,13 @@ function forSafariAppearance() {
         zenWordDisplay.style.visibility = 'visible';
         zenWordDisplay.style.willChange = 'transform';
     }
-    // 説明エリアの幅不具合対策（より強力に）
+    // 説明エリアの幅不具合対策
     if (meaningContainer) {
         meaningContainer.offsetHeight;
         meaningContainer.style.visibility = 'hidden';
         meaningContainer.offsetHeight;
         meaningContainer.style.visibility = 'visible';
         meaningContainer.style.transform = 'translateZ(0)';
-        // 明示的に幅を再計算させる
-        meaningContainer.style.width = 'auto';
-        meaningContainer.offsetWidth;
     }
     if (meaningPaper) {
         meaningPaper.offsetHeight;
@@ -94,24 +91,15 @@ function forSafariAppearance() {
         meaningPaper.offsetHeight;
         meaningPaper.style.visibility = 'visible';
         meaningPaper.style.transform = 'translateZ(0)';
-        // 縦書き要素の幅を強制再計算
-        meaningPaper.style.minWidth = 'fit-content';
-        meaningPaper.offsetWidth;
     }
     
-    // 2. setTimeout/animationFrame遅延（より長い遅延で確実に）
+    // 2. setTimeout/animationFrame遅延
     setTimeout(() => {
         if (app) app.style.opacity = '0.99';
-        // 説明エリアをさらに遅延して再描画
-        if (meaningContainer) {
-            meaningContainer.style.display = 'none';
-            meaningContainer.offsetHeight;
-            meaningContainer.style.display = '';
-        }
         requestAnimationFrame(() => {
             if (app) app.style.opacity = '1';
         });
-    }, 100);
+    }, 50);
     
     // 3. CSSアニメーションで再描画（例: 一瞬だけ色変更）
     if (app) {
