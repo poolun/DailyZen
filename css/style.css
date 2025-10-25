@@ -10,7 +10,7 @@
     --meaning-font: 'Hiragino Mincho Pro W6','Noto Serif JP', 'Kosugi Maru', serif;
     --zen-color: #004073; /* 禅語の色 */
     --meaning-color: #666666; /* 説明文の色 */
-    --meaning-font-size: 1.5rem; /* 1.0rem × 2 = 2.0rem */
+    --meaning-font-size: 2rem;
 }
 
 body {
@@ -22,8 +22,7 @@ body {
     min-height: 100vh;
 }
 
-/* スケーリングラッパーの基準サイズ（デザイン基準: W980 x H739 固定） */
-/* デスクトップ（横長画面）のみで固定サイズとズーム適用 */
+/* スケーリングラッパー - 横向きでのみ固定サイズとズーム適用 */
 @media (orientation: landscape) {
     #scale-wrapper {
         width: 1049px;
@@ -34,8 +33,10 @@ body {
         justify-content: center;
         transform-origin: top center; /* 縦基準でスケール */
     }
-    
-    /* 基礎レイアウト (#app) はラッパー内で固定サイズ */
+}
+
+/* 横向きでのみ固定サイズ適用 */
+@media (orientation: landscape) {
     #app {
         width: 1049px;
         height: 739px;
