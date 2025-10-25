@@ -642,6 +642,14 @@ function applyZoom() {
     // 小さい方のスケールを採用（はみ出さないように）
     const scale = Math.min(scaleX, scaleY);
 
-    // transform でズーム適用（中央基準で既に配置済み）
-    wrapper.style.transform = `scale(${scale})`;
+    // iPhone横置きの場合はtranslateY(50%)を保持
+    const isiPhoneLandscape = window.matchMedia("(orientation: landscape) and (max-width: 896px) and (max-height: 414px)").matches;
+    
+    if (isiPhoneLandscape) {
+        // iPhone横置き: translateY(50%)とscaleを両方適用
+        wrapper.style.transform = `translateY(50%) scale(${scale})`;
+    } else {
+        // その他のデバイス: scaleのみ適用
+        wrapper.style.transform = `scale(${scale})`;
+    }
 }
