@@ -1,6 +1,5 @@
 /* ================================================================
-   共通設定 - CSS変数・基本スタイル・全画面共通要素
-   ================================================================ */
+   共通設定 - CSS変数・基本スタイル・全画面共通要素============================================================= */
 
 :root {
     --bg-color: #f0efef;
@@ -10,7 +9,7 @@
     --meaning-font: 'Hiragino Mincho Pro W6','Noto Serif JP', 'Kosugi Maru', serif;
     --zen-color: #004073; /* 禅語の色 */
     --meaning-color: #666666; /* 説明文の色 */
-    --meaning-font-size: 2rem;
+    --meaning-font-size: 1.6rem;
 }
 
 body {
@@ -204,19 +203,12 @@ body::before {
     margin: 0;
 }
 
-#meaning-paper {
-margin: 0;
-padding:0;
-}
-
-#meaning{
-  color: var(--meaning-color);
+#meaning {
+    color: var(--meaning-color);
     font-size: 1.35rem;
     background: var(--white);
-    box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4); /* ドロップシャドウ復活 */
-    height: 100%;
+    box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4);
     margin: 0;
-    width: auto;
     padding: 20px;
 }
 /* ================================================================
@@ -383,14 +375,19 @@ padding:0;
         align-items: center; /* 縦方向中央揃え */
     }
     
-    #meaning-paper {
+    #meaning {
         line-height: 2.0;
         font-size: var(--meaning-font-size);
         text-align: left;
         writing-mode: vertical-rl;
         text-orientation: mixed;
         white-space: pre-wrap;
+        background: var(--white);
+        box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4);
         padding: 1em;
+        width: fit-content;
+        height: fit-content;
+        margin: 0;
     }
 }
 
@@ -408,7 +405,8 @@ padding:0;
 
     /* デスクトップでの高さ固定とスクロールバー非表示設定 */
     #meaning-container {
-        height: 60vh; /* 高さを60vhに変更 */
+        height: auto; /* ズーム対応のためautoに変更 */
+        max-height: 60vh; /* 最大高さ制限 */
         overflow: auto;
         -ms-overflow-style: none; /* IE/Edge */
         scrollbar-width: none; /* Firefox */
