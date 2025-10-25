@@ -544,16 +544,18 @@ body::before {
    iPhone横置き専用設定 - PCレイアウトの確実な適用とセンター揃え
    ================================================================ */
 @media (orientation: landscape) and (max-width: 896px) and (max-height: 414px) {
-    /* インフォエリアの改行を許可（PCと同じ設定を上書き） */
-    #date-block p,
-    #sekki-block p {
-        white-space: normal !important; /* iPhone横向きでは改行を許可 */
+    /* bodyレベルでのセンタリング */
+    body {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
     
     /* scale-wrapper内でのセンタリング強化 */
     #scale-wrapper {
         justify-content: center !important;
         align-items: center !important;
+        margin: 0 auto !important;
     }
     
     /* app内でのセンタリング強化 */
@@ -561,5 +563,11 @@ body::before {
         justify-content: center !important;
         align-items: center !important;
         margin: 0 auto !important;
+    }
+    
+    /* インフォエリアの改行を許可（PCと同じ設定を上書き） */
+    #date-block p,
+    #sekki-block p {
+        white-space: normal !important; /* iPhone横向きでは改行を許可 */
     }
 }
