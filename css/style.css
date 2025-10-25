@@ -554,12 +554,14 @@ body::before {
         overflow: hidden !important;
     }
     
-    /* scale-wrapper - viewport中央配置とサイズ調整 */
+    /* scale-wrapper - コンテンツエリアを縦方向中央に配置 */
     #scale-wrapper {
         justify-content: center !important;
         align-items: center !important;
         margin: 0 auto !important;
         transform-origin: center center !important; /* 中央基準でスケール */
+        /* コンテンツエリアを半分下に移動して画面中央に配置 */
+        transform: translateY(50%) scale(var(--zoom-scale, 1)) !important;
     }
     
     /* app内でのセンタリング強化 */
