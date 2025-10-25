@@ -62,7 +62,7 @@ function forSafariAppearance() {
     const app = document.getElementById('app');
     const zenWordDisplay = document.getElementById('zen-word-display');
     const meaningContainer = document.getElementById('meaning-container');
-    const meaningPaper = document.getElementById('meaning-paper');
+    const meaningElement = document.getElementById('meaning');
     
     // 1. 強制リフロー（visibility切り替えなし）
     if (app) {
@@ -333,9 +333,9 @@ async function renderDailyZen() {
 // テキスト挿入後に説明エリアの幅を強制的に再計算する関数
 function recalculateMeaningWidth() {
     const meaningContainer = document.getElementById('meaning-container');
-    const meaningPaper = document.getElementById('meaning-paper');
+    const meaningElement = document.getElementById('meaning');
     
-    if (!meaningContainer || !meaningPaper) return;
+    if (!meaningContainer || !meaningElement) return;
     
     // 横長画面(landscape)でのみ実行
     const isLandscape = window.matchMedia("(orientation: landscape)").matches;
@@ -352,17 +352,17 @@ function recalculateMeaningWidth() {
         computedWidth: window.getComputedStyle(meaningContainer).width,
         flexShrink: window.getComputedStyle(meaningContainer).flexShrink
     });
-    console.log('📄 BEFORE - Paper:', {
-        offsetWidth: meaningPaper.offsetWidth,
-        computedWidth: window.getComputedStyle(meaningPaper).width,
-        writingMode: window.getComputedStyle(meaningPaper).writingMode
+    console.log('📄 BEFORE - Meaning:', {
+        offsetWidth: meaningElement.offsetWidth,
+        computedWidth: window.getComputedStyle(meaningElement).width,
+        writingMode: window.getComputedStyle(meaningElement).writingMode
     });
     
     if (isAppleDevice) {
         // Appleデバイス: リセットせず、強制リフローのみ
-        meaningPaper.offsetWidth;
+        meaningElement.offsetWidth;
         meaningContainer.offsetWidth;
-        meaningPaper.offsetHeight;
+        meaningElement.offsetHeight;
         meaningContainer.offsetHeight;
         
         // 少し遅延して再確認
@@ -371,18 +371,18 @@ function recalculateMeaningWidth() {
                 offsetWidth: meaningContainer.offsetWidth,
                 computedWidth: window.getComputedStyle(meaningContainer).width
             });
-            console.log('⏱️ AFTER 100ms - Paper:', {
-                offsetWidth: meaningPaper.offsetWidth,
-                computedWidth: window.getComputedStyle(meaningPaper).width
+            console.log('⏱️ AFTER 100ms - Meaning:', {
+                offsetWidth: meaningElement.offsetWidth,
+                computedWidth: window.getComputedStyle(meaningElement).width
             });
         }, 100);
     } else {
         // その他のデバイス: 強制リフロー + リセット
-        meaningPaper.offsetWidth;
+        meaningElement.offsetWidth;
         meaningContainer.offsetWidth;
         
         requestAnimationFrame(() => {
-            meaningPaper.style.width = '';
+            meaningElement.style.width = '';
             meaningContainer.style.width = '';
             
             console.log('✅ AFTER RAF - Container:', {
@@ -630,7 +630,7 @@ function applyZoom() {
         return;
     }
 
-    const designWidth = 980;
+    const designWidth = 1049;
     const designHeight = 739;
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
