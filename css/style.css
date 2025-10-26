@@ -560,8 +560,8 @@ body::before {
         align-items: center !important;
         margin: 0 auto !important;
         transform-origin: center center !important; /* 中央基準でスケール */
-        /* 上に寄ったコンテンツを画面中央に配置するために上方向に調整 */
-        transform: translateY(-25%) scale(var(--zoom-scale, 1)) !important;
+        /* コンテンツを下方向に移動して画面中央に配置 */
+        transform: translateY(10%) scale(var(--zoom-scale, 1)) !important;
     }
     
     /* app内でのセンタリング強化 */
