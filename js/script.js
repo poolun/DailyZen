@@ -646,8 +646,8 @@ function applyZoom() {
     const isiPhoneLandscape = window.matchMedia("(orientation: landscape) and (max-width: 896px) and (max-height: 414px)").matches;
     
     if (isiPhoneLandscape) {
-        // iPhone横置き: translateY(50%)とscaleを両方適用
-        wrapper.style.transform = `translateY(50%) scale(${scale})`;
+        // iPhone横置き: translateY(-25%)とscaleを両方適用して画面中央に配置
+        wrapper.style.transform = `translateY(-25%) scale(${scale})`;
     } else {
         // その他のデバイス: scaleのみ適用
         wrapper.style.transform = `scale(${scale})`;
