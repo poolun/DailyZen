@@ -560,8 +560,8 @@ body::before {
         align-items: center !important;
         margin: 0 auto !important;
         transform-origin: center center !important; /* 中央基準でスケール */
-        /* コンテンツを下方向に移動して画面中央に配置 */
-        transform: translateY(10%) scale(var(--zoom-scale, 1)) !important;
+        /* iPhone横向きは上余白を減らして1.35倍大きく表示 */
+        transform: translateY(-8%) scale(var(--zoom-scale, 0.675)) !important;
     }
     
     /* app内でのセンタリング強化 */
