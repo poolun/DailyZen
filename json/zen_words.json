@@ -1,655 +1,1084 @@
-// Mac Chrome表示バグ対策: 強制リフロー・GPUレイヤー・visibility・opacityハック
-function forMacAppearance() {
-    const app = document.getElementById('app');
-    const zenWordDisplay = document.getElementById('zen-word-display');
-    const meaningContainer = document.getElementById('meaning-container');
-    // 1. 強制リフロー
-    if (app) {
-        app.offsetHeight;
-        app.style.transform = 'translateZ(0)';
-        app.style.willChange = 'transform';
+{
+  "zenWords": [
+    {
+      "no": 1,
+      "zengo": "而今",
+      "reading": "にこん / じこん",
+      "meaning": "過去を悔やまず、未来を憂えず、ただ今この一瞬に全力を注ぐ。",
+      "theme": "集中",
+      "source_person": "道元（Dōgen）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 2,
+      "zengo": "日々是好日",
+      "reading": "にちにちこれこうじつ",
+      "meaning": "良い日も悪い日もない。毎日がかけがえのない尊い一日である。",
+      "theme": "平静",
+      "source_person": "雲門文偃（Yunmen Wenyan）",
+      "source_text_en": "Mumonkan / Hekiganroku（『無門関』 / 『碧巌録』）"
+    },
+    {
+      "no": 3,
+      "zengo": "放下着",
+      "reading": "ほうげじゃく",
+      "meaning": "一切の執着やこだわりを手放し、軽やかに生きなさい。",
+      "theme": "解放",
+      "source_person": "唐代の僧（Tang Dynasty Monk）",
+      "source_text_en": "Shōyōroku（『従容録』）"
+    },
+    {
+      "no": 4,
+      "zengo": "平常心是道",
+      "reading": "へいじょうしんこれどう",
+      "meaning": "特別な修行ではなく、日常のありのままの心こそが悟りの境地である。",
+      "theme": "平静",
+      "source_person": "馬祖道一（Mazu Daoyi）",
+      "source_text_en": "Mumonkan（『無門関』）"
+    },
+    {
+      "no": 5,
+      "zengo": "行雲流水",
+      "reading": "こううんりゅうすい",
+      "meaning": "空を流れる雲、留まることのない水のように、執着せずに自然体で生きる。",
+      "theme": "自由",
+      "source_person": "蘇軾（Sū Shì - Song Dynasty Poet）",
+      "source_text_en": "Xie Minshi Tuiguan Yu Shu（『謝民師推官与書』）"
+    },
+    {
+      "no": 6,
+      "zengo": "脚下照顧",
+      "reading": "きゃっかしょうこ",
+      "meaning": "他人や遠くを見ず、自分の足元（現在と自己）をよく見つめなさい。",
+      "theme": "集中",
+      "source_person": "孤峰覚明（Kohō Kakumyō）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 7,
+      "zengo": "知足",
+      "reading": "ちそく",
+      "meaning": "足りるを知る。他と比べず、今あるものに感謝し、心安らかに過ごす。",
+      "theme": "満足",
+      "source_person": "老子（Laozi - Taoist Philosopher）",
+      "source_text_en": "Laozi（『老子』）"
+    },
+    {
+      "no": 8,
+      "zengo": "無心",
+      "reading": "むしん",
+      "meaning": "雑念や先入観のない、囚われのない純粋な心。",
+      "theme": "集中",
+      "source_person": "達磨、禅宗（Bodhidharma, Zen School）",
+      "source_text_en": "Zen Teaching / Sōkyōroku（『宗鏡録』）"
+    },
+    {
+      "no": 9,
+      "zengo": "和敬清寂",
+      "reading": "わけいせいじゃく",
+      "meaning": "互いに和し、敬い、心を清くし、穏やかに過ごす（茶道の精神）。",
+      "theme": "調和",
+      "source_person": "千利休（Sen no Rikyū）",
+      "source_text_en": "Cha no Yu Essence（茶の湯の根本精神）"
+    },
+    {
+      "no": 10,
+      "zengo": "無縄自縛",
+      "reading": "むじょうじばく",
+      "meaning": "自分を縛っているものは、他人や環境ではなく自分自身の思い込みである。",
+      "theme": "解放",
+      "source_person": "臨済宗の僧（Rinzai School Monk）",
+      "source_text_en": "Shōbōgenzō / Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 11,
+      "zengo": "一期一会",
+      "reading": "いちごいちえ",
+      "meaning": "この瞬間、この出会いは二度とないものとして大切に向き合いなさい。",
+      "theme": "集中",
+      "source_person": "千利休（Sen no Rikyū）",
+      "source_text_en": "Yamanoue Sōji Ki（『山上宗二記』）"
+    },
+    {
+      "no": 12,
+      "zengo": "且緩々",
+      "reading": "しゃかんかん",
+      "meaning": "慌てることなくゆっくりと、落ち着いて事を進めなさい。",
+      "theme": "平静",
+      "source_person": "雲門文偃（Yunmen Wenyan）",
+      "source_text_en": "Unmon Kōroku（『雲門広録』）"
+    },
+    {
+      "no": 13,
+      "zengo": "啐啄同時",
+      "reading": "そったくどうじ",
+      "meaning": "師弟が互いに機が熟したと悟り、その一瞬で悟りを開かせること。絶好のタイミング。",
+      "theme": "集中",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Hekiganroku（『碧巌録』）"
+    },
+    {
+      "no": 14,
+      "zengo": "円相",
+      "reading": "えんそう",
+      "meaning": "円は「宇宙・真理・仏性」を象徴し、欠けたところのない完全な悟りの姿を表す。",
+      "theme": "調和",
+      "source_person": "禅画のテーマ（Zen Painting Theme）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 15,
+      "zengo": "一華開五葉",
+      "reading": "いっかごようをひらく",
+      "meaning": "一つの花から五つの葉が開く。達磨から始まった禅宗が五つの宗派に分かれて栄えること。",
+      "theme": "発展",
+      "source_person": "達磨（Bodhidharma）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 16,
+      "zengo": "独坐大雄峰",
+      "reading": "どくざだいゆうほう",
+      "meaning": "誰にも頼らず、ただ一人、自己を深く見つめる場所（心境）。",
+      "theme": "自立",
+      "source_person": "潙山霊祐（Guishan Lingyou）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 17,
+      "zengo": "主人公著",
+      "reading": "しゅじんこうじゃく",
+      "meaning": "本当の自分自身（主人公）がしっかりと座っている。不動の精神状態。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 18,
+      "zengo": "喫茶去",
+      "reading": "きっさこ",
+      "meaning": "お茶でも飲みなさい。特別な理屈や禅問答ではなく、目の前の日常に集中せよ。",
+      "theme": "平静",
+      "source_person": "趙州従諗（Zhaozhou Congshen）",
+      "source_text_en": "Mumonkan（『無門関』）"
+    },
+    {
+      "no": 19,
+      "zengo": "廓然無聖",
+      "reading": "かくねんむしょう",
+      "meaning": "広々として何もない、特別な悟りの境地はないということ。悟りを求める心すら手放す。",
+      "theme": "解放",
+      "source_person": "達磨と武帝の問答（Bodhidharma and Emperor Wu）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 20,
+      "zengo": "随所作主",
+      "reading": "ずいしょさしゅ",
+      "meaning": "どこにいても、その場所の主人となりなさい。環境に左右されず、主体的に生きよ。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 21,
+      "zengo": "一字千金",
+      "reading": "いちじせんきん",
+      "meaning": "一文字が千金に値するほど、言葉や教えが尊いこと。",
+      "theme": "感謝",
+      "source_person": "禅語としての比喩（Zen Metaphor）",
+      "source_text_en": "General Proverb（一般の故事成語）"
+    },
+    {
+      "no": 22,
+      "zengo": "無一物",
+      "reading": "むいちもつ",
+      "meaning": "何一つ持つものがない状態。執着を捨て去った、清浄で囚われのない心境。",
+      "theme": "解放",
+      "source_person": "六祖慧能（Huìnéng）",
+      "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
+    },
+    {
+      "no": 23,
+      "zengo": "松無古今色",
+      "reading": "まつにここんのいろなし",
+      "meaning": "松の色はいつの時代も変わらない。真理は永遠であり、時間によって左右されない。",
+      "theme": "普遍",
+      "source_person": "大智円行（Daizhi Yuanxing）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 24,
+      "zengo": "光陰莫軽",
+      "reading": "こういんかろんずることなかれ",
+      "meaning": "わずかな時間も軽んじてはならない。一瞬一瞬を大切に生きよ。",
+      "theme": "集中",
+      "source_person": "朱子（Zhu Xi）",
+      "source_text_en": "Shōbōgenzō Zuimonki（『正法眼蔵随聞記』）"
+    },
+    {
+      "no": 25,
+      "zengo": "心外無別法",
+      "reading": "しんげむべっぽう",
+      "meaning": "心から離れたところに悟りも真理も存在しない。全ては心の中に帰結する。",
+      "theme": "自立",
+      "source_person": "六祖慧能（Huìnéng）",
+      "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
+    },
+    {
+      "no": 26,
+      "zengo": "和光同塵",
+      "reading": "わこうどうじん",
+      "meaning": "智慧の光を和らげ、俗世の塵（ちり）にまじり、人々と共に生きる。",
+      "theme": "調和",
+      "source_person": "老子（Laozi）",
+      "source_text_en": "Laozi（『老子』）"
+    },
+    {
+      "no": 27,
+      "zengo": "夢",
+      "reading": "ゆめ",
+      "meaning": "人生は夢や幻のように儚いものである。執着することなく、深くこだわらない心境。",
+      "theme": "解放",
+      "source_person": "般若心経（Heart Sutra）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 28,
+      "zengo": "一味清風",
+      "reading": "いちみせいふう",
+      "meaning": "ただ一つのさわやかな風。全ての物事が平等であり、差別がない真理の境地。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 29,
+      "zengo": "無事",
+      "reading": "ぶじ",
+      "meaning": "特別な課題や煩悩がない、何事もない平穏な境地。あるがままの姿。",
+      "theme": "平静",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 30,
+      "zengo": "柳緑花紅",
+      "reading": "やなぎはみどり、はなはくれない",
+      "meaning": "柳の緑、花の赤。自然のありのままの美しさがそのまま真実の姿である。",
+      "theme": "調和",
+      "source_person": "蘇軾（Sū Shì）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 31,
+      "zengo": "水急不流月",
+      "reading": "みずいそげどつきはながれず",
+      "meaning": "水面は速く流れても、水に映る月は動かない。現象に惑わされず、本質を見失うな。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 32,
+      "zengo": "直心是道場",
+      "reading": "じきしんこれどうじょう",
+      "meaning": "素直で正直な心こそが、修行をするべき場所（道場）である。",
+      "theme": "自立",
+      "source_person": "維摩経（Vimalakirti Sutra）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 33,
+      "zengo": "閑古錐",
+      "reading": "かんこすい",
+      "meaning": "使い古されて角が取れたキリのように、悟りきって何も求めなくなった境地。",
+      "theme": "満足",
+      "source_person": "雲門文偃（Yunmen Wenyan）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 34,
+      "zengo": "本来無一物",
+      "reading": "ほんらいむいちもつ",
+      "meaning": "元々、執着すべき実体は何一つない。心は本来清浄である。",
+      "theme": "解放",
+      "source_person": "六祖慧能（Huìnéng）",
+      "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
+    },
+    {
+      "no": 35,
+      "zengo": "八風吹不動",
+      "reading": "はっぷうすいふどう",
+      "meaning": "利・衰・毀・誉・称・譏・苦・楽の8種の風（誘惑や中傷）に心を乱されない。",
+      "theme": "平静",
+      "source_person": "白居易（Bai Juyi）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 36,
+      "zengo": "夢幻泡影",
+      "reading": "むげんほうよう",
+      "meaning": "人生の全ては夢や幻、泡や影のように儚い。執着を捨てなさい。",
+      "theme": "解放",
+      "source_person": "金剛般若経（Diamond Sutra）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 37,
+      "zengo": "不立文字",
+      "reading": "ふりゅうもんじ",
+      "meaning": "仏の教えは言葉や文字で表し尽くせるものではない。座禅など実践を通して会得せよ。",
+      "theme": "集中",
+      "source_person": "禅宗の教え（Zen School Principle）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 38,
+      "zengo": "日日新",
+      "reading": "ひびあらた",
+      "meaning": "毎日毎日が新しく生まれ変わる。常に向上心を持ち、過去に囚われず生きよ。",
+      "theme": "発展",
+      "source_person": "大学（Da Xue）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 39,
+      "zengo": "前後際断",
+      "reading": "ぜんごさいだん",
+      "meaning": "過去と未来の思いを断ち切り、ただ「今、この一瞬」に集中して生きる。",
+      "theme": "集中",
+      "source_person": "道元（Dōgen）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 40,
+      "zengo": "莫妄想",
+      "reading": "まくもうぞう",
+      "meaning": "妄想するな、余計なことを考えるな。ありのままを素直に受け入れよ。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 41,
+      "zengo": "寿山福海",
+      "reading": "じゅざんふくかい",
+      "meaning": "長寿は山のように動かず、幸福は海のように広大である。長寿と幸福を祈る。",
+      "theme": "感謝",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 42,
+      "zengo": "吾唯足知",
+      "reading": "われただたるをしる",
+      "meaning": "私はただ足るを知る。欲望を追求せず、今あるものに満足して生きる。",
+      "theme": "満足",
+      "source_person": "龍安寺の蹲踞の銘（Inscription on Ryoanji Tsukubai）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 43,
+      "zengo": "一黙如雷",
+      "reading": "いちもくじょらい",
+      "meaning": "真に価値のある言葉は、沈黙の後に雷のように重く響く。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 44,
+      "zengo": "梅開五福",
+      "reading": "ばいかいごふく",
+      "meaning": "梅の花は五つの花弁を持ち、長寿、富、健康、徳、子孫の五つの福をもたらす。",
+      "theme": "感謝",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 45,
+      "zengo": "青山元不動",
+      "reading": "せいざんもとふどう",
+      "meaning": "青い山は元々動かない。世の中が変化しても、真理は変わらず不動である。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 46,
+      "zengo": "歩歩是道場",
+      "reading": "ほほこれどうじょう",
+      "meaning": "一歩一歩の歩みが修行の場である。日常生活の全てが仏道である。",
+      "theme": "集中",
+      "source_person": "道元（Dōgen）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 47,
+      "zengo": "柔軟心",
+      "reading": "にゅうなんしん",
+      "meaning": "凝り固まらず、水のように物事に順応する、しなやかで素直な心。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 48,
+      "zengo": "喫一盞茶",
+      "reading": "きっいっせんのちゃ",
+      "meaning": "まず一杯のお茶を飲みなさい。目の前の行いに集中し、余計なことを考えるな。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 49,
+      "zengo": "直指人心",
+      "reading": "じきしにんしん",
+      "meaning": "経典によらず、ただ人々の心そのものをまっすぐに指し示して悟らせる。",
+      "theme": "自立",
+      "source_person": "禅宗の教え（Zen School Principle）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 50,
+      "zengo": "不昧因果",
+      "reading": "ふまいいんが",
+      "meaning": "因果の理を隠したり、惑わされたりしない。自らの行為の結果を素直に受け止める。",
+      "theme": "普遍",
+      "source_person": "百丈懐海（Baizhang Huaihai）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 51,
+      "zengo": "随縁而化",
+      "reading": "ずいえんにか",
+      "meaning": "縁にしたがって自ずから変化・成長する。自然の流れに身を任せよ。",
+      "theme": "自由",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 52,
+      "zengo": "照顧脚下",
+      "reading": "しょうこきゃっか",
+      "meaning": "己の足元を見よ。今、目の前の事柄に集中し、自己を見つめなさい。",
+      "theme": "集中",
+      "source_person": "孤峰覚明（Kohō Kakumyō）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 53,
+      "zengo": "一路看尽",
+      "reading": "いちろかんじん",
+      "meaning": "一つのことを最後まで見届ける。生涯を貫く確固たる信念を持つ。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 54,
+      "zengo": "明珠在掌",
+      "reading": "みょうじゅたなごころにあり",
+      "meaning": "悟りの智慧は既に自分の手の中にある。外に探し求める必要はない。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 55,
+      "zengo": "莫煩悩",
+      "reading": "まくぼんのう",
+      "meaning": "煩悩を気にするな。目の前のことに集中すれば、煩悩は自然と消える。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 56,
+      "zengo": "坐断紅塵",
+      "reading": "ざだんこうじん",
+      "meaning": "俗世間から離れ、静かに座って瞑想する。外界の影響を受けない境地。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 57,
+      "zengo": "泥中有蓮",
+      "reading": "でいちゅうにれんあり",
+      "meaning": "泥の中から清らかな蓮が咲くように、煩悩の世の中から悟りが開く。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 58,
+      "zengo": "春色無高下",
+      "reading": "しゅんしょくにこうげなし",
+      "meaning": "春の景色に高低優劣はない。万物は平等であるという仏の真理。",
+      "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 59,
+      "zengo": "劫外春光",
+      "reading": "こうがいのしゅんこう",
+      "meaning": "永遠の時を超えた、限りない生命力。悟りの世界に満ちる春の光。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 60,
+      "zengo": "十牛図",
+      "reading": "じゅうぎゅうず",
+      "meaning": "悟りに至るまでの修行の段階を、牛を捕まえる図で示したもの。",
+      "theme": "発展",
+      "source_person": "廓庵師遠（Kuoan Shiyuan）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 61,
+      "zengo": "語尽山河",
+      "reading": "ごじんさんが",
+      "meaning": "言葉を尽くしても、真理は山や河のように広大で全てを語り尽くせない。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 62,
+      "zengo": "喫茶三昧",
+      "reading": "きっさざんまい",
+      "meaning": "ただひたすらにお茶を飲むことに集中する。日常の行為に没頭すること。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 63,
+      "zengo": "随処楽",
+      "reading": "ずいしょらく",
+      "meaning": "どこにいても楽しみを見つける。現状を受け入れ、今を生きる喜び。",
+      "theme": "満足",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 64,
+      "zengo": "万法帰一",
+      "reading": "ばんぽうきいつ",
+      "meaning": "あらゆる現象や真理は、すべて一つの根源に帰着する。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 65,
+      "zengo": "念々去来",
+      "reading": "ねんねんきょらい",
+      "meaning": "心に浮かぶ思いは次々と現れ、そして消えていく。執着しない心。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 66,
+      "zengo": "一念三千",
+      "reading": "いちねんさんぜん",
+      "meaning": "一瞬の心に全宇宙の真理が含まれている。心の力を知ること。",
+      "theme": "普遍",
+      "source_person": "天台宗（Tendai School）",
+      "source_text_en": "摩訶止観（Mohe Zhiguan）"
+    },
+    {
+      "no": 67,
+      "zengo": "喫菜事魔",
+      "reading": "きっさいじま",
+      "meaning": "粗末な食べ物でも、誠意を持って頂くことが心の魔を祓う。食への感謝。",
+      "theme": "感謝",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 68,
+      "zengo": "不生不滅",
+      "reading": "ふしょうふめつ",
+      "meaning": "生まれもしないし、滅びもしない。真理は永遠で不変である。",
+      "theme": "普遍",
+      "source_person": "般若心経（Heart Sutra）",
+      "source_text_en": "Prajñāpāramitā Hṛdaya（Heart Sutra）"
+    },
+    {
+      "no": 69,
+      "zengo": "虚心坦懐",
+      "reading": "きょしんたんかい",
+      "meaning": "心に何のわだかまりもなく、素直でさっぱりしていること。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 70,
+      "zengo": "一拳打破",
+      "reading": "いっけんたは",
+      "meaning": "迷いや煩悩を、一撃で打ち破るほどの鋭い悟りの境地。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 71,
+      "zengo": "一滴水",
+      "reading": "いってきすい",
+      "meaning": "小さな一滴の水も、源を辿れば大きな流れに通じている。小さな行いも大切にせよ。",
+      "theme": "感謝",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 72,
+      "zengo": "梅一輪",
+      "reading": "うめいちりん",
+      "meaning": "まだ寒いうちに一輪だけ咲く梅の花。厳しい状況下でも、信念をもって行動せよ。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 73,
+      "zengo": "唯我独尊",
+      "reading": "ゆいがどくそん",
+      "meaning": "この世で自分だけが尊い。全ての人間が仏性を持つ尊い存在であること。",
+      "theme": "自立",
+      "source_person": "釈迦（Shakyamuni）",
+      "source_text_en": "仏教経典（Buddhist Sutras）"
+    },
+    {
+      "no": 74,
+      "zengo": "心月輪",
+      "reading": "しんげつりん",
+      "meaning": "月のように清らかで円満な心。真理を映す悟りの心。",
+      "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 75,
+      "zengo": "青山緑水",
+      "reading": "せいざんりょくすい",
+      "meaning": "青い山と緑の水。自然のありのままの姿が真理そのものである。",
+      "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 76,
+      "zengo": "心頭滅却",
+      "reading": "しんとうめっきゃく",
+      "meaning": "心の迷いを滅すれば、火の熱さも感じなくなる。精神の力で苦難を乗り越える。",
+      "theme": "平静",
+      "source_person": "快川紹喜（Kaisen Jōki）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 77,
+      "zengo": "看々臘月尽",
+      "reading": "みよみよろうげつつく",
+      "meaning": "見よ、もう12月が終わる。時は待ってくれない、今この一瞬を大切に生きよ。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 78,
+      "zengo": "無刀剣",
+      "reading": "むとうけん",
+      "meaning": "刀や剣を持たない。争いを好まない、平和な心。",
+      "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 79,
+      "zengo": "喫飯度日",
+      "reading": "きっぱんとにち",
+      "meaning": "飯を食って日々を送る。日常の雑事の中にこそ真の修行がある。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 80,
+      "zengo": "明歴々露堂々",
+      "reading": "めいれきれき ろどうどう",
+      "meaning": "真理ははっきりと輝き、隠すことなく堂々とあらわれている。全ては明らかである。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 81,
+      "zengo": "看脚下",
+      "reading": "かんきゃっか",
+      "meaning": "足元を見なさい。目の前の現実、今の自分自身をよく見つめなさい。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 82,
+      "zengo": "莫煩悩",
+      "reading": "まくぼんのう",
+      "meaning": "煩悩を気にするな。目の前のことに集中すれば、煩悩は自然と消える。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 83,
+      "zengo": "雲門一字",
+      "reading": "うんもんいちじ",
+      "meaning": "雲門禅師の投げかけた一文字の言葉に、全ての真理が含まれている。",
+      "theme": "普遍",
+      "source_person": "雲門文偃（Yunmen Wenyan）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 84,
+      "zengo": "本来面目",
+      "reading": "ほんらいのめんもく",
+      "meaning": "生まれながらに持っている、ありのままの真実の自己。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 85,
+      "zengo": "万古清風",
+      "reading": "ばんこせいふう",
+      "meaning": "永遠に変わらない清々しい風。真理は常に清らかである。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 86,
+      "zengo": "一超直入如来地",
+      "reading": "いっちょうじきにゅうにょらいち",
+      "meaning": "迷いの世界から一気に飛び越え、最高の悟りの境地にまっすぐ到達する。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 87,
+      "zengo": "唯心所現",
+      "reading": "ゆいしんしょげん",
+      "meaning": "全ては心の持ちようで決まる。世界は自分の心の現れである。",
+      "theme": "自立",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "華厳経（Avataṃsaka Sūtra）"
+    },
+    {
+      "no": 88,
+      "zengo": "空手還郷",
+      "reading": "くうしゅげんきょう",
+      "meaning": "悟りを開いて故郷に帰る。何も持たない無一物の姿こそが悟りの境地。",
+      "theme": "解放",
+      "source_person": "十牛図（Jūgyūzu）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 89,
+      "zengo": "本来清浄",
+      "reading": "ほんらいしょうじょう",
+      "meaning": "人間の心は生まれながらにして清らかで、煩悩によって汚されていない。",
+      "theme": "普遍",
+      "source_person": "禅宗（Zen School）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 90,
+      "zengo": "随所皆真",
+      "reading": "ずいしょかいしん",
+      "meaning": "どこであろうと、全てが真実の姿であり、悟りの場である。",
+      "theme": "普遍",
+      "source_person": "道元（Dōgen）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 91,
+      "zengo": "一期一句",
+      "reading": "いちごいっく",
+      "meaning": "一生に一度の貴重な機会を大切にし、心を込めて一つの句（言葉）を交わす。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 92,
+      "zengo": "喫茶去三昧",
+      "reading": "きっさこざんまい",
+      "meaning": "ただひたすらにお茶を飲むことに集中する。目の前の作業に没頭する。",
+      "theme": "集中",
+      "source_person": "趙州従諗（Zhaozhou Congshen）",
+      "source_text_en": "Mumonkan（『無門関』）"
+    },
+    {
+      "no": 93,
+      "zengo": "無尽蔵",
+      "reading": "むじんぞう",
+      "meaning": "いくら使っても尽きることのない宝。智慧や徳は常に尽きることがない。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 94,
+      "zengo": "無位真人",
+      "reading": "むいのしんじん",
+      "meaning": "何ら地位や肩書きを持たない、真の悟りを開いた人。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 95,
+      "zengo": "風光日々新",
+      "reading": "ふうこうひびあらた",
+      "meaning": "自然の景色は毎日新しい。常に新しい気持ちで物事に向き合う。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 96,
+      "zengo": "随流得妙",
+      "reading": "ずいりゅうとくみょう",
+      "meaning": "流れに身を任せることで、かえって妙なる真理を得ることができる。",
+      "theme": "自由",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 97,
+      "zengo": "無功用行",
+      "reading": "むくうぎょう",
+      "meaning": "計らいや意図のない、自然な行い。見返りを求めない行為。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 98,
+      "zengo": "主人公著",
+      "reading": "しゅじんこうじゃく",
+      "meaning": "主人公（真の自己）がしっかりと座っている。不動の精神状態。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 99,
+      "zengo": "啐啄",
+      "reading": "そったく",
+      "meaning": "師匠と弟子の息がぴたりと合う、絶妙のタイミング。",
+      "theme": "集中",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Hekiganroku（『碧巌録』）"
+    },
+    {
+      "no": 100,
+      "zengo": "和同開珍",
+      "reading": "わどうかいちん",
+      "meaning": "和合をもって、心の中の宝を開き、真理に到達する。",
+      "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 101,
+      "zengo": "無漏",
+      "reading": "むろ",
+      "meaning": "煩悩の漏れがない清らかな状態。悟りを開いた境地。",
+      "theme": "解放",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 102,
+      "zengo": "清風拂明月",
+      "reading": "せいふうめいげつをはらう",
+      "meaning": "清らかな風が明るい月を払うように、全てが清らかで美しい境地。",
+      "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 103,
+      "zengo": "円転自在",
+      "reading": "えんてんじざい",
+      "meaning": "何にもとらわれず、円を描くように自由で融通がきくこと。",
+      "theme": "自由",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 104,
+      "zengo": "自灯明",
+      "reading": "じとうみょう",
+      "meaning": "自分自身を拠り所として生きる。他者に頼らず、自己の智慧を光とする。",
+      "theme": "自立",
+      "source_person": "釈迦（Shakyamuni）",
+      "source_text_en": "涅槃経（Nirvāṇa Sūtra）"
+    },
+    {
+      "no": 105,
+      "zengo": "無辺風光",
+      "reading": "むへんふうこう",
+      "meaning": "限りなく広がる美しい風景。悟りの世界は無限である。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 106,
+      "zengo": "一超直入",
+      "reading": "いっちょうじきにゅう",
+      "meaning": "迷いの世界から悟りの世界へ一気に飛び込む。決意と実行。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 107,
+      "zengo": "白珪尚可磨",
+      "reading": "はっけいなおみがくべし",
+      "meaning": "白い宝石でさえ磨く必要がある。どれほど優れていても努力は必要。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 108,
+      "zengo": "不洗塵",
+      "reading": "あらわずしてちりなし",
+      "meaning": "洗い流す必要がないほど、元々清らかである心（心は本来清浄）。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 109,
+      "zengo": "主人公",
+      "reading": "しゅじんこう",
+      "meaning": "雑念に振り回されない、不動の自己の中心（真の自分）。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 110,
+      "zengo": "山高水長",
+      "reading": "やまたかくみずながし",
+      "meaning": "徳の高い人の行いは、山のように高く、水のように長く後世まで伝わる。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 111,
+      "zengo": "風外",
+      "reading": "ふうがい",
+      "meaning": "世俗の煩わしさの外。世間から離れた悟りの境地、あるいは風変わりな様。",
+      "theme": "自由",
+      "source_person": "風外本高（Fūgai Honkō - Zen Painter）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 112,
+      "zengo": "万象",
+      "reading": "ばんしょう",
+      "meaning": "この世のありとあらゆるもの、宇宙全体。全てが真理の現れである。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 113,
+      "zengo": "安心立命",
+      "reading": "あんじんりつめい",
+      "meaning": "天命を知り、心を安らかに定め、人生の試練に動じない境地。",
+      "theme": "平静",
+      "source_person": "儒教、後に禅（Confucianism, later Zen）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 114,
+      "zengo": "行住坐臥",
+      "reading": "ぎょうじゅうざが",
+      "meaning": "歩き、立ち止まり、座り、横になる。日常の全ての動作が修行である。",
+      "theme": "集中",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 115,
+      "zengo": "洗心",
+      "reading": "せんしん",
+      "meaning": "心を洗い清めること。煩悩や邪念を払い、清らかな心を取り戻す。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 116,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "この一生。二度とない人生の瞬間、瞬間を大切にせよ。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 117,
+      "zengo": "無刀",
+      "reading": "むとう",
+      "meaning": "刀を持たない。争いを避ける平和な心。または、無念無想の境地。",
+      "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 118,
+      "zengo": "是々非々",
+      "reading": "ぜぜひぜひ",
+      "meaning": "正しいことは正しい、間違っていることは間違っているとはっきりと判断する。",
+      "theme": "自立",
+      "source_person": "中国古典（Chinese Classic）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 119,
+      "zengo": "無礙",
+      "reading": "むげ",
+      "meaning": "何ものにも妨げられないこと。自由自在で、囚われのない心境。",
+      "theme": "自由",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 120,
+      "zengo": "只管打坐",
+      "reading": "しかんたざ",
+      "meaning": "ただひたすらに坐禅すること。坐禅の行為そのものが悟りであるとする曹洞宗の基本的な教え。",
+      "theme": "集中",
+      "source_person": "道元（Dōgen）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
     }
-    if (zenWordDisplay) {
-        zenWordDisplay.offsetHeight;
-        zenWordDisplay.style.visibility = 'hidden';
-        zenWordDisplay.offsetHeight;
-        zenWordDisplay.style.visibility = 'visible';
-        zenWordDisplay.style.willChange = 'transform';
-    }
-    if (meaningContainer) {
-        meaningContainer.offsetHeight;
-        meaningContainer.style.visibility = 'hidden';
-        meaningContainer.offsetHeight;
-        meaningContainer.style.visibility = 'visible';
-        meaningContainer.style.transform = 'translateZ(0)';
-    }
-    // 2. setTimeout/animationFrame遅延
-    setTimeout(() => {
-        if (app) app.style.opacity = '0.99';
-        requestAnimationFrame(() => {
-            if (app) app.style.opacity = '1';
-        });
-    }, 50);
-    // 3. CSSアニメーションで再描画（例: 一瞬だけ色変更）
-    if (app) {
-        app.style.transition = 'background-color 0.2s';
-        app.style.backgroundColor = '#f0f0f0';
-        setTimeout(() => {
-            app.style.backgroundColor = '';
-        }, 200);
-    }
-    // 4. window.scrollTo(0,1)で一瞬スクロール
-    window.scrollTo(0, 1);
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-    }, 100);
-}
-// 擬似クリック判定用フラグ
-let isSimulatedClick = false;
-// Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
-// 擬似的にkakejiku-containerをクリックするデバッグ関数
-function debugSimulateKakejikuClick() {
-    const kakejiku = document.getElementById('kakejiku-container');
-    if (kakejiku) {
-        isSimulatedClick = true;
-        const evt = new MouseEvent('click', { bubbles: true, cancelable: true, view: window });
-        kakejiku.dispatchEvent(evt);
-    }
-}
-// js/script.js
-// Safari表示バグ対策: 強制再描画・リフロー・CSSハックをまとめて実行
-function forSafariAppearance() {
-    const app = document.getElementById('app');
-    const zenWordDisplay = document.getElementById('zen-word-display');
-    const meaningContainer = document.getElementById('meaning-container');
-    const meaningElement = document.getElementById('meaning');
-    
-    // 1. 強制リフロー（visibility切り替えなし）
-    if (app) {
-        app.offsetHeight;
-        app.style.transform = 'translateZ(0)';
-        app.style.willChange = 'transform';
-    }
-    if (zenWordDisplay) {
-        zenWordDisplay.offsetHeight;
-        zenWordDisplay.style.willChange = 'transform';
-    }
-    // 説明エリアは触らない（初回レンダリングが正しいため）
-    if (meaningContainer) {
-        meaningContainer.offsetHeight;
-    }
-    if (meaningPaper) {
-        meaningPaper.offsetHeight;
-    }
-    
-    // 2. setTimeout/animationFrame遅延は削除
-    // 3. CSSアニメーションも削除
-    // 4. スクロール処理も削除
-}
-
-// ページキャッシュクリア機能
-function clearPageCache() {
-    // ブラウザキャッシュを強制リロード
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function(registrations) {
-            registrations.forEach(function(registration) {
-                registration.unregister();
-            });
-        });
-    }
-    
-    // キャッシュストレージをクリア
-    if ('caches' in window) {
-        caches.keys().then(function(names) {
-            names.forEach(function(name) {
-                caches.delete(name);
-            });
-        });
-    }
-    
-    // セッションストレージとローカルストレージをクリア
-    sessionStorage.clear();
-    localStorage.clear();
-
-    // Appleデバイスごとに分岐
-        if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
-            debugSimulateKakejikuClick();
-        } else if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
-            forMacAppearance();
-        }
-    // Safari表示バグ対策
-    if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
-        forSafariAppearance();
-    }
-    // 強制リロード（無効化）
-    // location.reload(true); // ←リロードはしません
-// ← 余分な閉じカッコ削除
-}
-
-// Ctrl+Shift+R でキャッシュクリア
-document.addEventListener('keydown', function(e) {
-    if (e.ctrlKey && e.shiftKey && e.key === 'R') {
-        e.preventDefault();
-        clearPageCache();
-    }
-});
-
-// 漢数字変換マップ
-const KANSUJI_MAP = {
-    '0': '〇', '1': '一', '2': '二', '3': '三', '4': '四', '5': '五',
-    '6': '六', '7': '七', '8': '八', '9': '九', '10': '十'
-};
-
-/**
- * 数値を漢数字の文字列に変換する（十進表記）
- * 例: 2025年10月16日 -> 二〇二五年一〇月一六日
- * @param {string} str 変換対象の文字列 (年、月、日など)
- * @returns {string} 漢数字に変換された文字列
- */
-function toKansuji(str) {
-    // 全ての数値を十進表記に変換（各桁を個別に変換）
-    return Array.from(str).map(char => KANSUJI_MAP[char] || char).join('');
-}
-
-
-// 二十四節気データを取得する関数（強化版）
-async function getSekkiData() {
-    try {
-        const data = await fetchWithRetry('json/sekki_data.json');
-        return data.sekkiData;
-    } catch (error) {
-        console.error("二十四節気データの取得中にエラーが発生しました:", error);
-        
-        // フォールバック: 最小限のデータで動作継続
-        return [{
-            month: 1, day: 1, sekki: "データ読み込み失敗"
-        }];
-    }
-}
-
-// 現在の日付に基づいて二十四節気を計算する関数 (変更なし)
-async function getCurrentSekki() {
-    const today = new Date();
-    const currentMonth = today.getMonth() + 1;
-    const currentDay = today.getDate();
-    
-    const sekkiData = await getSekkiData();
-
-    const dateValue = currentMonth * 100 + currentDay;
-    
-    let currentSekkiString = "データなし (Error)";
-    let nextSekki = sekkiData[0]; 
-
-    for (let i = 0; i < sekkiData.length; i++) {
-        const sekki = sekkiData[i];
-        const sekkiValue = sekki.month * 100 + sekki.day;
-        
-        if (i === sekkiData.length - 1) {
-            if (dateValue >= sekkiValue || dateValue < nextSekki.month * 100 + nextSekki.day) {
-                currentSekkiString = sekki.sekki;
-                break;
-            }
-        } else {
-            nextSekki = sekkiData[i + 1];
-            const nextSekkiValue = nextSekki.month * 100 + nextSekki.day;
-
-            if (dateValue >= sekkiValue && dateValue < nextSekkiValue) {
-                currentSekkiString = sekki.sekki;
-                break;
-            }
-        }
-    }
-    
-    if (currentSekkiString === "データなし (Error)") {
-        const lastSekki = sekkiData[sekkiData.length - 1];
-        if (dateValue >= lastSekki.month * 100 + lastSekki.day) {
-            currentSekkiString = lastSekki.sekki;
-        }
-    }
-    
-    const [name, readingWithParen] = currentSekkiString.split(' ');
-    let reading = '';
-    
-    if (readingWithParen) {
-        const readingBody = readingWithParen.replace(/[()（）]/g, '');
-        reading = `（${readingBody}）`;
-    }
-
-    return {
-        name: name,
-        reading: reading
-    };
-}
-
-
-// 日付と二十四節気の情報を取得する関数
-async function getDateAndSekki() {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth() + 1;
-    const day = today.getDate();
-    const weekday = ['日', '月', '火', '水', '木', '金', '土'][today.getDay()];
-    
-    const { name: sekkiName, reading: sekkiReading } = await getCurrentSekki();
-
-    const weekdayString = `（${weekday}）`;
-    
-    // PC/タブレット版 (縦書き): 年月日を漢数字に変換
-    const kansujiYear = toKansuji(String(year));
-    const kansujiMonth = toKansuji(String(month));
-    const kansujiDay = toKansuji(String(day));
-
-    // 日付の表示フォーマット
-    const dateInfoPC = `${kansujiYear}年${kansujiMonth}月${kansujiDay}日${weekdayString}`; 
-    
-    // モバイル版 (横書き) - 漢数字使用
-    const dateInfoMobile = `${kansujiYear}年${kansujiMonth}月${kansujiDay}日${weekdayString}`; 
-
-    return {
-        dateInfoPC: dateInfoPC,
-        dateInfoMobile: dateInfoMobile,
-        sekkiName: sekkiName,
-        sekkiReading: sekkiReading
-    };
-}
-
-// 無制限データ読み込み用の関数（リトライ機能付き）
-async function fetchWithRetry(url, maxRetries = 10, timeout = 30000) {
-    for (let i = 0; i < maxRetries; i++) {
-        try {
-            // タイムアウト付きfetch
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), timeout);
-            
-            const response = await fetch(url, { 
-                signal: controller.signal,
-                cache: 'no-cache', // キャッシュを無効化
-                headers: {
-                    'Cache-Control': 'no-cache, no-store, must-revalidate',
-                    'Pragma': 'no-cache',
-                    'Expires': '0'
-                }
-            });
-            
-            clearTimeout(timeoutId);
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const data = await response.json();
-            return data;
-            
-        } catch (error) {
-            if (i < maxRetries - 1) {
-                const delay = Math.min(1000 * Math.pow(2, i), 5000); // 指数バックオフ（最大5秒）
-                await new Promise(resolve => setTimeout(resolve, delay));
-            } else {
-                throw new Error(`Failed to fetch after ${maxRetries} attempts: ${error.message}`);
-            }
-        }
-    }
-}
-
-// 日付を基にした固定シードで禅語を取得する関数
-async function getDailyZenWord() {
-    try {
-        const data = await fetchWithRetry('json/zen_words.json');
-        const words = data.zenWords;
-        
-        // 今日の日付を基にしたシード値を作成
-        const today = new Date();
-        const dateString = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-        
-        // 日付文字列から数値シードを生成
-        let seed = 0;
-        for (let i = 0; i < dateString.length; i++) {
-            seed = seed * 31 + dateString.charCodeAt(i);
-        }
-        
-        // シードを基にした固定インデックスを計算
-        const dailyIndex = Math.abs(seed) % words.length;
-        return words[dailyIndex];
-    } catch (error) {
-        console.error("禅語の取得中にエラーが発生しました:", error);
-        return null;
-    }
-}
-
-// DOMにコンテンツをレンダリングする関数
-async function renderDailyZen() {
-    const zenWord = await getDailyZenWord();
-    const { dateInfoPC, dateInfoMobile, sekkiName, sekkiReading } = await getDateAndSekki();
-
-    const isMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
-    
-    const dateEl = document.getElementById('date-info');
-    const sekkiEl = document.getElementById('sekki-info'); 
-    const readingEl = document.getElementById('reading'); 
-    
-    if (zenWord) {
-        readingEl.textContent = zenWord.reading;
-        document.getElementById('zengo').textContent = zenWord.zengo;
-        
-        // 説明文に theme, meaning, source_person, source_text_en を追加
-        const fullMeaning = `【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}\n＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
-        document.getElementById('meaning').textContent = fullMeaning;
-        
-        // テキスト挿入後に説明エリアの幅を再計算
-        recalculateMeaningWidth();
-    } else {
-        readingEl.textContent = "";
-        document.getElementById('zengo').textContent = "エラー";
-        document.getElementById('meaning').textContent = "データ読み込みに失敗しました。";
-        recalculateMeaningWidth();
-    }
-    
-    // 日付と節気の表示を要素に直接設定
-    if (!isMobile) {
-        // PC版: 縦書きなので一行で表示
-        dateEl.textContent = dateInfoPC;
-        sekkiEl.textContent = sekkiReading ? `${sekkiName}${sekkiReading}` : sekkiName;
-    } else {
-        // モバイル版: 改行文字で2行に分ける（dateInfoMobileを使用）
-        dateEl.textContent = dateInfoMobile;
-        sekkiEl.textContent = sekkiReading ? `${sekkiName}\n${sekkiReading}` : sekkiName;
-    }
-}
-
-// テキスト挿入後に説明エリアの幅を強制的に再計算する関数
-function recalculateMeaningWidth() {
-    const meaningContainer = document.getElementById('meaning-container');
-    const meaningElement = document.getElementById('meaning');
-    
-    if (!meaningContainer || !meaningElement) return;
-    
-    // 横長画面(landscape)でのみ実行
-    const isLandscape = window.matchMedia("(orientation: landscape)").matches;
-    if (!isLandscape) return;
-    
-    // Appleデバイスの判定
-    const isAppleDevice = /Macintosh|iPhone|iPad|iPod/.test(navigator.userAgent);
-    
-    if (isAppleDevice) {
-        // Appleデバイス: 強制リフローのみ
-        meaningElement.offsetWidth;
-        meaningContainer.offsetWidth;
-        meaningElement.offsetHeight;
-        meaningContainer.offsetHeight;
-    } else {
-        // その他のデバイス: 強制リフロー + リセット
-        meaningElement.offsetWidth;
-        meaningContainer.offsetWidth;
-        
-        requestAnimationFrame(() => {
-            meaningElement.style.width = '';
-            meaningContainer.style.width = '';
-        });
-    }
-}
-
-// デバッグモード用の変数
-let debugMode = false;
-let debugIndex = 0;
-let allZenWords = [];
-
-// デバッグモード用の禅語データを取得する関数
-async function loadAllZenWords() {
-    try {
-        const data = await fetchWithRetry('json/zen_words.json');
-        allZenWords = data.zenWords;
-        return allZenWords;
-    } catch (error) {
-        console.error("禅語データの読み込み中にエラーが発生しました:", error);
-        allZenWords = [];
-        return [];
-    }
-}
-
-// デバッグモード用の禅語表示関数
-async function renderDebugZen(index) {
-    if (allZenWords.length === 0) {
-        await loadAllZenWords();
-    }
-    
-    if (allZenWords.length === 0) {
-        return;
-    }
-    
-    // インデックスの範囲チェック
-    if (index < 0) index = allZenWords.length - 1;
-    if (index >= allZenWords.length) index = 0;
-    
-    debugIndex = index;
-    const zenWord = allZenWords[index];
-    
-    if (!zenWord) {
-        return;
-    }
-    const { dateInfoPC, dateInfoMobile, sekkiName, sekkiReading } = await getDateAndSekki();
-
-    const isMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
-    
-    const dateEl = document.getElementById('date-info');
-    const sekkiEl = document.getElementById('sekki-info'); 
-    const readingEl = document.getElementById('reading'); 
-    
-    if (zenWord) {
-        readingEl.textContent = zenWord.reading;
-        document.getElementById('zengo').textContent = zenWord.zengo;
-        
-        // デバッグモード用の表示
-        const fullMeaning = `[DEBUG ${index + 1}/${allZenWords.length}]\n【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}\n＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
-        document.getElementById('meaning').textContent = fullMeaning;
-    }
-    
-    // 日付と節気の表示
-    if (!isMobile) {
-        dateEl.textContent = dateInfoPC;
-        sekkiEl.textContent = sekkiReading ? `${sekkiName}${sekkiReading}` : sekkiName;
-    } else {
-        dateEl.textContent = dateInfoMobile;
-        sekkiEl.textContent = sekkiReading ? `${sekkiName}\n${sekkiReading}` : sekkiName;
-    }
-}
-
-// キーボードイベントハンドラ
-document.addEventListener('keydown', async (event) => {
-    // F9: デバッグモードの切り替え
-    if (event.key === 'F9') {
-        event.preventDefault();
-        debugMode = !debugMode;
-        
-        if (debugMode) {
-            console.log('デバッグモードON - 矢印キーで禅語を切り替えできます');
-            
-            await loadAllZenWords();
-            console.log(`データ読み込み完了: 全${allZenWords.length}項目`);
-            console.log(`最初の項目: ${allZenWords[0]?.no} - ${allZenWords[0]?.zengo}`);
-            console.log(`最後の項目: ${allZenWords[allZenWords.length-1]?.no} - ${allZenWords[allZenWords.length-1]?.zengo}`);
-            
-            // 現在の日付ベースのインデックスを初期値として設定
-            const today = new Date();
-            const dateString = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-            let seed = 0;
-            for (let i = 0; i < dateString.length; i++) {
-                seed = seed * 31 + dateString.charCodeAt(i);
-            }
-            debugIndex = Math.abs(seed) % allZenWords.length;
-            
-            await renderDebugZen(debugIndex);
-        } else {
-            console.log('デバッグモードOFF');
-            await renderDailyZen(); // 通常モードに戻る
-        }
-        return;
-    }
-    
-    // デバッグモード時の矢印キー操作
-    if (debugMode) {
-        if (event.key === 'ArrowRight') {
-            event.preventDefault();
-            await renderDebugZen(debugIndex + 1);
-        } else if (event.key === 'ArrowLeft') {
-            event.preventDefault();
-            await renderDebugZen(debugIndex - 1);
-        }
-    }
-});
-
-// ページ読み込み時の初期化(表示・フォント・モーダル・レイアウト修正)
-document.addEventListener('DOMContentLoaded', async () => {
-    // iPhone横向き初回表示バグ対策: リロードチェックを最初に
-    if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
-        const isLandscape = window.matchMedia("(orientation: landscape)").matches;
-        if (isLandscape) {
-            // 横向きの場合、初回のみリロード
-            const hasReloaded = sessionStorage.getItem('iphone_landscape_reloaded');
-            if (!hasReloaded) {
-                // 初回表示時のみリロード
-                sessionStorage.setItem('iphone_landscape_reloaded', 'true');
-                setTimeout(() => {
-                    location.reload();
-                }, 100);
-                return; // リロード前に処理を中断
-            }
-        } else {
-            // 縦向きの場合はフラグをクリア
-            sessionStorage.removeItem('iphone_landscape_reloaded');
-        }
-    }
-    
-    // ⚠️ キャッシュクリアは一旦無効化(無限リロード防止)
-    // clearPageCache();
-    
-    // コンテンツを描画
-    await renderDailyZen();
-    document.getElementById('app').classList.add('fonts-loaded');
-    setupModal();
-    // 初回ズーム適用
-    applyZoom();
-
-});
-
-// 強制再描画函数
-function forceReflow() {
-    const app = document.getElementById('app');
-    const zenWordDisplay = document.getElementById('zen-word-display');
-    
-    // 強制的にレイアウト再計算を実行
-    if (app) {
-        app.offsetHeight;
-        app.style.transform = 'translateZ(0)';
-    }
-    
-    if (zenWordDisplay) {
-        zenWordDisplay.offsetHeight;
-        // 一時的にvisibilityをhiddenにしてから戻す（再描画強制）
-        zenWordDisplay.style.visibility = 'hidden';
-        zenWordDisplay.offsetHeight; // 強制レンダリング
-        zenWordDisplay.style.visibility = 'visible';
-    }
-}
-
-// モーダル表示機能
-function setupModal() {
-    const kakejikuContainer = document.getElementById('kakejiku-container');
-    const modalOverlay = document.getElementById('modal-overlay');
-    const modalClose = document.getElementById('modal-close');
-    const modalMeaning = document.getElementById('modal-meaning');
-    
-    // 縦長（モバイル）時のみ掛け軸クリックでモーダル表示
-    kakejikuContainer.addEventListener('click', () => {
-        const isPortraitMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
-        if (isSimulatedClick) {
-            isSimulatedClick = false;
-            return;
-        }
-        if (isPortraitMobile) {
-            if (modalOverlay.classList.contains('show')) {
-                // すでに開いていれば閉じる
-                modalOverlay.classList.remove('show');
-            } else {
-                // 閉じていれば開く
-                const meaningText = document.getElementById('meaning').textContent;
-                modalMeaning.textContent = meaningText;
-                modalOverlay.classList.add('show');
-            }
-        }
-    });
-    
-    // モーダルを閉じる
-    function closeModal() {
-        modalOverlay.classList.remove('show');
-        // モーダル閉じる時も再描画実行（位置ずれ修正）
-        setTimeout(() => {
-            forceReflow();
-        }, 300); // アニメーション完了後
-    }
-    
-    modalClose.addEventListener('click', closeModal);
-    modalOverlay.addEventListener('click', (e) => {
-        if (e.target === modalOverlay) {
-            closeModal();
-        }
-    });
-    
-    // Escキーでモーダルを閉じる
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeModal();
-        }
-    });
-}
-
-// リサイズ時にレスポンシブな表示を再適用
-window.addEventListener('resize', () => {
-    if (debugMode) {
-        renderDebugZen(debugIndex);
-    } else {
-        renderDailyZen();
-    }
-    // ズームを再計算
-    applyZoom();
-});
-
-/**
- * W980×H739 の固定デザインをウィンドウサイズに合わせてズームイン・ズームアウト
- * 横長画面（landscape）のみで適用
- */
-function applyZoom() {
-    const wrapper = document.getElementById('scale-wrapper');
-    if (!wrapper) return;
-
-    // モバイル（縦長）ではズーム無効化
-    const isLandscape = window.matchMedia("(orientation: landscape)").matches;
-    
-    if (!isLandscape) {
-        wrapper.style.transform = ''; // スケールをリセット
-        return;
-    }
-
-    const designWidth = 1049;
-    const designHeight = 739;
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-
-    // ウィンドウサイズに対するスケール係数を計算（縦横比を保持）
-    const scaleX = windowWidth / designWidth;
-    const scaleY = windowHeight / designHeight;
-    
-    // 小さい方のスケールを採用（はみ出さないように）
-    const scale = Math.min(scaleX, scaleY);
-
-    // iPhone横置きの場合はtranslateY(50%)を保持
-    const isiPhoneLandscape = window.matchMedia("(orientation: landscape) and (max-width: 896px) and (max-height: 414px)").matches;
-    
-    if (isiPhoneLandscape) {
-        // iPhone横置き: iPhone画面サイズに合わせたスケールを1.35倍大きく調整
-        const iPhoneScale = Math.min(windowWidth / designWidth, windowHeight / designHeight) * 1.215; // 0.9 * 1.35 = 1.215
-        wrapper.style.transform = `translateY(-12.5%) scale(${iPhoneScale})`;
-    } else {
-        // その他のデバイス: scaleのみ適用
-        wrapper.style.transform = `scale(${scale})`;
-    }
+  ]
 }
