@@ -1,0 +1,28 @@
+{
+  "sekkiData": [
+    {"month": 1, "day": 5, "sekki": "小寒 (しょうかん)"},
+    {"month": 1, "day": 20, "sekki": "大寒 (だいかん)"},
+    {"month": 2, "day": 4, "sekki": "立春 (りっしゅん)"},
+    {"month": 2, "day": 19, "sekki": "雨水 (うすい)"},
+    {"month": 3, "day": 6, "sekki": "啓蟄 (けいちつ)"},
+    {"month": 3, "day": 21, "sekki": "春分 (しゅんぶん)"},
+    {"month": 4, "day": 5, "sekki": "清明 (せいめい)"},
+    {"month": 4, "day": 20, "sekki": "穀雨 (こくう)"},
+    {"month": 5, "day": 6, "sekki": "立夏 (りっか)"},
+    {"month": 5, "day": 21, "sekki": "小満 (しょうまん)"},
+    {"month": 6, "day": 6, "sekki": "芒種 (ぼうしゅ)"},
+    {"month": 6, "day": 21, "sekki": "夏至 (げし)"},
+    {"month": 7, "day": 7, "sekki": "小暑 (しょうしょ)"},
+    {"month": 7, "day": 23, "sekki": "大暑 (たいしょ)"},
+    {"month": 8, "day": 8, "sekki": "立秋 (りっしゅう)"},
+    {"month": 8, "day": 23, "sekki": "処暑 (しょしょ)"},
+    {"month": 9, "day": 8, "sekki": "白露 (はくろ)"},
+    {"month": 9, "day": 23, "sekki": "秋分 (しゅうぶん)"},
+    {"month": 10, "day": 8, "sekki": "寒露 (かんろ)"},
+    {"month": 10, "day": 23, "sekki": "霜降 (そうこう)"},
+    {"month": 11, "day": 7, "sekki": "立冬 (りっとう)"},
+    {"month": 11, "day": 22, "sekki": "小雪 (しょうせつ)"},
+    {"month": 12, "day": 7, "sekki": "大雪 (たいせつ)"},
+    {"month": 12, "day": 22, "sekki": "冬至 (とうじ)"}
+  ]
+}

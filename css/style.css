@@ -1,0 +1,582 @@
+/* ================================================================
+   共通設定 - CSS変数・基本スタイル・全画面共通要素============================================================= */
+
+:root {
+    --bg-color: #f0efef;
+    --text-color: #333;
+    --white: #ffffff;
+    --zen-font: 'Zen Antique', 'Hiragino Mincho Pro W6', 'Hiragino Mincho ProN W6', 'Yu Mincho Demibold', 'Noto Serif JP', serif;
+    --meaning-font: 'Hiragino Mincho Pro W6','Noto Serif JP', 'Kosugi Maru', serif;
+    --zen-color: #004073; /* 禅語の色 */
+    --meaning-color: #666666; /* 説明文の色 */
+    --meaning-font-size: 1.6rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    font-family: var(--meaning-font);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* スケーリングラッパー - 横向きでのみ固定サイズとズーム適用 */
+@media (orientation: landscape) {
+    #scale-wrapper {
+        width: 1049px;
+        height: 739px;
+        margin: 0 auto; /* 横中央 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform-origin: top center; /* 縦基準でスケール */
+    }
+}
+
+/* 横向きでのみ固定サイズ適用 */
+@media (orientation: landscape) {
+    #app {
+        width: 1049px;
+        height: 739px;
+    }
+}
+
+/* グローバルにボックスサイズを border-box に統一（高さ計算を安定させるため） */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* 背景画像の設定 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/zen_background.png');
+    background-size: auto 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+/* .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    padding: 0;
+} */
+
+/* 禅語と読みを内包するコンテナ */
+#zen-word-display {
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 1.65rem 0 0 0;
+    /* #kakejiku-container に対して最大54%の高さに制限 */
+    max-height: 54%;
+}
+
+#zengo {
+    font-family: var(--zen-font);
+    font-size: 3.25rem;
+    color: var(--zen-color);
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.5rem;
+    font-weight: 300;
+}
+
+#reading-block {
+    margin: 0;
+    padding: 0;
+}
+
+#reading {
+    font-family: var(--meaning-font);
+    font-size: 1.6rem;
+    color: #666666;
+    margin: 0;
+    padding: 0;
+}
+
+#reading-block, #zengo-block {
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    text-orientation: upright;
+    -webkit-text-orientation: upright;
+    padding: 0;
+}
+
+#meaning {
+    color: var(--meaning-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* ================================================================
+   モバイル版（デフォルト） - 縦3段レイアウト
+   ================================================================ */
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 100vh; /* モバイル用：画面全体に表示 */
+    padding: 1rem;
+}
+
+/* 年月日と節気のコンテナ */
+#info-container{
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+}
+
+#info-container * {
+    margin: 0;
+    padding: 0;
+}
+
+#info-container p{
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.175em;
+  margin:0;
+  padding:0;
+  /* white-space: nowrap は削除 - 曜日の改行を許可 */
+}
+
+/* 年月日ブロック（横書き）*/
+#info-container #date-block{
+    display: block;
+    white-space: pre-line; /* ブロック自体はpre-lineのまま */
+    text-align: center;
+    margin: 0;
+    padding:0;
+}
+
+/* 節気ブロック（横書き）*/
+#info-container #sekki-block{
+    display: block;
+    white-space: pre-line; /* ブロック自体はpre-lineのまま */
+    text-align: center;
+}
+
+/* 中央の掛け軸と禅語 */
+#kakejiku-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    min-height: 60vh;
+    width: 320px;
+    background-image: url('../images/kakejiku_base.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#kakejiku-base {
+    position: absolute;
+    width: auto;
+    height: 100vh; /* モバイル用に戻す */
+    object-fit: contain;
+}
+
+/* 説明文エリア */
+#meaning-container {
+    display: block; /* デフォルト表示を明示（空のルールセットを避けるため） */
+    margin: 0;
+}
+
+#meaning {
+    color: var(--meaning-color);
+    font-size: 1.35rem;
+    background: var(--white);
+    box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4);
+    margin: 0;
+    padding: 20px;
+}
+/* ================================================================
+   モバイル版専用（縦長画面のみ） - 年月日と節気を2行表示 + 説明文非表示
+   ================================================================ */
+@media (orientation: portrait) and (max-width: 767px) {
+    #info-container {
+        flex-direction: column !important;
+        gap: 0.5rem;
+    }
+    
+    #info-container #date-block {
+        white-space: nowrap; /* 改行を防ぐ */
+    }
+    
+    #info-container #sekki-block {
+        white-space: nowrap; /* 改行を防ぐ */
+    }
+    
+    /* モバイル縦向きでのみ説明文を非表示 */
+    #meaning-container {
+        display: none !important;
+    }
+    
+    /* 掛け軸をタップ可能にするスタイル */
+    #kakejiku-container {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    
+    #kakejiku-container:hover {
+        transform: scale(1.02);
+    }
+    
+    #kakejiku-container:active {
+        transform: scale(0.98);
+    }
+}
+
+#zengo {
+    font-family: var(--zen-font);
+    font-size: 2.8rem;
+    color: var(--zen-color);
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.5rem;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+#reading {
+    font-family: var(--meaning-font);
+    font-size: 1rem;
+    color: #666666;
+    margin: 0;
+    padding: 0;
+}
+
+#reading-block, #zengo-block {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    padding: 0;
+}
+
+/* ================================================================
+   PC版（横長画面） - 横3段レイアウト
+   ================================================================ */
+@media (orientation: landscape) {
+    #app {
+        flex-direction: row;
+        /* 親要素（#scale-wrapper）の高さを使う */
+        height: 100%;
+        /* max-width: 1122px; */
+        margin: 0 auto;
+        gap: 0;
+        padding: 20px;
+        /* 幅比率 30:40:30 の配分 */
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* 日付情報コンテナ (右側) - 縦書きレイアウト */
+    #info-container {
+        order: 3;
+        flex-basis: 20%; /* 20%幅に変更 */
+        /* 親の高さに合わせて収める（余白によるオーバーフローを防ぐ） */
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start; /* 左寄せに変更 */
+        align-items: center; /* 縦方向中央揃え */
+        gap: 0.17em;
+    }
+    
+    /* 表示順序（右から：年月日, 節気）*/
+    #date-block {
+        order: 2;
+        flex-shrink: 0;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        height: 100%;
+        display: flex;
+        align-items: center; /* 縦方向中央揃え */
+        justify-content: center; /* 横方向中央揃え */
+    }
+
+    #sekki-block {
+        order: 1;
+        flex-shrink: 0;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        height: 100%;
+        display: flex;
+        align-items: center; /* 縦方向中央揃え */
+        justify-content: center; /* 横方向中央揃え */
+    }
+
+    /* 日付・節気ブロック内のテキストスタイル */
+    #date-block p {
+        margin: 0;
+        padding: 0; /* パディングをゼロに */
+        line-height: 1.5;
+        font-size: 2.0rem;
+        font-weight: bold;
+        text-align: center; /* 中央揃え */
+        font-family: var(--meaning-font);
+        letter-spacing: 0.35rem;
+        white-space: nowrap; /* 改行なし */
+    }
+
+   #sekki-block p {
+        margin: 0;
+        padding: 0; /* パディングをゼロに */
+        line-height: 1.5;
+        font-size: 2.0rem;
+        font-weight: bold;
+        text-align: center; /* 中央揃え */
+        font-family: var(--meaning-font);
+        letter-spacing: 0.35rem;
+        white-space: nowrap; /* 改行なし */
+    }
+
+    /* 掛け軸コンテナ (中央) */
+    #kakejiku-container {
+        order: 2;
+        flex-basis: 40%; /* 40%幅 */
+        /* 親の高さにぴったり収める（padding を含めて計算される） */
+        height: 100vh;
+        display: flex;
+        justify-content: center; /* 中央揃えに戻す */
+        align-items: center; /* 縦方向中央揃え */
+        /* background-size: 380px 1000px; */
+    }
+
+    /* 解説コンテナ (左側) */
+    #meaning-container {
+        order: 1;
+        flex-basis: 40%; /* 40%幅に変更 */
+        align-self: center;
+        display: flex;
+        justify-content: flex-end; /* 右寄せに変更 */
+        align-items: center; /* 縦方向中央揃え */
+    }
+    
+    #meaning {
+        line-height: 2.0;
+        font-size: var(--meaning-font-size);
+        text-align: left;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        white-space: pre-wrap;
+        background: var(--white);
+        box-shadow: 0.5rem 0.5rem 0 0 rgba(102, 102, 102, 0.4);
+        padding: 1em;
+        width: fit-content;
+        height: fit-content;
+        margin: 0;
+    }
+}
+
+/* デスクトップ幅では body のスクロールを抑制し、コンテナ内部で必要に応じてスクロールできるようにする */
+@media (min-width: 768px) {
+    html, body {
+        height: 100%;
+        overflow: hidden; /* ページ全体のスクロールバーを出さない */
+    }
+
+    /* 必要なら内部でスクロール可能にする（例：意味表示など） */
+    #meaning-container, #info-container {
+        overflow: auto;
+    }
+
+    /* デスクトップでの高さ固定とスクロールバー非表示設定 */
+    #meaning-container {
+        height: auto; /* ズーム対応のためautoに変更 */
+        max-height: 60vh; /* 最大高さ制限 */
+        overflow: auto;
+        -ms-overflow-style: none; /* IE/Edge */
+        scrollbar-width: none; /* Firefox */
+        /* 幅はリキッド（自動調整）にするため width 指定なし */
+        padding: 0.5rem; /* シャドウ用のスペース確保 */
+    }
+    #meaning-container::-webkit-scrollbar { display: none; } /* WebKit */
+
+    #info-container {
+        height: 80vh; /* ユーザー指定：情報エリアを80vhに固定 */
+        overflow: auto;
+        -ms-overflow-style: none; /* IE/Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    #info-container::-webkit-scrollbar { display: none; } /* WebKit */
+}
+
+/* ================================================================
+   モバイル版専用 - モーダル表示機能
+   ================================================================ */
+
+/* モーダル背景 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* モーダル表示状態 */
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* モーダルコンテンツ */
+.modal-content {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 80vw;
+    max-width: 400px;
+    max-height: 35vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(50px);
+    transition: transform 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 上揃え */
+    align-items: flex-end; /* 右揃え */
+}
+
+/* モーダル表示時のアニメーション */
+.modal-overlay.show .modal-content {
+    transform: translateY(0);
+}
+
+/* モーダル内のテキスト */
+.modal-text {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    font-family: var(--meaning-font);
+    color: var(--meaning-color);
+    writing-mode: vertical-rl;
+    text-orientation: mixed; /* upright → mixed に変更（半角英数字を横向きに）*/
+    align-self: flex-end; /* 親の右端に揃える */
+    white-space: pre-wrap; /* 改行を有効にする */
+}
+
+/* 閉じるボタン */
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--meaning-color);
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.modal-close:hover {
+    background-color: #f0f0f0;
+}
+
+/* タップヒント要素 */
+.tap-hint {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .tap-hint {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.9);
+        padding: 6px 12px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        color: var(--zen-color);
+        white-space: nowrap;
+        z-index: 10;
+        animation: pulse 2s infinite;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+/* ================================================================
+   iPhone横置き専用設定 - PCレイアウトの確実な適用とセンター揃え
+   ================================================================ */
+@media (orientation: landscape) and (max-width: 896px) and (max-height: 414px) {
+    /* bodyレベルでのセンタリング - viewport高さを考慮 */
+    body {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        min-height: 100vh !important;
+        height: 100vh !important;
+        overflow: hidden !important;
+    }
+    
+    /* scale-wrapper - コンテンツエリアを縦方向中央に配置 */
+    #scale-wrapper {
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto !important;
+        transform-origin: center center !important; /* 中央基準でスケール */
+        /* iPhone横向きは上余白を減らして1.35倍大きく表示 */
+        transform: translateY(-8%) scale(var(--zoom-scale, 0.675)) !important;
+    }
+    
+    /* app内でのセンタリング強化 */
+    #app {
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto !important;
+    }
+    
+    /* インフォエリアの文字サイズとスペーシングを縮小 */
+    #date-block p,
+    #sekki-block p {
+        font-size: 1.25rem !important; /* 2.0rem から 0.75 縮小 */
+        line-height: 1.0 !important; /* 1.5 から 0.5 縮小 */
+        white-space: normal !important; /* iPhone横向きでは改行を許可 */
+        letter-spacing: 0.2rem !important; /* レタースペースも調整 */
+    }
+}

@@ -1,0 +1,112 @@
+{
+  "zenWords": [
+    {
+      "no": 1,
+      "zengo": "而今",
+      "reading": "にこん / じこん",
+      "meaning": "過去を悔やまず、未来を憂えず、ただ今この一瞬に全力を注ぐ。",
+      "theme": "集中",
+      "source_person": "道元（Dōgen）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 2,
+      "zengo": "日々是好日",
+      "reading": "にちにちこれこうじつ",
+      "meaning": "良い日も悪い日もない。毎日がかけがえのない尊い一日である。",
+      "theme": "平静",
+      "source_person": "雲門文偃（Yunmen Wenyan）",
+      "source_text_en": "Mumonkan / Hekiganroku（『無門関』 / 『碧巌録』）"
+    },
+    {
+      "no": 3,
+      "zengo": "放下着",
+      "reading": "ほうげじゃく",
+      "meaning": "一切の執着やこだわりを手放し、軽やかに生きなさい。",
+      "theme": "解放",
+      "source_person": "唐代の僧（Tang Dynasty Monk）",
+      "source_text_en": "Shōyōroku（『従容録』）"
+    },
+    {
+      "no": 4,
+      "zengo": "平常心是道",
+      "reading": "へいじょうしんこれどう",
+      "meaning": "特別な修行ではなく、日常のありのままの心こそが悟りの境地である。",
+      "theme": "平静",
+      "source_person": "馬祖道一（Mazu Daoyi）",
+      "source_text_en": "Mumonkan（『無門関』）"
+    },
+    {
+      "no": 5,
+      "zengo": "行雲流水",
+      "reading": "こううんりゅうすい",
+      "meaning": "空を流れる雲、留まることのない水のように、執着せずに自然体で生きる。",
+      "theme": "自由",
+      "source_person": "蘇軾（Sū Shì - Song Dynasty Poet）",
+      "source_text_en": "Xie Minshi Tuiguan Yu Shu（『謝民師推官与書』）"
+    },
+    {
+      "no": 6,
+      "zengo": "脚下照顧",
+      "reading": "きゃっかしょうこ",
+      "meaning": "他人や遠くを見ず、自分の足元（現在と自己）をよく見つめなさい。",
+      "theme": "集中",
+      "source_person": "孤峰覚明（Kohō Kakumyō）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 7,
+      "zengo": "知足",
+      "reading": "ちそく",
+      "meaning": "足りるを知る。他と比べず、今あるものに感謝し、心安らかに過ごす。",
+      "theme": "満足",
+      "source_person": "老子（Laozi - Taoist Philosopher）",
+      "source_text_en": "Laozi（『老子』）"
+    },
+    {
+      "no": 8,
+      "zengo": "無心",
+      "reading": "むしん",
+      "meaning": "雑念や先入観のない、囚われのない純粋な心。",
+      "theme": "集中",
+      "source_person": "達磨、禅宗（Bodhidharma, Zen School）",
+      "source_text_en": "Zen Teaching / Sōkyōroku（『宗鏡録』）"
+    },
+    {
+      "no": 9,
+      "zengo": "和敬清寂",
+      "reading": "わけいせいじゃく",
+      "meaning": "互いに和し、敬い、心を清くし、穏やかに過ごす（茶道の精神）。",
+      "theme": "調和",
+      "source_person": "千利休（Sen no Rikyū）",
+      "source_text_en": "Cha no Yu Essence（茶の湯の根本精神）"
+    },
+    {
+      "no": 10,
+      "zengo": "無縄自縛",
+      "reading": "むじょうじばく",
+      "meaning": "自分を縛っているものは、他人や環境ではなく自分自身の思い込みである。",
+      "theme": "解放",
+      "source_person": "臨済宗の僧（Rinzai School Monk）",
+      "source_text_en": "Shōbōgenzō / Rinzai-roku（『正法眼蔵』 / 『臨済録』）"
+    },
+    {
+      "no": 11,
+      "zengo": "一期一会",
+      "reading": "いちごいちえ",
+      "meaning": "この瞬間、この出会いは二度とないものとして大切に向き合いなさい。",
+      "theme": "集中",
+      "source_person": "千利休（Sen no Rikyū）",
+      "source_text_en": "Yamanoue Sōji Ki（『山上宗二記』）"
+    },
+    {
+      "no": 12,
+      "zengo": "且緩々",
+      "reading": "しゃかんかん",
+      "meaning": "慌てることなくゆっくりと、落ち着いて事を進めなさい。",
+      "theme": "平静",
+      "source_person": "雲門文偃（Yunmen Wenyan）",
+      "source_text_en": "Unmon Kōroku（『雲門広録』）"
+    }
+  ]
+}
