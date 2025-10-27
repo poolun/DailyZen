@@ -152,18 +152,18 @@ function toKansuji(str) {
 }
 
 
-// 二十四節気データを取得する関数 (変更なし)
+// 二十四節気データを取得する関数（強化版）
 async function getSekkiData() {
     try {
-        const response = await fetch('json/sekki_data.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
+        const data = await fetchWithRetry('json/sekki_data.json');
         return data.sekkiData;
     } catch (error) {
         console.error("二十四節気データの取得中にエラーが発生しました:", error);
-        return [];
+        
+        // フォールバック: 最小限のデータで動作継続
+        return [{
+            month: 1, day: 1, sekki: "データ読み込み失敗"
+        }];
     }
 }
 
@@ -253,15 +253,54 @@ async function getDateAndSekki() {
     };
 }
 
+// 無制限データ読み込み用の関数（リトライ機能付き）
+async function fetchWithRetry(url, maxRetries = 10, timeout = 30000) {
+    for (let i = 0; i < maxRetries; i++) {
+        try {
+            console.log(`📡 Fetching attempt ${i + 1}/${maxRetries}: ${url}`);
+            
+            // タイムアウト付きfetch
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), timeout);
+            
+            const response = await fetch(url, { 
+                signal: controller.signal,
+                cache: 'no-cache', // キャッシュを無効化
+                headers: {
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache',
+                    'Expires': '0'
+                }
+            });
+            
+            clearTimeout(timeoutId);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            console.log(`✅ Data loaded successfully on attempt ${i + 1}`);
+            return data;
+            
+        } catch (error) {
+            console.warn(`⚠️ Attempt ${i + 1} failed:`, error.message);
+            
+            if (i < maxRetries - 1) {
+                const delay = Math.min(1000 * Math.pow(2, i), 5000); // 指数バックオフ（最大5秒）
+                console.log(`⏳ Retrying in ${delay}ms...`);
+                await new Promise(resolve => setTimeout(resolve, delay));
+            } else {
+                throw new Error(`Failed to fetch after ${maxRetries} attempts: ${error.message}`);
+            }
+        }
+    }
+}
+
 // 日付を基にした固定シードで禅語を取得する関数
 async function getDailyZenWord() {
     try {
-        const response = await fetch('json/zen_words.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        
+        const data = await fetchWithRetry('json/zen_words.json');
         const words = data.zenWords;
         
         // 今日の日付を基にしたシード値を作成
@@ -398,18 +437,18 @@ let debugMode = false;
 let debugIndex = 0;
 let allZenWords = [];
 
-// デバッグモード用の禅語データを取得する関数
+// デバッグモード用の禅語データを取得する関数（強化版）
 async function loadAllZenWords() {
     try {
-        const response = await fetch('json/zen_words.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
+        const data = await fetchWithRetry('json/zen_words.json');
         allZenWords = data.zenWords;
+        console.log(`📚 Loaded ${allZenWords.length} zen words for debug mode`);
         return allZenWords;
     } catch (error) {
         console.error("禅語データの読み込み中にエラーが発生しました:", error);
+        
+        // フォールバック: 空のデータでも動作を継続
+        allZenWords = [];
         return [];
     }
 }
