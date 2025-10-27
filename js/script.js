@@ -350,7 +350,7 @@ async function renderDailyZen() {
         }
         
         // 説明文に theme, meaning, source_person, source_text_en を追加
-        const fullMeaning = `【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}\n＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
+        const fullMeaning = `【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
         document.getElementById('meaning').textContent = fullMeaning;
         
         // テキスト挿入後に説明エリアの幅を再計算
@@ -467,7 +467,7 @@ async function renderDebugZen(index) {
         }
         
         // デバッグモード用の表示
-        const fullMeaning = `[DEBUG ${index + 1}/${allZenWords.length}]\n【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}\n＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
+        const fullMeaning = `[DEBUG ${index + 1}/${allZenWords.length}]【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
         document.getElementById('meaning').textContent = fullMeaning;
     }
     
