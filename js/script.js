@@ -329,7 +329,15 @@ async function renderDailyZen() {
     
     if (zenWord) {
         readingEl.textContent = zenWord.reading;
-        document.getElementById('zengo').textContent = zenWord.zengo;
+        const zengoElement = document.getElementById('zengo');
+        zengoElement.textContent = zenWord.zengo;
+        
+        // 7文字以上の禅語は小さくする
+        if (zenWord.zengo.length >= 7) {
+            zengoElement.classList.add('long-zengo');
+        } else {
+            zengoElement.classList.remove('long-zengo');
+        }
         
         // 説明文に theme, meaning, source_person, source_text_en を追加
         const fullMeaning = `【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}\n＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
@@ -339,7 +347,9 @@ async function renderDailyZen() {
         recalculateMeaningWidth();
     } else {
         readingEl.textContent = "";
-        document.getElementById('zengo').textContent = "エラー";
+        const zengoElement = document.getElementById('zengo');
+        zengoElement.textContent = "エラー";
+        zengoElement.classList.remove('long-zengo'); // エラー時はクラスを削除
         document.getElementById('meaning').textContent = "データ読み込みに失敗しました。";
         recalculateMeaningWidth();
     }
@@ -436,7 +446,15 @@ async function renderDebugZen(index) {
     
     if (zenWord) {
         readingEl.textContent = zenWord.reading;
-        document.getElementById('zengo').textContent = zenWord.zengo;
+        const zengoElement = document.getElementById('zengo');
+        zengoElement.textContent = zenWord.zengo;
+        
+        // 7文字以上の禅語は小さくする
+        if (zenWord.zengo.length >= 7) {
+            zengoElement.classList.add('long-zengo');
+        } else {
+            zengoElement.classList.remove('long-zengo');
+        }
         
         // デバッグモード用の表示
         const fullMeaning = `[DEBUG ${index + 1}/${allZenWords.length}]\n【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}\n＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
