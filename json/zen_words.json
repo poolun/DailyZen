@@ -215,6 +215,222 @@
       "theme": "解放",
       "source_person": "六祖慧能（Huìnéng）",
       "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
+    },
+    {
+      "no": 25,
+      "zengo": "松無古今色",
+      "reading": "まつにここんのいろなし",
+      "meaning": "松の色はいつの時代も変わらない。真理は永遠であり、時間によって左右されない。",
+      "theme": "普遍",
+      "source_person": "大智円行（Daizhi Yuanxing）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 26,
+      "zengo": "一寸の光陰軽んずべからず",
+      "reading": "いっすんのこういんかろんずべからず",
+      "meaning": "わずかな時間も無駄にしてはならない。一瞬一瞬を大切に生きよ。",
+      "theme": "集中",
+      "source_person": "朱子（Zhu Xi）",
+      "source_text_en": "Shōbōgenzō Zuimonki（『正法眼蔵随聞記』）"
+    },
+    {
+      "no": 27,
+      "zengo": "心外無別法",
+      "reading": "しんげむべっぽう",
+      "meaning": "心から離れたところに悟りも真理も存在しない。全ては心の中に帰結する。",
+      "theme": "自立",
+      "source_person": "六祖慧能（Huìnéng）",
+      "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
+    },
+    {
+      "no": 28,
+      "zengo": "和光同塵",
+      "reading": "わこうどうじん",
+      "meaning": "智慧の光を和らげ、俗世の塵（ちり）にまじり、人々と共に生きる。",
+      "theme": "調和",
+      "source_person": "老子（Laozi）",
+      "source_text_en": "Laozi（『老子』）"
+    },
+    {
+      "no": 29,
+      "zengo": "夢",
+      "reading": "ゆめ",
+      "meaning": "人生は夢や幻のように儚いものである。執着することなく、深くこだわらない心境。",
+      "theme": "解放",
+      "source_person": "般若心経（Heart Sutra）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 30,
+      "zengo": "一味清風",
+      "reading": "いちみせいふう",
+      "meaning": "ただ一つのさわやかな風。全ての物事が平等であり、差別がない真理の境地。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 31,
+      "zengo": "無事",
+      "reading": "ぶじ",
+      "meaning": "特別な課題や煩悩がない、何事もない平穏な境地。あるがままの姿。",
+      "theme": "平静",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 32,
+      "zengo": "柳緑花紅",
+      "reading": "やなぎはみどり、はなはくれない",
+      "meaning": "柳の緑、花の赤。自然のありのままの美しさがそのまま真実の姿である。",
+      "theme": "調和",
+      "source_person": "蘇軾（Sū Shì）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 33,
+      "zengo": "水急不流月",
+      "reading": "みずいそげどつきはながれず",
+      "meaning": "水面は速く流れても、水に映る月は動かない。現象に惑わされず、本質を見失うな。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 34,
+      "zengo": "直心是道場",
+      "reading": "じきしんこれどうじょう",
+      "meaning": "素直で正直な心こそが、修行をするべき場所（道場）である。",
+      "theme": "自立",
+      "source_person": "維摩経（Vimalakirti Sutra）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 35,
+      "zengo": "閑古錐",
+      "reading": "かんこすい",
+      "meaning": "使い古されて角が取れたキリのように、悟りきって何も求めなくなった境地。",
+      "theme": "満足",
+      "source_person": "雲門文偃（Yunmen Wenyan）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 36,
+      "zengo": "本来無一物",
+      "reading": "ほんらいむいちもつ",
+      "meaning": "元々、執着すべき実体は何一つない。心は本来清浄である。",
+      "theme": "解放",
+      "source_person": "六祖慧能（Huìnéng）",
+      "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
+    },
+    {
+      "no": 37,
+      "zengo": "一期一会",
+      "reading": "いちごいちえ",
+      "meaning": "この瞬間、この出会いは二度とないものとして大切に向き合いなさい。",
+      "theme": "集中",
+      "source_person": "千利休（Sen no Rikyū）",
+      "source_text_en": "Yamanoue Sōji Ki（『山上宗二記』）"
+    },
+    {
+      "no": 38,
+      "zengo": "夢幻泡影",
+      "reading": "むげんほうよう",
+      "meaning": "人生の全ては夢や幻、泡や影のように儚い。執着を捨てなさい。",
+      "theme": "解放",
+      "source_person": "金剛般若経（Diamond Sutra）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 39,
+      "zengo": "八風吹けども動ぜず",
+      "reading": "はっぷうふけどもどうぜず",
+      "meaning": "利・衰・毀・誉・称・譏・苦・楽の8種の風（誘惑や中傷）に心を乱されない。",
+      "theme": "平静",
+      "source_person": "白居易（Bai Juyi）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 40,
+      "zengo": "不立文字",
+      "reading": "ふりゅうもんじ",
+      "meaning": "仏の教えは言葉や文字で表し尽くせるものではない。座禅など実践を通して会得せよ。",
+      "theme": "集中",
+      "source_person": "禅宗の教え（Zen School Principle）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 41,
+      "zengo": "日日新",
+      "reading": "ひびあらた",
+      "meaning": "毎日毎日が新しく生まれ変わる。常に向上心を持ち、過去に囚われず生きよ。",
+      "theme": "発展",
+      "source_person": "大学（Da Xue）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 42,
+      "zengo": "前後際断",
+      "reading": "ぜんごさいだん",
+      "meaning": "過去と未来の思いを断ち切り、ただ「今、この一瞬」に集中して生きる。",
+      "theme": "集中",
+      "source_person": "道元（Dōgen）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 43,
+      "zengo": "莫妄想",
+      "reading": "まくもうぞう",
+      "meaning": "妄想するな、余計なことを考えるな。ありのままを素直に受け入れよ。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 44,
+      "zengo": "放下着",
+      "reading": "ほうげじゃく",
+      "meaning": "一切の執着やこだわりを手放し、軽やかに生きなさい。",
+      "theme": "解放",
+      "source_person": "唐代の僧（Tang Dynasty Monk）",
+      "source_text_en": "Shōyōroku（『従容録』）"
+    },
+    {
+      "no": 45,
+      "zengo": "啐啄同時",
+      "reading": "そったくどうじ",
+      "meaning": "師弟が互いに機が熟したと悟り、その一瞬で悟りを開かせること。絶好のタイミング。",
+      "theme": "集中",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Hekiganroku（『碧巌録』）"
+    },
+    {
+      "no": 46,
+      "zengo": "寿山福海",
+      "reading": "じゅざんふくかい",
+      "meaning": "長寿は山のように動かず、幸福は海のように広大である。長寿と幸福を祈る。",
+      "theme": "感謝",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 47,
+      "zengo": "照顧脚下",
+      "reading": "しょうこきゃっか",
+      "meaning": "己の足元を見よ。今、目の前の事柄に集中し、自己を見つめなさい。",
+      "theme": "集中",
+      "source_person": "孤峰覚明（Kohō Kakumyō）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 48,
+      "zengo": "吾唯足知",
+      "reading": "われただたるをしる",
+      "meaning": "私はただ足るを知る。欲望を追求せず、今あるものに満足して生きる。",
+      "theme": "満足",
+      "source_person": "龍安寺の蹲踞の銘（Inscription on Ryoanji Tsukubai）",
+      "source_text_en": "Zen Teaching（禅の教え）"
     }
   ]
 }
