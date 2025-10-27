@@ -326,12 +326,12 @@
     },
     {
       "no": 37,
-      "zengo": "一期一会",
-      "reading": "いちごいちえ",
-      "meaning": "この瞬間、この出会いは二度とないものとして大切に向き合いなさい。",
-      "theme": "集中",
-      "source_person": "千利休（Sen no Rikyū）",
-      "source_text_en": "Yamanoue Sōji Ki（『山上宗二記』）"
+      "zengo": "八風吹けども動ぜず",
+      "reading": "はっぷうふけどもどうぜず",
+      "meaning": "利・衰・毀・誉・称・譏・苦・楽の8種の風（誘惑や中傷）に心を乱されない。",
+      "theme": "平静",
+      "source_person": "白居易（Bai Juyi）",
+      "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
       "no": 38,
@@ -344,15 +344,6 @@
     },
     {
       "no": 39,
-      "zengo": "八風吹けども動ぜず",
-      "reading": "はっぷうふけどもどうぜず",
-      "meaning": "利・衰・毀・誉・称・譏・苦・楽の8種の風（誘惑や中傷）に心を乱されない。",
-      "theme": "平静",
-      "source_person": "白居易（Bai Juyi）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 40,
       "zengo": "不立文字",
       "reading": "ふりゅうもんじ",
       "meaning": "仏の教えは言葉や文字で表し尽くせるものではない。座禅など実践を通して会得せよ。",
@@ -361,7 +352,7 @@
       "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
-      "no": 41,
+      "no": 40,
       "zengo": "日日新",
       "reading": "ひびあらた",
       "meaning": "毎日毎日が新しく生まれ変わる。常に向上心を持ち、過去に囚われず生きよ。",
@@ -370,7 +361,7 @@
       "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
-      "no": 42,
+      "no": 41,
       "zengo": "前後際断",
       "reading": "ぜんごさいだん",
       "meaning": "過去と未来の思いを断ち切り、ただ「今、この一瞬」に集中して生きる。",
@@ -379,7 +370,7 @@
       "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
     },
     {
-      "no": 43,
+      "no": 42,
       "zengo": "莫妄想",
       "reading": "まくもうぞう",
       "meaning": "妄想するな、余計なことを考えるな。ありのままを素直に受け入れよ。",
@@ -388,25 +379,7 @@
       "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
-      "no": 44,
-      "zengo": "放下着",
-      "reading": "ほうげじゃく",
-      "meaning": "一切の執着やこだわりを手放し、軽やかに生きなさい。",
-      "theme": "解放",
-      "source_person": "唐代の僧（Tang Dynasty Monk）",
-      "source_text_en": "Shōyōroku（『従容録』）"
-    },
-    {
-      "no": 45,
-      "zengo": "啐啄同時",
-      "reading": "そったくどうじ",
-      "meaning": "師弟が互いに機が熟したと悟り、その一瞬で悟りを開かせること。絶好のタイミング。",
-      "theme": "集中",
-      "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Hekiganroku（『碧巌録』）"
-    },
-    {
-      "no": 46,
+      "no": 43,
       "zengo": "寿山福海",
       "reading": "じゅざんふくかい",
       "meaning": "長寿は山のように動かず、幸福は海のように広大である。長寿と幸福を祈る。",
@@ -415,22 +388,49 @@
       "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
-      "no": 47,
-      "zengo": "照顧脚下",
-      "reading": "しょうこきゃっか",
-      "meaning": "己の足元を見よ。今、目の前の事柄に集中し、自己を見つめなさい。",
-      "theme": "集中",
-      "source_person": "孤峰覚明（Kohō Kakumyō）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 48,
+      "no": 44,
       "zengo": "吾唯足知",
       "reading": "われただたるをしる",
       "meaning": "私はただ足るを知る。欲望を追求せず、今あるものに満足して生きる。",
       "theme": "満足",
       "source_person": "龍安寺の蹲踞の銘（Inscription on Ryoanji Tsukubai）",
       "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 45,
+      "zengo": "一超直入如来地",
+      "reading": "いっちょうじきにゅうにょらいち",
+      "meaning": "一つの飛躍で、仏陀の悟りの境地にまっすぐ到達する。迷いを断ち切る鋭い悟り。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 46,
+      "zengo": "梅花五福を開く",
+      "reading": "ばいかごふくをひらく",
+      "meaning": "梅の花は五つの花弁を持ち、長寿、富、健康、徳、子孫の五つの福をもたらす。",
+      "theme": "感謝",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 47,
+      "zengo": "青山元不動",
+      "reading": "せいざんもとふどう",
+      "meaning": "青い山は元々動かない。世の中が変化しても、真理は変わらず不動である。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 48,
+      "zengo": "歩歩是道場",
+      "reading": "ほほこれどうじょう",
+      "meaning": "一歩一歩の歩みが修行の場である。日常生活の全てが仏道である。",
+      "theme": "集中",
+      "source_person": "道元（Dōgen）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
     }
   ]
 }
