@@ -1079,6 +1079,51 @@
       "theme": "集中",
       "source_person": "道元（Dōgen）",
       "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 121,
+      "zengo": "山花開似錦",
+      "reading": "さんか にしきにひらくがごとし",
+      "meaning": "山に咲く花が錦のように美しい。自然のありのままの姿がそのまま真理であり、無上の美である。",
+      "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 122,
+      "zengo": "主人公を喚び看よ",
+      "reading": "しゅじんこうをよびみよ",
+      "meaning": "雑念に惑わされている自分に気づき、真の自己（主人公）を呼び覚まし、目を覚まして生きなさい。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 123,
+      "zengo": "真実語",
+      "reading": "しんじつご",
+      "meaning": "嘘偽りのない、真実の言葉。仏の教え。禅において、言葉を超えた真実を伝える唯一の言葉。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 124,
+      "zengo": "看即是",
+      "reading": "かんそくぜ",
+      "meaning": "見ることがすなわちそれである。理屈を介さず、ありのままの現実を見つめることで真理が明らかになる。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 125,
+      "zengo": "万事休す",
+      "reading": "ばんじきゅうす",
+      "meaning": "全ての計らいや煩悩が止まること。全ての行為や執着を捨てて安らぎを得た悟りの境地。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
     }
   ]
 }
