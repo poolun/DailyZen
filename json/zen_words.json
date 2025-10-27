@@ -107,6 +107,114 @@
       "theme": "平静",
       "source_person": "雲門文偃（Yunmen Wenyan）",
       "source_text_en": "Unmon Kōroku（『雲門広録』）"
+    },
+    {
+      "no": 13,
+      "zengo": "啐啄同時",
+      "reading": "そったくどうじ",
+      "meaning": "師弟が互いに機が熟したと悟り、その一瞬で悟りを開かせること。絶好のタイミング。",
+      "theme": "集中",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Hekiganroku（『碧巌録』）"
+    },
+    {
+      "no": 14,
+      "zengo": "円相",
+      "reading": "えんそう",
+      "meaning": "円は「宇宙・真理・仏性」を象徴し、欠けたところのない完全な悟りの姿を表す。",
+      "theme": "調和",
+      "source_person": "禅画のテーマ（Zen Painting Theme）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 15,
+      "zengo": "一華開五葉",
+      "reading": "いっかごようをひらく",
+      "meaning": "一つの花から五つの葉が開く。達磨から始まった禅宗が五つの宗派に分かれて栄えること。",
+      "theme": "発展",
+      "source_person": "達磨（Bodhidharma）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 16,
+      "zengo": "独坐大雄峰",
+      "reading": "どくざだいゆうほう",
+      "meaning": "誰にも頼らず、ただ一人、自己を深く見つめる場所（心境）。",
+      "theme": "自立",
+      "source_person": "潙山霊祐（Guishan Lingyou）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 17,
+      "zengo": "主人公",
+      "reading": "しゅじんこう",
+      "meaning": "本当の自分自身。雑念に振り回されない、不動の自己の中心。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 18,
+      "zengo": "喫茶去",
+      "reading": "きっさこ",
+      "meaning": "お茶でも飲みなさい。特別な理屈や禅問答ではなく、目の前の日常に集中せよ。",
+      "theme": "平静",
+      "source_person": "趙州従諗（Zhaozhou Congshen）",
+      "source_text_en": "Mumonkan（『無門関』）"
+    },
+    {
+      "no": 19,
+      "zengo": "廓然無聖",
+      "reading": "かくねんむしょう",
+      "meaning": "広々として何もない、特別な悟りの境地はないということ。悟りを求める心すら手放す。",
+      "theme": "解放",
+      "source_person": "達磨と武帝の問答（Bodhidharma and Emperor Wu）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 20,
+      "zengo": "随所作主",
+      "reading": "ずいしょさしゅ",
+      "meaning": "どこにいても、その場所の主人となりなさい。環境に左右されず、主体的に生きよ。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 21,
+      "zengo": "一字千金",
+      "reading": "いちじせんきん",
+      "meaning": "一文字が千金に値するほど、言葉や教えが尊いこと。",
+      "theme": "感謝",
+      "source_person": "禅語としての比喩（Zen Metaphor）",
+      "source_text_en": "General Proverb（一般の故事成語）"
+    },
+    {
+      "no": 22,
+      "zengo": "山是山水是水",
+      "reading": "やまはこれやまみずはこれみず",
+      "meaning": "山はただ山、水はただ水。ありのままの姿を素直に受け入れる境地。",
+      "theme": "平静",
+      "source_person": "青原行思（Qingyuan Xingsi）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 23,
+      "zengo": "主人公に問え",
+      "reading": "しゅじんこうにとうえ",
+      "meaning": "迷ったとき、苦しいときこそ、外に答えを求めず、心の中の真の自己（主人公）に問いかけなさい。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 24,
+      "zengo": "無一物",
+      "reading": "むいちもつ",
+      "meaning": "何一つ持つものがない状態。執着を捨て去った、清浄で囚われのない心境。",
+      "theme": "解放",
+      "source_person": "六祖慧能（Huìnéng）",
+      "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
     }
   ]
 }
