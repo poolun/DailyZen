@@ -110,12 +110,12 @@
     },
     {
       "no": 13,
-      "zengo": "啐啄同時",
-      "reading": "そったくどうじ",
-      "meaning": "師弟が互いに機が熟したと悟り、その一瞬で悟りを開かせること。絶好のタイミング。",
-      "theme": "集中",
-      "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Hekiganroku（『碧巌録』）"
+      "zengo": "笑門来福",
+      "reading": "しょうもんらいふく",
+      "meaning": "笑いのある家には自然と幸福がやってくる。明るく快活に過ごすことが福を招く。",
+      "theme": "幸福",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "General Proverb / Zen Teaching"
     },
     {
       "no": 14,
@@ -884,12 +884,12 @@
     },
     {
       "no": 99,
-      "zengo": "啐啄",
-      "reading": "そったく",
-      "meaning": "師匠と弟子の息がぴたりと合う、絶妙のタイミング。",
-      "theme": "集中",
-      "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Hekiganroku（『碧巌録』）"
+      "zengo": "万歳",
+      "reading": "ばんざい",
+      "meaning": "いつまでも栄え、長寿であることを祝う言葉。幸福と繁栄を願う。",
+      "theme": "感謝",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 100,
