@@ -364,6 +364,13 @@ async function renderDailyZen() {
         recalculateMeaningWidth();
     }
     
+    // iPhone縦向けレイアウト修正
+    if (/iPhone/.test(navigator.userAgent)) {
+        setTimeout(() => {
+            fixiPhonePortraitLayout();
+        }, 100);
+    }
+    
     // 日付と節気の表示を要素に直接設定
     if (!isMobile) {
         // PC版: 縦書きなので一行で表示
@@ -535,7 +542,7 @@ document.addEventListener('keydown', async (event) => {
 
 // ページ読み込み時の初期化(表示・フォント・モーダル・レイアウト修正)
 document.addEventListener('DOMContentLoaded', async () => {
-    // iPhone横向き初回表示バグ対策: リロードチェックを最初に
+    // iPhone表示バグ対策
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
         const isLandscape = window.matchMedia("(orientation: landscape)").matches;
         if (isLandscape) {
@@ -550,8 +557,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 return; // リロード前に処理を中断
             }
         } else {
-            // 縦向きの場合はフラグをクリア
+            // 縦向きの場合：zen-word-display位置修正
             sessionStorage.removeItem('iphone_landscape_reloaded');
+            setTimeout(() => {
+                fixiPhonePortraitLayout();
+            }, 300);
         }
     }
     
@@ -566,6 +576,39 @@ document.addEventListener('DOMContentLoaded', async () => {
     applyZoom();
 
 });
+
+// iPhone縦向け専用レイアウト修正関数
+function fixiPhonePortraitLayout() {
+    const zenWordDisplay = document.getElementById('zen-word-display');
+    const kakejikuContainer = document.getElementById('kakejiku-container');
+    
+    if (!zenWordDisplay || !kakejikuContainer) return;
+    
+    // iPhone縦向きでのみ実行
+    const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+    const isiPhone = /iPhone/.test(navigator.userAgent);
+    
+    if (isiPhone && isPortrait) {
+        // 強制的に中央寄せを再適用
+        zenWordDisplay.style.display = 'flex';
+        zenWordDisplay.style.justifyContent = 'center';
+        zenWordDisplay.style.alignItems = 'center';
+        zenWordDisplay.style.width = '100%';
+        
+        // 強制リフロー
+        zenWordDisplay.offsetWidth;
+        zenWordDisplay.offsetHeight;
+        
+        // 一時的にvisibilityをhiddenにして強制再描画
+        zenWordDisplay.style.visibility = 'hidden';
+        zenWordDisplay.offsetHeight;
+        zenWordDisplay.style.visibility = 'visible';
+        
+        // 親コンテナも強制リフロー
+        kakejikuContainer.offsetWidth;
+        kakejikuContainer.offsetHeight;
+    }
+}
 
 // 強制再描画函数
 function forceReflow() {
@@ -647,6 +690,13 @@ window.addEventListener('resize', () => {
     }
     // ズームを再計算
     applyZoom();
+    
+    // iPhone縦向けレイアウト修正
+    if (/iPhone/.test(navigator.userAgent)) {
+        setTimeout(() => {
+            fixiPhonePortraitLayout();
+        }, 200);
+    }
 });
 
 /**
