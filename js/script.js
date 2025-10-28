@@ -691,6 +691,18 @@ window.addEventListener('resize', () => {
     // ズームを再計算
     applyZoom();
     
+    // iPhone縦横切り替え時の強制リセット
+    if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+        setTimeout(() => {
+            const kakejiku = document.getElementById('kakejiku-container');
+            const zenWordDisplay = document.getElementById('zen-word-display');
+            if (kakejiku && zenWordDisplay) {
+                // 強制リフロー
+                kakejiku.offsetHeight;
+                zenWordDisplay.offsetHeight;
+            }
+        }, 100);
+    }
 
 });
 
@@ -707,6 +719,12 @@ function applyZoom() {
     
     if (!isLandscape) {
         wrapper.style.transform = ''; // スケールをリセット
+        // 縦長に戻った時は掛け軸サイズもリセット
+        const kakejiku = document.getElementById('kakejiku-container');
+        if (kakejiku) {
+            kakejiku.style.width = '';
+            kakejiku.style.height = '';
+        }
         return;
     }
 
