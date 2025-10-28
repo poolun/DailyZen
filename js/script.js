@@ -44,19 +44,7 @@ function forMacAppearance() {
         window.scrollTo(0, 0);
     }, 100);
 }
-// 擬似クリック判定用フラグ
-let isSimulatedClick = false;
-// Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
-// 擬似的にkakejiku-containerをクリックするデバッグ関数
-function debugSimulateKakejikuClick() {
-    const kakejiku = document.getElementById('kakejiku-container');
-    if (kakejiku) {
-        isSimulatedClick = true;
-        const evt = new MouseEvent('click', { bubbles: true, cancelable: true, view: window });
-        kakejiku.dispatchEvent(evt);
-    }
-}
-// js/script.js
+
 // Safari表示バグ対策: 強制再描画・リフロー・CSSハックをまとめて実行
 function forSafariAppearance() {
     const app = document.getElementById('app');
@@ -111,12 +99,10 @@ function clearPageCache() {
     sessionStorage.clear();
     localStorage.clear();
 
-    // Appleデバイスごとに分岐
-        if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
-            debugSimulateKakejikuClick();
-        } else if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
-            forMacAppearance();
-        }
+    // Macデバイスの場合のみ実行
+    if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
+        forMacAppearance();
+    }
     // Safari表示バグ対策
     if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
         forSafariAppearance();
@@ -588,21 +574,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 });
 
-// iPhone縦長専用: 完全に描画が完了してからクリックイベントを発火
-if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
-    const isPortrait = window.matchMedia("(orientation: portrait)").matches;
-    if (isPortrait) {
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                debugSimulateKakejikuClick();
-                console.log('iPhone縦長: 擬似クリック実行'); // デバッグ用
-            }, 300);
-        });
-    }
-}
-
-
-
 // 強制再描画函数
 function forceReflow() {
     const app = document.getElementById('app');
@@ -633,10 +604,6 @@ function setupModal() {
     // 縦長（モバイル）時のみ掛け軸クリックでモーダル表示
     kakejikuContainer.addEventListener('click', () => {
         const isPortraitMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
-        if (isSimulatedClick) {
-            isSimulatedClick = false;
-            return;
-        }
         if (isPortraitMobile) {
             if (modalOverlay.classList.contains('show')) {
                 // すでに開いていれば閉じる
