@@ -1,4 +1,5 @@
 // Mac Chrome表示バグ対策: 強制リフロー・GPUレイヤー・visibility・opacityハック
+
 function forMacAppearance() {
     const app = document.getElementById('app');
     const zenWordDisplay = document.getElementById('zen-word-display');
