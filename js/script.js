@@ -590,10 +590,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
         const isPortrait = window.matchMedia("(orientation: portrait)").matches;
         if (isPortrait) {
-            // タップで直ることが確認されているので、自動的にクリックイベントを発火
-            setTimeout(() => {
-                debugSimulateKakejikuClick();
-            }, 100); // 100ms後に実行（DOM構築完了後）
+            // 完全に描画が完了してからクリックイベントを発火
+            // window.onloadで全リソース読み込み完了を待つ
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    debugSimulateKakejikuClick();
+                }, 300); // さらに300ms待機して確実に描画完了
+            });
         }
     }
 
