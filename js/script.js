@@ -499,7 +499,7 @@ document.addEventListener('keydown', async (event) => {
             console.log(`最後の項目: ${allZenWords[allZenWords.length-1]?.no} - ${allZenWords[allZenWords.length-1]?.zengo}`);
             
             // 現在の日めくりインデックスを初期値として設定
-            const START_DATE = new Date(2025, 10, 16);
+            const START_DATE = new Date(2025, 9, 16); // 月は0ベース（10月=9）
             const today = new Date();
             const todayNormalized = new Date(today.getFullYear(), today.getMonth(), today.getDate());
             const startDateNormalized = new Date(START_DATE.getFullYear(), START_DATE.getMonth(), START_DATE.getDate());
