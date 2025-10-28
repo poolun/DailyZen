@@ -83,6 +83,13 @@ body::before {
     padding: 1.65rem 0 0 0;
     /* #kakejiku-container に対して最大54%の高さに制限 */
     max-height: 54%;
+    
+    /* iOS/Safari対応: GPU加速を有効化してレンダリングを安定化 */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* will-change: transform; */ /* 必要に応じて有効化 */
 }
 
 #zengo {
@@ -196,6 +203,12 @@ body::before {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    
+    /* iOS/Safari対応: GPU加速とレンダリング最適化 */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 #kakejiku-base {
@@ -248,6 +261,44 @@ body::before {
         align-items: center !important; /* 縦方向中央揃え */
         cursor: pointer;
         transition: transform 0.2s ease;
+        
+        /* iOS Safari対応: 親要素のflexbox配置を強制 */
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+    }
+    
+    /* iOS Safari対応: zen-word-displayの中央配置を強制 */
+    #zen-word-display {
+        /* 絶対配置からの相対配置に変更して中央揃えを確実にする */
+        position: relative;
+        left: auto;
+        right: auto;
+        margin: 0 auto;
+        
+        /* Flexboxプロパティを明示的に再指定 */
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -webkit-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        
+        /* iOS特有のバグ対策: GPU加速を明示的に有効化 */
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        
+        /* width指定で中央配置を安定化 */
+        width: 100%;
+        max-width: 100%;
     }
     
     #kakejiku-container:hover {
@@ -258,25 +309,30 @@ body::before {
         transform: scale(0.98);
     }
     
-
+    /* 7文字以上の禅語用スタイル（縦長画面・モバイル） */
+    #zengo.long-zengo {
+        font-size: 2.3rem; /* 6文字分の大きさに調整 */
+        letter-spacing: 0.35rem; /* 文字間を少し詰める */
+        
+        /* iOS Safari対応: テキストレンダリング最適化 */
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* モバイル縦長専用: zengoのフォントサイズ調整 */
+    #zengo {
+        font-size: 2.8rem;
+        white-space: nowrap;
+    }
+    
+    /* reading のフォントサイズもモバイル用に調整 */
+    #reading {
+        font-size: 1rem;
+    }
 }
 
-#zengo {
-    font-family: var(--zen-font);
-    font-size: 2.8rem;
-    color: var(--zen-color);
-    margin: 0;
-    padding: 0;
-    letter-spacing: 0.5rem;
-    font-weight: 300;
-    white-space: nowrap;
-}
-
-/* 7文字以上の禅語用スタイル（縦長画面・モバイル） */
-#zengo.long-zengo {
-    font-size: 2.3rem; /* 6文字分の大きさに調整 */
-    letter-spacing: 0.4rem; /* 文字間を少し詰める */
-}
+/* ================================================================
 
 #reading {
     font-family: var(--meaning-font);
