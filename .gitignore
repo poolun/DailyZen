@@ -65,3 +65,12 @@ npm-debug.log*
 # Backup files
 *.bak
 *.backup
+
+# Certificates and private keys
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+*.der
