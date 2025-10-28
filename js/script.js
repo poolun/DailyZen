@@ -568,6 +568,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupModal();
     // 初回ズーム適用
     applyZoom();
+    
+    // iPhone縦長専用: 初期レンダリング後の強制レイアウト修正
+    if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+        const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+        if (isPortrait) {
+            // DOM構築完了後、次のフレームで強制リフロー
+            requestAnimationFrame(() => {
+                const kakejiku = document.getElementById('kakejiku-container');
+                const zenWordDisplay = document.getElementById('zen-word-display');
+                
+                if (kakejiku && zenWordDisplay) {
+                    // 強制リフロー: 親→子の順で計算
+                    kakejiku.offsetHeight;
+                    zenWordDisplay.offsetHeight;
+                    
+                    // CSSプロパティを再適用して確実にFlexbox計算を実行
+                    kakejiku.style.display = 'flex';
+                    kakejiku.style.justifyContent = 'center';
+                    kakejiku.style.alignItems = 'center';
+                    
+                    // さらに次のフレームで再度リフロー
+                    requestAnimationFrame(() => {
+                        kakejiku.offsetHeight;
+                        zenWordDisplay.offsetHeight;
+                    });
+                }
+            });
+        }
+    }
 
 });
 
