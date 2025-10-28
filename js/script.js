@@ -44,7 +44,19 @@ function forMacAppearance() {
         window.scrollTo(0, 0);
     }, 100);
 }
-
+// 擬似クリック判定用フラグ
+let isSimulatedClick = false;
+// Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
+// 擬似的にkakejiku-containerをクリックするデバッグ関数
+function debugSimulateKakejikuClick() {
+    const kakejiku = document.getElementById('kakejiku-container');
+    if (kakejiku) {
+        isSimulatedClick = true;
+        const evt = new MouseEvent('click', { bubbles: true, cancelable: true, view: window });
+        kakejiku.dispatchEvent(evt);
+    }
+}
+// js/script.js
 // Safari表示バグ対策: 強制再描画・リフロー・CSSハックをまとめて実行
 function forSafariAppearance() {
     const app = document.getElementById('app');
@@ -99,10 +111,12 @@ function clearPageCache() {
     sessionStorage.clear();
     localStorage.clear();
 
-    // Macデバイスの場合のみ実行
-    if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
-        forMacAppearance();
-    }
+    // Appleデバイスごとに分岐
+        if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+            debugSimulateKakejikuClick();
+        } else if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
+            forMacAppearance();
+        }
     // Safari表示バグ対策
     if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
         forSafariAppearance();
@@ -525,27 +539,7 @@ document.addEventListener('keydown', async (event) => {
 
 // ページ読み込み時の初期化(表示・フォント・モーダル・レイアウト修正)
 document.addEventListener('DOMContentLoaded', async () => {
-    // ⚠️ バージョン管理によるキャッシュクリアは一旦無効化
-    // const SCRIPT_VERSION = '1.0.2';
-    // const savedVersion = localStorage.getItem('script_version');
-    // if (savedVersion !== SCRIPT_VERSION) {
-    //     localStorage.setItem('script_version', SCRIPT_VERSION);
-    //     sessionStorage.clear();
-    //     if ('serviceWorker' in navigator) {
-    //         navigator.serviceWorker.getRegistrations().then(registrations => {
-    //             registrations.forEach(registration => registration.unregister());
-    //         });
-    //     }
-    //     if ('caches' in window) {
-    //         caches.keys().then(names => {
-    //             names.forEach(name => caches.delete(name));
-    //         });
-    //     }
-    //     location.reload(true);
-    //     return;
-    // }
-    
-    // iPhone表示バグ対策
+    // iPhone横向き表示バグ対策: 初回のみリロード
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
         const isLandscape = window.matchMedia("(orientation: landscape)").matches;
         if (isLandscape) {
@@ -572,7 +566,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 初回ズーム適用
     applyZoom();
     
-    // iOS対策: レンダリング完了後にflexboxを強制再計算
+    // iOS対策: レンダリング完了後にflexboxを強制再計算（iPhone縦長のみ）
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
         const isPortrait = window.matchMedia("(orientation: portrait)").matches;
         if (isPortrait) {
@@ -614,6 +608,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 });
 
+
+
 // 強制再描画函数
 function forceReflow() {
     const app = document.getElementById('app');
@@ -644,6 +640,10 @@ function setupModal() {
     // 縦長（モバイル）時のみ掛け軸クリックでモーダル表示
     kakejikuContainer.addEventListener('click', () => {
         const isPortraitMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
+        if (isSimulatedClick) {
+            isSimulatedClick = false;
+            return;
+        }
         if (isPortraitMobile) {
             if (modalOverlay.classList.contains('show')) {
                 // すでに開いていれば閉じる
