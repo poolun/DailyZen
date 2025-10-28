@@ -364,6 +364,8 @@ async function renderDailyZen() {
         recalculateMeaningWidth();
     }
     
+
+    
     // 日付と節気の表示を要素に直接設定
     if (!isMobile) {
         // PC版: 縦書きなので一行で表示
@@ -533,9 +535,11 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
+
+
 // ページ読み込み時の初期化(表示・フォント・モーダル・レイアウト修正)
 document.addEventListener('DOMContentLoaded', async () => {
-    // iPhone横向き初回表示バグ対策: リロードチェックを最初に
+    // iPhone表示バグ対策
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
         const isLandscape = window.matchMedia("(orientation: landscape)").matches;
         if (isLandscape) {
@@ -566,6 +570,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     applyZoom();
 
 });
+
+
 
 // 強制再描画函数
 function forceReflow() {
@@ -647,6 +653,8 @@ window.addEventListener('resize', () => {
     }
     // ズームを再計算
     applyZoom();
+    
+
 });
 
 /**
