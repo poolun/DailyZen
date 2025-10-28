@@ -1,6 +1,5 @@
 /* ================================================================
-   共通設定 - CSS変数・基本スタイル・全画面共通要素
-============================================================= */
+   共通設定 - CSS変数・基本スタイル・全画面共通要素============================================================= */
 
 :root {
     --bg-color: #f0efef;
@@ -256,20 +255,35 @@ body::before {
         transform: scale(0.98);
     }
     
-    /* iPhone縦向け専用 - zen-word-display中央寄せ強化 */
+    /* iPhone縦向け専用 - 完全中央寄せ強制 */
+    #kakejiku-container {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    
     #zen-word-display {
         display: flex !important;
+        flex-direction: row-reverse !important;
         justify-content: center !important;
         align-items: center !important;
         width: 100% !important;
         margin: 0 auto !important;
         text-align: center !important;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
+        box-sizing: border-box !important;
     }
     
     #zengo-block, #reading-block {
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
+        text-align: center !important;
+        flex-shrink: 0 !important;
     }
 }
 
