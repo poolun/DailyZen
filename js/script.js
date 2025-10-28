@@ -585,22 +585,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupModal();
     // 初回ズーム適用
     applyZoom();
-    
-    // iPhone縦長専用: 初期レンダリング後の強制レイアウト修正
-    if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
-        const isPortrait = window.matchMedia("(orientation: portrait)").matches;
-        if (isPortrait) {
-            // 完全に描画が完了してからクリックイベントを発火
-            // window.onloadで全リソース読み込み完了を待つ
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    debugSimulateKakejikuClick();
-                }, 300); // さらに300ms待機して確実に描画完了
-            });
-        }
-    }
 
 });
+
+// iPhone縦長専用: 完全に描画が完了してからクリックイベントを発火
+if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+    const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+    if (isPortrait) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                debugSimulateKakejikuClick();
+                console.log('iPhone縦長: 擬似クリック実行'); // デバッグ用
+            }, 300);
+        });
+    }
+}
 
 
 
