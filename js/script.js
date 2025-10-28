@@ -572,20 +572,43 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 初回ズーム適用
     applyZoom();
     
-    // iOS Safari対策: レンダリング完了後にflexboxを強制再計算
+    // iOS対策: レンダリング完了後にflexboxを強制再計算
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
         const isPortrait = window.matchMedia("(orientation: portrait)").matches;
         if (isPortrait) {
-            requestAnimationFrame(() => {
-                const zenWordDisplay = document.getElementById('zen-word-display');
-                const kakejikuContainer = document.getElementById('kakejiku-container');
-                if (zenWordDisplay && kakejikuContainer) {
-                    // 一時的にdisplay:noneにしてから戻す（最も強力な再計算方法）
-                    zenWordDisplay.style.display = 'none';
-                    zenWordDisplay.offsetHeight; // 強制リフロー
-                    zenWordDisplay.style.display = '';
-                }
-            });
+            const isSafari = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+            const isChrome = /Chrome/.test(navigator.userAgent);
+            
+            if (isSafari) {
+                // Safari: display:none による強制再計算
+                requestAnimationFrame(() => {
+                    const zenWordDisplay = document.getElementById('zen-word-display');
+                    if (zenWordDisplay) {
+                        zenWordDisplay.style.display = 'none';
+                        zenWordDisplay.offsetHeight;
+                        zenWordDisplay.style.display = '';
+                    }
+                });
+            } else if (isChrome) {
+                // Chrome: より強力な対策（二段階リフロー）
+                requestAnimationFrame(() => {
+                    const zenWordDisplay = document.getElementById('zen-word-display');
+                    const kakejikuContainer = document.getElementById('kakejiku-container');
+                    if (zenWordDisplay && kakejikuContainer) {
+                        // 1. 親要素を強制再描画
+                        kakejikuContainer.style.display = 'flex';
+                        kakejikuContainer.offsetHeight;
+                        
+                        // 2. 子要素を強制再描画
+                        zenWordDisplay.style.display = 'none';
+                        zenWordDisplay.offsetHeight;
+                        zenWordDisplay.style.display = '';
+                        
+                        // 3. もう一度親要素を再計算
+                        kakejikuContainer.offsetHeight;
+                    }
+                });
+            }
         }
     }
 
