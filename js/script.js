@@ -571,6 +571,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupModal();
     // 初回ズーム適用
     applyZoom();
+    
+    // iOS Safari対策: レンダリング完了後にflexboxを強制再計算
+    if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+        const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+        if (isPortrait) {
+            requestAnimationFrame(() => {
+                const zenWordDisplay = document.getElementById('zen-word-display');
+                const kakejikuContainer = document.getElementById('kakejiku-container');
+                if (zenWordDisplay && kakejikuContainer) {
+                    // 一時的にdisplay:noneにしてから戻す（最も強力な再計算方法）
+                    zenWordDisplay.style.display = 'none';
+                    zenWordDisplay.offsetHeight; // 強制リフロー
+                    zenWordDisplay.style.display = '';
+                }
+            });
+        }
+    }
 
 });
 
