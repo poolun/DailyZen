@@ -539,6 +539,35 @@ document.addEventListener('keydown', async (event) => {
 
 // ページ読み込み時の初期化(表示・フォント・モーダル・レイアウト修正)
 document.addEventListener('DOMContentLoaded', async () => {
+    // バージョン管理: コード更新時にキャッシュクリア
+    const SCRIPT_VERSION = '1.0.1'; // 更新のたびにバージョンを変更
+    const savedVersion = localStorage.getItem('script_version');
+    
+    if (savedVersion !== SCRIPT_VERSION) {
+        // 新バージョン検出: キャッシュをクリアしてリロード
+        console.log('新バージョン検出: キャッシュをクリアします');
+        localStorage.setItem('script_version', SCRIPT_VERSION);
+        sessionStorage.clear();
+        
+        // Service Workerをクリア
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(registrations => {
+                registrations.forEach(registration => registration.unregister());
+            });
+        }
+        
+        // キャッシュストレージをクリア
+        if ('caches' in window) {
+            caches.keys().then(names => {
+                names.forEach(name => caches.delete(name));
+            });
+        }
+        
+        // リロード
+        location.reload(true);
+        return;
+    }
+    
     // iPhone表示バグ対策
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
         const isLandscape = window.matchMedia("(orientation: landscape)").matches;
@@ -559,9 +588,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
     
-    // ⚠️ キャッシュクリアは一旦無効化(無限リロード防止)
-    // clearPageCache();
-    
     // コンテンツを描画
     await renderDailyZen();
     document.getElementById('app').classList.add('fonts-loaded');
@@ -573,28 +599,36 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
         const isPortrait = window.matchMedia("(orientation: portrait)").matches;
         if (isPortrait) {
-            // DOM構築完了後、次のフレームで強制リフロー
-            requestAnimationFrame(() => {
-                const kakejiku = document.getElementById('kakejiku-container');
-                const zenWordDisplay = document.getElementById('zen-word-display');
-                
-                if (kakejiku && zenWordDisplay) {
-                    // 強制リフロー: 親→子の順で計算
-                    kakejiku.offsetHeight;
-                    zenWordDisplay.offsetHeight;
+            // より確実な修正: setTimeoutとrequestAnimationFrameを組み合わせる
+            setTimeout(() => {
+                requestAnimationFrame(() => {
+                    const kakejiku = document.getElementById('kakejiku-container');
+                    const zenWordDisplay = document.getElementById('zen-word-display');
                     
-                    // CSSプロパティを再適用して確実にFlexbox計算を実行
-                    kakejiku.style.display = 'flex';
-                    kakejiku.style.justifyContent = 'center';
-                    kakejiku.style.alignItems = 'center';
-                    
-                    // さらに次のフレームで再度リフロー
-                    requestAnimationFrame(() => {
+                    if (kakejiku && zenWordDisplay) {
+                        // 一旦visibilityをhiddenにしてリセット
+                        zenWordDisplay.style.visibility = 'hidden';
+                        
+                        // 強制リフロー: 親→子の順で計算
                         kakejiku.offsetHeight;
                         zenWordDisplay.offsetHeight;
-                    });
-                }
-            });
+                        
+                        // CSSプロパティを再適用して確実にFlexbox計算を実行
+                        kakejiku.style.display = 'flex';
+                        kakejiku.style.justifyContent = 'center';
+                        kakejiku.style.alignItems = 'center';
+                        
+                        // visibilityを戻す
+                        zenWordDisplay.style.visibility = 'visible';
+                        
+                        // さらに次のフレームで再度リフロー
+                        requestAnimationFrame(() => {
+                            kakejiku.offsetHeight;
+                            zenWordDisplay.offsetHeight;
+                        });
+                    }
+                });
+            }, 50); // 50ms遅延で確実にDOM構築完了後に実行
         }
     }
 
