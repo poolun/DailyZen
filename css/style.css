@@ -243,6 +243,9 @@ body::before {
     
     /* 掛け軸をタップ可能にするスタイル */
     #kakejiku-container {
+        display: flex !important; /* Flexboxレイアウトを維持 */
+        justify-content: center !important; /* 中央揃え */
+        align-items: center !important; /* 縦方向中央揃え */
         cursor: pointer;
         transition: transform 0.2s ease;
     }
