@@ -2,6 +2,7 @@
 function forMacAppearance() {
     const app = document.getElementById('app');
     const zenWordDisplay = document.getElementById('zen-word-display');
+    const meaningContainer = document.getElementById('meaning-container');
     // 1. 強制リフロー
     if (app) {
         app.offsetHeight;
@@ -14,6 +15,13 @@ function forMacAppearance() {
         zenWordDisplay.offsetHeight;
         zenWordDisplay.style.visibility = 'visible';
         zenWordDisplay.style.willChange = 'transform';
+    }
+    if (meaningContainer) {
+        meaningContainer.offsetHeight;
+        meaningContainer.style.visibility = 'hidden';
+        meaningContainer.offsetHeight;
+        meaningContainer.style.visibility = 'visible';
+        meaningContainer.style.transform = 'translateZ(0)';
     }
     // 2. setTimeout/animationFrame遅延
     setTimeout(() => {
@@ -53,7 +61,10 @@ function debugSimulateKakejikuClick() {
 function forSafariAppearance() {
     const app = document.getElementById('app');
     const zenWordDisplay = document.getElementById('zen-word-display');
-    // 1. 強制リフロー
+    const meaningContainer = document.getElementById('meaning-container');
+    const meaningElement = document.getElementById('meaning');
+    
+    // 1. 強制リフロー（visibility切り替えなし）
     if (app) {
         app.offsetHeight;
         app.style.transform = 'translateZ(0)';
@@ -61,31 +72,19 @@ function forSafariAppearance() {
     }
     if (zenWordDisplay) {
         zenWordDisplay.offsetHeight;
-        zenWordDisplay.style.visibility = 'hidden';
-        zenWordDisplay.offsetHeight;
-        zenWordDisplay.style.visibility = 'visible';
         zenWordDisplay.style.willChange = 'transform';
     }
-    // 2. setTimeout/animationFrame遅延
-    setTimeout(() => {
-        if (app) app.style.opacity = '0.99';
-        requestAnimationFrame(() => {
-            if (app) app.style.opacity = '1';
-        });
-    }, 50);
-    // 3. CSSアニメーションで再描画（例: 一瞬だけ色変更）
-    if (app) {
-        app.style.transition = 'background-color 0.2s';
-        app.style.backgroundColor = '#f8f8f8';
-        setTimeout(() => {
-            app.style.backgroundColor = '';
-        }, 200);
+    // 説明エリアは触らない（初回レンダリングが正しいため）
+    if (meaningContainer) {
+        meaningContainer.offsetHeight;
     }
-    // 4. window.scrollTo(0,1)で一瞬スクロール
-    window.scrollTo(0, 1);
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-    }, 100);
+    if (meaningPaper) {
+        meaningPaper.offsetHeight;
+    }
+    
+    // 2. setTimeout/animationFrame遅延は削除
+    // 3. CSSアニメーションも削除
+    // 4. スクロール処理も削除
 }
 
 // ページキャッシュクリア機能
@@ -124,7 +123,6 @@ function clearPageCache() {
     }
     // 強制リロード（無効化）
     // location.reload(true); // ←リロードはしません
-// ← 余分な閉じカッコ削除
 }
 
 // Ctrl+Shift+R でキャッシュクリア
@@ -298,11 +296,25 @@ async function renderDailyZen() {
     if (zenWord) {
         readingEl.textContent = zenWord.reading;
         document.getElementById('zengo').textContent = zenWord.zengo;
-        document.getElementById('meaning').textContent = zenWord.meaning;
+        
+        // 説明文に theme, meaning, source_person, source_text_en を追加（余計なスペース削除）
+        const fullMeaning = `【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}\n＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
+        document.getElementById('meaning').textContent = fullMeaning;
+        
+        console.log('📝 Text inserted:', {
+            meaningLength: fullMeaning.length,
+            meaningPreview: fullMeaning.substring(0, 50) + '...'
+        });
+        
+        // テキスト挿入後に説明エリアの幅を再計算
+        recalculateMeaningWidth();
     } else {
         readingEl.textContent = "";
         document.getElementById('zengo').textContent = "エラー";
         document.getElementById('meaning').textContent = "データ読み込みに失敗しました。";
+        
+        // エラー時も幅を再計算
+        recalculateMeaningWidth();
     }
     
     // 日付と節気の表示を要素に直接設定
@@ -314,6 +326,69 @@ async function renderDailyZen() {
         // モバイル版: 改行文字で2行に分ける（dateInfoMobileを使用）
         dateEl.textContent = dateInfoMobile;
         sekkiEl.textContent = sekkiReading ? `${sekkiName}\n${sekkiReading}` : sekkiName;
+    }
+}
+
+// テキスト挿入後に説明エリアの幅を強制的に再計算する関数
+function recalculateMeaningWidth() {
+    const meaningContainer = document.getElementById('meaning-container');
+    const meaningElement = document.getElementById('meaning');
+    
+    if (!meaningContainer || !meaningElement) return;
+    
+    // 横長画面(landscape)でのみ実行
+    const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+    if (!isLandscape) return;
+    
+    // Appleデバイスの判定
+    const isAppleDevice = /Macintosh|iPhone|iPad|iPod/.test(navigator.userAgent);
+    
+    // デバッグログ: 計算前の状態
+    console.log('=== recalculateMeaningWidth DEBUG ===');
+    console.log('🔍 Device:', isAppleDevice ? 'Apple' : 'Other');
+    console.log('📏 BEFORE - Container:', {
+        offsetWidth: meaningContainer.offsetWidth,
+        computedWidth: window.getComputedStyle(meaningContainer).width,
+        flexShrink: window.getComputedStyle(meaningContainer).flexShrink
+    });
+    console.log('📄 BEFORE - Meaning:', {
+        offsetWidth: meaningElement.offsetWidth,
+        computedWidth: window.getComputedStyle(meaningElement).width,
+        writingMode: window.getComputedStyle(meaningElement).writingMode
+    });
+    
+    if (isAppleDevice) {
+        // Appleデバイス: リセットせず、強制リフローのみ
+        meaningElement.offsetWidth;
+        meaningContainer.offsetWidth;
+        meaningElement.offsetHeight;
+        meaningContainer.offsetHeight;
+        
+        // 少し遅延して再確認
+        setTimeout(() => {
+            console.log('⏱️ AFTER 100ms - Container:', {
+                offsetWidth: meaningContainer.offsetWidth,
+                computedWidth: window.getComputedStyle(meaningContainer).width
+            });
+            console.log('⏱️ AFTER 100ms - Meaning:', {
+                offsetWidth: meaningElement.offsetWidth,
+                computedWidth: window.getComputedStyle(meaningElement).width
+            });
+        }, 100);
+    } else {
+        // その他のデバイス: 強制リフロー + リセット
+        meaningElement.offsetWidth;
+        meaningContainer.offsetWidth;
+        
+        requestAnimationFrame(() => {
+            meaningElement.style.width = '';
+            meaningContainer.style.width = '';
+            
+            console.log('✅ AFTER RAF - Container:', {
+                offsetWidth: meaningContainer.offsetWidth,
+                computedWidth: window.getComputedStyle(meaningContainer).width
+            });
+        });
     }
 }
 
@@ -363,7 +438,10 @@ async function renderDebugZen(index) {
     if (zenWord) {
         readingEl.textContent = zenWord.reading;
         document.getElementById('zengo').textContent = zenWord.zengo;
-        document.getElementById('meaning').textContent = `[DEBUG ${index + 1}/${allZenWords.length}] ${zenWord.meaning}`;
+        
+        // デバッグモード用の表示も余計なスペース削除
+        const fullMeaning = `[DEBUG ${index + 1}/${allZenWords.length}]\n【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}\n＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
+        document.getElementById('meaning').textContent = fullMeaning;
     }
     
     // 日付と節気の表示
@@ -418,23 +496,39 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
-// ページ読み込み時の初期化（表示・フォント・モーダル・レイアウト修正）
+// ページ読み込み時の初期化(表示・フォント・モーダル・レイアウト修正)
 document.addEventListener('DOMContentLoaded', async () => {
+    // iPhone横向き初回表示バグ対策: リロードチェックを最初に
+    if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+        const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+        if (isLandscape) {
+            // 横向きの場合、初回のみリロード
+            const hasReloaded = sessionStorage.getItem('iphone_landscape_reloaded');
+            if (!hasReloaded) {
+                // 初回表示時のみリロード
+                sessionStorage.setItem('iphone_landscape_reloaded', 'true');
+                setTimeout(() => {
+                    location.reload();
+                }, 100);
+                return; // リロード前に処理を中断
+            }
+        } else {
+            // 縦向きの場合はフラグをクリア
+            sessionStorage.removeItem('iphone_landscape_reloaded');
+        }
+    }
+    
+    // ⚠️ キャッシュクリアは一旦無効化(無限リロード防止)
+    // clearPageCache();
+    
+    // コンテンツを描画
     await renderDailyZen();
     document.getElementById('app').classList.add('fonts-loaded');
     setupModal();
-    // 初回スケーリング適用
-    scaleToHeight();
-    // Appleデバイスごとに分岐
-    if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
-        debugSimulateKakejikuClick();
-    } else if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
-        forMacAppearance();
-    }
-    // Safari表示バグ対策
-    if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
-        forSafariAppearance();
-    }
+    // 初回ズーム適用
+    applyZoom();
+    
+    console.log('✅ DailyZen initialized');
 });
 
 // 強制再描画函数
@@ -515,36 +609,47 @@ window.addEventListener('resize', () => {
     } else {
         renderDailyZen();
     }
-    // スケーリングを再計算
-    scaleToHeight();
+    // ズームを再計算
+    applyZoom();
 });
 
 /**
- * ウィンドウ高さを基準に縦方向で全体をスケールする
- * デザイン基準は H = 739px
+ * W980×H739 の固定デザインをウィンドウサイズに合わせてズームイン・ズームアウト
+ * 横長画面（landscape）のみで適用
  */
-function scaleToHeight() {
+function applyZoom() {
     const wrapper = document.getElementById('scale-wrapper');
     if (!wrapper) return;
 
-    const designHeight = 739; // px
-    const windowHeight = window.innerHeight;
-    // 縦基準のスケール係数
-    let scale = windowHeight / designHeight;
-
-    // 横幅が足りない場合は横幅基準で縮小（あくまで最大でフィットさせるため）
-    const designWidth = 980;
-    const windowWidth = window.innerWidth;
-    const widthScale = windowWidth / designWidth;
-
-    // 縦基準を優先するが、横が足りない場合は横基準を使って縮小
-    if (widthScale < scale) {
-        scale = widthScale;
+    // モバイル（縦長）ではズーム無効化
+    const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+    
+    if (!isLandscape) {
+        wrapper.style.transform = ''; // スケールをリセット
+        return;
     }
 
-    // 最小縮小率を設定（過度の拡大を防ぐ）
-    const maxScale = 1.2; // optional: allow slight upscale
-    if (scale > maxScale) scale = maxScale;
+    const designWidth = 1049;
+    const designHeight = 739;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
 
-    wrapper.style.transform = `scale(${scale})`;
+    // ウィンドウサイズに対するスケール係数を計算（縦横比を保持）
+    const scaleX = windowWidth / designWidth;
+    const scaleY = windowHeight / designHeight;
+    
+    // 小さい方のスケールを採用（はみ出さないように）
+    const scale = Math.min(scaleX, scaleY);
+
+    // iPhone横置きの場合はtranslateY(50%)を保持
+    const isiPhoneLandscape = window.matchMedia("(orientation: landscape) and (max-width: 896px) and (max-height: 414px)").matches;
+    
+    if (isiPhoneLandscape) {
+        // iPhone横置き: iPhone画面サイズに合わせたスケールを1.35倍大きく調整
+        const iPhoneScale = Math.min(windowWidth / designWidth, windowHeight / designHeight) * 1.215; // 0.9 * 1.35 = 1.215
+        wrapper.style.transform = `translateY(-12.5%) scale(${iPhoneScale})`;
+    } else {
+        // その他のデバイス: scaleのみ適用
+        wrapper.style.transform = `scale(${scale})`;
+    }
 }

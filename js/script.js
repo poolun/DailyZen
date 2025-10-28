@@ -3,7 +3,7 @@ function forMacAppearance() {
     const app = document.getElementById('app');
     const zenWordDisplay = document.getElementById('zen-word-display');
     const meaningContainer = document.getElementById('meaning-container');
-    // 1. 強制リフロー
+    
     if (app) {
         app.offsetHeight;
         app.style.transform = 'translateZ(0)';
@@ -23,14 +23,14 @@ function forMacAppearance() {
         meaningContainer.style.visibility = 'visible';
         meaningContainer.style.transform = 'translateZ(0)';
     }
-    // 2. setTimeout/animationFrame遅延
+    
     setTimeout(() => {
         if (app) app.style.opacity = '0.99';
         requestAnimationFrame(() => {
             if (app) app.style.opacity = '1';
         });
     }, 50);
-    // 3. CSSアニメーションで再描画（例: 一瞬だけ色変更）
+    
     if (app) {
         app.style.transition = 'background-color 0.2s';
         app.style.backgroundColor = '#f0f0f0';
@@ -38,33 +38,20 @@ function forMacAppearance() {
             app.style.backgroundColor = '';
         }, 200);
     }
-    // 4. window.scrollTo(0,1)で一瞬スクロール
+    
     window.scrollTo(0, 1);
     setTimeout(() => {
         window.scrollTo(0, 0);
     }, 100);
 }
-// 擬似クリック判定用フラグ
-let isSimulatedClick = false;
-// Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
-// 擬似的にkakejiku-containerをクリックするデバッグ関数
-function debugSimulateKakejikuClick() {
-    const kakejiku = document.getElementById('kakejiku-container');
-    if (kakejiku) {
-        isSimulatedClick = true;
-        const evt = new MouseEvent('click', { bubbles: true, cancelable: true, view: window });
-        kakejiku.dispatchEvent(evt);
-    }
-}
-// js/script.js
-// Safari表示バグ対策: 強制再描画・リフロー・CSSハックをまとめて実行
+
+// Safari表示バグ対策: 強制再描画・リフロー
 function forSafariAppearance() {
     const app = document.getElementById('app');
     const zenWordDisplay = document.getElementById('zen-word-display');
     const meaningContainer = document.getElementById('meaning-container');
-    const meaningElement = document.getElementById('meaning');
     
-    // 1. 強制リフロー（visibility切り替えなし）
+    // 強制リフロー（visibility切り替えなし）
     if (app) {
         app.offsetHeight;
         app.style.transform = 'translateZ(0)';
@@ -74,17 +61,9 @@ function forSafariAppearance() {
         zenWordDisplay.offsetHeight;
         zenWordDisplay.style.willChange = 'transform';
     }
-    // 説明エリアは触らない（初回レンダリングが正しいため）
     if (meaningContainer) {
         meaningContainer.offsetHeight;
     }
-    if (meaningPaper) {
-        meaningPaper.offsetHeight;
-    }
-    
-    // 2. setTimeout/animationFrame遅延は削除
-    // 3. CSSアニメーションも削除
-    // 4. スクロール処理も削除
 }
 
 // ページキャッシュクリア機能
@@ -111,19 +90,14 @@ function clearPageCache() {
     sessionStorage.clear();
     localStorage.clear();
 
-    // Appleデバイスごとに分岐
-        if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
-            debugSimulateKakejikuClick();
-        } else if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
-            forMacAppearance();
-        }
+    // Macデバイスの場合のみ実行
+    if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
+        forMacAppearance();
+    }
     // Safari表示バグ対策
     if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
         forSafariAppearance();
     }
-    // 強制リロード（無効化）
-    // location.reload(true); // ←リロードはしません
-// ← 余分な閉じカッコ削除
 }
 
 // Ctrl+Shift+R でキャッシュクリア
@@ -152,18 +126,18 @@ function toKansuji(str) {
 }
 
 
-// 二十四節気データを取得する関数 (変更なし)
+// 二十四節気データを取得する関数（強化版）
 async function getSekkiData() {
     try {
-        const response = await fetch('json/sekki_data.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
+        const data = await fetchWithRetry('json/sekki_data.json');
         return data.sekkiData;
     } catch (error) {
         console.error("二十四節気データの取得中にエラーが発生しました:", error);
-        return [];
+        
+        // フォールバック: 最小限のデータで動作継続
+        return [{
+            month: 1, day: 1, sekki: "データ読み込み失敗"
+        }];
     }
 }
 
@@ -253,29 +227,72 @@ async function getDateAndSekki() {
     };
 }
 
-// 日付を基にした固定シードで禅語を取得する関数
+// 無制限データ読み込み用の関数（リトライ機能付き）
+async function fetchWithRetry(url, maxRetries = 10, timeout = 30000) {
+    for (let i = 0; i < maxRetries; i++) {
+        try {
+            // タイムアウト付きfetch
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), timeout);
+            
+            const response = await fetch(url, { 
+                signal: controller.signal,
+                cache: 'no-cache', // キャッシュを無効化
+                headers: {
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache',
+                    'Expires': '0'
+                }
+            });
+            
+            clearTimeout(timeoutId);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            return data;
+            
+        } catch (error) {
+            if (i < maxRetries - 1) {
+                const delay = Math.min(1000 * Math.pow(2, i), 5000); // 指数バックオフ（最大5秒）
+                await new Promise(resolve => setTimeout(resolve, delay));
+            } else {
+                throw new Error(`Failed to fetch after ${maxRetries} attempts: ${error.message}`);
+            }
+        }
+    }
+}
+
+// 日めくりカレンダー方式で禅語を取得する関数
 async function getDailyZenWord() {
     try {
-        const response = await fetch('json/zen_words.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        
+        const data = await fetchWithRetry('json/zen_words.json');
         const words = data.zenWords;
         
-        // 今日の日付を基にしたシード値を作成
+        // 基準日：2025年10月16日（サービス開始日）
+        const START_DATE = new Date(2025, 9, 16); // 月は0ベース（10月=9）
         const today = new Date();
-        const dateString = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
         
-        // 日付文字列から数値シードを生成
-        let seed = 0;
-        for (let i = 0; i < dateString.length; i++) {
-            seed = seed * 31 + dateString.charCodeAt(i);
+        // 今日の日付を日本時間で正規化（時間を0:00:00に設定）
+        const todayNormalized = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        const startDateNormalized = new Date(START_DATE.getFullYear(), START_DATE.getMonth(), START_DATE.getDate());
+        
+        // 経過日数を計算
+        const diffTime = todayNormalized.getTime() - startDateNormalized.getTime();
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        
+        // データインデックスを計算（120項目でループ）
+        let dailyIndex;
+        if (diffDays >= 0) {
+            // 基準日以降：順次表示
+            dailyIndex = diffDays % words.length;
+        } else {
+            // 基準日より前：最後から逆算
+            dailyIndex = (words.length + (diffDays % words.length)) % words.length;
         }
         
-        // シードを基にした固定インデックスを計算
-        const dailyIndex = Math.abs(seed) % words.length;
         return words[dailyIndex];
     } catch (error) {
         console.error("禅語の取得中にエラーが発生しました:", error);
@@ -296,27 +313,32 @@ async function renderDailyZen() {
     
     if (zenWord) {
         readingEl.textContent = zenWord.reading;
-        document.getElementById('zengo').textContent = zenWord.zengo;
+        const zengoElement = document.getElementById('zengo');
+        zengoElement.textContent = zenWord.zengo;
         
-        // 説明文に theme, meaning, source_person, source_text_en を追加（余計なスペース削除）
-        const fullMeaning = `【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}\n＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
+        // 7文字以上の禅語は小さくする
+        if (zenWord.zengo.length >= 7) {
+            zengoElement.classList.add('long-zengo');
+        } else {
+            zengoElement.classList.remove('long-zengo');
+        }
+        
+        // 説明文に theme, meaning, source_person, source_text_en を追加
+        const fullMeaning = `【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
         document.getElementById('meaning').textContent = fullMeaning;
-        
-        console.log('📝 Text inserted:', {
-            meaningLength: fullMeaning.length,
-            meaningPreview: fullMeaning.substring(0, 50) + '...'
-        });
         
         // テキスト挿入後に説明エリアの幅を再計算
         recalculateMeaningWidth();
     } else {
         readingEl.textContent = "";
-        document.getElementById('zengo').textContent = "エラー";
+        const zengoElement = document.getElementById('zengo');
+        zengoElement.textContent = "エラー";
+        zengoElement.classList.remove('long-zengo'); // エラー時はクラスを削除
         document.getElementById('meaning').textContent = "データ読み込みに失敗しました。";
-        
-        // エラー時も幅を再計算
         recalculateMeaningWidth();
     }
+    
+
     
     // 日付と節気の表示を要素に直接設定
     if (!isMobile) {
@@ -344,38 +366,12 @@ function recalculateMeaningWidth() {
     // Appleデバイスの判定
     const isAppleDevice = /Macintosh|iPhone|iPad|iPod/.test(navigator.userAgent);
     
-    // デバッグログ: 計算前の状態
-    console.log('=== recalculateMeaningWidth DEBUG ===');
-    console.log('🔍 Device:', isAppleDevice ? 'Apple' : 'Other');
-    console.log('📏 BEFORE - Container:', {
-        offsetWidth: meaningContainer.offsetWidth,
-        computedWidth: window.getComputedStyle(meaningContainer).width,
-        flexShrink: window.getComputedStyle(meaningContainer).flexShrink
-    });
-    console.log('📄 BEFORE - Meaning:', {
-        offsetWidth: meaningElement.offsetWidth,
-        computedWidth: window.getComputedStyle(meaningElement).width,
-        writingMode: window.getComputedStyle(meaningElement).writingMode
-    });
-    
     if (isAppleDevice) {
-        // Appleデバイス: リセットせず、強制リフローのみ
+        // Appleデバイス: 強制リフローのみ
         meaningElement.offsetWidth;
         meaningContainer.offsetWidth;
         meaningElement.offsetHeight;
         meaningContainer.offsetHeight;
-        
-        // 少し遅延して再確認
-        setTimeout(() => {
-            console.log('⏱️ AFTER 100ms - Container:', {
-                offsetWidth: meaningContainer.offsetWidth,
-                computedWidth: window.getComputedStyle(meaningContainer).width
-            });
-            console.log('⏱️ AFTER 100ms - Meaning:', {
-                offsetWidth: meaningElement.offsetWidth,
-                computedWidth: window.getComputedStyle(meaningElement).width
-            });
-        }, 100);
     } else {
         // その他のデバイス: 強制リフロー + リセット
         meaningElement.offsetWidth;
@@ -384,11 +380,6 @@ function recalculateMeaningWidth() {
         requestAnimationFrame(() => {
             meaningElement.style.width = '';
             meaningContainer.style.width = '';
-            
-            console.log('✅ AFTER RAF - Container:', {
-                offsetWidth: meaningContainer.offsetWidth,
-                computedWidth: window.getComputedStyle(meaningContainer).width
-            });
         });
     }
 }
@@ -401,15 +392,12 @@ let allZenWords = [];
 // デバッグモード用の禅語データを取得する関数
 async function loadAllZenWords() {
     try {
-        const response = await fetch('json/zen_words.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
+        const data = await fetchWithRetry('json/zen_words.json');
         allZenWords = data.zenWords;
         return allZenWords;
     } catch (error) {
         console.error("禅語データの読み込み中にエラーが発生しました:", error);
+        allZenWords = [];
         return [];
     }
 }
@@ -420,7 +408,9 @@ async function renderDebugZen(index) {
         await loadAllZenWords();
     }
     
-    if (allZenWords.length === 0) return;
+    if (allZenWords.length === 0) {
+        return;
+    }
     
     // インデックスの範囲チェック
     if (index < 0) index = allZenWords.length - 1;
@@ -428,6 +418,10 @@ async function renderDebugZen(index) {
     
     debugIndex = index;
     const zenWord = allZenWords[index];
+    
+    if (!zenWord) {
+        return;
+    }
     const { dateInfoPC, dateInfoMobile, sekkiName, sekkiReading } = await getDateAndSekki();
 
     const isMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
@@ -438,10 +432,18 @@ async function renderDebugZen(index) {
     
     if (zenWord) {
         readingEl.textContent = zenWord.reading;
-        document.getElementById('zengo').textContent = zenWord.zengo;
+        const zengoElement = document.getElementById('zengo');
+        zengoElement.textContent = zenWord.zengo;
         
-        // デバッグモード用の表示も余計なスペース削除
-        const fullMeaning = `[DEBUG ${index + 1}/${allZenWords.length}]\n【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}\n＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
+        // 7文字以上の禅語は小さくする
+        if (zenWord.zengo.length >= 7) {
+            zengoElement.classList.add('long-zengo');
+        } else {
+            zengoElement.classList.remove('long-zengo');
+        }
+        
+        // デバッグモード用の表示
+        const fullMeaning = `[DEBUG ${index + 1}/${allZenWords.length}]【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
         document.getElementById('meaning').textContent = fullMeaning;
     }
     
@@ -453,8 +455,6 @@ async function renderDebugZen(index) {
         dateEl.textContent = dateInfoMobile;
         sekkiEl.textContent = sekkiReading ? `${sekkiName}\n${sekkiReading}` : sekkiName;
     }
-    
-    console.log(`デバッグモード: ${index + 1}/${allZenWords.length} - ${zenWord.zengo}`);
 }
 
 // キーボードイベントハンドラ
@@ -465,21 +465,24 @@ document.addEventListener('keydown', async (event) => {
         debugMode = !debugMode;
         
         if (debugMode) {
-            console.log('デバッグモードON - 矢印キーで禅語を切り替えできます');
             await loadAllZenWords();
             
-            // 現在の日付ベースのインデックスを初期値として設定
+            // 現在の日めくりインデックスを初期値として設定
+            const START_DATE = new Date(2025, 9, 16); // 月は0ベース（10月=9）
             const today = new Date();
-            const dateString = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-            let seed = 0;
-            for (let i = 0; i < dateString.length; i++) {
-                seed = seed * 31 + dateString.charCodeAt(i);
+            const todayNormalized = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+            const startDateNormalized = new Date(START_DATE.getFullYear(), START_DATE.getMonth(), START_DATE.getDate());
+            const diffTime = todayNormalized.getTime() - startDateNormalized.getTime();
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            
+            if (diffDays >= 0) {
+                debugIndex = diffDays % allZenWords.length;
+            } else {
+                debugIndex = (allZenWords.length + (diffDays % allZenWords.length)) % allZenWords.length;
             }
-            debugIndex = Math.abs(seed) % allZenWords.length;
             
             await renderDebugZen(debugIndex);
         } else {
-            console.log('デバッグモードOFF');
             await renderDailyZen(); // 通常モードに戻る
         }
         return;
@@ -497,9 +500,11 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
-// ページ読み込み時の初期化(表示・フォント・モーダル・レイアウト修正)
+
+
+// ページ読み込み時の初期化
 document.addEventListener('DOMContentLoaded', async () => {
-    // iPhone横向き初回表示バグ対策: リロードチェックを最初に
+    // iPhone横向き表示バグ対策: 初回のみリロード
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
         const isLandscape = window.matchMedia("(orientation: landscape)").matches;
         if (isLandscape) {
@@ -519,9 +524,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
     
-    // ⚠️ キャッシュクリアは一旦無効化(無限リロード防止)
-    // clearPageCache();
-    
     // コンテンツを描画
     await renderDailyZen();
     document.getElementById('app').classList.add('fonts-loaded');
@@ -529,7 +531,46 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 初回ズーム適用
     applyZoom();
     
-    console.log('✅ DailyZen initialized');
+    // iOS対策: レンダリング完了後にflexboxを強制再計算
+    if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+        const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+        if (isPortrait) {
+            const isSafari = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+            const isChrome = /Chrome/.test(navigator.userAgent);
+            
+            if (isSafari) {
+                // Safari: display:none による強制再計算
+                requestAnimationFrame(() => {
+                    const zenWordDisplay = document.getElementById('zen-word-display');
+                    if (zenWordDisplay) {
+                        zenWordDisplay.style.display = 'none';
+                        zenWordDisplay.offsetHeight;
+                        zenWordDisplay.style.display = '';
+                    }
+                });
+            } else if (isChrome) {
+                // Chrome: より強力な対策（二段階リフロー）
+                requestAnimationFrame(() => {
+                    const zenWordDisplay = document.getElementById('zen-word-display');
+                    const kakejikuContainer = document.getElementById('kakejiku-container');
+                    if (zenWordDisplay && kakejikuContainer) {
+                        // 1. 親要素を強制再描画
+                        kakejikuContainer.style.display = 'flex';
+                        kakejikuContainer.offsetHeight;
+                        
+                        // 2. 子要素を強制再描画
+                        zenWordDisplay.style.display = 'none';
+                        zenWordDisplay.offsetHeight;
+                        zenWordDisplay.style.display = '';
+                        
+                        // 3. もう一度親要素を再計算
+                        kakejikuContainer.offsetHeight;
+                    }
+                });
+            }
+        }
+    }
+
 });
 
 // 強制再描画函数
@@ -562,10 +603,6 @@ function setupModal() {
     // 縦長（モバイル）時のみ掛け軸クリックでモーダル表示
     kakejikuContainer.addEventListener('click', () => {
         const isPortraitMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
-        if (isSimulatedClick) {
-            isSimulatedClick = false;
-            return;
-        }
         if (isPortraitMobile) {
             if (modalOverlay.classList.contains('show')) {
                 // すでに開いていれば閉じる
@@ -612,6 +649,8 @@ window.addEventListener('resize', () => {
     }
     // ズームを再計算
     applyZoom();
+    
+
 });
 
 /**
