@@ -1,5 +1,6 @@
 /* ================================================================
-   共通設定 - CSS変数・基本スタイル・全画面共通要素============================================================= */
+   共通設定 - CSS変数・基本スタイル・全画面共通要素
+============================================================= */
 
 :root {
     --bg-color: #f0efef;
@@ -93,6 +94,12 @@ body::before {
     padding: 0;
     letter-spacing: 0.5rem;
     font-weight: 300;
+}
+
+/* 7文字以上の禅語用スタイル（横長画面） */
+#zengo.long-zengo {
+    font-size: 2.7rem; /* 6文字分の大きさに調整 */
+    letter-spacing: 0.4rem; /* 文字間を少し詰める */
 }
 
 #reading-block {
@@ -248,6 +255,22 @@ body::before {
     #kakejiku-container:active {
         transform: scale(0.98);
     }
+    
+    /* iPhone縦向け専用 - zen-word-display中央寄せ強化 */
+    #zen-word-display {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+    
+    #zengo-block, #reading-block {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
 }
 
 #zengo {
@@ -259,6 +282,12 @@ body::before {
     letter-spacing: 0.5rem;
     font-weight: 300;
     white-space: nowrap;
+}
+
+/* 7文字以上の禅語用スタイル（縦長画面・モバイル） */
+#zengo.long-zengo {
+    font-size: 2.3rem; /* 6文字分の大きさに調整 */
+    letter-spacing: 0.4rem; /* 文字間を少し詰める */
 }
 
 #reading {
