@@ -3,7 +3,7 @@ function forMacAppearance() {
     const app = document.getElementById('app');
     const zenWordDisplay = document.getElementById('zen-word-display');
     const meaningContainer = document.getElementById('meaning-container');
-    
+    // 1. 強制リフロー
     if (app) {
         app.offsetHeight;
         app.style.transform = 'translateZ(0)';
@@ -23,14 +23,14 @@ function forMacAppearance() {
         meaningContainer.style.visibility = 'visible';
         meaningContainer.style.transform = 'translateZ(0)';
     }
-    
+    // 2. setTimeout/animationFrame遅延
     setTimeout(() => {
         if (app) app.style.opacity = '0.99';
         requestAnimationFrame(() => {
             if (app) app.style.opacity = '1';
         });
     }, 50);
-    
+    // 3. CSSアニメーションで再描画（例: 一瞬だけ色変更）
     if (app) {
         app.style.transition = 'background-color 0.2s';
         app.style.backgroundColor = '#f0f0f0';
@@ -38,20 +38,33 @@ function forMacAppearance() {
             app.style.backgroundColor = '';
         }, 200);
     }
-    
+    // 4. window.scrollTo(0,1)で一瞬スクロール
     window.scrollTo(0, 1);
     setTimeout(() => {
         window.scrollTo(0, 0);
     }, 100);
 }
-
-// Safari表示バグ対策: 強制再描画・リフロー
+// 擬似クリック判定用フラグ
+let isSimulatedClick = false;
+// Appleデバイス再描画バグ対策: リサイズ＆クリックイベント発火処理を関数化
+// 擬似的にkakejiku-containerをクリックするデバッグ関数
+function debugSimulateKakejikuClick() {
+    const kakejiku = document.getElementById('kakejiku-container');
+    if (kakejiku) {
+        isSimulatedClick = true;
+        const evt = new MouseEvent('click', { bubbles: true, cancelable: true, view: window });
+        kakejiku.dispatchEvent(evt);
+    }
+}
+// js/script.js
+// Safari表示バグ対策: 強制再描画・リフロー・CSSハックをまとめて実行
 function forSafariAppearance() {
     const app = document.getElementById('app');
     const zenWordDisplay = document.getElementById('zen-word-display');
     const meaningContainer = document.getElementById('meaning-container');
+    const meaningElement = document.getElementById('meaning');
     
-    // 強制リフロー（visibility切り替えなし）
+    // 1. 強制リフロー（visibility切り替えなし）
     if (app) {
         app.offsetHeight;
         app.style.transform = 'translateZ(0)';
@@ -61,9 +74,17 @@ function forSafariAppearance() {
         zenWordDisplay.offsetHeight;
         zenWordDisplay.style.willChange = 'transform';
     }
+    // 説明エリアは触らない（初回レンダリングが正しいため）
     if (meaningContainer) {
         meaningContainer.offsetHeight;
     }
+    if (meaningPaper) {
+        meaningPaper.offsetHeight;
+    }
+    
+    // 2. setTimeout/animationFrame遅延は削除
+    // 3. CSSアニメーションも削除
+    // 4. スクロール処理も削除
 }
 
 // ページキャッシュクリア機能
@@ -90,14 +111,19 @@ function clearPageCache() {
     sessionStorage.clear();
     localStorage.clear();
 
-    // Macデバイスの場合のみ実行
-    if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
-        forMacAppearance();
-    }
+    // Appleデバイスごとに分岐
+        if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+            debugSimulateKakejikuClick();
+        } else if (/Macintosh/.test(navigator.userAgent) && /Chrome/.test(navigator.userAgent) && !/Windows/.test(navigator.userAgent)) {
+            forMacAppearance();
+        }
     // Safari表示バグ対策
     if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
         forSafariAppearance();
     }
+    // 強制リロード（無効化）
+    // location.reload(true); // ←リロードはしません
+// ← 余分な閉じカッコ削除
 }
 
 // Ctrl+Shift+R でキャッシュクリア
@@ -465,7 +491,12 @@ document.addEventListener('keydown', async (event) => {
         debugMode = !debugMode;
         
         if (debugMode) {
+            console.log('デバッグモードON - 矢印キーで禅語を切り替えできます');
+            
             await loadAllZenWords();
+            console.log(`データ読み込み完了: 全${allZenWords.length}項目`);
+            console.log(`最初の項目: ${allZenWords[0]?.no} - ${allZenWords[0]?.zengo}`);
+            console.log(`最後の項目: ${allZenWords[allZenWords.length-1]?.no} - ${allZenWords[allZenWords.length-1]?.zengo}`);
             
             // 現在の日めくりインデックスを初期値として設定
             const START_DATE = new Date(2025, 9, 16); // 月は0ベース（10月=9）
@@ -481,8 +512,12 @@ document.addEventListener('keydown', async (event) => {
                 debugIndex = (allZenWords.length + (diffDays % allZenWords.length)) % allZenWords.length;
             }
             
+            console.log(`基準日(2025/10/16)からの経過日数: ${diffDays}日`);
+            console.log(`本日の禅語インデックス: ${debugIndex + 1}/${allZenWords.length}`);
+            
             await renderDebugZen(debugIndex);
         } else {
+            console.log('デバッグモードOFF');
             await renderDailyZen(); // 通常モードに戻る
         }
         return;
@@ -502,7 +537,7 @@ document.addEventListener('keydown', async (event) => {
 
 
 
-// ページ読み込み時の初期化
+// ページ読み込み時の初期化(表示・フォント・モーダル・レイアウト修正)
 document.addEventListener('DOMContentLoaded', async () => {
     // iPhone横向き表示バグ対策: 初回のみリロード
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
@@ -531,7 +566,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 初回ズーム適用
     applyZoom();
     
-    // iOS対策: レンダリング完了後にflexboxを強制再計算
+    // iOS対策: レンダリング完了後にflexboxを強制再計算（iPhone縦長のみ）
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
         const isPortrait = window.matchMedia("(orientation: portrait)").matches;
         if (isPortrait) {
@@ -573,6 +608,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 });
 
+
+
 // 強制再描画函数
 function forceReflow() {
     const app = document.getElementById('app');
@@ -603,6 +640,10 @@ function setupModal() {
     // 縦長（モバイル）時のみ掛け軸クリックでモーダル表示
     kakejikuContainer.addEventListener('click', () => {
         const isPortraitMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
+        if (isSimulatedClick) {
+            isSimulatedClick = false;
+            return;
+        }
         if (isPortraitMobile) {
             if (modalOverlay.classList.contains('show')) {
                 // すでに開いていれば閉じる
@@ -650,6 +691,18 @@ window.addEventListener('resize', () => {
     // ズームを再計算
     applyZoom();
     
+    // iPhone縦横切り替え時の強制リセット
+    if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
+        setTimeout(() => {
+            const kakejiku = document.getElementById('kakejiku-container');
+            const zenWordDisplay = document.getElementById('zen-word-display');
+            if (kakejiku && zenWordDisplay) {
+                // 強制リフロー
+                kakejiku.offsetHeight;
+                zenWordDisplay.offsetHeight;
+            }
+        }, 100);
+    }
 
 });
 
@@ -666,6 +719,12 @@ function applyZoom() {
     
     if (!isLandscape) {
         wrapper.style.transform = ''; // スケールをリセット
+        // 縦長に戻った時は掛け軸サイズもリセット
+        const kakejiku = document.getElementById('kakejiku-container');
+        if (kakejiku) {
+            kakejiku.style.width = '';
+            kakejiku.style.height = '';
+        }
         return;
     }
 
