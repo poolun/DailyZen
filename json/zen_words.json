@@ -2,213 +2,6 @@
   "zenWords": [
     {
       "no": 1,
-      "zengo": "而今",
-      "reading": "にこん / じこん",
-      "meaning": "過去を悔やまず、未来を憂えず、ただ今この一瞬に全力を注ぐ。",
-      "theme": "集中",
-      "source_person": "道元（Dōgen）",
-      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
-    },
-    {
-      "no": 2,
-      "zengo": "日々是好日",
-      "reading": "にちにちこれこうじつ",
-      "meaning": "良い日も悪い日もない。毎日がかけがえのない尊い一日である。",
-      "theme": "平静",
-      "source_person": "雲門文偃（Yunmen Wenyan）",
-      "source_text_en": "Mumonkan / Hekiganroku（『無門関』 / 『碧巌録』）"
-    },
-    {
-      "no": 3,
-      "zengo": "放下着",
-      "reading": "ほうげじゃく",
-      "meaning": "一切の執着やこだわりを手放し、軽やかに生きなさい。",
-      "theme": "解放",
-      "source_person": "唐代の僧（Tang Dynasty Monk）",
-      "source_text_en": "Shōyōroku（『従容録』）"
-    },
-    {
-      "no": 4,
-      "zengo": "平常心是道",
-      "reading": "へいじょうしんこれどう",
-      "meaning": "特別な修行ではなく、日常のありのままの心こそが悟りの境地である。",
-      "theme": "平静",
-      "source_person": "馬祖道一（Mazu Daoyi）",
-      "source_text_en": "Mumonkan（『無門関』）"
-    },
-    {
-      "no": 5,
-      "zengo": "行雲流水",
-      "reading": "こううんりゅうすい",
-      "meaning": "空を流れる雲、留まることのない水のように、執着せずに自然体で生きる。",
-      "theme": "自由",
-      "source_person": "蘇軾（Sū Shì - Song Dynasty Poet）",
-      "source_text_en": "Xie Minshi Tuiguan Yu Shu（『謝民師推官与書』）"
-    },
-    {
-      "no": 6,
-      "zengo": "脚下照顧",
-      "reading": "きゃっかしょうこ",
-      "meaning": "他人や遠くを見ず、自分の足元（現在と自己）をよく見つめなさい。",
-      "theme": "集中",
-      "source_person": "孤峰覚明（Kohō Kakumyō）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 7,
-      "zengo": "知足",
-      "reading": "ちそく",
-      "meaning": "足りるを知る。他と比べず、今あるものに感謝し、心安らかに過ごす。",
-      "theme": "満足",
-      "source_person": "老子（Laozi - Taoist Philosopher）",
-      "source_text_en": "Laozi（『老子』）"
-    },
-    {
-      "no": 8,
-      "zengo": "無心",
-      "reading": "むしん",
-      "meaning": "雑念や先入観のない、囚われのない純粋な心。",
-      "theme": "集中",
-      "source_person": "達磨、禅宗（Bodhidharma, Zen School）",
-      "source_text_en": "Zen Teaching / Sōkyōroku（『宗鏡録』）"
-    },
-    {
-      "no": 9,
-      "zengo": "和敬清寂",
-      "reading": "わけいせいじゃく",
-      "meaning": "互いに和し、敬い、心を清くし、穏やかに過ごす（茶道の精神）。",
-      "theme": "調和",
-      "source_person": "千利休（Sen no Rikyū）",
-      "source_text_en": "Cha no Yu Essence（茶の湯の根本精神）"
-    },
-    {
-      "no": 10,
-      "zengo": "無縄自縛",
-      "reading": "むじょうじばく",
-      "meaning": "自分を縛っているものは、他人や環境ではなく自分自身の思い込みである。",
-      "theme": "解放",
-      "source_person": "臨済宗の僧（Rinzai School Monk）",
-      "source_text_en": "Shōbōgenzō / Rinzai-roku（『臨済録』）"
-    },
-    {
-      "no": 11,
-      "zengo": "一期一会",
-      "reading": "いちごいちえ",
-      "meaning": "この瞬間、この出会いは二度とないものとして大切に向き合いなさい。",
-      "theme": "集中",
-      "source_person": "千利休（Sen no Rikyū）",
-      "source_text_en": "Yamanoue Sōji Ki（『山上宗二記』）"
-    },
-    {
-      "no": 12,
-      "zengo": "且緩々",
-      "reading": "しゃかんかん",
-      "meaning": "慌てることなくゆっくりと、落ち着いて事を進めなさい。",
-      "theme": "平静",
-      "source_person": "雲門文偃（Yunmen Wenyan）",
-      "source_text_en": "Unmon Kōroku（『雲門広録』）"
-    },
-    {
-      "no": 13,
-      "zengo": "笑門来福",
-      "reading": "しょうもんらいふく",
-      "meaning": "笑いのある家には自然と幸福がやってくる。明るく快活に過ごすことが福を招く。",
-      "theme": "幸福",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "General Proverb / Zen Teaching"
-    },
-    {
-      "no": 14,
-      "zengo": "円相",
-      "reading": "えんそう",
-      "meaning": "円は「宇宙・真理・仏性」を象徴し、欠けたところのない完全な悟りの姿を表す。",
-      "theme": "調和",
-      "source_person": "禅画のテーマ（Zen Painting Theme）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 15,
-      "zengo": "山花開似錦",
-      "reading": "さんか にしきにひらくがごとし",
-      "meaning": "山に咲く花が錦のように美しい。自然のありのままの姿がそのまま真理であり、無上の美である。",
-      "theme": "調和",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 16,
-      "zengo": "光陰莫軽",
-      "reading": "こういんかろんずることなかれ",
-      "meaning": "わずかな時間も軽んじてはならない。一瞬一瞬を大切に生きよ。",
-      "theme": "集中",
-      "source_person": "朱子（Zhu Xi）",
-      "source_text_en": "Shōbōgenzō Zuimonki（『正法眼蔵随聞記』）"
-    },
-    {
-      "no": 17,
-      "zengo": "随縁放曠",
-      "reading": "ずいえんほうこう",
-      "meaning": "起こる縁に身を任せ、こだわりなく、心を広々として生きる。",
-      "theme": "自由",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 18,
-      "zengo": "柔軟心",
-      "reading": "にゅうなんしん",
-      "meaning": "凝り固まらず、水のように物事に順応する、しなやかで素直な心。",
-      "theme": "平静",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 19,
-      "zengo": "壺中日月長",
-      "reading": "こちゅうじつげつながし",
-      "meaning": "俗世間を離れた清閑な世界には、悠久の時間が流れる。",
-      "theme": "平静",
-      "source_person": "後漢の費長房（Fei Changfang）の故事",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 20,
-      "zengo": "喫茶去",
-      "reading": "きっさこ",
-      "meaning": "お茶でも飲みなさい。特別な理屈や禅問答ではなく、目の前の日常に集中せよ。",
-      "theme": "平静",
-      "source_person": "趙州従諗（Zhaozhou Congshen）",
-      "source_text_en": "Mumonkan（『無門関』）"
-    },
-    {
-      "no": 21,
-      "zengo": "和光同塵",
-      "reading": "わこうどうじん",
-      "meaning": "智慧の光を和らげ、俗世の塵（ちり）にまじり、人々と共に生きる。",
-      "theme": "調和",
-      "source_person": "老子（Laozi）",
-      "source_text_en": "Laozi（『老子』）"
-    },
-    {
-      "no": 22,
-      "zengo": "柳緑花紅",
-      "reading": "やなぎはみどり、はなはくれない",
-      "meaning": "柳の緑、花の赤。自然のありのままの美しさがそのまま真実の姿である。",
-      "theme": "調和",
-      "source_person": "蘇軾（Sū Shì）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 23,
-      "zengo": "夢",
-      "reading": "ゆめ",
-      "meaning": "人生は夢や幻のように儚いものである。執着することなく、深くこだわらない心境。",
-      "theme": "解放",
-      "source_person": "般若心経（Heart Sutra）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 24,
       "zengo": "無一物",
       "reading": "むいちもつ",
       "meaning": "何一つ持つものがない状態。執着を捨て去った、清浄で囚われのない心境。",
@@ -217,52 +10,43 @@
       "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
     },
     {
-      "no": 25,
-      "zengo": "随順",
-      "reading": "ずいじゅん",
-      "meaning": "真理や教えに従い、あるがままを受け入れる。余計な計らいをしない。",
-      "theme": "自立",
+      "no": 2,
+      "zengo": "脚下照顧",
+      "reading": "きゃっかしょうこ",
+      "meaning": "他人や遠くを見ず、自分の足元（現在と自己）をよく見つめなさい。",
+      "theme": "集中",
+      "source_person": "孤峰覚明（Kohō Kakumyō）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 3,
+      "zengo": "自適",
+      "reading": "じてき",
+      "meaning": "他人に頼らず、自分の境遇に満足して安らかに暮らす。",
+      "theme": "友愛",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
-      "no": 26,
-      "zengo": "随所作主",
-      "reading": "ずいしょさしゅ",
-      "meaning": "どこにいても、その場所の主人となりなさい。環境に左右されず、主体的に生きよ。",
-      "theme": "自立",
-      "source_person": "臨済義玄（Linji Yixuan）",
-      "source_text_en": "Rinzai-roku（『臨済録』）"
+      "no": 4,
+      "zengo": "行雲流水",
+      "reading": "こううんりゅうすい",
+      "meaning": "空を流れる雲、留まることのない水のように、執着せずに自然体で生きる。",
+      "theme": "自由",
+      "source_person": "蘇軾（Sū Shì - Song Dynasty Poet）",
+      "source_text_en": "Xie Minshi Tuiguan Yu Shu（『謝民師推官与書』）"
     },
     {
-      "no": 27,
-      "zengo": "一字千金",
-      "reading": "いちじせんきん",
-      "meaning": "一文字が千金に値するほど、言葉や教えが尊いこと。",
-      "theme": "感謝",
-      "source_person": "禅語としての比喩（Zen Metaphor）",
-      "source_text_en": "General Proverb（一般の故事成語）"
-    },
-    {
-      "no": 28,
-      "zengo": "無事",
-      "reading": "ぶじ",
-      "meaning": "特別な課題や煩悩がない、何事もない平穏な境地。あるがままの姿。",
-      "theme": "平静",
-      "source_person": "臨済義玄（Linji Yixuan）",
-      "source_text_en": "Rinzai-roku（『臨済録』）"
-    },
-    {
-      "no": 29,
-      "zengo": "一味清風",
-      "reading": "いちみせいふう",
-      "meaning": "ただ一つのさわやかな風。全ての物事が平等であり、差別がない真理の境地。",
-      "theme": "平静",
+      "no": 5,
+      "zengo": "道",
+      "reading": "みち / どう",
+      "meaning": "真理、または真理に至るための修行の道。進むべき希望の道。",
+      "theme": "希望",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching（禅の教え）"
+      "source_text_en": "Zen Teaching"
     },
     {
-      "no": 30,
+      "no": 6,
       "zengo": "喫飯度日",
       "reading": "きっぱんとにち",
       "meaning": "飯を食って日々を送る。日常の雑事の中にこそ真の修行がある。",
@@ -271,403 +55,34 @@
       "source_text_en": "Zen Teaching"
     },
     {
-      "no": 31,
-      "zengo": "直心是道場",
-      "reading": "じきしんこれどうじょう",
-      "meaning": "素直で正直な心こそが、修行をするべき場所（道場）である。",
-      "theme": "自立",
-      "source_person": "維摩経（Vimalakirti Sutra）",
-      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
-    },
-    {
-      "no": 32,
-      "zengo": "前後際断",
-      "reading": "ぜんごさいだん",
-      "meaning": "過去と未来の思いを断ち切り、ただ「今、この一瞬」に集中して生きる。",
-      "theme": "集中",
-      "source_person": "道元（Dōgen）",
-      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
-    },
-    {
-      "no": 33,
-      "zengo": "日日新",
-      "reading": "ひびあらた",
-      "meaning": "毎日毎日が新しく生まれ変わる。常に向上心を持ち、過去に囚われず生きよ。",
-      "theme": "発展",
-      "source_person": "大学（Da Xue）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 34,
-      "zengo": "莫妄想",
-      "reading": "まくもうぞう",
-      "meaning": "妄想するな、余計なことを考えるな。ありのままを素直に受け入れよ。",
-      "theme": "平静",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 35,
-      "zengo": "吾唯足知",
-      "reading": "われただたるをしる",
-      "meaning": "私はただ足るを知る。欲望を追求せず、今あるものに満足して生きる。",
-      "theme": "満足",
-      "source_person": "龍安寺の蹲踞の銘（Inscription on Ryoanji Tsukubai）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 36,
-      "zengo": "歩歩是道場",
-      "reading": "ほほこれどうじょう",
-      "meaning": "一歩一歩の歩みが修行の場である。日常生活の全てが仏道である。",
-      "theme": "集中",
-      "source_person": "道元（Dōgen）",
-      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
-    },
-    {
-      "no": 37,
-      "zengo": "八風吹不動",
-      "reading": "はっぷうすいふどう",
-      "meaning": "利・衰・毀・誉・称・譏・苦・楽の8種の風（誘惑や中傷）に心を乱されない。",
-      "theme": "平静",
-      "source_person": "白居易（Bai Juyi）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 38,
-      "zengo": "一滴水",
-      "reading": "いってきすい",
-      "meaning": "小さな一滴の水も、源を辿れば大きな流れに通じている。小さな行いも大切にせよ。",
-      "theme": "感謝",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 39,
-      "zengo": "随縁而化",
-      "reading": "ずいえんにか",
-      "meaning": "縁にしたがって自ずから変化・成長する。自然の流れに身を任せよ。",
-      "theme": "自由",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 40,
-      "zengo": "坐断紅塵",
-      "reading": "ざだんこうじん",
-      "meaning": "俗世間から離れ、静かに座って瞑想する。外界の影響を受けない境地。",
-      "theme": "平静",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 41,
-      "zengo": "清涼",
-      "reading": "せいりょう",
-      "meaning": "煩悩の炎が消え、心が清らかで涼しい境地。安らぎの悟りの心。",
-      "theme": "解放",
+      "no": 7,
+      "zengo": "大円鏡智",
+      "reading": "だいえんきょうち",
+      "meaning": "煩悩を離れ、すべてを映し出す智慧。完全な悟りの境地。",
+      "theme": "完成",
       "source_person": "仏教用語（Buddhist term）",
       "source_text_en": "Zen Teaching"
     },
     {
-      "no": 42,
-      "zengo": "莫煩悩",
-      "reading": "まくぼんのう",
-      "meaning": "煩悩を気にするな。目の前のことに集中すれば、煩悩は自然と消える。",
-      "theme": "解放",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 43,
-      "zengo": "一黙如雷",
-      "reading": "いちもくじょらい",
-      "meaning": "真に価値のある言葉は、沈黙の後に雷のように重く響く。",
-      "theme": "集中",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 44,
-      "zengo": "喫一盞茶",
-      "reading": "きっいっせんのちゃ",
-      "meaning": "まず一杯のお茶を飲みなさい。目の前の行いに集中し、余計なことを考えるな。",
-      "theme": "集中",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 45,
-      "zengo": "随処楽",
-      "reading": "ずいしょらく",
-      "meaning": "どこにいても楽しみを見つける。現状を受け入れ、今を生きる喜び。",
-      "theme": "満足",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 46,
-      "zengo": "独坐大雄峰",
-      "reading": "どくざだいゆうほう",
-      "meaning": "誰にも頼らず、ただ一人、自己を深く見つめる場所（心境）。",
-      "theme": "自立",
-      "source_person": "潙山霊祐（Guishan Lingyou）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 47,
-      "zengo": "風光日々新",
-      "reading": "ふうこうひびあらた",
-      "meaning": "自然の景色は毎日新しい。常に新しい気持ちで物事に向き合う。",
-      "theme": "発展",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 48,
-      "zengo": "一超直入",
-      "reading": "いっちょうじきにゅう",
-      "meaning": "迷いの世界から悟りの世界へ一気に飛び込む。決意と実行。",
-      "theme": "集中",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 49,
-      "zengo": "唯我独尊",
-      "reading": "ゆいがどくそん",
-      "meaning": "この世で自分だけが尊い。全ての人間が仏性を持つ尊い存在であること。",
-      "theme": "自立",
-      "source_person": "釈迦（Shakyamuni）",
-      "source_text_en": "仏教経典（Buddhist Sutras）"
-    },
-    {
-      "no": 50,
-      "zengo": "山高水長",
-      "reading": "やまたかくみずながし",
-      "meaning": "徳の高い人の行いは、山のように高く、水のように長く後世まで伝わる。",
+      "no": 8,
+      "zengo": "生",
+      "reading": "せい / いきる",
+      "meaning": "生きること。人生の根源的な意義を問う。",
       "theme": "普遍",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
-      "no": 51,
-      "zengo": "無刀剣",
-      "reading": "むとうけん",
-      "meaning": "刀や剣を持たない。争いを好まない、平和な心。",
-      "theme": "調和",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 52,
-      "zengo": "心月輪",
-      "reading": "しんげつりん",
-      "meaning": "月のように清らかで円満な心。真理を映す悟りの心。",
-      "theme": "調和",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 53,
-      "zengo": "青山緑水",
-      "reading": "せいざんりょくすい",
-      "meaning": "青い山と緑の水。自然のありのままの姿が真理そのものである。",
-      "theme": "調和",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 54,
-      "zengo": "念々去来",
-      "reading": "ねんねんきょらい",
-      "meaning": "心に浮かぶ思いは次々と現れ、そして消えていく。執着しない心。",
-      "theme": "平静",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 55,
-      "zengo": "虚心坦懐",
-      "reading": "きょしんたんかい",
-      "meaning": "心に何のわだかまりもなく、素直でさっぱりしていること。",
-      "theme": "平静",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 56,
-      "zengo": "随流得妙",
-      "reading": "ずいりゅうとくみょう",
-      "meaning": "流れに身を任せることで、かえって妙なる真理を得ることができる。",
-      "theme": "自由",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 57,
-      "zengo": "風外",
-      "reading": "ふうがい",
-      "meaning": "世俗の煩わしさの外。世間から離れた悟りの境地、あるいは風変わりな様。",
-      "theme": "自由",
-      "source_person": "風外本高（Fūgai Honkō - Zen Painter）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 58,
-      "zengo": "春色無高下",
-      "reading": "しゅんしょくにこうげなし",
-      "meaning": "春の景色に高低優劣はない。万物は平等であるという仏の真理。",
-      "theme": "調和",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 59,
-      "zengo": "泥中有蓮",
-      "reading": "でいちゅうにれんあり",
-      "meaning": "泥の中から清らかな蓮が咲くように、煩悩の世の中から悟りが開く。",
+      "no": 9,
+      "zengo": "大悟徹底",
+      "reading": "たいごてってい",
+      "meaning": "真実を深く理解し、心の底から悟りを開く。",
       "theme": "発展",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
-      "no": 60,
-      "zengo": "無尽蔵",
-      "reading": "むじんぞう",
-      "meaning": "いくら使っても尽きることのない宝。智慧や徳は常に尽きることがない。",
-      "theme": "発展",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 61,
-      "zengo": "喫菜事魔",
-      "reading": "きっさいじま",
-      "meaning": "粗末な食べ物でも、誠意を持って頂くことが心の魔を祓う。食への感謝。",
-      "theme": "感謝",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 62,
-      "zengo": "梅開五福",
-      "reading": "ばいかいごふく",
-      "meaning": "梅の花は五つの花弁を持ち、長寿、富、健康、徳、子孫の五つの福をもたらす。",
-      "theme": "感謝",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 63,
-      "zengo": "只管打坐",
-      "reading": "しかんたざ",
-      "meaning": "ただひたすらに坐禅すること。坐禅の行為そのものが悟りであるとする曹洞宗の基本的な教え。",
-      "theme": "集中",
-      "source_person": "道元（Dōgen）",
-      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
-    },
-    {
-      "no": 64,
-      "zengo": "行住坐臥",
-      "reading": "ぎょうじゅうざが",
-      "meaning": "歩き、立ち止まり、座り、横になる。日常の全ての動作が修行である。",
-      "theme": "集中",
-      "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 65,
-      "zengo": "心頭滅却",
-      "reading": "しんとうめっきゃく",
-      "meaning": "心の迷いを滅すれば、火の熱さも感じなくなる。精神の力で苦難を乗り越える。",
-      "theme": "平静",
-      "source_person": "快川紹喜（Kaisen Jōki）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 66,
-      "zengo": "看々臘月尽",
-      "reading": "みよみよろうげつつく",
-      "meaning": "見よ、もう12月が終わる。時は待ってくれない、今この一瞬を大切に生きよ。",
-      "theme": "集中",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 67,
-      "zengo": "寿山福海",
-      "reading": "じゅざんふくかい",
-      "meaning": "長寿は山のように動かず、幸福は海のように広大である。長寿と幸福を祈る。",
-      "theme": "感謝",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 68,
-      "zengo": "一拳打破",
-      "reading": "いっけんたは",
-      "meaning": "迷いや煩悩を、一撃で打ち破るほどの鋭い悟りの境地。",
-      "theme": "解放",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 69,
-      "zengo": "洗心",
-      "reading": "せんしん",
-      "meaning": "心を洗い清めること。煩悩や邪念を払い、清らかな心を取り戻す。",
-      "theme": "解放",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 70,
-      "zengo": "無功用行",
-      "reading": "むくうぎょう",
-      "meaning": "計らいや意図のない、自然な行い。見返りを求めない行為。",
-      "theme": "解放",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 71,
-      "zengo": "本来面目",
-      "reading": "ほんらいのめんもく",
-      "meaning": "生まれながらに持っている、ありのままの真実の自己。",
-      "theme": "自立",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 72,
-      "zengo": "直截",
-      "reading": "ちょくせつ",
-      "meaning": "遠回りせず、まっすぐに真理を悟る。また、直接的に行動を起こす。",
-      "theme": "自立",
-      "source_person": "臨済義玄（Linji Yixuan）",
-      "source_text_en": "Rinzai-roku（『臨済録』）"
-    },
-    {
-      "no": 73,
-      "zengo": "無位真人",
-      "reading": "むいのしんじん",
-      "meaning": "何ら地位や肩書きを持たない、真の悟りを開いた人。",
-      "theme": "自立",
-      "source_person": "臨済義玄（Linji Yixuan）",
-      "source_text_en": "Rinzai-roku（『臨済録』）"
-    },
-    {
-      "no": 74,
-      "zengo": "梅一輪",
-      "reading": "うめいちりん",
-      "meaning": "まだ寒いうちに一輪だけ咲く梅の花。厳しい状況下でも、信念をもって行動せよ。",
-      "theme": "自立",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
-    },
-    {
-      "no": 75,
+      "no": 10,
       "zengo": "是々非々",
       "reading": "ぜぜひぜひ",
       "meaning": "正しいことは正しい、間違っていることは間違っているとはっきりと判断する。",
@@ -676,371 +91,3872 @@
       "source_text_en": "Zen Teaching"
     },
     {
-      "no": 76,
-      "zengo": "正身",
-      "reading": "しょうしん",
-      "meaning": "心身を正しく保つ。真の自己（主人公）として正しく生きる。",
-      "theme": "自立",
-      "source_person": "道元（Dōgen） / 禅語（Zen word）",
-      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+      "no": 11,
+      "zengo": "謝恩",
+      "reading": "しゃおん",
+      "meaning": "いただいた恩恵に感謝すること。仏様やご先祖様への感謝。",
+      "theme": "感謝",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
     },
     {
-      "no": 77,
-      "zengo": "対機説法",
-      "reading": "たいきせっぽう",
-      "meaning": "相手の能力や状況、心の状態に合わせて、最も適切な方法で教えを説くこと。",
+      "no": 12,
+      "zengo": "和光同塵",
+      "reading": "わこうどうじん",
+      "meaning": "智慧の光を和らげ、俗世の塵（ちり）にまじり、人々と共に生きる。",
       "theme": "調和",
+      "source_person": "老子（Laozi）",
+      "source_text_en": "Laozi（『老子』）"
+    },
+    {
+      "no": 13,
+      "zengo": "仏法僧",
+      "reading": "ぶっぽうそう",
+      "meaning": "仏（悟りを開いた人）、法（仏の教え）、僧（教えを学ぶ修行者）の三宝。",
+      "theme": "普遍",
       "source_person": "仏教用語（Buddhist term）",
       "source_text_en": "Zen Teaching"
     },
     {
-      "no": 78,
-      "zengo": "和同開珍",
-      "reading": "わどうかいちん",
-      "meaning": "和合をもって、心の中の宝を開き、真理に到達する。",
+      "no": 14,
+      "zengo": "直指人心",
+      "reading": "じきしにんしん",
+      "meaning": "言葉に頼らず、直接人の心（仏性）を指し示す。",
+      "theme": "集中/自立",
+      "source_person": "禅宗の教え（Zen School Principle）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 15,
+      "zengo": "山花開似錦",
+      "reading": "さんか にしきにひらくがごとし",
+      "meaning": "山に咲く花が錦のように美しい。自然のありのままの姿がそのまま真理であり、無上の美である。",
+      "theme": "自然",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 16,
+      "zengo": "壺中日月長",
+      "reading": "こちゅうじつげつながし",
+      "meaning": "俗世間を離れた清閑な世界には、悠久の時間が流れる。",
+      "theme": "平静",
+      "source_person": "後漢の費長房（Fei Changfang）の故事",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 17,
+      "zengo": "自性清浄",
+      "reading": "じしょうしょうじょう",
+      "meaning": "人の心は本来、煩悩がなく清らかであるという真理。",
+      "theme": "解放",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 18,
+      "zengo": "風月",
+      "reading": "ふうげつ",
+      "meaning": "風と月。自然の自由で美しい情景。",
+      "theme": "自由",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 19,
+      "zengo": "満月",
+      "reading": "まんげつ",
+      "meaning": "欠けたところのない完全な月。悟りの完成。",
+      "theme": "完成",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 20,
+      "zengo": "至誠通天",
+      "reading": "しせいつうてん",
+      "meaning": "この上なく誠実な心は天に通じる。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 21,
+      "zengo": "福",
+      "reading": "ふく",
+      "meaning": "幸福、恵み。善行によってもたらされる良い結果。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 22,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 23,
+      "zengo": "心気一如",
+      "reading": "しんきいちにょ",
+      "meaning": "心と身体が一つになり、調和が取れている状態。",
       "theme": "調和",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
-      "no": 79,
-      "zengo": "清風拂明月",
-      "reading": "せいふうめいげつをはらう",
-      "meaning": "清らかな風が明るい月を払うように、全てが清らかで美しい境地。",
+      "no": 24,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 25,
+      "zengo": "看脚下",
+      "reading": "かんきゃっか",
+      "meaning": "自分の足元を見なさい。目の前のことに集中せよ。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 26,
+      "zengo": "友誼",
+      "reading": "ゆうぎ",
+      "meaning": "友人としての親愛の情。真の交わり。",
+      "theme": "友愛",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 27,
+      "zengo": "不退転",
+      "reading": "ふたいてん",
+      "meaning": "信念を曲げない強い心。目標に向かって突き進む。",
+      "theme": "発展",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 28,
+      "zengo": "夢",
+      "reading": "ゆめ",
+      "meaning": "人生は夢や幻のように儚いものである。執着することなく、深くこだわらない心境。",
+      "theme": "解放",
+      "source_person": "般若心経（Heart Sutra）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 29,
+      "zengo": "真",
+      "reading": "しん",
+      "meaning": "真実、真理。嘘偽りのない、ありのままの姿。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 30,
+      "zengo": "明鏡止水",
+      "reading": "めいきょうしすい",
+      "meaning": "曇りのない鏡と、止まった水面のように、静かで澄み切った心。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 31,
+      "zengo": "光明蔵",
+      "reading": "こうみょうぞう",
+      "meaning": "仏の智慧の光が蔵されている場所。無限の希望。",
+      "theme": "希望",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 32,
+      "zengo": "心月輪",
+      "reading": "しんげつりん",
+      "meaning": "月のように円満な悟りの心。完成された平静な境地。",
+      "theme": "完成/平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 33,
+      "zengo": "不苦不楽",
+      "reading": "ふくふらく",
+      "meaning": "苦でも楽でもない、一切の極端な感覚を超越した中道の境地。",
+      "theme": "平静",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 34,
+      "zengo": "無事是貴人",
+      "reading": "ぶじこれきにん",
+      "meaning": "何の煩悩や問題もない、ありのままの自分でいることこそが貴い存在である。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 35,
+      "zengo": "随縁放曠",
+      "reading": "ずいえんほうこう",
+      "meaning": "起こる縁に身を任せ、こだわりなく、心を広々として生きる。",
+      "theme": "自由",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 36,
+      "zengo": "共鳴",
+      "reading": "きょうめい",
+      "meaning": "互いの心が響き合うこと。深い理解と調和。",
+      "theme": "友愛",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 37,
+      "zengo": "青山緑水",
+      "reading": "せいざんりょくすい",
+      "meaning": "青い山と緑の水。自然のありのままの姿が真理そのものである。",
       "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 38,
+      "zengo": "花紅柳緑",
+      "reading": "かこうりゅうりょく",
+      "meaning": "花は赤く柳は緑。自然のありのままの姿がそのまま真理である。",
+      "theme": "自然/普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 39,
+      "zengo": "清貧",
+      "reading": "せいひん",
+      "meaning": "貧しくても心が清らかで、品位があること。",
+      "theme": "満足",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 40,
+      "zengo": "法",
+      "reading": "ほう",
+      "meaning": "真理、教え、宇宙の法則。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 41,
+      "zengo": "成",
+      "reading": "じょう / なる",
+      "meaning": "達成、完成。修行の目的を果たすこと。",
+      "theme": "完成",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 42,
+      "zengo": "空",
+      "reading": "くう",
+      "meaning": "存在する全ては、実体がない。執着を断つための根本的な真理。",
+      "theme": "解放",
+      "source_person": "般若心経（Heart Sutra）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 43,
+      "zengo": "共生",
+      "reading": "きょうせい",
+      "meaning": "共に生きること。調和を重んじる。",
+      "theme": "調和",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 44,
+      "zengo": "随喜",
+      "reading": "ずいき",
+      "meaning": "他人の善行を見て、それを共に喜ぶこと。",
+      "theme": "感謝",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 45,
+      "zengo": "応無所住",
+      "reading": "おうむしょじゅう",
+      "meaning": "どこにも心を留めないこと。執着しない、自由な心。",
+      "theme": "自由",
+      "source_person": "金剛般若経（Diamond Sutra）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 46,
+      "zengo": "絆",
+      "reading": "きずな",
+      "meaning": "人との強いつながり。修行仲間や家族との深い縁。",
+      "theme": "友愛",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 47,
+      "zengo": "啐啄同時",
+      "reading": "そったくどうじ",
+      "meaning": "師と弟子の機が熟し、互いに求め合った最高の瞬間。好機を逃さない。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 48,
+      "zengo": "一息",
+      "reading": "いっそく",
+      "meaning": "一つの息。一回限りの呼吸に集中すること。命の大切さ。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 49,
+      "zengo": "風鈴",
+      "reading": "ふうりん",
+      "meaning": "風に揺られて鳴る音は、一瞬のいのちの響き。無常の真理を教える。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 50,
+      "zengo": "一大事",
+      "reading": "いちだいじ",
+      "meaning": "人生で最も重要なこと（悟りを開くこと）。今この一瞬を大切にすること。",
+      "theme": "集中",
+      "source_person": "法華経（Lotus Sutra）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 51,
+      "zengo": "笑門来福",
+      "reading": "しょうもんらいふく",
+      "meaning": "笑いのある家には自然と幸福がやってくる。明るく快活に過ごすことが福を招く。",
+      "theme": "幸福",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "General Proverb / Zen Teaching"
+    },
+    {
+      "no": 52,
+      "zengo": "行",
+      "reading": "ぎょう",
+      "meaning": "修行、実践、行動。",
+      "theme": "集中",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 53,
+      "zengo": "一草一木",
+      "reading": "いっそういちぼく",
+      "meaning": "一本の草、一本の木。全ての自然の存在が仏の命を宿している。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 54,
+      "zengo": "随順",
+      "reading": "ずいじゅん",
+      "meaning": "真理や教えに従い、あるがままを受け入れる。余計な計らいをしない。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 55,
+      "zengo": "妙手",
+      "reading": "みょうしゅ",
+      "meaning": "神業のような素晴らしい技術。自在な境地から生まれる。",
+      "theme": "自由",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 56,
+      "zengo": "山水有清音",
+      "reading": "さんすいにせいおんあり",
+      "meaning": "山や川には清らかな音が響いている。自然の中に真理がある。",
+      "theme": "自然",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 57,
+      "zengo": "主人公",
+      "reading": "しゅじんこう",
+      "meaning": "真の自己。他者に頼らず、自分自身の人生の主役として生きる。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 58,
+      "zengo": "不忘初心",
+      "reading": "ふぼうしょしん",
+      "meaning": "最初の志を忘れないこと。常に向上心を持ち続ける。",
+      "theme": "発展",
+      "source_person": "世阿弥（Zeami）",
+      "source_text_en": "Fūshikaden（『風姿花伝』）"
+    },
+    {
+      "no": 59,
+      "zengo": "唯心",
+      "reading": "ゆいしん",
+      "meaning": "すべては心の現れである。心の持ち方一つで世界が変わる。",
+      "theme": "自立",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 60,
+      "zengo": "風光",
+      "reading": "ふうこう",
+      "meaning": "自然の美しい景色。そのありのままの姿が真理である。",
+      "theme": "自由",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 61,
+      "zengo": "円相",
+      "reading": "えんそう",
+      "meaning": "円は「宇宙・真理・仏性」を象徴し、欠けたところのない完全な悟りの姿を表す。",
+      "theme": "調和",
+      "source_person": "禅画のテーマ（Zen Painting Theme）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 62,
+      "zengo": "一花開天下春",
+      "reading": "いっかひらいててんかのはる",
+      "meaning": "一輪の花が咲けば、世界中に春が来る。小さな変化が大きな影響をもたらす。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 63,
+      "zengo": "無心帰一",
+      "reading": "むしんきいつ",
+      "meaning": "無心の状態になれば、全てが一つの真理に帰着する。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 64,
+      "zengo": "不言",
+      "reading": "ふげん",
+      "meaning": "言葉で表現できない真理。沈黙の中にこそ真実がある。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 65,
+      "zengo": "自受用三昧",
+      "reading": "じじゅゆうざんまい",
+      "meaning": "自らの修行によって得た悟りの境地に浸りきること。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 66,
+      "zengo": "覚悟",
+      "reading": "かくご",
+      "meaning": "真理を悟り、迷いを捨てること。決意をもって事に当たる。",
+      "theme": "自立",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 67,
+      "zengo": "無一物中無尽蔵",
+      "reading": "むいちもつちゅうむじんぞう",
+      "meaning": "何一つない心の中に、尽きることのない宝（真理、智慧）が満ちている。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 68,
+      "zengo": "慈悲",
+      "reading": "じひ",
+      "meaning": "他人の苦しみを抜き、楽を与えること。仏の持つ深い愛情。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 69,
+      "zengo": "風月無辺",
+      "reading": "ふうげつむへん",
+      "meaning": "風や月の自然の美しさは限りがない。悟りの境地は無限である。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 70,
+      "zengo": "無事",
+      "reading": "ぶじ",
+      "meaning": "特別な課題や煩悩がない、何事もない平穏な境地。あるがままの姿。",
+      "theme": "平静",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 71,
+      "zengo": "愛",
+      "reading": "あい",
+      "meaning": "仏の慈悲。生きとし生けるもの全てへの愛。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 72,
+      "zengo": "一期一会",
+      "reading": "いちごいちえ",
+      "meaning": "この瞬間、この出会いは二度とないものとして大切に向き合いなさい。",
+      "theme": "集中",
+      "source_person": "千利休（Sen no Rikyū）",
+      "source_text_en": "Yamanoue Sōji Ki（『山上宗二記』）"
+    },
+    {
+      "no": 73,
+      "zengo": "柳緑花紅",
+      "reading": "やなぎはみどり、はなはくれない",
+      "meaning": "柳の緑、花の赤。自然のありのままの美しさがそのまま真実の姿である。",
+      "theme": "調和",
+      "source_person": "蘇軾（Sū Shì）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 74,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 75,
+      "zengo": "知足者常楽",
+      "reading": "ちそくしゃじょうらく",
+      "meaning": "足ることを知る者は、常に心が満たされ、安らかである。",
+      "theme": "満足",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 76,
+      "zengo": "無畏",
+      "reading": "むい",
+      "meaning": "畏れを抱かないこと。煩悩を離れ、一切の恐れがない境地。",
+      "theme": "解放",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 77,
+      "zengo": "遊",
+      "reading": "ゆう",
+      "meaning": "自由に遊び楽しむ。真理を体得し、自在に生きる。",
+      "theme": "自由",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 78,
+      "zengo": "仏",
+      "reading": "ほとけ / ぶつ",
+      "meaning": "悟りを開いた人。全ての人が持つ仏性。真理の象徴。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 79,
+      "zengo": "雲水",
+      "reading": "うんすい",
+      "meaning": "雲のように留まらず、水のように流れゆく修行僧。",
+      "theme": "自由",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 80,
-      "zengo": "万象",
-      "reading": "ばんしょう",
-      "meaning": "この世のありとあらゆるもの、宇宙全体。全てが真理の現れである。",
-      "theme": "普遍",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching"
+      "zengo": "直心是道場",
+      "reading": "じきしんこれどうじょう",
+      "meaning": "素直で正直な心こそが、修行をするべき場所（道場）である。",
+      "theme": "自立",
+      "source_person": "維摩経（Vimalakirti Sutra）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
     },
     {
       "no": 81,
-      "zengo": "万法帰一",
-      "reading": "ばんぽうきいつ",
-      "meaning": "あらゆる現象や真理は、すべて一つの根源に帰着する。",
-      "theme": "普遍",
-      "source_person": "禅語（Zen word）",
+      "zengo": "無所求",
+      "reading": "むしょぐ",
+      "meaning": "求めるものが何もない境地。執着を捨て去る。",
+      "theme": "解放",
+      "source_person": "仏教用語（Buddhist term）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 82,
-      "zengo": "無辺風光",
-      "reading": "むへんふうこう",
-      "meaning": "限りなく広がる美しい風景。悟りの世界は無限である。",
-      "theme": "普遍",
+      "zengo": "行住坐臥",
+      "reading": "ぎょうじゅうざが",
+      "meaning": "行（歩く）、住（止まる）、坐（座る）、臥（寝る）。日常の全てが修行である。",
+      "theme": "平静",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 83,
-      "zengo": "随所皆真",
-      "reading": "ずいしょかいしん",
-      "meaning": "どこであろうと、全てが真実の姿であり、悟りの場である。",
-      "theme": "普遍",
-      "source_person": "道元（Dōgen）",
-      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+      "zengo": "安心立命",
+      "reading": "あんじんりゅうみょう",
+      "meaning": "天命を知り、心を安らかに保つこと。迷いから解放された心境。",
+      "theme": "解放",
+      "source_person": "陽明学（Neo-Confucianism）",
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 84,
-      "zengo": "水急不流月",
-      "reading": "みずいそげどつきはながれず",
-      "meaning": "水面は速く流れても、水に映る月は動かない。現象に惑わされず、本質を見失うな。",
-      "theme": "普遍",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching（禅の教え）"
+      "zengo": "無我",
+      "reading": "むが",
+      "meaning": "自分という実体がないこと。自我への執着を捨てる。",
+      "theme": "解放",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 85,
-      "zengo": "松無古今色",
-      "reading": "まつにここんのいろなし",
-      "meaning": "松の色はいつの時代も変わらない。真理は永遠であり、時間によって左右されない。",
-      "theme": "普遍",
-      "source_person": "大智円行（Daizhi Yuanxing）",
-      "source_text_en": "Zen Teaching（禅の教え）"
+      "zengo": "大慈大悲",
+      "reading": "だいじだいひ",
+      "meaning": "仏の持つ、限りない慈しみと哀れみ。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 86,
-      "zengo": "青山元不動",
-      "reading": "せいざんもとふどう",
-      "meaning": "青い山は元々動かない。世の中が変化しても、真理は変わらず不動である。",
-      "theme": "普遍",
-      "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching（禅の教え）"
+      "zengo": "自灯明",
+      "reading": "じとうみょう",
+      "meaning": "自分自身を頼りとし、教えを灯火として生きる。",
+      "theme": "自立",
+      "source_person": "釈迦（Shakyamuni Buddha）",
+      "source_text_en": "Daihannya-kyō（『大般涅槃経』）"
     },
     {
       "no": 87,
-      "zengo": "不昧因果",
-      "reading": "ふまいいんが",
-      "meaning": "因果の理を隠したり、惑わされたりしない。自らの行為の結果を素直に受け止める。",
-      "theme": "普遍",
-      "source_person": "百丈懐海（Baizhang Huaihai）",
+      "zengo": "心頭滅却",
+      "reading": "しんとうめっきゃく",
+      "meaning": "心の煩悩や雑念を打ち消し、一切の妄想を消し去る。",
+      "theme": "集中",
+      "source_person": "快川紹喜（Kaikawa Jōki）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 88,
-      "zengo": "不立文字",
-      "reading": "ふりゅうもんじ",
-      "meaning": "仏の教えは言葉や文字で表し尽くせるものではない。座禅など実践を通して会得せよ。",
-      "theme": "集中",
-      "source_person": "禅宗の教え（Zen School Principle）",
-      "source_text_en": "Zen Teaching（禅の教え）"
+      "zengo": "本来無一物",
+      "reading": "ほんらいむいちもつ",
+      "meaning": "人間の本性には、本来何一つ煩悩や執着といった汚れはない。",
+      "theme": "解放",
+      "source_person": "六祖慧能（Huìnéng）",
+      "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
     },
     {
       "no": 89,
-      "zengo": "無漏",
-      "reading": "むろ",
-      "meaning": "煩悩の漏れがない清らかな状態。悟りを開いた境地。",
-      "theme": "解放",
+      "zengo": "禅",
+      "reading": "ぜん",
+      "meaning": "坐禅による修行。悟りへ至るための集中と実践。",
+      "theme": "集中",
       "source_person": "仏教用語（Buddhist term）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 90,
-      "zengo": "空手還郷",
-      "reading": "くうしゅげんきょう",
-      "meaning": "悟りを開いて故郷に帰る。何も持たない無一物の姿こそが悟りの境地。",
-      "theme": "解放",
-      "source_person": "十牛図（Jūgyūzu）",
+      "zengo": "不立文字",
+      "reading": "ふりゅうもんじ",
+      "meaning": "言葉や文字によらず、心から心へと真理が伝わること。",
+      "theme": "集中",
+      "source_person": "禅宗の教え（Zen School Principle）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 91,
-      "zengo": "一超直入如来地",
-      "reading": "いっちょうじきにゅうにょらいち",
-      "meaning": "迷いの世界から一気に飛び越え、最高の悟りの境地にまっすぐ到達する。",
-      "theme": "解放",
-      "source_person": "禅語（Zen word）",
+      "zengo": "一如",
+      "reading": "いちにょ",
+      "meaning": "全てのものが一つの真理であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 92,
-      "zengo": "明珠在掌",
-      "reading": "みょうじゅたなごころにあり",
-      "meaning": "悟りの智慧は既に自分の手の中にある。外に探し求める必要はない。",
-      "theme": "自立",
+      "zengo": "知足",
+      "reading": "ちそく",
+      "meaning": "足ることを知る。現状に満足し、欲張らないこと。",
+      "theme": "満足",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 93,
-      "zengo": "自灯明",
-      "reading": "じとうみょう",
-      "meaning": "自分自身を拠り所として生きる。他者に頼らず、自己の智慧を光とする。",
-      "theme": "自立",
-      "source_person": "釈迦（Shakyamuni）",
-      "source_text_en": "涅槃経（Nirvāṇa Sūtra）"
+      "zengo": "万事休す",
+      "reading": "ばんじきゅうす",
+      "meaning": "全ての執着を捨て去り、何事にも捉われない境地。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 94,
-      "zengo": "唯心所現",
-      "reading": "ゆいしんしょげん",
-      "meaning": "全ては心の持ちようで決まる。世界は自分の心の現れである。",
+      "zengo": "随処作主",
+      "reading": "ずいしょさしゅ",
+      "meaning": "いかなる場所、状況においても、自らの主体性を見失わないこと。",
       "theme": "自立",
-      "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "華厳経（Avataṃsaka Sūtra）"
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
     },
     {
       "no": 95,
-      "zengo": "心外無別法",
-      "reading": "しんげむべっぽう",
-      "meaning": "心から離れたところに悟りも真理も存在しない。全ては心の中に帰結する。",
-      "theme": "自立",
-      "source_person": "六祖慧能（Huìnéng）",
-      "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
+      "zengo": "一寸光陰一寸金",
+      "reading": "いっすんのこういんいっすんのかね",
+      "meaning": "わずかな時間も金の価値がある。時間を大切にせよ。",
+      "theme": "集中",
+      "source_person": "中国の格言（Chinese Proverb）",
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 96,
-      "zengo": "廓然無聖",
-      "reading": "かくねんむしょう",
-      "meaning": "広々として何もない、特別な悟りの境地はないということ。悟りを求める心すら手放す。",
+      "zengo": "無功徳",
+      "reading": "むくどく",
+      "meaning": "功徳を求めない心。見返りを求めず善行を行う。",
       "theme": "解放",
-      "source_person": "達磨と武帝の問答（Bodhidharma and Emperor Wu）",
-      "source_text_en": "Zen Teaching（禅の教え）"
+      "source_person": "六祖慧能（Huìnéng）と梁の武帝の問答",
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 97,
-      "zengo": "本来無一物",
-      "reading": "ほんらいむいちもつ",
-      "meaning": "元々、執着すべき実体は何一つない。心は本来清浄である。",
-      "theme": "解放",
-      "source_person": "六祖慧能（Huìnéng）",
-      "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
+      "zengo": "寿山福海",
+      "reading": "じゅざんふくかい",
+      "meaning": "長寿は山のように、幸福は海のように広大である。",
+      "theme": "幸福",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 98,
-      "zengo": "不洗塵",
-      "reading": "あらわずしてちりなし",
-      "meaning": "洗い流す必要がないほど、元々清らかである心（心は本来清浄）。",
-      "theme": "解放",
-      "source_person": "禅語（Zen word）",
+      "zengo": "円",
+      "reading": "えん",
+      "meaning": "完全、円満、真理。欠けたところのない悟りの姿。",
+      "theme": "完成",
+      "source_person": "禅画のテーマ（Zen Painting Theme）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 99,
-      "zengo": "夢幻泡影",
-      "reading": "むげんほうよう",
-      "meaning": "人生の全ては夢や幻、泡や影のように儚い。執着を捨てなさい。",
-      "theme": "解放",
-      "source_person": "金剛般若経（Diamond Sutra）",
-      "source_text_en": "Zen Teaching（禅の教え）"
-    },
-    {
-      "no": 100,
-      "zengo": "無量寿",
-      "reading": "むりょうじゅ",
-      "meaning": "限りない生命、永遠の真理。阿弥陀仏の別名。",
-      "theme": "解放",
+      "zengo": "真理",
+      "reading": "しんり",
+      "meaning": "永遠に変わらない普遍の法則。仏の教え。",
+      "theme": "普遍",
       "source_person": "仏教用語（Buddhist term）",
       "source_text_en": "Zen Teaching"
     },
     {
-      "no": 101,
-      "zengo": "語尽山河",
-      "reading": "ごじんさんが",
-      "meaning": "言葉を尽くしても、真理は山や河のように広大で全てを語り尽くせない。",
-      "theme": "普遍",
+      "no": 100,
+      "zengo": "清流",
+      "reading": "せいりゅう",
+      "meaning": "清らかな流れ。清浄な心の象徴。",
+      "theme": "平静",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 101,
+      "zengo": "夢幻",
+      "reading": "むげん",
+      "meaning": "夢や幻のように人生は儚い。執着を断つべきである。",
+      "theme": "解放",
+      "source_person": "般若心経（Heart Sutra）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
       "no": 102,
-      "zengo": "一念三千",
-      "reading": "いちねんさんぜん",
-      "meaning": "一瞬の心に全宇宙の真理が含まれている。心の力を知ること。",
-      "theme": "普遍",
-      "source_person": "天台宗（Tendai School）",
-      "source_text_en": "摩訶止観（Mohe Zhiguan）"
+      "zengo": "無",
+      "reading": "む",
+      "meaning": "存在しないこと。あらゆる執着を断ち切った究極の境地。",
+      "theme": "解放",
+      "source_person": "『無門関』第一則「趙州狗子」",
+      "source_text_en": "Mumonkan（『無門関』）"
     },
     {
       "no": 103,
-      "zengo": "不生不滅",
-      "reading": "ふしょうふめつ",
-      "meaning": "生まれもしないし、滅びもしない。真理は永遠で不変である。",
-      "theme": "普遍",
-      "source_person": "般若心経（Heart Sutra）",
-      "source_text_en": "Prajñāpāramitā Hṛdaya（Heart Sutra）"
+      "zengo": "一休",
+      "reading": "いっきゅう",
+      "meaning": "一つの休息。一休みして心を整える。",
+      "theme": "平静",
+      "source_person": "一休宗純（Ikkyū Sōjun）",
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 104,
-      "zengo": "万古清風",
-      "reading": "ばんこせいふう",
-      "meaning": "永遠に変わらない清々しい風。真理は常に清らかである。",
-      "theme": "普遍",
+      "zengo": "無念無想",
+      "reading": "むねんむそう",
+      "meaning": "念（思い）も想（考え）もない、一切の雑念を捨て去った心の状態。",
+      "theme": "集中",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 105,
-      "zengo": "本来清浄",
-      "reading": "ほんらいしょうじょう",
-      "meaning": "人間の心は生まれながらにして清らかで、煩悩によって汚されていない。",
-      "theme": "普遍",
-      "source_person": "禅宗（Zen School）",
+      "zengo": "啐啄",
+      "reading": "そったく",
+      "meaning": "師と弟子の機が熟し、互いに求め合った最高の瞬間。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 106,
-      "zengo": "劫外春光",
-      "reading": "こうがいのしゅんこう",
-      "meaning": "永遠の時を超えた、限りない生命力。悟りの世界に満ちる春の光。",
+      "zengo": "一味禅",
+      "reading": "いちみぜん",
+      "meaning": "全ての修行、教えの根本にある、ただ一つの真理。",
       "theme": "普遍",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 107,
-      "zengo": "雲門一字",
-      "reading": "うんもんいちじ",
-      "meaning": "雲門禅師の投げかけた一文字の言葉に、全ての真理が含まれている。",
-      "theme": "普遍",
-      "source_person": "雲門文偃（Yunmen Wenyan）",
+      "zengo": "一円相",
+      "reading": "いちえんそう",
+      "meaning": "円は「宇宙・真理・仏性」を象徴。欠けたところのない完全な悟りの姿。",
+      "theme": "調和",
+      "source_person": "禅画のテーマ（Zen Painting Theme）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 108,
-      "zengo": "明歴々露堂々",
-      "reading": "めいれきれき ろどうどう",
-      "meaning": "真理ははっきりと輝き、隠すことなく堂々とあらわれている。全ては明らかである。",
-      "theme": "普遍",
+      "zengo": "一字書",
+      "reading": "いちじしょ",
+      "meaning": "禅の真髄をただ一文字に込めて書くこと。",
+      "theme": "集中",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 109,
-      "zengo": "白珪尚可磨",
-      "reading": "はっけいなおみがくべし",
-      "meaning": "白い宝石でさえ磨く必要がある。どれほど優れていても努力は必要。",
-      "theme": "発展",
-      "source_person": "禅語（Zen word）",
+      "zengo": "無所得",
+      "reading": "むしょとく",
+      "meaning": "得るものが何もない。悟りを得ようという執着すら捨てる。",
+      "theme": "解放",
+      "source_person": "般若心経（Heart Sutra）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 110,
-      "zengo": "十牛図",
-      "reading": "じゅうぎゅうず",
-      "meaning": "悟りに至るまでの修行の段階を、牛を捕まえる図で示したもの。",
-      "theme": "発展",
-      "source_person": "廓庵師遠（Kuoan Shiyuan）",
+      "zengo": "一水四見",
+      "reading": "いっすいしけん",
+      "meaning": "同じ水を見ても、見る者によって見え方が異なる。世界の多様性。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 111,
-      "zengo": "安心立命",
-      "reading": "あんじんりつめい",
-      "meaning": "天命を知り、心を安らかに定め、人生の試練に動じない境地。",
-      "theme": "平静",
-      "source_person": "儒教、後に禅（Confucianism, later Zen）",
+      "zengo": "妙",
+      "reading": "みょう",
+      "meaning": "言葉では言い表せない、奥深い真理や働き。",
+      "theme": "普遍",
+      "source_person": "法華経（Lotus Sutra）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 112,
-      "zengo": "閑古錐",
-      "reading": "かんこすい",
-      "meaning": "使い古されて角が取れたキリのように、悟りきって何も求めなくなった境地。",
-      "theme": "満足",
-      "source_person": "雲門文偃（Yunmen Wenyan）",
-      "source_text_en": "Zen Teaching（禅の教え）"
+      "zengo": "知",
+      "reading": "ち",
+      "meaning": "智慧。物事の本質を見抜く力。",
+      "theme": "集中",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 113,
-      "zengo": "万歳",
-      "reading": "ばんざい",
-      "meaning": "いつまでも栄え、長寿であることを祝う言葉。幸福と繁栄を願う。",
-      "theme": "感謝",
+      "zengo": "喫飯度日",
+      "reading": "きっぱんとにち",
+      "meaning": "飯を食って日々を送る。日常の雑事の中にこそ真の修行がある。",
+      "theme": "平静",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 114,
-      "zengo": "喫茶三昧",
-      "reading": "きっさざんまい",
-      "meaning": "ただひたすらにお茶を飲むことに集中する。日常の行為に没頭すること。",
-      "theme": "集中",
-      "source_person": "禅語（Zen word）",
+      "zengo": "自力",
+      "reading": "じりき",
+      "meaning": "自らの修行によって悟りを開こうとする力。",
+      "theme": "自立",
+      "source_person": "仏教用語（Buddhist term）",
       "source_text_en": "Zen Teaching"
     },
     {
       "no": 115,
-      "zengo": "一路看尽",
-      "reading": "いちろかんじん",
-      "meaning": "一つのことを最後まで見届ける。生涯を貫く確固たる信念を持つ。",
+      "zengo": "無分別",
+      "reading": "むふんべつ",
+      "meaning": "差別や区別をしないこと。すべてのものを平等に見る。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 116,
+      "zengo": "安心",
+      "reading": "あんじん",
+      "meaning": "迷いがなく、心が安らかな状態。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 117,
+      "zengo": "不二法門",
+      "reading": "ふにほうもん",
+      "meaning": "真理は一つであり、対立を超えた境地。",
+      "theme": "普遍",
+      "source_person": "維摩経（Yuima-gyō）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 118,
+      "zengo": "無分別智",
+      "reading": "むふんべつち",
+      "meaning": "分別や判断をしない、真実をありのままに捉える智慧。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 119,
+      "zengo": "自性",
+      "reading": "じしょう",
+      "meaning": "ものや心の本来持っている性質。仏性。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 120,
+      "zengo": "明",
+      "reading": "めい",
+      "meaning": "明るい、悟りの光。智慧。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 121,
+      "zengo": "一息",
+      "reading": "いっき",
+      "meaning": "一息に。一気に集中してやり遂げる。",
       "theme": "集中",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
-      "no": 116,
-      "zengo": "対機説法",
-      "reading": "たいきせっぽう",
-      "meaning": "相手の能力や状況、心の状態に合わせて、最も適切な方法で教えを説くこと。",
-      "theme": "調和",
+      "no": 122,
+      "zengo": "一歩",
+      "reading": "いっぽ",
+      "meaning": "確実な一歩を踏み出すこと。修行の道のり。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 123,
+      "zengo": "無礙",
+      "reading": "むげ",
+      "meaning": "何物にも妨げられない、自由自在な境地。",
+      "theme": "自由",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 124,
+      "zengo": "知恵",
+      "reading": "ちえ",
+      "meaning": "物事の本質を見抜く力。仏の悟り。",
+      "theme": "集中",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 125,
+      "zengo": "水上行",
+      "reading": "すいじょうぎょう",
+      "meaning": "水の上を歩くように、一切の執着から解放された自由な境地。",
+      "theme": "自由",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 126,
+      "zengo": "独坐大雄峰",
+      "reading": "どくざだいゆうほう",
+      "meaning": "誰にも頼らず、一人で悟りの山に座る。自立した修行の姿。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 127,
+      "zengo": "花",
+      "reading": "はな",
+      "meaning": "ありのままの美しさ。真理の現れ。",
+      "theme": "自然",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 128,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 129,
+      "zengo": "清",
+      "reading": "きよし",
+      "meaning": "清らか、清浄。心の汚れがない状態。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 130,
+      "zengo": "遊戯三昧",
+      "reading": "ゆげざんまい",
+      "meaning": "真理を体得し、あらゆる状況を遊びのように自在に楽しむ境地。",
+      "theme": "自由",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 131,
+      "zengo": "無事是道人",
+      "reading": "ぶじこれどうにん",
+      "meaning": "特別な課題を持たない、ありのままの人が悟りの人である。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Linji Yixuan）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 132,
+      "zengo": "一滴",
+      "reading": "いってき",
+      "meaning": "一滴の水。小さな命も大きな宇宙に通じている。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 133,
+      "zengo": "大用",
+      "reading": "だいゆう",
+      "meaning": "偉大な働き、真理の現れ。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 134,
+      "zengo": "妙音",
+      "reading": "みょうおん",
+      "meaning": "言葉では表せない、真理の音。",
+      "theme": "普遍",
+      "source_person": "法華経（Lotus Sutra）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 135,
+      "zengo": "一華開五葉",
+      "reading": "いっかごようをひらく",
+      "meaning": "一輪の花から五枚の葉が広がる。真理が広まること。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 136,
+      "zengo": "満身",
+      "reading": "まんしん",
+      "meaning": "全身、満ちた心。",
+      "theme": "完成",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 137,
+      "zengo": "円光",
+      "reading": "えんこう",
+      "meaning": "円満な悟りの光。仏の智慧。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 138,
+      "zengo": "放下",
+      "reading": "ほうげ",
+      "meaning": "一切の執着やこだわりを手放すこと。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 139,
+      "zengo": "独歩",
+      "reading": "どっぽ",
+      "meaning": "誰にも頼らず、一人で道を歩む。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 140,
+      "zengo": "清風",
+      "reading": "せいふう",
+      "meaning": "清らかな風。心の平穏を象徴。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 141,
+      "zengo": "満",
+      "reading": "まん",
+      "meaning": "満たされていること。悟りの完成。",
+      "theme": "完成",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 142,
+      "zengo": "一息",
+      "reading": "いっそく",
+      "meaning": "一つの息。一回限りの呼吸に集中すること。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 143,
+      "zengo": "風",
+      "reading": "かぜ / ふう",
+      "meaning": "自然のありのままの姿。自由の象徴。",
+      "theme": "自由",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 144,
+      "zengo": "満月",
+      "reading": "まんげつ",
+      "meaning": "欠けたところのない完全な月。悟りの完成。",
+      "theme": "完成",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 145,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 146,
+      "zengo": "無心",
+      "reading": "むしん",
+      "meaning": "私心のない、清らかな心。雑念のない心の状態。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 147,
+      "zengo": "自",
+      "reading": "じ / おのずから",
+      "meaning": "自分自身、または自然のありのまま。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 148,
+      "zengo": "自在",
+      "reading": "じざい",
+      "meaning": "何物にも束縛されず、思いのままであること。",
+      "theme": "自由",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 149,
+      "zengo": "感謝",
+      "reading": "かんしゃ",
+      "meaning": "全てのものへの感謝の念。",
+      "theme": "感謝",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 150,
+      "zengo": "一",
+      "reading": "いち",
+      "meaning": "一つの真理。すべては一つであること。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 151,
+      "zengo": "寿",
+      "reading": "ことぶき / じゅ",
+      "meaning": "長寿、命。",
+      "theme": "幸福",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 152,
+      "zengo": "大",
+      "reading": "だい",
+      "meaning": "大きい、広大な。真理の広大さ。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 153,
+      "zengo": "一筋",
+      "reading": "ひとすじ",
+      "meaning": "一つの道に集中する。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 154,
+      "zengo": "大円",
+      "reading": "だいえん",
+      "meaning": "大きな円。欠けたところのない完全な悟り。",
+      "theme": "完成",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 155,
+      "zengo": "大悟",
+      "reading": "たいご",
+      "meaning": "真実を深く理解し、心の底から悟りを開く。",
+      "theme": "発展",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 156,
+      "zengo": "満月",
+      "reading": "まんげつ",
+      "meaning": "欠けたところのない完全な月。悟りの完成。",
+      "theme": "完成",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 157,
+      "zengo": "一滴",
+      "reading": "いってき",
+      "meaning": "一滴の水。小さな命も大きな宇宙に通じている。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 158,
+      "zengo": "妙",
+      "reading": "みょう",
+      "meaning": "言葉では言い表せない、奥深い真理や働き。",
+      "theme": "普遍",
+      "source_person": "法華経（Lotus Sutra）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 159,
+      "zengo": "無心",
+      "reading": "むしん",
+      "meaning": "私心のない、清らかな心。雑念のない心の状態。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 160,
+      "zengo": "福",
+      "reading": "ふく",
+      "meaning": "幸福、恵み。善行によってもたらされる良い結果。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 161,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 162,
+      "zengo": "生",
+      "reading": "せい / いきる",
+      "meaning": "生きること。人生の根源的な意義を問う。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 163,
+      "zengo": "一息",
+      "reading": "いっそく",
+      "meaning": "一つの息。一回限りの呼吸に集中すること。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 164,
+      "zengo": "大慈",
+      "reading": "だいじ",
+      "meaning": "大きな慈しみ。仏の持つ深い愛情。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 165,
+      "zengo": "仏法",
+      "reading": "ぶっぽう",
+      "meaning": "仏の教え、真理。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 166,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 167,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 168,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 169,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 170,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 171,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 172,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 173,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 174,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 175,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 176,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 177,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 178,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 179,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 180,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 181,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 182,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 183,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 184,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 185,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 186,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 187,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 188,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 189,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 190,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 191,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 192,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 193,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 194,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 195,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 196,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 197,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 198,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 199,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 200,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 201,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 202,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 203,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 204,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 205,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 206,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 207,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 208,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 209,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 210,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 211,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 212,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 213,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 214,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 215,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 216,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 217,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 218,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 219,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 220,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 221,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 222,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 223,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 224,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 225,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 226,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 227,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 228,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 229,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 230,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 231,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 232,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 233,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 234,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 235,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 236,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 237,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 238,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 239,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 240,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 241,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 242,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 243,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 244,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 245,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 246,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 247,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 248,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 249,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 250,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 251,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 252,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 253,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 254,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 255,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 256,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 257,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 258,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 259,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 260,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 261,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 262,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 263,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 264,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 265,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 266,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 267,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 268,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 269,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 270,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 271,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 272,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 273,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 274,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 275,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 276,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 277,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 278,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 279,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 280,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 281,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 282,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 283,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 284,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 285,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 286,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 287,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 288,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 289,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 290,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 291,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 292,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 293,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 294,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 295,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 296,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 297,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 298,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 299,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 300,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 301,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 302,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 303,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 304,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 305,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 306,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 307,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 308,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 309,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 310,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 311,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 312,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 313,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 314,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 315,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 316,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 317,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 318,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 319,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 320,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 321,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 322,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 323,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 324,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 325,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 326,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 327,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 328,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 329,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 330,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 331,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 332,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 333,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 334,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 335,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 336,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 337,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 338,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 339,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 340,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 341,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 342,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 343,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 344,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 345,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 346,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 347,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 348,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 349,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 350,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 351,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 352,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 353,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 354,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 355,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 356,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 357,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 358,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 359,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 360,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 361,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 362,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 363,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 364,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 365,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 366,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 367,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 368,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 369,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 370,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 371,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 372,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 373,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 374,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 375,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 376,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 377,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 378,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 379,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 380,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 381,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 382,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 383,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 384,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 385,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 386,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 387,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 388,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 389,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 390,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 391,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 392,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 393,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 394,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 395,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 396,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 397,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 398,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 399,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 400,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 401,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 402,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 403,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 404,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 405,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 406,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 407,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 408,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 409,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 410,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 411,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 412,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 413,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 414,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 415,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 416,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 417,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 418,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 419,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 420,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 421,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 422,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 423,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 424,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 425,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 426,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 427,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 428,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 429,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 430,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 431,
+      "zengo": "一期",
+      "reading": "いちご",
+      "meaning": "一生。この一度きりの人生。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 432,
+      "zengo": "直",
+      "reading": "じき / なお",
+      "meaning": "真っ直ぐ、素直。正直な心。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 433,
+      "zengo": "自得",
+      "reading": "じとく",
+      "meaning": "師や人から教わらず、自分で真理を悟ること。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 434,
+      "zengo": "清流無間",
+      "reading": "せいりゅうむけん",
+      "meaning": "清らかな流れは途切れることがない。修行の継続。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 435,
+      "zengo": "一味",
+      "reading": "いちみ",
+      "meaning": "すべてのものが本来一つの味（真理）であること。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 436,
+      "zengo": "一水",
+      "reading": "いっすい",
+      "meaning": "一つの水。すべてのものは元をただせば一つの真理。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 437,
+      "zengo": "妙用",
+      "reading": "みょうゆう",
+      "meaning": "言葉では言い表せない、素晴らしい働き。真理の現れ。",
+      "theme": "普遍",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 438,
+      "zengo": "一燈",
+      "reading": "いっとう",
+      "meaning": "一つの灯火。暗闇を照らす希望の光。",
+      "theme": "希望",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 439,
+      "zengo": "円満",
+      "reading": "えんまん",
+      "meaning": "欠けるところなく満たされている状態。悟りの完成した姿。",
+      "theme": "完成",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 440,
+      "zengo": "大悲",
+      "reading": "だいひ",
+      "meaning": "大きな悲しみ。他人の苦しみを共に悲しみ、救おうとする心。",
+      "theme": "友愛",
       "source_person": "仏教用語（Buddhist term）",
       "source_text_en": "Zen Teaching"
     }
