@@ -48,11 +48,11 @@
     },
     {
       "no": 6,
-      "zengo": "仏",
-      "reading": "ほとけ / ぶつ",
-      "meaning": "悟りを開いた人。真理の象徴。",
-      "theme": "普遍",
-      "source_person": "仏教用語（Buddhist term）",
+      "zengo": "和顔愛語",
+      "reading": "わげんあいご",
+      "meaning": "和やかな顔つき（和顔）と、思いやりある優しい言葉（愛語）で、人に対して接すること。親切で穏やかな態度を表す。",
+      "theme": "慈愛・親切",
+      "source_person": "仏教用語",
       "source_text_en": "Zen Teaching",
       "priority": 3
     },
