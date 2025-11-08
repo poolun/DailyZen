@@ -297,25 +297,26 @@ async function getDailyZenWord() {
         const data = await fetchWithRetry('json/zen_words.json');
         const words = data.zenWords;
         
-        // 基準日：2025年10月16日（サービス開始日）
-        const START_DATE = new Date(2025, 9, 16); // 月は0ベース（10月=9）
+        // 基準日：今年の1月1日（no1が1月1日）
         const today = new Date();
+        const currentYear = today.getFullYear();
+        const START_DATE = new Date(currentYear, 0, 1); // 月は0ベース（1月=0）
         
         // 今日の日付を日本時間で正規化（時間を0:00:00に設定）
         const todayNormalized = new Date(today.getFullYear(), today.getMonth(), today.getDate());
         const startDateNormalized = new Date(START_DATE.getFullYear(), START_DATE.getMonth(), START_DATE.getDate());
         
-        // 経過日数を計算
+        // 経過日数を計算（1月1日からの日数）
         const diffTime = todayNormalized.getTime() - startDateNormalized.getTime();
         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
         
-        // データインデックスを計算（120項目でループ）
+        // データインデックスを計算（366項目でループ）
         let dailyIndex;
         if (diffDays >= 0) {
-            // 基準日以降：順次表示
+            // 1月1日以降：順次表示
             dailyIndex = diffDays % words.length;
         } else {
-            // 基準日より前：最後から逆算
+            // 前年の場合（通常発生しないが安全のため）
             dailyIndex = (words.length + (diffDays % words.length)) % words.length;
         }
         
@@ -468,8 +469,13 @@ async function renderDebugZen(index) {
             zengoElement.classList.remove('long-zengo');
         }
         
-        // デバッグモード用の表示
-        const fullMeaning = `[DEBUG ${index + 1}/${allZenWords.length}]【${zenWord.theme.trim()}】\n${zenWord.meaning.trim()}＜${zenWord.source_person.trim()}：${zenWord.source_text_en.trim()}＞`;
+        // デバッグモード用の表示（修正版）
+        const theme = zenWord.theme?.trim() || 'テーマなし';
+        const meaning = zenWord.meaning?.trim() || '説明なし';
+        const sourcePerson = zenWord.source_person?.trim() || '出典不明';
+        const sourceTextEn = zenWord.source_text_en?.trim() || 'Unknown';
+        
+        const fullMeaning = `[DEBUG ${index + 1}/${allZenWords.length}]【${theme}】\n${meaning}＜${sourcePerson}：${sourceTextEn}＞`;
         document.getElementById('meaning').textContent = fullMeaning;
     }
     
@@ -499,8 +505,9 @@ document.addEventListener('keydown', async (event) => {
             console.log(`最後の項目: ${allZenWords[allZenWords.length-1]?.no} - ${allZenWords[allZenWords.length-1]?.zengo}`);
             
             // 現在の日めくりインデックスを初期値として設定
-            const START_DATE = new Date(2025, 9, 16); // 月は0ベース（10月=9）
             const today = new Date();
+            const currentYear = today.getFullYear();
+            const START_DATE = new Date(currentYear, 0, 1); // 月は0ベース（1月=0）
             const todayNormalized = new Date(today.getFullYear(), today.getMonth(), today.getDate());
             const startDateNormalized = new Date(START_DATE.getFullYear(), START_DATE.getMonth(), START_DATE.getDate());
             const diffTime = todayNormalized.getTime() - startDateNormalized.getTime();
@@ -512,7 +519,7 @@ document.addEventListener('keydown', async (event) => {
                 debugIndex = (allZenWords.length + (diffDays % allZenWords.length)) % allZenWords.length;
             }
             
-            console.log(`基準日(2025/10/16)からの経過日数: ${diffDays}日`);
+            console.log(`基準日(${currentYear}/1/1)からの経過日数: ${diffDays}日`);
             console.log(`本日の禅語インデックス: ${debugIndex + 1}/${allZenWords.length}`);
             
             await renderDebugZen(debugIndex);
