@@ -60,8 +60,8 @@
       "reading": "ちそく",
       "meaning": "足りるを知る。他と比べず、今あるものに感謝し、心安らかに過ごす。",
       "theme": "満足",
-      "source_person": "老子（Laozi - Taoist Philosopher）",
-      "source_text_en": "Laozi（『老子』）"
+      "source_person": "老子（Rōshi- Taoist Philosopher）",
+      "source_text_en": "Rōshi（『老子』）"
     },
     {
       "no": 8,
@@ -168,7 +168,7 @@
       "reading": "こちゅうじつげつながし",
       "meaning": "俗世間を離れた清閑な世界には、悠久の時間が流れる。",
       "theme": "平静",
-      "source_person": "後漢の費長房（Fei Changfang）の故事",
+      "source_person": "後漢の費長房（Hichōbō）の故事",
       "source_text_en": "Zen Teaching"
     },
     {
@@ -177,7 +177,7 @@
       "reading": "きっさこ",
       "meaning": "お茶でも飲みなさい。特別な理屈や禅問答ではなく、目の前の日常に集中せよ。",
       "theme": "平静",
-      "source_person": "趙州従諗（Zhaozhou Congshen）",
+      "source_person": "趙州従諗（Jōshū Jūshin）",
       "source_text_en": "Mumonkan（『無門関』）"
     },
     {
@@ -186,8 +186,8 @@
       "reading": "わこうどうじん",
       "meaning": "智慧の光を和らげ、俗世の塵（ちり）にまじり、人々と共に生きる。",
       "theme": "調和",
-      "source_person": "老子（Laozi）",
-      "source_text_en": "Laozi（『老子』）"
+      "source_person": "老子（Rōshi- Taoist Philosopher）",
+      "source_text_en": "Rōshi（『老子』）"
     },
     {
       "no": 22,
@@ -328,7 +328,7 @@
       "no": 37,
       "zengo": "八風吹不動",
       "reading": "はっぷうすいふどう",
-      "meaning": "利・衰・毀・誉・称・譏・苦・楽の8種の風（誘惑や中傷）に心を乱されない。",
+      "meaning": "利・衰・毀・誉・称・譏・苦・楽の八種の風（誘惑や中傷）に心を乱されない。",
       "theme": "平静",
       "source_person": "白居易（Bai Juyi）",
       "source_text_en": "Zen Teaching（禅の教え）"
@@ -870,7 +870,7 @@
       "reading": "ほんらいむいちもつ",
       "meaning": "元々、執着すべき実体は何一つない。心は本来清浄である。",
       "theme": "解放",
-      "source_person": "六祖慧能（Huìnéng）",
+      "source_person": "六祖慧能（Rokusō Enō）",
       "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
     },
     {
@@ -1023,7 +1023,7 @@
       "reading": "せいふうじょらい",
       "meaning": "清らかな風がゆるやかに吹いてくる。穏やかで心地よい境地。",
       "theme": "平静",
-      "source_person": "蘇軾（Sū Shì）",
+      "source_person": "蘇軾（So Shoku）",
       "source_text_en": "Zen Teaching"
     },
     {
@@ -1626,7 +1626,7 @@
       "reading": "じねん / しぜん",
       "meaning": "あるがまま。作為がないこと。真理は自然の中にある。",
       "theme": "自然",
-      "source_person": "老子、後に禅（Laozi, later Zen）",
+      "source_person": "老子（Rōshi- Taoist Philosopher）",
       "source_text_en": "Zen Teaching"
     },
     {
