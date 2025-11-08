@@ -2011,12 +2011,12 @@
     },
     {
       "no": 216,
-      "zengo": "無縁の慈悲",
-      "reading": "むえんのじひ",
-      "meaning": "特別な縁のない人にも分け隔てなく与える慈悲の心。",
-      "theme": "利他",
-      "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching"
+      "zengo": "知過必改",
+      "reading": "ちかひつかい",
+      "meaning": "自分の過ちを知ったならば、必ずそれを改めなさい。",
+      "theme": "普遍",
+      "source_person": "臨済義玄（Rinzai Gigen）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
     },
     {
       "no": 217,
@@ -2941,21 +2941,21 @@
     },
     {
       "no": 317,
-      "zengo": "臨済録",
-      "reading": "りんざいろく",
-      "meaning": "臨済義玄の言行録。臨済宗の根本聖典。",
-      "theme": "普遍",
-      "source_person": "臨済義玄（Rinzai Gigen）",
-      "source_text_en": "Rinzai-roku（『臨済録』）"
+      "zengo": "無縁の慈悲",
+      "reading": "むえんのじひ",
+      "meaning": "特別な縁のない人にも分け隔てなく与える慈悲の心。",
+      "theme": "利他",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 318,
-      "zengo": "六祖壇経",
-      "reading": "ろくそだんぎょう",
-      "meaning": "六祖慧能の教えを記したもの。禅宗の重要経典。",
-      "theme": "普遍",
-      "source_person": "六祖慧能（Rokuso Enō）",
-      "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
+      "zengo": "自灯明",
+      "reading": "じとうみょう",
+      "meaning": "師や他者を頼りとせず、自分の内面を見つめ、過ちも自身で気づき、正すことの大切さ。",
+      "theme": "自律・覚醒",
+      "source_person": "釈迦（ゴータマ・シッダールタ）",
+      "source_text_en": "Mahāparinibbāna Sutta（『大般涅槃経』など）"
     },
     {
       "no": 319,
