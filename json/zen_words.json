@@ -16,8 +16,7 @@
       "meaning": "一瞬の美しさ。真理の現れ。",
       "theme": "普遍",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 3,
@@ -53,8 +52,7 @@
       "meaning": "和やかな顔つき（和顔）と、思いやりある優しい言葉（愛語）で、人に対して接すること。親切で穏やかな態度を表す。",
       "theme": "慈愛・親切",
       "source_person": "仏教用語",
-      "source_text_en": "Zen Teaching",
-      "priority": 3
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 7,
@@ -72,8 +70,7 @@
       "meaning": "悟りを開いた人。全ての人が持つ仏性。真理の象徴。",
       "theme": "普遍",
       "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching",
-      "priority": 3
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 9,
@@ -103,13 +100,13 @@
       "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
     },
     {
+      "no": 12,
       "zengo": "光",
       "reading": "こう",
       "meaning": "希望の光。心を照らす輝き",
       "theme": "希望",
       "source_person": "大日如来",
-      "source_text_en": "Light",
-      "no": 12
+      "source_text_en": "Light"
     },
     {
       "no": 13,
@@ -118,8 +115,7 @@
       "meaning": "開く。悟りを開く。新しい道や可能性を開く。",
       "theme": "希望",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 3
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 14,
@@ -146,8 +142,7 @@
       "meaning": "移り変わり、執着のない心。",
       "theme": "自由",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 17,
@@ -183,8 +178,7 @@
       "meaning": "自在に形を変え、執着しない。真理の象徴。",
       "theme": "自由",
       "source_person": "老子（Rōshi）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 21,
@@ -229,8 +223,7 @@
       "meaning": "清らかさ。煩悩のない心。",
       "theme": "平静",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 26,
@@ -257,17 +250,16 @@
       "meaning": "清らかさ。心の汚れがないこと。",
       "theme": "平静",
       "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 29,
       "zengo": "一黙如雷",
+      "reading": "いちもくじょらい",
       "meaning": "真に価値のある言葉は、沈黙の後に雷のように重く響く。",
       "theme": "集中",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching（禅の教え）",
-      "reading": "いちもくじょらい"
+      "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
       "no": 30,
@@ -294,8 +286,7 @@
       "meaning": "欠けることなく全てを照らす。悟りの智慧。",
       "theme": "普遍",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 33,
@@ -340,8 +331,7 @@
       "meaning": "実体がないこと。全ては移り変わり、固定されたものはないという真理。",
       "theme": "普遍",
       "source_person": "般若心経（Heart Sutra）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 38,
@@ -386,8 +376,7 @@
       "meaning": "日々の実践と修行。正しい道を歩む具体的な行いのこと。",
       "theme": "集中",
       "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 43,
@@ -414,8 +403,7 @@
       "meaning": "真実、真理。偽りのないこと。",
       "theme": "普遍",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 46,
@@ -451,8 +439,7 @@
       "meaning": "真実、ありのままの姿。",
       "theme": "普遍",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 50,
@@ -482,13 +469,13 @@
       "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
+      "no": 53,
       "zengo": "慈",
       "reading": "じ",
       "meaning": "全ての存在に向ける温かく優しい心。母親が子を思う愛のような慈悲。",
       "theme": "慈愛",
       "source_person": "仏陀",
-      "source_text_en": "Compassion",
-      "no": 53
+      "source_text_en": "Compassion"
     },
     {
       "no": 54,
@@ -506,8 +493,7 @@
       "meaning": "春の景色に高低優劣はない。万物は平等であるという仏の真理。",
       "theme": "調和",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 56,
@@ -525,8 +511,7 @@
       "meaning": "心を集中し、平静な状態を保つこと。坐禅の核心。",
       "theme": "平静",
       "source_person": "六波羅蜜（Roku Haramitsu）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 58,
@@ -553,8 +538,7 @@
       "meaning": "心が波立つことなく静かで穏やかな状態。動じない安定した心境。",
       "theme": "平静",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 61,
@@ -563,8 +547,7 @@
       "meaning": "梅の花は五つの花弁を持ち、長寿、富、健康、徳、子孫の五つの福をもたらす。",
       "theme": "感謝",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching（禅の教え）",
-      "priority": 1
+      "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
       "no": 62,
@@ -573,26 +556,25 @@
       "meaning": "まだ寒いうちに一輪だけ咲く梅の花。厳しい状況下でも、信念をもって行動せよ。",
       "theme": "自立",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
+      "no": 63,
       "zengo": "輝",
       "reading": "き",
       "meaning": "美しく輝く。生命の輝き",
       "theme": "輝き",
       "source_person": "阿弥陀仏",
-      "source_text_en": "Shine",
-      "no": 63
+      "source_text_en": "Shine"
     },
     {
+      "no": 64,
       "zengo": "雲",
       "reading": "うん",
       "meaning": "雲のように形にとらわれず自由に変化する心。執着のない自在な境地。",
       "theme": "自然",
       "source_person": "雲門禅師",
-      "source_text_en": "Cloud",
-      "no": 64
+      "source_text_en": "Cloud"
     },
     {
       "no": 65,
@@ -601,8 +583,7 @@
       "meaning": "山に咲く花が錦のように美しい。自然のありのままの姿がそのまま真理であり、無上の美である。",
       "theme": "自然",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 66,
@@ -611,17 +592,16 @@
       "meaning": "何ら地位や肩書きを持たない、真の悟りを開いた人。",
       "theme": "自立",
       "source_person": "臨済義玄（Rinzai Gigen）",
-      "source_text_en": "Rinzai-roku（『臨済録』）",
-      "priority": 3
+      "source_text_en": "Rinzai-roku（『臨済録』）"
     },
     {
+      "no": 67,
       "zengo": "雨",
       "reading": "う",
       "meaning": "恵みの雨が大地を潤すように、心を清め豊かにする慈悲の働き。",
       "theme": "自然",
       "source_person": "一休禅師",
-      "source_text_en": "Rain",
-      "no": 67
+      "source_text_en": "Rain"
     },
     {
       "no": 68,
@@ -630,8 +610,7 @@
       "meaning": "柳の緑、花の赤。自然のありのままの美しさがそのまま真実の姿である。",
       "theme": "調和",
       "source_person": "蘇軾（Sō Shoku）",
-      "source_text_en": "Zen Teaching（禅の教え）",
-      "priority": 2
+      "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
       "no": 69,
@@ -640,8 +619,7 @@
       "meaning": "毎日毎日が新しく生まれ変わる。常に向上心を持ち、過去に囚われず生きよ。",
       "theme": "発展",
       "source_person": "大学（Da Xue）",
-      "source_text_en": "Zen Teaching（禅の教え）",
-      "priority": 3
+      "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
       "no": 70,
@@ -650,17 +628,16 @@
       "meaning": "自然の景色は毎日新しい。常に新しい気持ちで物事に向き合う。",
       "theme": "発展",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 3
+      "source_text_en": "Zen Teaching"
     },
     {
+      "no": 71,
       "zengo": "雪",
       "reading": "せつ",
       "meaning": "雪のように純白で汚れのない心。一切の迷いや煩悩から離れた境地。",
       "theme": "自然",
       "source_person": "良寛和尚",
-      "source_text_en": "Snow",
-      "no": 71
+      "source_text_en": "Snow"
     },
     {
       "no": 72,
@@ -669,8 +646,7 @@
       "meaning": "青い山と緑の水。自然のありのままの姿が真理そのものである。",
       "theme": "調和",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 3
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 73,
@@ -679,17 +655,16 @@
       "meaning": "泥の中から清らかな蓮が咲くように、煩悩の世の中から悟りが開く。",
       "theme": "発展",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 3
+      "source_text_en": "Zen Teaching"
     },
     {
+      "no": 74,
       "zengo": "松",
       "reading": "しょう",
       "meaning": "松の木のように季節に関わらず変わらない強固な意志と信念。",
       "theme": "自然",
       "source_person": "芭蕉",
-      "source_text_en": "Pine",
-      "no": 74
+      "source_text_en": "Pine"
     },
     {
       "no": 75,
@@ -698,8 +673,7 @@
       "meaning": "和合をもって、心の中の宝を開き、真理に到達する。",
       "theme": "調和",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 3
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 76,
@@ -708,17 +682,16 @@
       "meaning": "煩悩の漏れがない清らかな状態。悟りを開いた境地。",
       "theme": "解放",
       "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching",
-      "priority": 3
+      "source_text_en": "Zen Teaching"
     },
     {
+      "no": 77,
       "zengo": "竹",
       "reading": "ちく",
       "meaning": "竹のように柔軟でありながら折れない強さ。適応力のある心。",
       "theme": "自然",
       "source_person": "荘子",
-      "source_text_en": "Bamboo",
-      "no": 77
+      "source_text_en": "Bamboo"
     },
     {
       "no": 78,
@@ -727,8 +700,7 @@
       "meaning": "悟りを開いて故郷に帰る。何も持たない無一物の姿こそが悟りの境地。",
       "theme": "解放",
       "source_person": "十牛図（Jūgyūzu）",
-      "source_text_en": "Zen Teaching",
-      "priority": 3
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 79,
@@ -737,8 +709,7 @@
       "meaning": "自分がまだ悟りを開いていなくても、まず他人を悟りに導く。利他行。",
       "theme": "利他",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 3
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 80,
@@ -747,17 +718,16 @@
       "meaning": "坐禅や修行を通じて、一瞬にして悟りを開くこと。",
       "theme": "集中",
       "source_person": "禅宗の教え（Zen School Principle）",
-      "source_text_en": "Zen Teaching（禅の教え）",
-      "priority": 3
+      "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
+      "no": 81,
       "zengo": "梅",
       "reading": "ばい",
       "meaning": "厳しい寒さの中でも美しく咲く梅花のような不屈の精神と美しさ。",
       "theme": "自然",
       "source_person": "白隠禅師",
-      "source_text_en": "Plum",
-      "no": 81
+      "source_text_en": "Plum"
     },
     {
       "no": 82,
@@ -766,8 +736,7 @@
       "meaning": "師と弟子のタイミングが完全に一致し、悟りが開かれる瞬間。",
       "theme": "調和",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching（禅の教え）",
-      "priority": 3
+      "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
       "no": 83,
@@ -776,17 +745,16 @@
       "meaning": "真理を見抜く力。悟りを開いた者の持つ知。",
       "theme": "普遍",
       "source_person": "六波羅蜜（Roku Haramitsu）",
-      "source_text_en": "Zen Teaching",
-      "priority": 3
+      "source_text_en": "Zen Teaching"
     },
     {
+      "no": 84,
       "zengo": "桜",
       "reading": "おう",
       "meaning": "桜の花のように散りゆく美しさ。移ろいゆく人生の儚さと美しさ。",
       "theme": "自然",
       "source_person": "良寛和尚",
-      "source_text_en": "Cherry",
-      "no": 84
+      "source_text_en": "Cherry"
     },
     {
       "no": 85,
@@ -795,8 +763,7 @@
       "meaning": "宗派や教えの開祖。禅宗では達磨など。",
       "theme": "普遍",
       "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching",
-      "priority": 3
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 86,
@@ -805,8 +772,7 @@
       "meaning": "寺院を開いた僧侶。宗派の始祖。",
       "theme": "普遍",
       "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching",
-      "priority": 3
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 87,
@@ -818,22 +784,22 @@
       "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
+      "no": 88,
       "zengo": "蓮",
       "reading": "れん",
       "meaning": "蓮の花のように泥の中から清らかに咲く。逆境での清らかな心。",
       "theme": "自然",
       "source_person": "維摩居士",
-      "source_text_en": "Lotus",
-      "no": 88
+      "source_text_en": "Lotus"
     },
     {
+      "no": 89,
       "zengo": "慧",
       "reading": "え",
       "meaning": "真理を照らす智慧の光。迷いの闇を打ち払う深い洞察力のこと。",
       "theme": "智慧",
       "source_person": "文殊菩薩",
-      "source_text_en": "Wisdom",
-      "no": 89
+      "source_text_en": "Wisdom"
     },
     {
       "no": 90,
@@ -845,31 +811,31 @@
       "source_text_en": "All-knowing wisdom"
     },
     {
+      "no": 91,
       "zengo": "智",
       "reading": "ち",
       "meaning": "表面的な知識ではなく、物事の本質を見抜く深い智慧のこと。",
       "theme": "智慧",
       "source_person": "般若経",
-      "source_text_en": "Intelligence",
-      "no": 91
+      "source_text_en": "Intelligence"
     },
     {
+      "no": 92,
       "zengo": "忍",
       "reading": "にん",
       "meaning": "困難や苦しみに耐え忍ぶ強い心の力。修行における重要な徳目。",
       "theme": "修行",
       "source_person": "達磨大師",
-      "source_text_en": "Patience",
-      "no": 92
+      "source_text_en": "Patience"
     },
     {
+      "no": 93,
       "zengo": "忘",
       "reading": "ぼう",
       "meaning": "自分への執着やこだわりを手放すこと。無我の境地への道筋。",
       "theme": "修行",
       "source_person": "荘子",
-      "source_text_en": "Forget",
-      "no": 93
+      "source_text_en": "Forget"
     },
     {
       "no": 94,
@@ -890,13 +856,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 96,
       "zengo": "捨",
       "reading": "しゃ",
       "meaning": "物事への執着や固定観念を手放すこと。自由な心への解放。",
       "theme": "修行",
       "source_person": "釈迦",
-      "source_text_en": "Let go",
-      "no": 96
+      "source_text_en": "Let go"
     },
     {
       "no": 97,
@@ -935,13 +901,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 101,
       "zengo": "離",
       "reading": "り",
       "meaning": "欲望や迷いから距離を置くこと。清らかな心への回帰の道。",
       "theme": "修行",
       "source_person": "維摩経",
-      "source_text_en": "Detach",
-      "no": 101
+      "source_text_en": "Detach"
     },
     {
       "no": 102,
@@ -953,13 +919,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 103,
       "zengo": "静",
       "reading": "じょう",
       "meaning": "心の奥深くにある静かな平安。一切の雑念から解放された境地。",
       "theme": "平和",
       "source_person": "老子",
-      "source_text_en": "Quiet",
-      "no": 103
+      "source_text_en": "Quiet"
     },
     {
       "no": 104,
@@ -989,13 +955,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 107,
       "zengo": "朗",
       "reading": "ろう",
       "meaning": "明るく朗らか。晴れやかな心",
       "theme": "明朗",
       "source_person": "弥勒菩薩",
-      "source_text_en": "Bright",
-      "no": 107
+      "source_text_en": "Bright"
     },
     {
       "no": 108,
@@ -1034,13 +1000,13 @@
       "source_text_en": "涅槃経（Nirvāṇa Sūtra）"
     },
     {
+      "no": 112,
       "zengo": "淡",
       "reading": "たん",
       "meaning": "何事にも動じない淡泊で平静な心。執着のない自然な境地。",
       "theme": "平和",
       "source_person": "荘子",
-      "source_text_en": "Plain",
-      "no": 112
+      "source_text_en": "Plain"
     },
     {
       "no": 113,
@@ -1052,13 +1018,13 @@
       "source_text_en": "華厳経（Avataṃsaka Sūtra）"
     },
     {
+      "no": 114,
       "zengo": "柔",
       "reading": "じゅう",
       "meaning": "水のように柔軟で適応力のある心。強さの中にある優しさ。",
       "theme": "平和",
       "source_person": "老子",
-      "source_text_en": "Soft",
-      "no": 114
+      "source_text_en": "Soft"
     },
     {
       "no": 115,
@@ -1079,13 +1045,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 117,
       "zengo": "無心",
       "reading": "むしん",
       "meaning": "一切の雑念や計算を離れた純粋無垢な心の状態。自然体の境地。",
       "theme": "心",
       "source_person": "臨済義玄",
-      "source_text_en": "No mind",
-      "no": 117
+      "source_text_en": "No mind"
     },
     {
       "no": 118,
@@ -1115,13 +1081,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 121,
       "zengo": "本心",
       "reading": "ほんしん",
       "meaning": "生まれながらに持つ清らかで純粋な心。仏性とも呼ばれる本来面目。",
       "theme": "心",
       "source_person": "黄檗希運",
-      "source_text_en": "Original mind",
-      "no": 121
+      "source_text_en": "Original mind"
     },
     {
       "no": 122,
@@ -1142,13 +1108,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 124,
       "zengo": "安心",
       "reading": "あんじん",
       "meaning": "一切の不安や恐れから解放された安定した心の状態。真の平和。",
       "theme": "心",
       "source_person": "慧可",
-      "source_text_en": "Peace of mind",
-      "no": 124
+      "source_text_en": "Peace of mind"
     },
     {
       "no": 125,
@@ -1178,13 +1144,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 128,
       "zengo": "純心",
       "reading": "じゅんしん",
       "meaning": "一点の曇りもない透明で清らかな心。子供のような無邪気さ。",
       "theme": "心",
       "source_person": "良寛和尚",
-      "source_text_en": "Pure heart",
-      "no": 128
+      "source_text_en": "Pure heart"
     },
     {
       "no": 129,
@@ -1205,13 +1171,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 131,
       "zengo": "赤心",
       "reading": "せきしん",
       "meaning": "嘘偽りのない真っ直ぐで誠実な心。本音で生きる正直な姿勢。",
       "theme": "心",
       "source_person": "達磨大師",
-      "source_text_en": "Red heart",
-      "no": 131
+      "source_text_en": "Red heart"
     },
     {
       "no": 132,
@@ -1232,13 +1198,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 134,
       "zengo": "随縁",
       "reading": "ずいえん",
       "meaning": "与えられた環境や出会いを受け入れて自然に生きること。",
       "theme": "生き方",
       "source_person": "趙州従諗",
-      "source_text_en": "Following conditions",
-      "no": 134
+      "source_text_en": "Following conditions"
     },
     {
       "no": 135,
@@ -1259,13 +1225,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 137,
       "zengo": "任運",
       "reading": "にんうん",
       "meaning": "人為的な計らいを離れ、自然の流れに身を委ねる生き方。",
       "theme": "生き方",
       "source_person": "馬祖道一",
-      "source_text_en": "Natural flow",
-      "no": 137
+      "source_text_en": "Natural flow"
     },
     {
       "no": 138,
@@ -1286,13 +1252,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 140,
       "zengo": "無為",
       "reading": "むい",
       "meaning": "意図的な計らいを離れた自然な行い。無理のない自然体。",
       "theme": "生き方",
       "source_person": "老子",
-      "source_text_en": "Non-action",
-      "no": 140
+      "source_text_en": "Non-action"
     },
     {
       "no": 141,
@@ -1322,13 +1288,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 144,
       "zengo": "自然",
       "reading": "しぜん",
       "meaning": "飾らない素のままの姿。人工的でない本来の自然な状態。",
       "theme": "生き方",
       "source_person": "荘子",
-      "source_text_en": "Natural",
-      "no": 144
+      "source_text_en": "Natural"
     },
     {
       "no": 145,
@@ -1358,13 +1324,13 @@
       "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
+      "no": 148,
       "zengo": "平常",
       "reading": "へいじょう",
       "meaning": "特別でない日常の中にこそある真の道。普通であることの尊さ。",
       "theme": "生き方",
       "source_person": "南泉普願",
-      "source_text_en": "Ordinary",
-      "no": 148
+      "source_text_en": "Ordinary"
     },
     {
       "no": 149,
@@ -1382,17 +1348,16 @@
       "meaning": "ただ一つのさわやかな風。全ての物事が平等であり、差別がない真理の境地。",
       "theme": "平静",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching（禅の教え）",
-      "priority": 1
+      "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
+      "no": 151,
       "zengo": "無一物",
       "reading": "むいちもつ",
       "meaning": "一切の所有欲から解放された自由な境地。執着のない生き方。",
       "theme": "自由",
       "source_person": "慧能",
-      "source_text_en": "Not one thing",
-      "no": 151
+      "source_text_en": "Not one thing"
     },
     {
       "no": 152,
@@ -1410,8 +1375,7 @@
       "meaning": "利・衰・毀・誉・称・譏・苦・楽の8種の風（誘惑や中傷）に心を乱されない。",
       "theme": "平静",
       "source_person": "白居易（Haku Kyoi）",
-      "source_text_en": "Zen Teaching（禅の教え）",
-      "priority": 1
+      "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
       "no": 154,
@@ -1420,8 +1384,7 @@
       "meaning": "小さな一滴の水も、源を辿れば大きな流れに通じている。小さな行いも大切にせよ。",
       "theme": "感謝",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 155,
@@ -1430,17 +1393,16 @@
       "meaning": "煩悩の炎が消え、心が清らかで涼しい境地。安らぎの悟りの心。",
       "theme": "解放",
       "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
+      "no": 156,
       "zengo": "本来性",
       "reading": "ほんらいしょう",
       "meaning": "生まれながらに備わっている清らかで完全な性質。仏性のこと。",
       "theme": "本性",
       "source_person": "馬祖道一",
-      "source_text_en": "Original nature",
-      "no": 156
+      "source_text_en": "Original nature"
     },
     {
       "no": 157,
@@ -1449,8 +1411,7 @@
       "meaning": "徳の高い人の行いは、山のように高く、水のように長く後世まで伝わる。",
       "theme": "普遍",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 158,
@@ -1459,8 +1420,7 @@
       "meaning": "世俗の煩わしさの外。世間から離れた悟りの境地、あるいは風変わりな様。",
       "theme": "自由",
       "source_person": "風外本高（Fūgai Honkō - Zen Painter）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 159,
@@ -1472,22 +1432,22 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 160,
       "zengo": "望",
       "reading": "ぼう",
       "meaning": "未来への明るい期待と深い願い。前向きに生きる原動力。",
       "theme": "願望",
       "source_person": "法然",
-      "source_text_en": "Hope",
-      "no": 160
+      "source_text_en": "Hope"
     },
     {
+      "no": 161,
       "zengo": "無住心",
       "reading": "むじゅうしん",
       "meaning": "何一つにも執着せず常に清らかに流れる心。自由自在な境地。",
       "theme": "心",
       "source_person": "金剛経",
-      "source_text_en": "Non-abiding mind",
-      "no": 161
+      "source_text_en": "Non-abiding mind"
     },
     {
       "no": 162,
@@ -1505,8 +1465,7 @@
       "meaning": "清らかな風が明るい月を払うように、全てが清らかで美しい境地。",
       "theme": "調和",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 164,
@@ -1524,8 +1483,7 @@
       "meaning": "水面は速く流れても、水に映る月は動かない。現象に惑わされず、本質を見失うな。",
       "theme": "普遍",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching（禅の教え）",
-      "priority": 1
+      "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
       "no": 166,
@@ -1534,8 +1492,7 @@
       "meaning": "曇りのない鏡と静かな水。何事にも囚われない澄み切った心境。",
       "theme": "平静",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 167,
@@ -1553,8 +1510,7 @@
       "meaning": "空を流れる雲、留まることのない水のように、執着せずに自然体で生きる。",
       "theme": "自由",
       "source_person": "蘇軾（Sō Shoku）",
-      "source_text_en": "Xie Minshi Tuiguan Yu Shu（『謝民師推官与書』）",
-      "priority": 1
+      "source_text_en": "Xie Minshi Tuiguan Yu Shu（『謝民師推官与書』）"
     },
     {
       "no": 169,
@@ -1563,8 +1519,7 @@
       "meaning": "凝り固まらず、水のように物事に順応する、しなやかで素直な心。",
       "theme": "平静",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 170,
@@ -1582,8 +1537,7 @@
       "meaning": "縁にしたがって自ずから変化・成長する。自然の流れに身を任せよ。",
       "theme": "自由",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 172,
@@ -1592,8 +1546,7 @@
       "meaning": "月のように清らかで円満な心。真理を映す悟りの心。",
       "theme": "調和",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 173,
@@ -1602,8 +1555,7 @@
       "meaning": "限りなく広がる美しい風景。悟りの世界は無限である。",
       "theme": "普遍",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 174,
@@ -1612,8 +1564,7 @@
       "meaning": "流れに身を任せることで、かえって妙なる真理を得ることができる。",
       "theme": "自由",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 175,
@@ -1631,26 +1582,25 @@
       "meaning": "心を洗い清めること。煩悩や邪念を払い、清らかな心を取り戻す。",
       "theme": "解放",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
+      "no": 177,
       "zengo": "清浄心",
       "reading": "しょうじょうしん",
       "meaning": "一切の汚れや迷いから離れた透明で美しい心の状態。",
       "theme": "心",
       "source_person": "維摩経",
-      "source_text_en": "Pure mind",
-      "no": 177
+      "source_text_en": "Pure mind"
     },
     {
+      "no": 178,
       "zengo": "願",
       "reading": "がん",
       "meaning": "心の奥底からの切実で真摯な願い。真理への憧れと祈り。",
       "theme": "願望",
       "source_person": "親鸞",
-      "source_text_en": "Wish",
-      "no": 178
+      "source_text_en": "Wish"
     },
     {
       "no": 179,
@@ -1668,8 +1618,7 @@
       "meaning": "心は本来清らかで、煩悩（塵）を洗う必要はない。",
       "theme": "解放",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 181,
@@ -1687,8 +1636,7 @@
       "meaning": "仏の心。全ての人間に備わる清らかな心。",
       "theme": "普遍",
       "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 183,
@@ -1697,8 +1645,7 @@
       "meaning": "心の月。煩悩の雲が晴れた清らかな心。",
       "theme": "解放",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 184,
@@ -1707,8 +1654,7 @@
       "meaning": "元々、執着すべき実体は何一つない。心は本来清浄である。",
       "theme": "解放",
       "source_person": "六祖慧能（Rokuso Enō）",
-      "source_text_en": "Rokuso Dangyō（『六祖壇経』）",
-      "priority": 2
+      "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
     },
     {
       "no": 185,
@@ -1717,8 +1663,7 @@
       "meaning": "清らかで静かなこと。心が落ち着いた、安らぎの境地。",
       "theme": "平静",
       "source_person": "茶道（Sado）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 186,
@@ -1736,8 +1681,7 @@
       "meaning": "清らかな流れ。清浄な心、真理の流れ。",
       "theme": "平静",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 188,
@@ -1746,8 +1690,7 @@
       "meaning": "互いに和し、敬い、心を清くし、穏やかに過ごす（茶道の精神）。",
       "theme": "調和",
       "source_person": "千利休（Sen no Rikyū）",
-      "source_text_en": "Cha no Yu Essence（茶の湯の根本精神）",
-      "priority": 2
+      "source_text_en": "Cha no Yu Essence（茶の湯の根本精神）"
     },
     {
       "no": 189,
@@ -1765,8 +1708,7 @@
       "meaning": "俗世間を離れた清閑な世界には、悠久の時間が流れる。",
       "theme": "平静",
       "source_person": "後漢の費長房（Fei Changfang）の故事",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 191,
@@ -1775,8 +1717,7 @@
       "meaning": "汚れや迷いのない透明で美しい心。純粋無垢な精神状態。",
       "theme": "平静",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 192,
@@ -1794,8 +1735,7 @@
       "meaning": "仏の国。清らかな悟りの世界。",
       "theme": "完成",
       "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 194,
@@ -1804,17 +1744,16 @@
       "meaning": "一切の汚れや苦しみのない清浄な理想郷。心の安らぎの境地。",
       "theme": "完成",
       "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
+      "no": 195,
       "zengo": "求",
       "reading": "ぐ",
       "meaning": "真理や悟りを切実に求める心。向上心と探究心の現れ。",
       "theme": "探求",
       "source_person": "釈迦",
-      "source_text_en": "Seek",
-      "no": 195
+      "source_text_en": "Seek"
     },
     {
       "no": 196,
@@ -1823,8 +1762,7 @@
       "meaning": "青い山は元々動かない。世の中が変化しても、真理は変わらず不動である。",
       "theme": "普遍",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching（禅の教え）",
-      "priority": 3
+      "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
       "no": 197,
@@ -1863,13 +1801,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 201,
       "zengo": "見性成仏",
       "reading": "けんしょうじょうぶつ",
       "meaning": "自分の本来の性質を見極めることで仏の境地に到達すること。",
       "theme": "悟り",
       "source_person": "達磨大師",
-      "source_text_en": "See nature become Buddha",
-      "no": 201
+      "source_text_en": "See nature become Buddha"
     },
     {
       "no": 202,
@@ -1899,13 +1837,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 205,
       "zengo": "不立文字",
       "reading": "ふりゅうもんじ",
       "meaning": "文字や言葉に頼らず心から心へと伝わる真理の教え。",
       "theme": "教え",
       "source_person": "達磨大師",
-      "source_text_en": "Not establishing words",
-      "no": 205
+      "source_text_en": "Not establishing words"
     },
     {
       "no": 206,
@@ -1962,13 +1900,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 212,
       "zengo": "教外別伝",
       "reading": "きょうげべつでん",
       "meaning": "言葉や文字を超えた特別な伝承。心から心へと伝わる悟り。",
       "theme": "教え",
       "source_person": "達磨大師",
-      "source_text_en": "Special transmission",
-      "no": 212
+      "source_text_en": "Special transmission"
     },
     {
       "no": 213,
@@ -1989,13 +1927,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 215,
       "zengo": "心外無法",
       "reading": "しんげむほう",
       "meaning": "心を離れて真理は存在しない。心こそが全ての根本であること。",
       "theme": "心法",
       "source_person": "黄檗希運",
-      "source_text_en": "No dharma outside mind",
-      "no": 215
+      "source_text_en": "No dharma outside mind"
     },
     {
       "no": 216,
@@ -2025,13 +1963,13 @@
       "source_text_en": "Zen Teaching（禅の教え）"
     },
     {
+      "no": 219,
       "zengo": "無門関",
       "reading": "むもんかん",
       "meaning": "通るべき門のない関所。理屈を超えた悟りへの道筋。",
       "theme": "修行",
       "source_person": "無門慧開",
-      "source_text_en": "Gateless gate",
-      "no": 219
+      "source_text_en": "Gateless gate"
     },
     {
       "no": 220,
@@ -2043,13 +1981,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 221,
       "zengo": "平常心道",
       "reading": "へいじょうしんどう",
       "meaning": "特別でない普通の心こそが悟りへの道。日常の中にある真理。",
       "theme": "生き方",
       "source_person": "南泉普願",
-      "source_text_en": "Ordinary mind is way",
-      "no": 221
+      "source_text_en": "Ordinary mind is way"
     },
     {
       "no": 222,
@@ -2079,13 +2017,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 225,
       "zengo": "無事是貴",
       "reading": "ぶじこれき",
       "meaning": "何事もない平穏な状態こそが最も尊く価値のあること。",
       "theme": "平和",
       "source_person": "臨済義玄",
-      "source_text_en": "Nothing special precious",
-      "no": 225
+      "source_text_en": "Nothing special precious"
     },
     {
       "no": 226,
@@ -2142,13 +2080,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 232,
       "zengo": "即心即仏",
       "reading": "そくしんそくぶつ",
       "meaning": "今ここにある心そのものが既に仏である。本来の仏性の自覚。",
       "theme": "悟り",
       "source_person": "馬祖道一",
-      "source_text_en": "This mind is Buddha",
-      "no": 232
+      "source_text_en": "This mind is Buddha"
     },
     {
       "no": 233,
@@ -2160,22 +2098,22 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 234,
       "zengo": "晴",
       "reading": "せい",
       "meaning": "晴れやかな心。雲の晴れた空",
       "theme": "爽快",
       "source_person": "良寛和尚",
-      "source_text_en": "Clear",
-      "no": 234
+      "source_text_en": "Clear"
     },
     {
+      "no": 235,
       "zengo": "非心非仏",
       "reading": "ひしんひぶつ",
       "meaning": "心や仏という概念をも超越した究極の真理。一切の区別を超える。",
       "theme": "超越",
       "source_person": "馬祖道一",
-      "source_text_en": "Not mind not Buddha",
-      "no": 235
+      "source_text_en": "Not mind not Buddha"
     },
     {
       "no": 236,
@@ -2187,22 +2125,22 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 237,
       "zengo": "笑",
       "reading": "しょう",
       "meaning": "心の底から湧き上がる純粋な喜びの表現。明るく温かい笑顔。",
       "theme": "喜び",
       "source_person": "布袋和尚",
-      "source_text_en": "Smile",
-      "no": 237
+      "source_text_en": "Smile"
     },
     {
+      "no": 238,
       "zengo": "白雲抱幽石",
       "reading": "はくうんゆうせきをいだく",
       "meaning": "白い雲が静かな石を抱く",
       "theme": "自然",
       "source_person": "寒山",
-      "source_text_en": "White clouds embrace quiet stone",
-      "no": 238
+      "source_text_en": "White clouds embrace quiet stone"
     },
     {
       "no": 239,
@@ -2232,13 +2170,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 242,
       "zengo": "探",
       "reading": "たん",
       "meaning": "真理や悟りを求めて探し続ける姿勢。深く追求する探究心。",
       "theme": "探求",
       "source_person": "臨済義玄",
-      "source_text_en": "Search",
-      "no": 242
+      "source_text_en": "Search"
     },
     {
       "no": 243,
@@ -2269,22 +2207,21 @@
     },
     {
       "no": 246,
-      "zengo": "看々臘月尽",
-      "reading": "みよみよろうげつつく",
-      "meaning": "見よ、もう12月が終わる。時は待ってくれない、今この一瞬を大切に生きよ。",
-      "theme": "集中",
+      "zengo": "放下",
+      "reading": "ほうげ",
+      "meaning": "全てを投げ捨てる。執着を捨てる。",
+      "theme": "解放",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
+      "no": 247,
       "zengo": "流水不争先",
       "reading": "りゅうすいせんをあらそわず",
       "meaning": "水の流れのように争うことなく自然に進む謙虚な生き方。",
       "theme": "謙遜",
       "source_person": "老子",
-      "source_text_en": "Flowing water doesn't compete",
-      "no": 247
+      "source_text_en": "Flowing water doesn't compete"
     },
     {
       "no": 248,
@@ -2296,13 +2233,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 249,
       "zengo": "古池蛙飛込水音",
       "reading": "ふるいけかわずとびこむみずのおと",
       "meaning": "古池や蛙飛び込む水の音",
       "theme": "瞬間",
       "source_person": "芭蕉",
-      "source_text_en": "Old pond frog jumps water sound",
-      "no": 249
+      "source_text_en": "Old pond frog jumps water sound"
     },
     {
       "no": 250,
@@ -2311,17 +2248,16 @@
       "meaning": "欠けたところのない完全な月。悟りの完成。",
       "theme": "完成",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 1
+      "source_text_en": "Zen Teaching"
     },
     {
+      "no": 251,
       "zengo": "究",
       "reading": "きゅう",
       "meaning": "物事を深く追求し極めること。真理の奥底まで探究すること。",
       "theme": "探求",
       "source_person": "道元",
-      "source_text_en": "Study deeply",
-      "no": 251
+      "source_text_en": "Study deeply"
     },
     {
       "no": 252,
@@ -2330,8 +2266,7 @@
       "meaning": "俗世間から離れ、静かに座って瞑想する。外界の影響を受けない境地。",
       "theme": "平静",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 253,
@@ -2340,8 +2275,7 @@
       "meaning": "迷いの世界から悟りの世界へ一気に飛び込む。決意と実行。",
       "theme": "集中",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 254,
@@ -2350,8 +2284,7 @@
       "meaning": "生まれながらに持っている、ありのままの真実の自己。",
       "theme": "自立",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 255,
@@ -2369,17 +2302,16 @@
       "meaning": "どこであろうと、全てが真実の姿であり、悟りの場である。",
       "theme": "普遍",
       "source_person": "道元（Dōgen）",
-      "source_text_en": "Shōbōgenzō（『正法眼蔵』）",
-      "priority": 2
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
     },
     {
+      "no": 257,
       "zengo": "学",
       "reading": "がく",
       "meaning": "知識や智慧を吸収しようとする謙虚で素直な心の姿勢。",
       "theme": "学習",
       "source_person": "孔子",
-      "source_text_en": "Learn",
-      "no": 257
+      "source_text_en": "Learn"
     },
     {
       "no": 258,
@@ -2397,17 +2329,16 @@
       "meaning": "自我がないこと。自分という固定した実体がないという真理。",
       "theme": "解放",
       "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
+      "no": 260,
       "zengo": "教",
       "reading": "きょう",
       "meaning": "真理や智慧を他者に分かりやすく伝えること。慈悲深い指導。",
       "theme": "教育",
       "source_person": "釈迦",
-      "source_text_en": "Teach",
-      "no": 260
+      "source_text_en": "Teach"
     },
     {
       "no": 261,
@@ -2416,17 +2347,16 @@
       "meaning": "本来の自分。生まれながらの真実の姿。",
       "theme": "自立",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
+      "no": 262,
       "zengo": "導",
       "reading": "どう",
       "meaning": "迷っている人を正しい道に案内すること。慈悲に満ちた指導。",
       "theme": "指導",
       "source_person": "文殊菩薩",
-      "source_text_en": "Guide",
-      "no": 262
+      "source_text_en": "Guide"
     },
     {
       "no": 263,
@@ -2438,13 +2368,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 264,
       "zengo": "護",
       "reading": "ご",
       "meaning": "大切なものを守り抜くこと。愛する者への深い慈悲の現れ。",
       "theme": "守護",
       "source_person": "不動明王",
-      "source_text_en": "Protect",
-      "no": 264
+      "source_text_en": "Protect"
     },
     {
       "no": 265,
@@ -2453,8 +2383,7 @@
       "meaning": "この世の全ては実体を持たず、空である。",
       "theme": "普遍",
       "source_person": "般若心経（Heart Sutra）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 266,
@@ -2466,13 +2395,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 267,
       "zengo": "守",
       "reading": "しゅ",
       "meaning": "大切なものを保護すること。愛と慈悲に基づいた守護の心。",
       "theme": "守護",
       "source_person": "観音菩薩",
-      "source_text_en": "Keep",
-      "no": 267
+      "source_text_en": "Keep"
     },
     {
       "no": 268,
@@ -2481,8 +2410,7 @@
       "meaning": "形あるものは、そのまま実体がない（空）ことである。",
       "theme": "普遍",
       "source_person": "般若心経（Heart Sutra）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 269,
@@ -2509,8 +2437,7 @@
       "meaning": "悟りへ至るための八つの正しい実践。",
       "theme": "集中",
       "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 272,
@@ -2519,8 +2446,7 @@
       "meaning": "悟りへ至るための六つの実践。",
       "theme": "普遍",
       "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 273,
@@ -2529,8 +2455,7 @@
       "meaning": "五穀が豊かに実ること。平和と繁栄。",
       "theme": "感謝",
       "source_person": "一般（General）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 274,
@@ -2542,13 +2467,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 275,
       "zengo": "安",
       "reading": "あん",
       "meaning": "心が平穏で落ち着いている状態。一切の不安から解放された境地。",
       "theme": "平安",
       "source_person": "阿弥陀仏",
-      "source_text_en": "Peace",
-      "no": 275
+      "source_text_en": "Peace"
     },
     {
       "no": 276,
@@ -2569,13 +2494,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 278,
       "zengo": "穏",
       "reading": "おん",
       "meaning": "波風の立たない静かで平和な状態。心の安定した境地。",
       "theme": "平安",
       "source_person": "良寛和尚",
-      "source_text_en": "Calm",
-      "no": 278
+      "source_text_en": "Calm"
     },
     {
       "no": 279,
@@ -2587,22 +2512,22 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 280,
       "zengo": "泰",
       "reading": "たい",
       "meaning": "安全で平和な状態。何の心配もない安定した境地のこと。",
       "theme": "平安",
       "source_person": "老子",
-      "source_text_en": "Stable",
-      "no": 280
+      "source_text_en": "Stable"
     },
     {
+      "no": 281,
       "zengo": "康",
       "reading": "こう",
       "meaning": "心身ともに健やかで病気のない状態。真の豊かさの基盤。",
       "theme": "健全",
       "source_person": "華陀",
-      "source_text_en": "Health",
-      "no": 281
+      "source_text_en": "Health"
     },
     {
       "no": 282,
@@ -2623,13 +2548,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 284,
       "zengo": "福",
       "reading": "ふく",
       "meaning": "心からの満足と喜びに満ちた状態。真の豊かさと幸せ。",
       "theme": "幸せ",
       "source_person": "布袋和尚",
-      "source_text_en": "Fortune",
-      "no": 284
+      "source_text_en": "Fortune"
     },
     {
       "no": 285,
@@ -2641,13 +2566,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 286,
       "zengo": "歌",
       "reading": "か",
       "meaning": "心の奥底から湧き出る美しい歌声。内なる調和の表現。",
       "theme": "調和",
       "source_person": "芭蕉",
-      "source_text_en": "Song",
-      "no": 286
+      "source_text_en": "Song"
     },
     {
       "no": 287,
@@ -2668,13 +2593,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 289,
       "zengo": "祥",
       "reading": "しょう",
       "meaning": "幸運で縁起の良いこと。めでたく喜ばしい出来事や状況。",
       "theme": "幸運",
       "source_person": "吉祥天",
-      "source_text_en": "Auspicious",
-      "no": 289
+      "source_text_en": "Auspicious"
     },
     {
       "no": 290,
@@ -2713,22 +2638,22 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 294,
       "zengo": "瑞",
       "reading": "ずい",
       "meaning": "幸運の前触れとなる良いしるし。吉事の訪れを告げる縁起。",
       "theme": "吉兆",
       "source_person": "弥勒菩薩",
-      "source_text_en": "Good omen",
-      "no": 294
+      "source_text_en": "Good omen"
     },
     {
+      "no": 295,
       "zengo": "鶴",
       "reading": "かく",
       "meaning": "鶴のように長く健やかに生きること。不老長寿の理想的な姿。",
       "theme": "長寿",
       "source_person": "老子",
-      "source_text_en": "Crane",
-      "no": 295
+      "source_text_en": "Crane"
     },
     {
       "no": 296,
@@ -2746,7 +2671,7 @@
       "meaning": "愚かさ。真理を知らない無明。",
       "theme": "解放",
       "source_person": "三毒（Sandoku）",
-      "source_en": "Zen Teaching"
+      "source_text_en": ""
     },
     {
       "no": 298,
@@ -2758,13 +2683,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 299,
       "zengo": "結",
       "reading": "けつ",
       "meaning": "縁によって結ばれること。深いつながりや絆の形成のこと。",
       "theme": "つながり",
-      "source_parameter": "普賢菩薩",
-      "source_text_en": "Bind",
-      "no": 299
+      "source_person": "",
+      "source_text_en": "Bind"
     },
     {
       "no": 300,
@@ -2812,22 +2737,22 @@
       "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
     },
     {
+      "no": 305,
       "zengo": "舞",
       "reading": "ぶ",
       "meaning": "軽やかに踊る。自由な表現",
       "theme": "自由",
       "source_person": "一休禅師",
-      "source_text_en": "Dance",
-      "no": 305
+      "source_text_en": "Dance"
     },
     {
+      "no": 306,
       "zengo": "合",
       "reading": "ごう",
       "meaning": "分かれていたものが一つになること。調和と統合の完成した状態。",
       "theme": "統合",
       "source_person": "荘子",
-      "source_text_en": "Unite",
-      "no": 306
+      "source_text_en": "Unite"
     },
     {
       "no": 307,
@@ -2857,13 +2782,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 310,
       "zengo": "慈愛",
       "reading": "じあい",
       "meaning": "深い愛情と慈悲に満ちた心。母親が子を思うような無条件の愛。",
       "theme": "慈悲",
       "source_person": "観音菩薩",
-      "source_text_en": "Loving kindness",
-      "no": 310
+      "source_text_en": "Loving kindness"
     },
     {
       "no": 311,
@@ -2893,22 +2818,22 @@
       "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
     },
     {
-      "zengo": "慈悲",
-      "reading": "じひ",
-      "meaning": "苦しむ者への深い思いやりと救いの心。仏の根本的な徳性。",
-      "theme": "慈悲",
-      "source_person": "釈迦",
-      "source_text_en": "Compassion",
-      "no": 314
+      "no": 314,
+      "zengo": "大道無門",
+      "reading": "だいどうむもん",
+      "meaning": "悟りの真実の道はこだわりを捨てれば、どこからでも入ることができる。",
+      "theme": "自由、悟り、こだわりからの解放",
+      "source_person": "無",
+      "source_text_en": "The Great Way has no gate"
     },
     {
-      "zengo": "亀",
-      "reading": "き",
-      "meaning": "亀のように長生きし深い知恵を蓄えること。智慧と長寿の象徴。",
-      "theme": "長寿",
-      "source_person": "荘子",
-      "source_text_en": "Turtle",
-      "no": 315
+      "no": 315,
+      "zengo": "廓然無聖",
+      "reading": "かくねんむしょう",
+      "meaning": "広々としていて、聖なるものも凡俗なものもないということ。一切の差別や執着を離れ、ありのままの状態。",
+      "theme": "絶対の自由、無分別、執着の否定",
+      "source_person": "達磨大師",
+      "source_text_en": "Vast emptiness, nothing holy"
     },
     {
       "no": 316,
@@ -2929,13 +2854,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 318,
       "zengo": "虎",
       "reading": "こ",
       "meaning": "虎のような勇猛果敢さと威厳。恐れを知らない堂々とした姿勢。",
       "theme": "勇気",
       "source_person": "虎渓三笑",
-      "source_text_en": "Tiger",
-      "no": 318
+      "source_text_en": "Tiger"
     },
     {
       "no": 319,
@@ -2956,40 +2881,40 @@
       "source_text_en": "Form is emptiness"
     },
     {
+      "no": 321,
       "zengo": "忍辱",
       "reading": "にんにく",
       "meaning": "屈辱や苦難に耐え忍ぶこと。菩薩の修行における重要な徳目。",
       "theme": "忍耐",
       "source_person": "維摩居士",
-      "source_text_en": "Patience",
-      "no": 321
+      "source_text_en": "Patience"
     },
     {
+      "no": 322,
       "zengo": "禅定",
       "reading": "ぜんじょう",
       "meaning": "心を一点に集中し乱れを鎮めること。瞑想による心の統一。",
       "theme": "瞑想",
       "source_person": "達磨大師",
-      "source_text_en": "Meditation",
-      "no": 322
+      "source_text_en": "Meditation"
     },
     {
+      "no": 323,
       "zengo": "般若",
       "reading": "はんにゃ",
       "meaning": "真理を見抜く深い智慧。迷いを断ち切る仏の根本的な智慧。",
       "theme": "智慧",
       "source_person": "般若経",
-      "source_text_en": "Prajna",
-      "no": 323
+      "source_text_en": "Prajna"
     },
     {
+      "no": 324,
       "zengo": "菩提",
       "reading": "ぼだい",
       "meaning": "迷いから目覚めた悟りの境地。仏となるための最終的な目標。",
       "theme": "悟り",
       "source_person": "釈迦",
-      "source_text_en": "Enlightenment",
-      "no": 324
+      "source_text_en": "Enlightenment"
     },
     {
       "no": 325,
@@ -3001,13 +2926,13 @@
       "source_text_en": "Gate of non-duality"
     },
     {
-      "zengo": "龍",
-      "reading": "りゅう",
-      "meaning": "龍のような自在な変化の力。困難を乗り越える強大な力。",
-      "theme": "力",
-      "source_person": "龍樹",
-      "source_text_en": "Dragon",
-      "no": 326
+      "no": 326,
+      "zengo": "大道無門",
+      "reading": "だいどうむもん",
+      "meaning": "悟りの真実の道はこだわりを捨てれば、どこからでも入ることができる。",
+      "theme": "自由、悟り、こだわりからの解放",
+      "source_person": "無",
+      "source_text_en": "The Great Way has no gate"
     },
     {
       "no": 327,
@@ -3019,13 +2944,13 @@
       "source_text_en": "True reality of all dharmas"
     },
     {
+      "no": 328,
       "zengo": "鳳",
       "reading": "ほう",
       "meaning": "鳳凰のような高貴で美しい品格。気品ある美しさの象徴。",
       "theme": "美",
       "source_person": "鳳凰",
-      "source_text_en": "Phoenix",
-      "no": 328
+      "source_text_en": "Phoenix"
     },
     {
       "no": 329,
@@ -3046,22 +2971,22 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 331,
       "zengo": "無分別",
       "reading": "むふんべつ",
       "meaning": "一切の区別や差別をしないこと。平等で偏見のない心の境地。",
       "theme": "平等",
       "source_person": "維摩経",
-      "source_text_en": "Non-discrimination",
-      "no": 331
+      "source_text_en": "Non-discrimination"
     },
     {
+      "no": 332,
       "zengo": "不動心",
       "reading": "ふどうしん",
       "meaning": "何があっても揺らがない強固で安定した心。不動明王のような心。",
       "theme": "不動",
       "source_person": "不動明王",
-      "source_text_en": "Immovable mind",
-      "no": 332
+      "source_text_en": "Immovable mind"
     },
     {
       "no": 333,
@@ -3109,13 +3034,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
-      "zengo": "大慈悲",
-      "reading": "だいじひ",
-      "meaning": "すべての存在を包み込む広大で深い慈悲の心。仏の大慈大悲。",
-      "theme": "慈悲",
-      "source_person": "観音菩薩",
-      "source_text_en": "Great compassion",
-      "no": 338
+      "no": 338,
+      "zengo": "亀",
+      "reading": "き",
+      "meaning": "亀のように長生きし深い知恵を蓄えること。智慧と長寿の象徴。",
+      "theme": "長寿",
+      "source_person": "荘子",
+      "source_text_en": "Turtle"
     },
     {
       "no": 339,
@@ -3127,31 +3052,31 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 340,
       "zengo": "大智慧",
       "reading": "だいちえ",
       "meaning": "すべてを見通す広大で深い智慧。仏の完全な智慧のこと。",
       "theme": "智慧",
       "source_person": "文殊菩薩",
-      "source_text_en": "Great wisdom",
-      "no": 340
+      "source_text_en": "Great wisdom"
     },
     {
+      "no": 341,
       "zengo": "麟",
       "reading": "りん",
       "meaning": "麒麟のような神聖で尊い存在。高潔で清らかな精神の象徴。",
       "theme": "聖性",
       "source_person": "孔子",
-      "source_text_en": "Kirin",
-      "no": 341
+      "source_text_en": "Kirin"
     },
     {
+      "no": 342,
       "zengo": "珠",
       "reading": "しゅ",
       "meaning": "如意宝珠のような貴重で価値ある宝。心の奥にある仏性のこと。",
       "theme": "価値",
       "source_person": "法華経",
-      "source_text_en": "Pearl",
-      "no": 342
+      "source_text_en": "Pearl"
     },
     {
       "no": 343,
@@ -3169,8 +3094,7 @@
       "meaning": "空であり、静かなこと。悟りの安らぎの境地。",
       "theme": "平静",
       "source_person": "禅語（Zen word）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 345,
@@ -3188,17 +3112,16 @@
       "meaning": "静かで安らかなこと。涅槃の境地。",
       "theme": "平静",
       "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching",
-      "priority": 2
+      "source_text_en": "Zen Teaching"
     },
     {
+      "no": 347,
       "zengo": "諸行無常",
       "reading": "しょぎょうむじょう",
       "meaning": "この世のすべては移り変わること。変化こそが世の常であること。",
       "theme": "無常",
       "source_person": "釈迦",
-      "source_text_en": "All is impermanent",
-      "no": 347
+      "source_text_en": "All is impermanent"
     },
     {
       "no": 348,
@@ -3219,13 +3142,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 350,
       "zengo": "玉",
       "reading": "ぎょく",
       "meaning": "玉のように美しく価値のある宝石。純粋で美しい心の象徴。",
       "theme": "美",
       "source_person": "孟子",
-      "source_text_en": "Jade",
-      "no": 350
+      "source_text_en": "Jade"
     },
     {
       "no": 351,
@@ -3237,13 +3160,13 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 352,
       "zengo": "諸法無我",
       "reading": "しょほうむが",
       "meaning": "この世の一切に固定的な実体はないこと。無我の真理。",
       "theme": "無我",
       "source_person": "釈迦",
-      "source_text_en": "All dharmas no-self",
-      "no": 352
+      "source_text_en": "All dharmas no-self"
     },
     {
       "no": 353,
@@ -3264,22 +3187,22 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 355,
       "zengo": "一期一会",
       "reading": "いちごいちえ",
       "meaning": "二度とない貴重な出会い。今この瞬間を大切にする心。",
       "theme": "出会い",
       "source_person": "千利休",
-      "source_text_en": "Once in lifetime",
-      "no": 355
+      "source_text_en": "Once in lifetime"
     },
     {
+      "no": 356,
       "zengo": "因果応報",
       "reading": "いんがおうほう",
       "meaning": "行いには必ず相応の結果が伴うこと。善因善果の道理。",
       "theme": "因果",
       "source_person": "釈迦",
-      "source_text_en": "Cause and effect",
-      "no": 356
+      "source_text_en": "Cause and effect"
     },
     {
       "no": 357,
@@ -3327,49 +3250,49 @@
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 362,
       "zengo": "自業自得",
       "reading": "じごうじとく",
       "meaning": "自分の行為によって生じた結果は自分で受けること。",
       "theme": "因果",
       "source_person": "仏教",
-      "source_text_en": "Own karma",
-      "no": 362
+      "source_text_en": "Own karma"
     },
     {
+      "no": 363,
       "zengo": "十方世界",
       "reading": "じっぽうせかい",
       "meaning": "東西南北と上下、過去現在未来を含む全宇宙のこと。",
       "theme": "宇宙",
       "source_person": "華厳経",
-      "source_text_en": "All directions world",
-      "no": 363
+      "source_text_en": "All directions world"
     },
     {
+      "no": 364,
       "zengo": "金",
       "reading": "きん",
       "meaning": "金のように変わることのない永遠の価値。真理の確固たる価値。",
       "theme": "価値",
       "source_person": "金剛経",
-      "source_text_en": "Gold",
-      "no": 364
+      "source_text_en": "Gold"
     },
     {
       "no": 365,
-      "zengo": "放下",
-      "reading": "ほうげ",
-      "meaning": "全てを投げ捨てる。執着を捨てる。",
-      "theme": "解放",
+      "zengo": "看々臘月尽",
+      "reading": "みよみよろうげつつく",
+      "meaning": "見よ、もう12月が終わる。時は待ってくれない、今この一瞬を大切に生きよ。",
+      "theme": "集中",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
     },
     {
+      "no": 366,
       "zengo": "三世諸仏",
       "reading": "さんぜしょぶつ",
       "meaning": "過去・現在・未来の三世にわたる全ての仏。時を超えた仏の存在。",
       "theme": "時間",
       "source_person": "法華経",
-      "source_text_en": "Three worlds Buddhas",
-      "no": 366
+      "source_text_en": "Three worlds Buddhas"
     }
   ]
 }
