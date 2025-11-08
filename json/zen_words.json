@@ -837,13 +837,12 @@
     },
     {
       "no": 90,
-      "zengo": "釈迦",
-      "reading": "しゃか",
-      "meaning": "釈迦牟尼。仏教の開祖。",
-      "theme": "普遍",
-      "source_person": "釈迦（Shaka）",
-      "source_text_en": "Zen Teaching",
-      "priority": 3
+      "zengo": "一切智",
+      "reading": "いっさいち",
+      "meaning": "すべてを知る智慧。仏の完全な智慧のこと。迷いなく真理を見通す力。",
+      "theme": "智慧",
+      "source_person": "釈迦",
+      "source_text_en": "All-knowing wisdom"
     },
     {
       "zengo": "智",
@@ -1153,12 +1152,12 @@
     },
     {
       "no": 125,
-      "zengo": "普賢",
-      "reading": "ふげん",
-      "meaning": "普賢菩薩。仏の理知と慈悲の象徴。",
-      "theme": "利他",
-      "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching"
+      "zengo": "万行円満",
+      "reading": "ばんぎょうえんまん",
+      "meaning": "すべての実践が完全に成就すること。菩薩の理想的な修行の完成。",
+      "theme": "完成",
+      "source_person": "華厳経",
+      "source_text_en": "Perfect completion of all practices"
     },
     {
       "no": 126,
@@ -2949,12 +2948,12 @@
     },
     {
       "no": 320,
-      "zengo": "般若心経",
-      "reading": "はんにゃしんぎょう",
-      "meaning": "空の思想を説いた短い経典。",
-      "theme": "普遍",
-      "source_person": "仏教経典（Buddhist Sutra）",
-      "source_text_en": "Heart Sutra（『般若心経』）"
+      "zengo": "色即是空",
+      "reading": "しきそくぜくう",
+      "meaning": "物質的な現象はすべて空性と同じであること。形あるものの本質は空。",
+      "theme": "空性",
+      "source_person": "般若心経",
+      "source_text_en": "Form is emptiness"
     },
     {
       "zengo": "忍辱",
@@ -2994,12 +2993,12 @@
     },
     {
       "no": 325,
-      "zengo": "維摩経",
-      "reading": "ゆいまぎょう",
-      "meaning": "居士である維摩の教え。在家の教えの重要経典。",
-      "theme": "普遍",
-      "source_person": "仏教経典（Buddhist Sutra）",
-      "source_text_en": "Vimalakirti Sutra（『維摩経』）"
+      "zengo": "不二法門",
+      "reading": "ふにほうもん",
+      "meaning": "二元的な対立を超越した真理への入り口。一切の分別を超えた境地。",
+      "theme": "不二",
+      "source_person": "維摩経",
+      "source_text_en": "Gate of non-duality"
     },
     {
       "zengo": "龍",
@@ -3012,12 +3011,12 @@
     },
     {
       "no": 327,
-      "zengo": "法華経",
-      "reading": "ほけきょう",
-      "meaning": "全ての人が成仏できるという真理を説く。",
-      "theme": "普遍",
-      "source_person": "仏教経典（Buddhist Sutra）",
-      "source_text_en": "Lotus Sutra（『法華経』）"
+      "zengo": "諸法実相",
+      "reading": "しょほうじっそう",
+      "meaning": "すべての法の真実の姿。現象の背後にある変わらない真理。",
+      "theme": "真実",
+      "source_person": "法華経",
+      "source_text_en": "True reality of all dharmas"
     },
     {
       "zengo": "鳳",
@@ -3030,12 +3029,12 @@
     },
     {
       "no": 329,
-      "zengo": "華厳経",
-      "reading": "けごんきょう",
-      "meaning": "宇宙の真理を説く。全ては一つという教え。",
-      "theme": "普遍",
-      "source_person": "仏教経典（Buddhist Sutra）",
-      "source_text_en": "Avataṃsaka Sūtra（『華厳経』）"
+      "zengo": "一即一切",
+      "reading": "いちそくいっさい",
+      "meaning": "一つの中にすべてが含まれること。個と全体の完全な調和。",
+      "theme": "統一",
+      "source_person": "華厳経",
+      "source_text_en": "One is all"
     },
     {
       "no": 330,
