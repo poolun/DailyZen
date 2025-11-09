@@ -924,7 +924,7 @@
       "reading": "じょう",
       "meaning": "心の奥深くにある静かな平安。一切の雑念から解放された境地。",
       "theme": "平和",
-      "source_person": "老子",
+      "source_person": "老子（Rōshi）",
       "source_text_en": "Quiet"
     },
     {
@@ -992,12 +992,12 @@
     },
     {
       "no": 111,
-      "zengo": "自灯明",
-      "reading": "じとうみょう",
-      "meaning": "自分自身を拠り所として生きる。他者に頼らず、自己の智慧を光とする。",
-      "theme": "自立",
-      "source_person": "釈迦（Shaka）",
-      "source_text_en": "涅槃経（Nirvāṇa Sūtra）"
+      "zengo": "大道無門",
+      "reading": "だいどうむもん",
+      "meaning": "悟りの真実の道はこだわりを捨てれば、どこからでも入ることができる。",
+      "theme": "自由、悟り、こだわりからの解放",
+      "source_person": "無",
+      "source_text_en": "The Great Way has no gate"
     },
     {
       "no": 112,
@@ -1023,7 +1023,7 @@
       "reading": "じゅう",
       "meaning": "水のように柔軟で適応力のある心。強さの中にある優しさ。",
       "theme": "平和",
-      "source_person": "老子",
+      "source_person": "老子（Rōshi）",
       "source_text_en": "Soft"
     },
     {
@@ -1257,7 +1257,7 @@
       "reading": "むい",
       "meaning": "意図的な計らいを離れた自然な行い。無理のない自然体。",
       "theme": "生き方",
-      "source_person": "老子",
+      "source_person": "老子（Rōshi）",
       "source_text_en": "Non-action"
     },
     {
@@ -2072,12 +2072,12 @@
     },
     {
       "no": 231,
-      "zengo": "解脱",
-      "reading": "げだつ",
-      "meaning": "煩悩や迷いから解放されること。悟り。",
-      "theme": "解放",
-      "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching"
+      "zengo": "大道無門",
+      "reading": "だいどうむもん",
+      "meaning": "悟りの真実の道はこだわりを捨てれば、どこからでも入ることができる。",
+      "theme": "自由、悟り、こだわりからの解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "The Great Way has no gate"
     },
     {
       "no": 232,
@@ -2216,12 +2216,12 @@
     },
     {
       "no": 247,
-      "zengo": "流水不争先",
-      "reading": "りゅうすいせんをあらそわず",
-      "meaning": "水の流れのように争うことなく自然に進む謙虚な生き方。",
-      "theme": "謙遜",
-      "source_person": "老子",
-      "source_text_en": "Flowing water doesn't compete"
+      "zengo": "禅定",
+      "reading": "ぜんじょう",
+      "meaning": "心を一点に集中し乱れを鎮めること。瞑想による心の統一。",
+      "theme": "瞑想",
+      "source_person": "達磨大師",
+      "source_text_en": "Meditation"
     },
     {
       "no": 248,
@@ -2517,7 +2517,7 @@
       "reading": "たい",
       "meaning": "安全で平和な状態。何の心配もない安定した境地のこと。",
       "theme": "平安",
-      "source_person": "老子",
+      "source_person": "老子（Rōshi）",
       "source_text_en": "Stable"
     },
     {
@@ -2652,7 +2652,7 @@
       "reading": "かく",
       "meaning": "鶴のように長く健やかに生きること。不老長寿の理想的な姿。",
       "theme": "長寿",
-      "source_person": "老子",
+      "source_person": "老子（Rōshi）",
       "source_text_en": "Crane"
     },
     {
@@ -2819,19 +2819,19 @@
     },
     {
       "no": 314,
-      "zengo": "大道無門",
-      "reading": "だいどうむもん",
-      "meaning": "悟りの真実の道はこだわりを捨てれば、どこからでも入ることができる。",
-      "theme": "自由、悟り、こだわりからの解放",
-      "source_person": "無",
-      "source_text_en": "The Great Way has no gate"
+      "zengo": "自燈明",
+      "reading": "じとうみょう",
+      "meaning": "自身を灯火とし、他人を頼りとせず、自己の内面を深く見つめて真実を悟ること。",
+      "theme": "反省、自己信頼、自立",
+      "source_person": "釈迦（Shaka）",
+      "source_text_en": "涅槃経（Nirvāṇa Sūtra）"
     },
     {
       "no": 315,
       "zengo": "廓然無聖",
       "reading": "かくねんむしょう",
-      "meaning": "広々としていて、聖なるものも凡俗なものもないということ。一切の差別や執着を離れ、ありのままの状態。",
-      "theme": "絶対の自由、無分別、執着の否定",
+      "meaning": "聖も凡も関係なく、執着を捨て去った広大無辺な世界。",
+      "theme": "分別、執着からの解放",
       "source_person": "達磨大師",
       "source_text_en": "Vast emptiness, nothing holy"
     },
@@ -2839,7 +2839,7 @@
       "no": 316,
       "zengo": "莫煩悩",
       "reading": "まくぼんのう",
-      "meaning": "煩悩を気にするな。目の前のことに集中すれば、煩悩は自然と消える。",
+      "meaning": "煩悩を気にすることなく目の前のことに集中すれば、煩悩は自然と消える。",
       "theme": "解放",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
@@ -2855,19 +2855,19 @@
     },
     {
       "no": 318,
-      "zengo": "虎",
-      "reading": "こ",
-      "meaning": "虎のような勇猛果敢さと威厳。恐れを知らない堂々とした姿勢。",
-      "theme": "勇気",
-      "source_person": "虎渓三笑",
-      "source_text_en": "Tiger"
+      "zengo": "解脱",
+      "reading": "げだつ",
+      "meaning": "迷いや煩悩の束縛から解放され、自由の境地に至ること。すべての苦しみからのがれること。",
+      "theme": "解放",
+      "source_person": "仏教用語（Buddhist term）",
+      "source_text_en": "Zen Teaching"
     },
     {
       "no": 319,
       "zengo": "戒",
       "reading": "いましめ / かい",
-      "meaning": "戒律。正しい行いの規律。",
-      "theme": "調和",
+      "meaning": "仏教において、修行者が守るべき正しい行いの規律。自己を律するルール。",
+      "theme": "倫理、調和",
       "source_person": "六波羅蜜（Roku Haramitsu）",
       "source_text_en": "Zen Teaching"
     },
@@ -2891,12 +2891,12 @@
     },
     {
       "no": 322,
-      "zengo": "禅定",
-      "reading": "ぜんじょう",
-      "meaning": "心を一点に集中し乱れを鎮めること。瞑想による心の統一。",
-      "theme": "瞑想",
-      "source_person": "達磨大師",
-      "source_text_en": "Meditation"
+      "zengo": "流水不争先",
+      "reading": "りゅうすいせんをあらそわず",
+      "meaning": "流水は先頭を争う愚行をしない。流水は、その本質が時空を超越した「道」そのものなのだから。",
+      "theme": "超然、優位性、不争の境地",
+      "source_person": "老子（Rōshi）",
+      "source_text_en": "Flowing water doesn't compete"
     },
     {
       "no": 323,
@@ -2948,9 +2948,9 @@
       "zengo": "鳳",
       "reading": "ほう",
       "meaning": "鳳凰のような高貴で美しい品格。気品ある美しさの象徴。",
-      "theme": "美",
-      "source_person": "鳳凰",
-      "source_text_en": "Phoenix"
+      "theme": "品格、威厳、美",
+      "source_person": "瑞鳥（zuichou）",
+      "source_text_en": "『五家正宗賛』（Goke Shōshū San）、禅語「彩鳳舞丹霄」（Sai Hō Bu Tansho）"
     },
     {
       "no": 329,
