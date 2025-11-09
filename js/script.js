@@ -302,8 +302,6 @@ async function getDailyZenWord() {
         
         // キャッシュが無いか、日付が変わった場合のみ再読み込み
         if (!zenWordsCache || lastLoadDate !== todayString) {
-            console.log('禅語データを読み込み中...');
-            
             const timestamp = Date.now();
             const response = await fetch(`json/zen_words.json?v=${timestamp}`, {
                 cache: 'no-cache',
@@ -320,8 +318,6 @@ async function getDailyZenWord() {
             
             zenWordsCache = await response.json();
             lastLoadDate = todayString;
-            
-            console.log('禅語データの読み込み完了');
         }
         
         const words = zenWordsCache.zenWords;
@@ -355,7 +351,6 @@ async function getDailyZenWord() {
         
         // エラー時のフォールバック: 既存のキャッシュがあれば使用
         if (zenWordsCache && zenWordsCache.zenWords) {
-            console.log("キャッシュデータを使用します");
             const words = zenWordsCache.zenWords;
             
             // 既存のロジックで今日の禅語を計算
@@ -560,12 +555,7 @@ document.addEventListener('keydown', async (event) => {
         debugMode = !debugMode;
         
         if (debugMode) {
-            console.log('デバッグモードON - 矢印キーで禅語を切り替えできます');
-            
             await loadAllZenWords();
-            console.log(`データ読み込み完了: 全${allZenWords.length}項目`);
-            console.log(`最初の項目: ${allZenWords[0]?.no} - ${allZenWords[0]?.zengo}`);
-            console.log(`最後の項目: ${allZenWords[allZenWords.length-1]?.no} - ${allZenWords[allZenWords.length-1]?.zengo}`);
             
             // 現在の日めくりインデックスを初期値として設定
             const today = new Date();
@@ -582,12 +572,8 @@ document.addEventListener('keydown', async (event) => {
                 debugIndex = (allZenWords.length + (diffDays % allZenWords.length)) % allZenWords.length;
             }
             
-            console.log(`基準日(${currentYear}/1/1)からの経過日数: ${diffDays}日`);
-            console.log(`本日の禅語インデックス: ${debugIndex + 1}/${allZenWords.length}`);
-            
             await renderDebugZen(debugIndex);
         } else {
-            console.log('デバッグモードOFF');
             await renderDailyZen(); // 通常モードに戻る
         }
         return;
