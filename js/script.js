@@ -291,11 +291,40 @@ async function fetchWithRetry(url, maxRetries = 10, timeout = 30000) {
     }
 }
 
-// 日めくりカレンダー方式で禅語を取得する関数
+// 禅語データのキャッシュ変数
+let zenWordsCache = null;
+let lastLoadDate = null;
+
+// 日めくりカレンダー方式で禅語を取得する関数（1日1回更新）
 async function getDailyZenWord() {
     try {
-        const data = await fetchWithRetry('json/zen_words.json');
-        const words = data.zenWords;
+        const todayString = new Date().toDateString(); // "Wed Nov 09 2024"
+        
+        // キャッシュが無いか、日付が変わった場合のみ再読み込み
+        if (!zenWordsCache || lastLoadDate !== todayString) {
+            console.log('禅語データを読み込み中...');
+            
+            const timestamp = Date.now();
+            const response = await fetch(`json/zen_words.json?v=${timestamp}`, {
+                cache: 'no-cache',
+                headers: {
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache',
+                    'Expires': '0'
+                }
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            zenWordsCache = await response.json();
+            lastLoadDate = todayString;
+            
+            console.log('禅語データの読み込み完了');
+        }
+        
+        const words = zenWordsCache.zenWords;
         
         // 基準日：今年の1月1日（no1が1月1日）
         const today = new Date();
@@ -323,6 +352,33 @@ async function getDailyZenWord() {
         return words[dailyIndex];
     } catch (error) {
         console.error("禅語の取得中にエラーが発生しました:", error);
+        
+        // エラー時のフォールバック: 既存のキャッシュがあれば使用
+        if (zenWordsCache && zenWordsCache.zenWords) {
+            console.log("キャッシュデータを使用します");
+            const words = zenWordsCache.zenWords;
+            
+            // 既存のロジックで今日の禅語を計算
+            const today = new Date();
+            const currentYear = today.getFullYear();
+            const START_DATE = new Date(currentYear, 0, 1);
+            
+            const todayNormalized = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+            const startDateNormalized = new Date(START_DATE.getFullYear(), START_DATE.getMonth(), START_DATE.getDate());
+            
+            const diffTime = todayNormalized.getTime() - startDateNormalized.getTime();
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            
+            let dailyIndex;
+            if (diffDays >= 0) {
+                dailyIndex = diffDays % words.length;
+            } else {
+                dailyIndex = (words.length + (diffDays % words.length)) % words.length;
+            }
+            
+            return words[dailyIndex];
+        }
+        
         return null;
     }
 }
@@ -416,11 +472,18 @@ let debugMode = false;
 let debugIndex = 0;
 let allZenWords = [];
 
-// デバッグモード用の禅語データを取得する関数
+// デバッグモード用の禅語データを取得する関数（キャッシュシステム使用）
 async function loadAllZenWords() {
     try {
-        const data = await fetchWithRetry('json/zen_words.json');
-        allZenWords = data.zenWords;
+        // getDailyZenWord()と同じキャッシュシステムを使用
+        const todayString = new Date().toDateString();
+        
+        if (!zenWordsCache || lastLoadDate !== todayString) {
+            // まだキャッシュされていない場合は、getDailyZenWord()を呼んでキャッシュを作成
+            await getDailyZenWord();
+        }
+        
+        allZenWords = zenWordsCache ? zenWordsCache.zenWords : [];
         return allZenWords;
     } catch (error) {
         console.error("禅語データの読み込み中にエラーが発生しました:", error);
