@@ -2630,12 +2630,12 @@
     },
     {
       "no": 293,
-      "zengo": "瞋",
-      "reading": "いかり / じん",
-      "meaning": "激しい怒りの感情。心を乱す煩悩の一つで制御すべき感情。",
-      "theme": "平静",
-      "source_person": "三毒（Sandoku）",
-      "source_text_en": "Zen Teaching"
+      "zengo": "忍辱",
+      "reading": "にんにく",
+      "meaning": "屈辱や苦難に耐え忍ぶこと。菩薩の修行における重要な徳目。",
+      "theme": "忍耐",
+      "source_person": "維摩居士",
+      "source_text_en": "Patience"
     },
     {
       "no": 294,
@@ -2722,7 +2722,7 @@
       "no": 303,
       "zengo": "主人公",
       "reading": "しゅじんこう",
-      "meaning": "自分自身の人生の真の主人。主体的に生きる確立された自我。",
+      "meaning": "自分自身の人生の真の主人は自分である。確立された真の自我。",
       "theme": "自立",
       "source_person": "臨済義玄（Rinzai Gigen）",
       "source_text_en": "Rinzai-roku（『臨済録』）"
@@ -2873,21 +2873,21 @@
     },
     {
       "no": 320,
+      "zengo": "瞋",
+      "reading": "いかり / じん",
+      "meaning": "激しい怒りの感情。心を乱す煩悩の一つで制御すべき感情。",
+      "theme": "平静",
+      "source_person": "三毒（Sandoku）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 321,
       "zengo": "鳳",
       "reading": "ほう",
       "meaning": "鳳凰のような高貴で美しい品格。気品ある美しさの象徴。",
       "theme": "品格、威厳、美",
       "source_person": "瑞鳥（zuichou）",
       "source_text_en": "『五家正宗賛』（Goke Shōshū San）、禅語「彩鳳舞丹霄」（Sai Hō Bu Tansho）"
-    },
-    {
-      "no": 321,
-      "zengo": "忍辱",
-      "reading": "にんにく",
-      "meaning": "屈辱や苦難に耐え忍ぶこと。菩薩の修行における重要な徳目。",
-      "theme": "忍耐",
-      "source_person": "維摩居士",
-      "source_text_en": "Patience"
     },
     {
       "no": 322,
