@@ -152,10 +152,24 @@ function toKansuji(str) {
 }
 
 
-// 二十四節気データを取得する関数（強化版）
+// 二十四節気データを取得する関数（強化版・キャッシュ回避）
 async function getSekkiData() {
     try {
-        const data = await fetchWithRetry('json/sekki_data.json');
+        const timestamp = Date.now();
+        const response = await fetch(`json/sekki_data.json?v=${timestamp}`, {
+            cache: 'no-cache',
+            headers: {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
         return data.sekkiData;
     } catch (error) {
         console.error("二十四節気データの取得中にエラーが発生しました:", error);
@@ -295,30 +309,25 @@ async function fetchWithRetry(url, maxRetries = 10, timeout = 30000) {
 let zenWordsCache = null;
 let lastLoadDate = null;
 
-// 日めくりカレンダー方式で禅語を取得する関数（1日1回更新）
+// 日めくりカレンダー方式で禅語を取得する関数（常に最新データ取得）
 async function getDailyZenWord() {
     try {
-        const todayString = new Date().toDateString(); // "Wed Nov 09 2024"
-        
-        // キャッシュが無いか、日付が変わった場合のみ再読み込み
-        if (!zenWordsCache || lastLoadDate !== todayString) {
-            const timestamp = Date.now();
-            const response = await fetch(`json/zen_words.json?v=${timestamp}`, {
-                cache: 'no-cache',
-                headers: {
-                    'Cache-Control': 'no-cache, no-store, must-revalidate',
-                    'Pragma': 'no-cache',
-                    'Expires': '0'
-                }
-            });
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+        // 常に最新データを取得（キャッシュを使わない）
+        const timestamp = Date.now();
+        const response = await fetch(`json/zen_words.json?v=${timestamp}`, {
+            cache: 'no-cache',
+            headers: {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0'
             }
-            
-            zenWordsCache = await response.json();
-            lastLoadDate = todayString;
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
+        
+        zenWordsCache = await response.json();
         
         const words = zenWordsCache.zenWords;
         
@@ -470,13 +479,8 @@ let allZenWords = [];
 // デバッグモード用の禅語データを取得する関数（キャッシュシステム使用）
 async function loadAllZenWords() {
     try {
-        // getDailyZenWord()と同じキャッシュシステムを使用
-        const todayString = new Date().toDateString();
-        
-        if (!zenWordsCache || lastLoadDate !== todayString) {
-            // まだキャッシュされていない場合は、getDailyZenWord()を呼んでキャッシュを作成
-            await getDailyZenWord();
-        }
+        // 常に最新データを取得（getDailyZenWord()を呼んで最新データを確保）
+        await getDailyZenWord();
         
         allZenWords = zenWordsCache ? zenWordsCache.zenWords : [];
         return allZenWords;
