@@ -172,8 +172,6 @@ async function getSekkiData() {
         const data = await response.json();
         return data.sekkiData;
     } catch (error) {
-        console.error("二十四節気データの取得中にエラーが発生しました:", error);
-        
         // フォールバック: 最小限のデータで動作継続
         return [{
             month: 1, day: 1, sekki: "データ読み込み失敗"
@@ -356,8 +354,6 @@ async function getDailyZenWord() {
         
         return words[dailyIndex];
     } catch (error) {
-        console.error("禅語の取得中にエラーが発生しました:", error);
-        
         // エラー時のフォールバック: 既存のキャッシュがあれば使用
         if (zenWordsCache && zenWordsCache.zenWords) {
             const words = zenWordsCache.zenWords;
@@ -485,7 +481,6 @@ async function loadAllZenWords() {
         allZenWords = zenWordsCache ? zenWordsCache.zenWords : [];
         return allZenWords;
     } catch (error) {
-        console.error("禅語データの読み込み中にエラーが発生しました:", error);
         allZenWords = [];
         return [];
     }
@@ -820,7 +815,6 @@ function checkDateChange() {
     const now = new Date().toDateString();
     if (now !== currentDate) {
         currentDate = now;
-        console.log('日付が変わりました。データを更新します。');
         
         // 現在のモードに応じて表示を更新
         if (debugMode) {
