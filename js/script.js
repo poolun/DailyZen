@@ -812,3 +812,38 @@ function applyZoom() {
         wrapper.style.transform = `scale(${scale})`;
     }
 }
+
+// 日付変更監視機能
+let currentDate = new Date().toDateString();
+
+function checkDateChange() {
+    const now = new Date().toDateString();
+    if (now !== currentDate) {
+        currentDate = now;
+        console.log('日付が変わりました。データを更新します。');
+        
+        // 現在のモードに応じて表示を更新
+        if (debugMode) {
+            renderDebugZen(debugIndex);
+        } else if (sekkiDebugMode) {
+            renderSekkiDebug(sekkiDebugIndex);
+        } else {
+            renderDailyZen();
+        }
+    }
+}
+
+// 1分ごとに日付変更をチェック
+setInterval(checkDateChange, 60000);
+
+// ページがフォーカスされた時も日付チェック（ブラウザを開き直した時など）
+document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+        checkDateChange();
+    }
+});
+
+// ページがフォーカスされた時も日付チェック（ウィンドウがアクティブになった時）
+window.addEventListener('focus', () => {
+    checkDateChange();
+});
