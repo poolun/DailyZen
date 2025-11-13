@@ -148,7 +148,7 @@
       "no": 17,
       "zengo": "莫妄想",
       "reading": "まくもうぞう",
-      "meaning": "妄想するな、余計なことを考えるな。ありのままを素直に受け入れよ。",
+      "meaning": "妄想せず、あるがままを受け入れる境地。",
       "theme": "平静",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching（禅の教え）"
@@ -301,8 +301,8 @@
       "no": 34,
       "zengo": "我",
       "reading": "が",
-      "meaning": "自我、エゴ。迷いの根本原因。",
-      "theme": "集中",
+      "meaning": "自我（エゴ）。迷いの根本原因となる感情。",
+      "theme": "煩悩",
       "source_person": "仏教用語（Buddhist term）",
       "source_text_en": "Zen Teaching"
     },
@@ -481,7 +481,7 @@
       "no": 54,
       "zengo": "一拳打破",
       "reading": "いっけんたは",
-      "meaning": "迷いや煩悩を、一撃で打ち破るほどの鋭い悟りの境地。",
+      "meaning": "心の迷いを打ち破った悟りの境地。",
       "theme": "解放",
       "source_person": "禅語（Zen word）",
       "source_text_en": "Zen Teaching"
@@ -1262,12 +1262,12 @@
     },
     {
       "no": 141,
-      "zengo": "無明",
-      "reading": "むみょう",
-      "meaning": "真理を知らない迷いの状態。悟りへの障害となる根本的な煩悩。",
-      "theme": "解放",
-      "source_person": "仏教用語（Buddhist term）",
-      "source_text_en": "Zen Teaching"
+      "zengo": "日々是好日",
+      "reading": "にちにちこれこうじつ",
+      "meaning": "毎日がかけがえのない最良の日である。どのような状況であっても、そのままを受け入れ、主体的に生きる境地。",
+      "theme": "肯定",
+      "source_person": "雲門文偃（Unmon Bunen）",
+      "source_text_en": "Every day is a good day"
     },
     {
       "no": 142,
@@ -3251,12 +3251,12 @@
     },
     {
       "no": 362,
-      "zengo": "自業自得",
-      "reading": "じごうじとく",
-      "meaning": "自分の行為によって生じた結果は自分で受けること。",
-      "theme": "因果",
-      "source_person": "仏教",
-      "source_text_en": "Own karma"
+      "zengo": "無事是貴",
+      "reading": "ぶじこれき",
+      "meaning": "何事もない平穏な状態こそが、最も尊く価値のあることである。",
+      "theme": "平和",
+      "source_person": "臨済義玄",
+      "source_text_en": "Nothing special precious"
     },
     {
       "no": 363,
