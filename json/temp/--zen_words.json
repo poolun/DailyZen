@@ -1,0 +1,814 @@
+{
+  "zenWords": [
+    {
+      "no": 1,
+      "zengo": "而今",
+      "reading": "にこん / じこん",
+      "meaning": "過去を悔やまず、未来を憂えず、ただ今この一瞬に全力を注ぐ。",
+      "theme": "集中",
+      "source_person": "道元（Dōgen）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 2,
+      "zengo": "日々是好日",
+      "reading": "にちにちこれこうじつ",
+      "meaning": "良い日も悪い日もない。毎日がかけがえのない尊い一日である。",
+      "theme": "平静",
+      "source_person": "雲門文偃（Unmon Bun'en）",
+      "source_text_en": "Mumonkan / Hekiganroku（『無門関』 / 『碧巌録』）"
+    },
+    {
+      "no": 3,
+      "zengo": "放下着",
+      "reading": "ほうげじゃく",
+      "meaning": "一切の執着やこだわりを手放し、軽やかに生きなさい。",
+      "theme": "解放",
+      "source_person": "唐代の僧（Tōdai no Sō）",
+      "source_text_en": "Shōyōroku（『従容録』）"
+    },
+    {
+      "no": 4,
+      "zengo": "平常心是道",
+      "reading": "へいじょうしんこれどう",
+      "meaning": "特別な修行ではなく、日常のありのままの心こそが悟りの境地である。",
+      "theme": "平静",
+      "source_person": "馬祖道一（Baso Dōitsu）",
+      "source_text_en": "Mumonkan（『無門関』）"
+    },
+    {
+      "no": 5,
+      "zengo": "行雲流水",
+      "reading": "こううんりゅうすい",
+      "meaning": "空を流れる雲、留まることのない水のように、執着せずに自然体で生きる。",
+      "theme": "自由",
+      "source_person": "蘇軾（So Shoku - Sōdai no Shijin）",
+      "source_text_en": "Xie Minshi Tuiguan Yu Shu（『謝民師推官与書』）"
+    },
+    {
+      "no": 6,
+      "zengo": "脚下照顧",
+      "reading": "きゃっかしょうこ",
+      "meaning": "他人や遠くを見ず、自分の足元（現在と自己）をよく見つめなさい。",
+      "theme": "集中",
+      "source_person": "孤峰覚明（Kohō Kakumyō）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 7,
+      "zengo": "知足",
+      "reading": "ちそく",
+      "meaning": "足りるを知る。他と比べず、今あるものに感謝し、心安らかに過ごす。",
+      "theme": "満足",
+      "source_person": "老子（Rōshi- Dōkyō no Kaizo）",
+      "source_text_en": "Rōshi（『老子』）"
+    },
+    {
+      "no": 8,
+      "zengo": "無心",
+      "reading": "むしん",
+      "meaning": "雑念や先入観のない、囚われのない純粋な心。",
+      "theme": "集中",
+      "source_person": "達磨、禅宗（Daruma, Zen Shū）",
+      "source_text_en": "Zen Teaching / Sōkyōroku（『宗鏡録』）"
+    },
+    {
+      "no": 9,
+      "zengo": "和敬清寂",
+      "reading": "わけいせいじゃく",
+      "meaning": "互いに和し、敬い、心を清くし、穏やかに過ごす（茶道の精神）。",
+      "theme": "調和",
+      "source_person": "千利休（Sen no Rikyū）",
+      "source_text_en": "Cha no Yu Essence（茶の湯の根本精神）"
+    },
+    {
+      "no": 10,
+      "zengo": "無縄自縛",
+      "reading": "むじょうじばく",
+      "meaning": "自分を縛っているものは、他人や環境ではなく自分自身の思い込みである。",
+      "theme": "解放",
+      "source_person": "臨済宗の僧（Rinzai Shū no Sō）",
+      "source_text_en": "Shōbōgenzō / Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 11,
+      "zengo": "一期一会",
+      "reading": "いちごいちえ",
+      "meaning": "この瞬間、この出会いは二度とないものとして大切に向き合いなさい。",
+      "theme": "集中",
+      "source_person": "千利休（Sen no Rikyū）",
+      "source_text_en": "Yamanoue Sōji Ki（『山上宗二記』）"
+    },
+    {
+      "no": 12,
+      "zengo": "且緩々",
+      "reading": "しゃかんかん",
+      "meaning": "慌てることなくゆっくりと、落ち着いて事を進めなさい。",
+      "theme": "平静",
+      "source_person": "雲門文偃（Unmon Bun'en）",
+      "source_text_en": "Unmon Kōroku（『雲門広録』）"
+    },
+    {
+      "no": 13,
+      "zengo": "笑門来福",
+      "reading": "しょうもんらいふく",
+      "meaning": "笑いのある家には自然と幸福がやってくる。明るく快活に過ごすことが福を招く。",
+      "theme": "幸福",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "General Proverb / Zen Teaching"
+    },
+    {
+      "no": 14,
+      "zengo": "円相",
+      "reading": "えんそう",
+      "meaning": "円は「宇宙・真理・仏性」を象徴し、欠けたところのない完全な悟りの姿を表す。",
+      "theme": "調和",
+      "source_person": "禅画のテーマ（Zenga no Tēma）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 15,
+      "zengo": "山花開似錦",
+      "reading": "さんか にしきにひらくがごとし",
+      "meaning": "山に咲く花が錦のように美しい。自然のありのままの姿がそのまま真理であり、無上の美である。",
+      "theme": "自然",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 16,
+      "zengo": "光陰莫軽",
+      "reading": "こういんかろんずることなかれ",
+      "meaning": "わずかな時間も軽んじてはならない。一瞬一瞬を大切に生きよ。",
+      "theme": "集中",
+      "source_person": "朱子（Shushi）",
+      "source_text_en": "Shōbōgenzō Zuimonki（『正法眼蔵随聞記』）"
+    },
+    {
+      "no": 17,
+      "zengo": "随縁放曠",
+      "reading": "ずいえんほうこう",
+      "meaning": "起こる縁に身を任せ、こだわりなく、心を広々として生きる。",
+      "theme": "自由",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 18,
+      "zengo": "柔軟心",
+      "reading": "にゅうなんしん",
+      "meaning": "凝り固まらず、水のように物事に順応する、しなやかで素直な心。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 19,
+      "zengo": "壺中日月長",
+      "reading": "こちゅうじつげつながし",
+      "meaning": "俗世間を離れた清閑な世界には、悠久の時間が流れる。",
+      "theme": "平静",
+      "source_person": "後漢の費長房（Hichōbō）の故事",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 20,
+      "zengo": "喫茶去",
+      "reading": "きっさこ",
+      "meaning": "お茶でも飲みなさい。特別な理屈や禅問答ではなく、目の前の日常に集中せよ。",
+      "theme": "平静",
+      "source_person": "趙州従諗（Jōshū Jūshin）",
+      "source_text_en": "Mumonkan（『無門関』）"
+    },
+    {
+      "no": 21,
+      "zengo": "和光同塵",
+      "reading": "わこうどうじん",
+      "meaning": "智慧の光を和らげ、俗世の塵（ちり）にまじり、人々と共に生きる。",
+      "theme": "調和",
+      "source_person": "老子（Rōshi- Dōkyō no Kaizo）",
+      "source_text_en": "Rōshi（『老子』）"
+    },
+    {
+      "no": 22,
+      "zengo": "柳緑花紅",
+      "reading": "やなぎはみどり、はなはくれない",
+      "meaning": "柳の緑、花の赤。自然のありのままの美しさがそのまま真実の姿である。",
+      "theme": "調和",
+      "source_person": "蘇軾（So Shoku）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 23,
+      "zengo": "夢",
+      "reading": "ゆめ",
+      "meaning": "人生は夢や幻のように儚いものである。執着することなく、深くこだわらない心境。",
+      "theme": "解放",
+      "source_person": "般若心経（Hannya Shingyō）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 24,
+      "zengo": "無一物",
+      "reading": "むいちもつ",
+      "meaning": "何一つ持つものがない状態。執着を捨て去った、清浄で囚われのない心境。",
+      "theme": "解放",
+      "source_person": "六祖慧能（Rokuso Enō）",
+      "source_text_en": "Rokuso Dangyō（『六祖壇経』）"
+    },
+    {
+      "no": 25,
+      "zengo": "随順",
+      "reading": "ずいじゅん",
+      "meaning": "真理や教えに従い、あるがままを受け入れる。余計な計らいをしない。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 26,
+      "zengo": "随所作主",
+      "reading": "ずいしょさしゅ",
+      "meaning": "どこにいても、その場所の主人となりなさい。環境に左右されず、主体的に生きよ。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Rinzai Gigen）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 27,
+      "zengo": "一字千金",
+      "reading": "いちじせんきん",
+      "meaning": "一文字が千金に値するほど、言葉や教えが尊いこと。",
+      "theme": "感謝",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "General Proverb（一般の故事成語）"
+    },
+    {
+      "no": 28,
+      "zengo": "無事",
+      "reading": "ぶじ",
+      "meaning": "特別な課題や煩悩がない、何事もない平穏な境地。あるがままの姿。",
+      "theme": "平静",
+      "source_person": "臨済義玄（Rinzai Gigen）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 29,
+      "zengo": "一味清風",
+      "reading": "いちみせいふう",
+      "meaning": "万物に優劣や差別はなく、すべてに共通する、ただ一つの清らかで平等な真理の境地。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 30,
+      "zengo": "喫飯度日",
+      "reading": "きっぱんとにち",
+      "meaning": "飯を食って日々を送る。日常の雑事の中にこそ真の修行がある。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 31,
+      "zengo": "直心是道場",
+      "reading": "じきしんこれどうじょう",
+      "meaning": "素直で正直な心こそが、修行をするべき場所（道場）である。",
+      "theme": "自立",
+      "source_person": "維摩経（Yuima-kyō）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 32,
+      "zengo": "前後際断",
+      "reading": "ぜんごさいだん",
+      "meaning": "過去と未来の思いを断ち切り、ただ「今、この一瞬」に集中して生きる。",
+      "theme": "集中",
+      "source_person": "道元（Dōgen）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 33,
+      "zengo": "日日新",
+      "reading": "ひびあらた",
+      "meaning": "毎日毎日が新しく生まれ変わる。常に向上心を持ち、過去に囚われず生きよ。",
+      "theme": "発展",
+      "source_person": "大学（Daigaku）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 34,
+      "zengo": "莫妄想",
+      "reading": "まくもうぞう",
+      "meaning": "妄想するな、余計なことを考えるな。ありのままを素直に受け入れよ。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 35,
+      "zengo": "吾唯足知",
+      "reading": "われただたるをしる",
+      "meaning": "私はただ足るを知る。欲望を追求せず、今あるものに満足して生きる。",
+      "theme": "満足",
+      "source_person": "龍安寺の蹲踞の銘（Ryōanji no Tsukubai no Mei）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 36,
+      "zengo": "歩歩是道場",
+      "reading": "ほほこれどうじょう",
+      "meaning": "一歩一歩の歩みが修行の場である。日常生活の全てが仏道である。",
+      "theme": "集中",
+      "source_person": "道元（Dōgen）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 37,
+      "zengo": "八風吹不動",
+      "reading": "はっぷうすいふどう",
+      "meaning": "利・衰・毀・誉・称・譏・苦・楽の八種の風（誘惑や中傷）に心を乱されない。",
+      "theme": "平静",
+      "source_person": "白居易（Haku Kyoi）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 38,
+      "zengo": "一滴水",
+      "reading": "いってきすい",
+      "meaning": "小さな一滴の水も、源を辿れば大きな流れに通じている。小さな行いも大切にせよ。",
+      "theme": "感謝",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 39,
+      "zengo": "随縁而化",
+      "reading": "ずいえんにか",
+      "meaning": "縁にしたがって自ずから変化・成長する。自然の流れに身を任せよ。",
+      "theme": "自由",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 40,
+      "zengo": "坐断紅塵",
+      "reading": "ざだんこうじん",
+      "meaning": "俗世間から離れ、静かに座って瞑想する。外界の影響を受けない境地。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 41,
+      "zengo": "清涼",
+      "reading": "せいりょう",
+      "meaning": "煩悩の炎が消え、心が清らかで涼しい境地。安らぎの悟りの心。",
+      "theme": "解放",
+      "source_person": "仏教用語（Bukkyō Yōgo）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 42,
+      "zengo": "莫煩悩",
+      "reading": "まくぼんのう",
+      "meaning": "煩悩を気にするな。目の前のことに集中すれば、煩悩は自然と消える。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 43,
+      "zengo": "一黙如雷",
+      "meaning": "真に価値のある言葉は、沈黙の後に雷のように重く響く。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）",
+      "reading": "いちもくじょらい"
+    },
+    {
+      "no": 44,
+      "zengo": "喫一盞茶",
+      "reading": "きっいっせんのちゃ",
+      "meaning": "まず一杯のお茶を飲みなさい。目の前の行いに集中し、余計なことを考えるな。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 45,
+      "zengo": "随処楽",
+      "reading": "ずいしょらく",
+      "meaning": "どこにいても楽しみを見つける。現状を受け入れ、今を生きる喜び。",
+      "theme": "満足",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 46,
+      "zengo": "独坐大雄峰",
+      "reading": "どくざだいゆうほう",
+      "meaning": "誰にも頼らず、ただ一人、自己を深く見つめる場所（心境）。",
+      "theme": "自立",
+      "source_person": "潙山霊祐（Isan Reiyū）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 47,
+      "zengo": "風光日々新",
+      "reading": "ふうこうひびあらた",
+      "meaning": "自然の景色は毎日新しい。常に新しい気持ちで物事に向き合う。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 48,
+      "zengo": "一超直入",
+      "reading": "いっちょうじきにゅう",
+      "meaning": "迷いの世界から悟りの世界へ一気に飛び込む。決意と実行。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 49,
+      "zengo": "自燈明",
+      "reading": "じとうみょう",
+      "meaning": "仏の教え（法）を頼りとしながらも、自らの内に真理の光を求め、最終的には自分自身を拠り所として生きること。",
+      "theme": "自立",
+      "source_person": "釈迦（Shakyamuni）",
+      "source_text_en": "Nehankyō（『涅槃経』）"
+    },
+    {
+      "no": 50,
+      "zengo": "山高水長",
+      "reading": "やまたかくみずながし",
+      "meaning": "徳の高い人の行いは、山のように高く、水のように長く後世まで伝わる。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 51,
+      "zengo": "無刀剣",
+      "reading": "むとうけん",
+      "meaning": "刀や剣を持たない。争いを好まない、平和な心。",
+      "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 52,
+      "zengo": "心月輪",
+      "reading": "しんげつりん",
+      "meaning": "月のように清らかで円満な心。真理を映す悟りの心。",
+      "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 53,
+      "zengo": "青山緑水",
+      "reading": "せいざんりょくすい",
+      "meaning": "青い山と緑の水。自然のありのままの姿が真理そのものである。",
+      "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 54,
+      "zengo": "念々去来",
+      "reading": "ねんねんきょらい",
+      "meaning": "心に浮かぶ思いは次々と現れ、そして消えていく。執着しない心。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 55,
+      "zengo": "虚心坦懐",
+      "reading": "きょしんたんかい",
+      "meaning": "心に何のわだかまりもなく、素直でさっぱりしていること。",
+      "theme": "平静",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 56,
+      "zengo": "随流得妙",
+      "reading": "ずいりゅうとくみょう",
+      "meaning": "流れに身を任せることで、かえって妙なる真理を得ることができる。",
+      "theme": "自由",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 57,
+      "zengo": "風外",
+      "reading": "ふうがい",
+      "meaning": "世俗の常識や煩悩から完全に解き放たれ、何物にも囚われない悟りの境地。自由奔放な生き方のこと。",
+      "theme": "自由",
+      "source_person": "風外本高（Fūgai Honkō - Zen Gaka）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 58,
+      "zengo": "春色無高下",
+      "reading": "しゅんしょくにこうげなし",
+      "meaning": "春の景色に高低優劣はない。万物は平等であるという仏の真理。",
+      "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 59,
+      "zengo": "泥中有蓮",
+      "reading": "でいちゅうにれんあり",
+      "meaning": "泥の中から清らかな蓮が咲くように、煩悩の世の中から悟りが開く。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 60,
+      "zengo": "無尽蔵",
+      "reading": "むじんぞう",
+      "meaning": "いくら使っても尽きることのない宝。智慧や徳は常に尽きることがない。",
+      "theme": "発展",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 61,
+      "zengo": "喫菜事魔",
+      "reading": "きっさいじま",
+      "meaning": "粗末な食べ物でも、誠意を持って頂くことが心の魔を祓う。食への感謝。",
+      "theme": "感謝",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 62,
+      "zengo": "梅開五福",
+      "reading": "ばいかいごふく",
+      "meaning": "梅の花は五つの花弁を持ち、長寿、富、健康、徳、子孫の五つの福をもたらす。",
+      "theme": "感謝",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 63,
+      "zengo": "只管打坐",
+      "reading": "しかんたざ",
+      "meaning": "ただひたすらに坐禅すること。坐禅の行為そのものが悟りであるとする曹洞宗の基本的な教え。",
+      "theme": "集中",
+      "source_person": "道元（Dōgen）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 64,
+      "zengo": "行住坐臥",
+      "reading": "ぎょうじゅうざが",
+      "meaning": "歩き、立ち止まり、座り、横になる。日常の全ての動作が修行である。",
+      "theme": "集中",
+      "source_person": "仏教用語（Bukkyō Yōgo）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 65,
+      "zengo": "心頭滅却",
+      "reading": "しんとうめっきゃく",
+      "meaning": "心の迷いを滅すれば、火の熱さも感じなくなる。精神の力で苦難を乗り越える。",
+      "theme": "平静",
+      "source_person": "快川紹喜（Kaisen Jōki）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 66,
+      "zengo": "看々臘月尽",
+      "reading": "みよみよろうげつつく",
+      "meaning": "見よ、もう12月が終わる。時は待ってくれない、今この一瞬を大切に生きよ。",
+      "theme": "集中",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 67,
+      "zengo": "寿山福海",
+      "reading": "じゅざんふくかい",
+      "meaning": "長寿は山のように動かず、幸福は海のように広大である。長寿と幸福を祈る。",
+      "theme": "感謝",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 68,
+      "zengo": "一拳打破",
+      "reading": "いっけんたは",
+      "meaning": "迷いや煩悩を、一撃で打ち破るほどの鋭い悟りの境地。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 69,
+      "zengo": "洗心",
+      "reading": "せんしん",
+      "meaning": "心を洗い清めること。煩悩や邪念を払い、清らかな心を取り戻す。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 70,
+      "zengo": "無功用行",
+      "reading": "むくうぎょう",
+      "meaning": "計らいや意図のない、自然な行い。見返りを求めない行為。",
+      "theme": "解放",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 71,
+      "zengo": "本来面目",
+      "reading": "ほんらいのめんもく",
+      "meaning": "生まれながらに持っている、ありのままの真実の自己。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 72,
+      "zengo": "直截",
+      "reading": "ちょくせつ",
+      "meaning": "遠回りせず、まっすぐに真理を悟る。また、直接的に行動を起こす。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Rinzai Gigen）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 73,
+      "zengo": "無位真人",
+      "reading": "むいのしんじん",
+      "meaning": "何ら地位や肩書きを持たない、真の悟りを開いた人。",
+      "theme": "自立",
+      "source_person": "臨済義玄（Rinzai Gigen）",
+      "source_text_en": "Rinzai-roku（『臨済録』）"
+    },
+    {
+      "no": 74,
+      "zengo": "梅一輪",
+      "reading": "うめいちりん",
+      "meaning": "まだ寒いうちに一輪だけ咲く梅の花。厳しい状況下でも、信念をもって行動せよ。",
+      "theme": "自立",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 75,
+      "zengo": "是々非々",
+      "reading": "ぜぜひぜひ",
+      "meaning": "正しいことは正しい、間違っていることは間違っているとはっきりと判断する。",
+      "theme": "自立",
+      "source_person": "中国古典（Chūgoku Koten）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 76,
+      "zengo": "正身",
+      "reading": "しょうしん",
+      "meaning": "心身を正しく保つ。真の自己（主人公）として正しく生きる。",
+      "theme": "自立",
+      "source_person": "道元（Dōgen） / 禅語（Zen word）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 77,
+      "zengo": "対機説法",
+      "reading": "たいきせっぽう",
+      "meaning": "相手の能力や状況、心の状態に合わせて、最も適切な方法で教えを説くこと。",
+      "theme": "調和",
+      "source_person": "仏教用語（Bukkyō Yōgo）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 78,
+      "zengo": "和同開珍",
+      "reading": "わどうかいちん",
+      "meaning": "和合をもって、心の中の宝を開き、真理に到達する。",
+      "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 79,
+      "zengo": "清風拂明月",
+      "reading": "せいふうめいげつをはらう",
+      "meaning": "清らかな風が明るい月を払うように、全てが清らかで美しい境地。",
+      "theme": "調和",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 80,
+      "zengo": "万象",
+      "reading": "ばんしょう",
+      "meaning": "この世のありとあらゆるもの、宇宙全体。全てが真理の現れである。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 81,
+      "zengo": "万法帰一",
+      "reading": "ばんぽうきいつ",
+      "meaning": "あらゆる現象や真理は、すべて一つの根源に帰着する。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 82,
+      "zengo": "無辺風光",
+      "reading": "むへんふうこう",
+      "meaning": "限りなく広がる美しい風景。悟りの世界は無限である。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 83,
+      "zengo": "随所皆真",
+      "reading": "ずいしょかいしん",
+      "meaning": "どこであろうと、全てが真実の姿であり、悟りの場である。",
+      "theme": "普遍",
+      "source_person": "道元（Dōgen）",
+      "source_text_en": "Shōbōgenzō（『正法眼蔵』）"
+    },
+    {
+      "no": 84,
+      "zengo": "水急不流月",
+      "reading": "みずいそげどつきはながれず",
+      "meaning": "水面は速く流れても、水に映る月は動かない。現象に惑わされず、本質を見失うな。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 85,
+      "zengo": "松無古今色",
+      "reading": "まつにここんのいろなし",
+      "meaning": "松の色はいつの時代も変わらない。真理は永遠であり、時間によって左右されない。",
+      "theme": "普遍",
+      "source_person": "大智円行（Daichi Enkō）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 86,
+      "zengo": "青山元不動",
+      "reading": "せいざんもとふどう",
+      "meaning": "青い山は元々動かない。世の中が変化しても、真理は変わらず不動である。",
+      "theme": "普遍",
+      "source_person": "禅語（Zen word）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 87,
+      "zengo": "不昧因果",
+      "reading": "ふまいいんが",
+      "meaning": "因果の理を隠したり、惑わされたりしない。自らの行為の結果を素直に受け止める。",
+      "theme": "普遍",
+      "source_person": "百丈懐海（Hyakujō Ekai）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 88,
+      "zengo": "不立文字",
+      "reading": "ふりゅうもんじ",
+      "meaning": "仏の教えは言葉や文字で表し尽くせるものではない。座禅など実践を通して会得せよ。",
+      "theme": "集中",
+      "source_person": "禅宗の教え（Zen Shū no Oshie）",
+      "source_text_en": "Zen Teaching（禅の教え）"
+    },
+    {
+      "no": 89,
+      "zengo": "無漏",
+      "reading": "むろ",
+      "meaning": "煩悩の漏れがない清らかな状態。悟りを開いた境地。",
+      "theme": "解放",
+      "source_person": "仏教用語（Bukkyō Yōgo）",
+      "source_text_en": "Zen Teaching"
+    },
+    {
+      "no": 90,
+      "zengo": "空手還郷",
+      "reading": "くうしゅげんきょう",
+      "meaning": "悟りを開いて故郷に帰る。何も持たない無一物の姿こそが悟りの境地。",
+      "theme": "解放",
+      "source_person": "十牛図（Jūgyūzu）",
+      "source_text_en": "Zen Teaching"
+    }
+  ]
+}
