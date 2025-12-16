@@ -1,30 +1,76 @@
-# ---------------------------------------------------------------- #
-# DailyZen App .gitignore
-# ---------------------------------------------------------------- #
-
-# 1. OS generated files (macOS, Windows, Linux)
+# macOS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
-# 2. Project/Build/Dependency files (if using npm/Ruby/Python etc.)
-# Opalが内部で生成する可能性のあるディレクトリや、ローカル開発環境で使用する場合
-/node_modules
-/vendor
-
-# 3. Log/Temp files
-*.log
-*.tmp
-*.bak
-/temp
-
-# 4. IDE specific files (Visual Studio Code, Sublime Text, etc.)
+# IDE
 .vscode/
 .idea/
+*.swp
+*.swo
 *~
 
-# 5. Asset Files (意図的に公開するもの以外は追跡しない)
-# 公開する zen_background.png や kakejiku_base.png は除外していますが、
-# ローカルで生成される中間ファイルやバックアップは無視します。
-*.psd
-*.ai
-*.xcf
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node_modules (if using Node.js in the future)
+node_modules/
+npm-debug.log*
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Backup files
+*.bak
+*.backup
+
+# Certificates and private keys
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+*.der

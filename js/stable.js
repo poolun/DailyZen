@@ -152,102 +152,85 @@ function toKansuji(str) {
 }
 
 
-// 二十四節気・七十二候データを取得する関数
-async function getSekkiKouData() {
+// 二十四節気データを取得する関数（強化版）
+async function getSekkiData() {
     try {
-        const data = await fetchWithRetry('json/sekki-kou_data.json');
-        return data.SekkikouData;
+        const data = await fetchWithRetry('json/sekki_data.json');
+        return data.sekkiData;
     } catch (error) {
-        console.error("二十四節気・七十二候データの取得中にエラーが発生しました:", error);
+        console.error("二十四節気データの取得中にエラーが発生しました:", error);
         
         // フォールバック: 最小限のデータで動作継続
         return [{
-            month: 1, day: 1, sekki: "データ読み込み失敗", "sekki-reading": "", kou1: "初候", "kou1-reading": "しょこう", kou2: "データ読み込み失敗", "kou2-reading": ""
+            month: 1, day: 1, sekki: "データ読み込み失敗"
         }];
     }
 }
 
-// 現在の日付に基づいて二十四節気・七十二候を計算する関数
-async function getCurrentSekkiKou() {
+// 現在の日付に基づいて二十四節気を計算する関数 (変更なし)
+async function getCurrentSekki() {
     const today = new Date();
     const currentMonth = today.getMonth() + 1;
     const currentDay = today.getDate();
     
-    const sekkiKouData = await getSekkiKouData();
+    const sekkiData = await getSekkiData();
 
     const dateValue = currentMonth * 100 + currentDay;
     
-    let currentData = {
-        sekki: "データなし (Error)",
-        sekkiReading: "",
-        kou1: "初候", 
-        kou1Reading: "しょこう",
-        kou2: "データなし (Error)",
-        kou2Reading: ""
-    };
-    let nextData = sekkiKouData[0];
+    let currentSekkiString = "データなし (Error)";
+    let nextSekki = sekkiData[0]; 
 
-    for (let i = 0; i < sekkiKouData.length; i++) {
-        const data = sekkiKouData[i];
-        const dataValue = data.month * 100 + data.day;
+    for (let i = 0; i < sekkiData.length; i++) {
+        const sekki = sekkiData[i];
+        const sekkiValue = sekki.month * 100 + sekki.day;
         
-        if (i === sekkiKouData.length - 1) {
-            if (dateValue >= dataValue || dateValue < nextData.month * 100 + nextData.day) {
-                currentData = {
-                    sekki: data.sekki.trim(),
-                    sekkiReading: data["sekki-reading"].trim(),
-                    kou1: data.kou1.trim(),
-                    kou1Reading: data["kou1-reading"].trim(),
-                    kou2: data.kou2.trim(),
-                    kou2Reading: data["kou2-reading"].trim()
-                };
+        if (i === sekkiData.length - 1) {
+            if (dateValue >= sekkiValue || dateValue < nextSekki.month * 100 + nextSekki.day) {
+                currentSekkiString = sekki.sekki;
                 break;
             }
         } else {
-            nextData = sekkiKouData[i + 1];
-            const nextDataValue = nextData.month * 100 + nextData.day;
+            nextSekki = sekkiData[i + 1];
+            const nextSekkiValue = nextSekki.month * 100 + nextSekki.day;
 
-            if (dateValue >= dataValue && dateValue < nextDataValue) {
-                currentData = {
-                    sekki: data.sekki.trim(),
-                    sekkiReading: data["sekki-reading"].trim(),
-                    kou1: data.kou1.trim(),
-                    kou1Reading: data["kou1-reading"].trim(),
-                    kou2: data.kou2.trim(),
-                    kou2Reading: data["kou2-reading"].trim()
-                };
+            if (dateValue >= sekkiValue && dateValue < nextSekkiValue) {
+                currentSekkiString = sekki.sekki;
                 break;
             }
         }
     }
     
-    if (currentData.sekki === "データなし (Error)") {
-        const lastData = sekkiKouData[sekkiKouData.length - 1];
-        if (dateValue >= lastData.month * 100 + lastData.day) {
-            currentData = {
-                sekki: lastData.sekki.trim(),
-                sekkiReading: lastData["sekki-reading"].trim(),
-                kou1: lastData.kou1.trim(),
-                kou1Reading: lastData["kou1-reading"].trim(),
-                kou2: lastData.kou2.trim(),
-                kou2Reading: lastData["kou2-reading"].trim()
-            };
+    if (currentSekkiString === "データなし (Error)") {
+        const lastSekki = sekkiData[sekkiData.length - 1];
+        if (dateValue >= lastSekki.month * 100 + lastSekki.day) {
+            currentSekkiString = lastSekki.sekki;
         }
     }
+    
+    const [name, readingWithParen] = currentSekkiString.split(' ');
+    let reading = '';
+    
+    if (readingWithParen) {
+        const readingBody = readingWithParen.replace(/[()（）]/g, '');
+        reading = `（${readingBody}）`;
+    }
 
-    return currentData;
+    return {
+        name: name,
+        reading: reading
+    };
 }
 
 
-// 日付と二十四節気・七十二候の情報を取得する関数
-async function getDateAndSekkiKou() {
+// 日付と二十四節気の情報を取得する関数
+async function getDateAndSekki() {
     const today = new Date();
     const year = today.getFullYear();
     const month = today.getMonth() + 1;
     const day = today.getDate();
     const weekday = ['日', '月', '火', '水', '木', '金', '土'][today.getDay()];
     
-    const { sekki, sekkiReading, kou1, kou1Reading, kou2, kou2Reading } = await getCurrentSekkiKou();
+    const { name: sekkiName, reading: sekkiReading } = await getCurrentSekki();
 
     const weekdayString = `（${weekday}）`;
     
@@ -265,12 +248,8 @@ async function getDateAndSekkiKou() {
     return {
         dateInfoPC: dateInfoPC,
         dateInfoMobile: dateInfoMobile,
-        sekki: sekki,
-        sekkiReading: sekkiReading,
-        kou1: kou1,
-        kou1Reading: kou1Reading,
-        kou2: kou2,
-        kou2Reading: kou2Reading
+        sekkiName: sekkiName,
+        sekkiReading: sekkiReading
     };
 }
 
@@ -323,6 +302,8 @@ async function getDailyZenWord() {
         
         // キャッシュが無いか、日付が変わった場合のみ再読み込み
         if (!zenWordsCache || lastLoadDate !== todayString) {
+            console.log('禅語データを読み込み中...');
+            
             const timestamp = Date.now();
             const response = await fetch(`json/zen_words.json?v=${timestamp}`, {
                 cache: 'no-cache',
@@ -339,6 +320,8 @@ async function getDailyZenWord() {
             
             zenWordsCache = await response.json();
             lastLoadDate = todayString;
+            
+            console.log('禅語データの読み込み完了');
         }
         
         const words = zenWordsCache.zenWords;
@@ -372,6 +355,7 @@ async function getDailyZenWord() {
         
         // エラー時のフォールバック: 既存のキャッシュがあれば使用
         if (zenWordsCache && zenWordsCache.zenWords) {
+            console.log("キャッシュデータを使用します");
             const words = zenWordsCache.zenWords;
             
             // 既存のロジックで今日の禅語を計算
@@ -402,13 +386,12 @@ async function getDailyZenWord() {
 // DOMにコンテンツをレンダリングする関数
 async function renderDailyZen() {
     const zenWord = await getDailyZenWord();
-    const { dateInfoPC, dateInfoMobile, sekki, sekkiReading, kou1, kou1Reading, kou2, kou2Reading } = await getDateAndSekkiKou();
+    const { dateInfoPC, dateInfoMobile, sekkiName, sekkiReading } = await getDateAndSekki();
 
     const isMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
     
     const dateEl = document.getElementById('date-info');
     const sekkiEl = document.getElementById('sekki-info'); 
-    const kouEl = document.getElementById('kou-info'); 
     const readingEl = document.getElementById('reading'); 
     
     if (zenWord) {
@@ -439,24 +422,16 @@ async function renderDailyZen() {
     }
     
 
-    // 日付と節気・候の表示を要素に直接設定
+    
+    // 日付と節気の表示を要素に直接設定
     if (!isMobile) {
         // PC版: 縦書きなので一行で表示
         dateEl.textContent = dateInfoPC;
-        // sekkiとkou1を同じ行に、kou2を別の要素に
-        const sekkiHTML = sekkiReading ? 
-            `<ruby>${sekki}<rt>${sekkiReading}</rt></ruby>　<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>` : 
-            `${sekki}　<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>`;
-        sekkiEl.innerHTML = sekkiHTML;
-        kouEl.innerHTML = `<ruby>${kou2}<rt>${kou2Reading}</rt></ruby>`;
+        sekkiEl.textContent = sekkiReading ? `${sekkiName}${sekkiReading}` : sekkiName;
     } else {
         // モバイル版: 改行文字で2行に分ける（dateInfoMobileを使用）
         dateEl.textContent = dateInfoMobile;
-        const sekkiHTML = sekkiReading ? 
-            `<ruby>${sekki}<rt>${sekkiReading}</rt></ruby>　<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>` : 
-            `${sekki}　<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>`;
-        sekkiEl.innerHTML = sekkiHTML;
-        kouEl.innerHTML = `<ruby>${kou2}<rt>${kou2Reading}</rt></ruby>`;
+        sekkiEl.textContent = sekkiReading ? `${sekkiName}\n${sekkiReading}` : sekkiName;
     }
 }
 
@@ -537,13 +512,12 @@ async function renderDebugZen(index) {
     if (!zenWord) {
         return;
     }
-    const { dateInfoPC, dateInfoMobile, sekki, sekkiReading, kou1, kou1Reading, kou2, kou2Reading } = await getDateAndSekkiKou();
+    const { dateInfoPC, dateInfoMobile, sekkiName, sekkiReading } = await getDateAndSekki();
 
     const isMobile = window.matchMedia("(max-width: 767px), (orientation: portrait)").matches;
     
     const dateEl = document.getElementById('date-info');
     const sekkiEl = document.getElementById('sekki-info'); 
-    const kouEl = document.getElementById('kou-info'); 
     const readingEl = document.getElementById('reading'); 
     
     if (zenWord) {
@@ -568,21 +542,13 @@ async function renderDebugZen(index) {
         document.getElementById('meaning').textContent = fullMeaning;
     }
     
-    // 日付と節気・候の表示
+    // 日付と節気の表示
     if (!isMobile) {
         dateEl.textContent = dateInfoPC;
-        const sekkiHTML = sekkiReading ? 
-            `<ruby>${sekki}<rt>${sekkiReading}</rt></ruby>　<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>` : 
-            `${sekki}　<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>`;
-        sekkiEl.innerHTML = sekkiHTML;
-        kouEl.innerHTML = `<ruby>${kou2}<rt>${kou2Reading}</rt></ruby>`;
+        sekkiEl.textContent = sekkiReading ? `${sekkiName}${sekkiReading}` : sekkiName;
     } else {
         dateEl.textContent = dateInfoMobile;
-        const sekkiHTML = sekkiReading ? 
-            `<ruby>${sekki}<rt>${sekkiReading}</rt></ruby>　<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>` : 
-            `${sekki}　<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>`;
-        sekkiEl.innerHTML = sekkiHTML;
-        kouEl.innerHTML = `<ruby>${kou2}<rt>${kou2Reading}</rt></ruby>`;
+        sekkiEl.textContent = sekkiReading ? `${sekkiName}\n${sekkiReading}` : sekkiName;
     }
 }
 
@@ -594,7 +560,12 @@ document.addEventListener('keydown', async (event) => {
         debugMode = !debugMode;
         
         if (debugMode) {
+            console.log('デバッグモードON - 矢印キーで禅語を切り替えできます');
+            
             await loadAllZenWords();
+            console.log(`データ読み込み完了: 全${allZenWords.length}項目`);
+            console.log(`最初の項目: ${allZenWords[0]?.no} - ${allZenWords[0]?.zengo}`);
+            console.log(`最後の項目: ${allZenWords[allZenWords.length-1]?.no} - ${allZenWords[allZenWords.length-1]?.zengo}`);
             
             // 現在の日めくりインデックスを初期値として設定
             const today = new Date();
@@ -611,8 +582,12 @@ document.addEventListener('keydown', async (event) => {
                 debugIndex = (allZenWords.length + (diffDays % allZenWords.length)) % allZenWords.length;
             }
             
+            console.log(`基準日(${currentYear}/1/1)からの経過日数: ${diffDays}日`);
+            console.log(`本日の禅語インデックス: ${debugIndex + 1}/${allZenWords.length}`);
+            
             await renderDebugZen(debugIndex);
         } else {
+            console.log('デバッグモードOFF');
             await renderDailyZen(); // 通常モードに戻る
         }
         return;
