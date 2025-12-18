@@ -63,11 +63,13 @@ body::before {
     z-index: -1;
 }
 
-/* .vertical-text {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    padding: 0;
-} */
+#kou-info ruby{
+    color: #7a0606; /* 72候ルビの色 */
+}
+
+#kou-info rt{
+    color: #0f6e4a; /* 72候ルビの色 */
+}
 
 /* 禅語と読みを内包するコンテナ */
 #zen-word-display {
@@ -151,12 +153,22 @@ body::before {
 /* 年月日と節気のコンテナ */
 #info-container{
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem; /* 0.8rem から 0.5rem に縮小して行間を詰める */
     position: relative;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* center から flex-start に変更して上揃えに */
     padding-top: 0;
+    max-width: 100%; /* 親要素からはみ出ないように */
+    overflow: visible; /* overflow: hidden を visible に変更 */
+    height: auto; /* 高さを自動調整 */
+    min-height: fit-content; /* 内容に合わせて最小高さを設定 */
+}
+
+/* info-containerの直接の子要素のマージン・パディングを0に統一 */
+#info-container > * {
+    margin: 0;
+    padding: 0;
 }
 
 #info-container * {
@@ -165,12 +177,31 @@ body::before {
 }
 
 #info-container p{
-  font-size: 1.4rem;
+  font-size: 1.2rem; /* 1.4rem から 1.2rem に縮小 */
   font-weight: bold;
-  letter-spacing: 0.175em;
-  margin:0;
-  padding:0;
+  letter-spacing: 0.1em; /* 0.175em から 0.1em に縮小 */
+  margin: 0; /* info-containerで制御するため0に */
+  padding: 0; /* info-containerで制御するため0に */
   /* white-space: nowrap は削除 - 曜日の改行を許可 */
+}
+
+
+#info-container #sekki-info{
+  font-size: 1.65rem; /* 24節気 */
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding-left: 0.5em;
+  text-align:top;
+}
+
+#info-container #kou-info {
+  font-size: 2rem; /* 72候 */
+  font-weight: bold;
+  letter-spacing: 0.35em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 /* 年月日ブロック（横書き）*/
@@ -178,15 +209,31 @@ body::before {
     display: block;
     white-space: pre-line; /* ブロック自体はpre-lineのまま */
     text-align: center;
-    margin: 0;
-    padding:0;
+    margin: 0; /* info-containerで制御するため0に */
+    padding: 0; /* info-containerで制御するため0に */
+    flex: 0 1 auto; /* 縮小可能 */
+    min-width: 0; /* 縮小を許可 */
 }
 
 /* 節気ブロック（横書き）*/
 #info-container #sekki-block{
-    display: block;
-    white-space: pre-line; /* ブロック自体はpre-lineのまま */
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    line-height: 1.1;
+    flex: 0 1 auto;
+    min-width: 0;
+    font-size: 2rem;
+}
+
+/* rubyタグのスタイリング */
+#info-container #sekki-block ruby {
+    ruby-align: center;
+}
+
+#info-container #sekki-block rt {
+    font-size: 0.5em;
+    opacity: 0.8;
 }
 
 /* 中央の掛け軸と禅語 */
@@ -230,18 +277,34 @@ body::before {
    ================================================================ */
 @media (orientation: portrait) and (max-width: 767px) {
     #info-container {
-        flex-direction: column !important;
+        flex-direction: column;
         gap: 0.5rem;
+        align-items: center;
     }
     
     #info-container #date-block {
-        white-space: nowrap; /* 改行を防ぐ */
+        text-align: center;
+        white-space: nowrap;
     }
     
     #info-container #sekki-block {
-        white-space: nowrap; /* 改行を防ぐ */
+        text-align: center;
     }
     
+    /* モバイルポートレート専用：節気と候のフォント設定 */
+    #info-container #sekki-info{
+        font-size: 1.2rem;
+        padding-bottom: 10px;
+    }
+    #info-container #kou-info {
+        font-size: 1.5rem;
+    }
+    #kou-info ruby{
+        letter-spacing: 0.5em;
+    }
+    #kou-info rt{
+        letter-spacing: 0.25em;
+    }
     /* モバイル縦向きでのみ説明文を非表示 */
     #meaning-container {
         display: none !important;
@@ -404,7 +467,7 @@ body::before {
 
    #sekki-block p {
         margin: 0;
-        padding: 0; /* パディングをゼロに */
+        padding: 0; 
         line-height: 1.5;
         font-size: 2.0rem;
         font-weight: bold;
@@ -412,6 +475,16 @@ body::before {
         font-family: var(--meaning-font);
         letter-spacing: 0.35rem;
         white-space: nowrap; /* 改行なし */
+    }
+
+    /* PC版での72候rubyスタイル */
+    #sekki-block ruby {
+        letter-spacing: 0.65em; /* 72候本体のレタースペース */
+    }
+
+    #sekki-block rt {
+        padding-left: 0.25em;
+        letter-spacing: 0.25em; /* 72候ルビのレタースペース */
     }
 
     /* 掛け軸コンテナ (中央) */
