@@ -191,8 +191,8 @@ body::before {
   font-weight: bold;
   letter-spacing: 0.1em;
   margin: 0;
-  padding-left: 0.5em;
-  text-align:top;
+  padding: 0;
+  text-align: center;
 }
 
 #info-container #kou-info {
