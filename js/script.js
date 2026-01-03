@@ -445,8 +445,8 @@ async function renderDailyZen() {
         dateEl.textContent = dateInfoPC;
         // sekkiとkou1を同じ行に、kou2を別の要素に
         const sekkiHTML = sekkiReading ? 
-            `<ruby>${sekki}<rt>${sekkiReading}</rt></ruby>　<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>` : 
-            `${sekki}　<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>`;
+            `<ruby>${sekki}<rt>${sekkiReading}</rt></ruby><ruby>${kou1}<rt>${kou1Reading}</rt></ruby>` : 
+            `${sekki}<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>`;
         sekkiEl.innerHTML = sekkiHTML;
         kouEl.innerHTML = `<ruby>${kou2}<rt>${kou2Reading}</rt></ruby>`;
     } else {
@@ -572,15 +572,15 @@ async function renderDebugZen(index) {
     if (!isMobile) {
         dateEl.textContent = dateInfoPC;
         const sekkiHTML = sekkiReading ? 
-            `<ruby>${sekki}<rt>${sekkiReading}</rt></ruby>　<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>` : 
-            `${sekki}　<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>`;
+            `<ruby>${sekki}<rt>${sekkiReading}</rt></ruby><ruby>${kou1}<rt>${kou1Reading}</rt></ruby>` : 
+            `${sekki}<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>`;
         sekkiEl.innerHTML = sekkiHTML;
         kouEl.innerHTML = `<ruby>${kou2}<rt>${kou2Reading}</rt></ruby>`;
     } else {
         dateEl.textContent = dateInfoMobile;
         const sekkiHTML = sekkiReading ? 
-            `<ruby>${sekki}<rt>${sekkiReading}</rt></ruby>　<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>` : 
-            `${sekki}　<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>`;
+            `<ruby>${sekki}<rt>${sekkiReading}</rt></ruby><ruby>${kou1}<rt>${kou1Reading}</rt></ruby>` : 
+            `${sekki}<ruby>${kou1}<rt>${kou1Reading}</rt></ruby>`;
         sekkiEl.innerHTML = sekkiHTML;
         kouEl.innerHTML = `<ruby>${kou2}<rt>${kou2Reading}</rt></ruby>`;
     }
