@@ -274,8 +274,9 @@ body::before {
 }
 /* ================================================================
    モバイル版専用（縦長画面のみ） - 年月日と節気を2行表示 + 説明文非表示
+   iPad含むすべてのポートレート表示に対応
    ================================================================ */
-@media (orientation: portrait) and (max-width: 767px) {
+@media (orientation: portrait) {
     #info-container {
         flex-direction: column;
         gap: 0.5rem;
