@@ -143,11 +143,12 @@ body::before {
 #app {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     box-sizing: border-box;
     min-height: 100vh; /* モバイル用：画面全体に表示 */
     padding: 1rem;
+    gap: 1.5rem;
 }
 
 /* 年月日と節気のコンテナ */
@@ -241,8 +242,9 @@ body::before {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex: 1;
+    align-0 0 auto;
+    min-height: 50vh;
+    maxx: 1;
     min-height: 60vh;
     width: 320px;
     background-image: url('../images/kakejiku_base.png');
@@ -373,6 +375,21 @@ body::before {
     
     #kakejiku-container:active {
         transform: scale(0.98);
+    }
+}
+
+/* iPad縦向き専用 - コンテンツを拡大表示 */
+@media (orientation: portrait) and (min-width: 768px) {
+    #app {
+        transform: scale(1.15);
+        transform-origin: top center;
+        gap: 0.3rem;
+        justify-content: flex-start;
+        padding-top: 2rem;
+    }
+    
+    #kakejiku-container {
+        width: 400px;
     }
 }
 
