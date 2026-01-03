@@ -191,8 +191,8 @@ body::before {
   font-weight: bold;
   letter-spacing: 0.1em;
   margin: 0;
-  padding: 0;
-  text-align: center;
+  padding-left: 0.5em;
+  text-align:top;
 }
 
 #info-container #kou-info {
@@ -295,6 +295,7 @@ body::before {
     #info-container #sekki-info{
         font-size: 1.2rem;
         padding-bottom: 10px;
+        letter-spacing: 0;
     }
     #info-container #kou-info {
         font-size: 1.5rem;
