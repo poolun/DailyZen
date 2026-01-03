@@ -295,7 +295,6 @@ body::before {
     #info-container #sekki-info{
         font-size: 1.2rem;
         padding-bottom: 10px;
-        letter-spacing: 0;
     }
     #info-container #kou-info {
         font-size: 1.5rem;
