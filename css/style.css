@@ -378,8 +378,8 @@ body::before {
     }
 }
 
-/* iPad縦向き専用 - コンテンツを拡大表示 */
-@media (orientation: portrait) and (min-width: 768px) {
+/* iPad縦向き専用 - コンテンツを拡大表示（768px～1023px = iPad mini / 通常iPad） */
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1023px) {
     #app {
         transform: scale(1.15);
         transform-origin: top center;
@@ -390,6 +390,27 @@ body::before {
     
     #kakejiku-container {
         width: 400px;
+    }
+}
+
+/* iPad Air 13インチ / iPad Pro 12.9・13インチ縦向き専用（1024px～1366px）*/
+/* iPad Air 13インチ / iPad Pro 12.9・13インチ縦向き専用（実際のwindow.innerWidthは683px付近）*/
+@media screen and (orientation: portrait) and (min-width: 680px) and (max-width: 768px) {
+    #scale-wrapper {
+        transform: scale(1) !important;
+    }
+    
+    #app {
+        transform: scale(1.15) !important;
+        transform-origin: top center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        justify-content: flex-start;
+        padding-top: 1rem;
+    }
+    
+    #kakejiku-container {
+        width: 320px;
     }
 }
 

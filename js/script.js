@@ -664,21 +664,52 @@ document.addEventListener('DOMContentLoaded', async () => {
     // iOS対策: レンダリング完了後にflexboxを強制再計算（iPhone縦長のみ）
     if (/iP(hone|ad|od)/.test(navigator.userAgent)) {
         const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+        const isIPadAir13 = window.matchMedia("(orientation: portrait) and (min-width: 680px) and (max-width: 768px)").matches;
+        
+        console.log('[iPad init] isPortrait:', isPortrait, 'isIPadAir13:', isIPadAir13);
+        
         if (isPortrait) {
             const isSafari = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
             const isChrome = /Chrome/.test(navigator.userAgent);
             
+            console.log('[iPad init] isSafari:', isSafari, 'isChrome:', isChrome);
+            
             if (isSafari) {
+                console.log('[iPad init] Safari処理開始');
                 // Safari: display:none による強制再計算
                 requestAnimationFrame(() => {
+                    console.log('[iPad init] requestAnimationFrame開始');
                     const zenWordDisplay = document.getElementById('zen-word-display');
                     if (zenWordDisplay) {
                         zenWordDisplay.style.display = 'none';
                         zenWordDisplay.offsetHeight;
                         zenWordDisplay.style.display = '';
                     }
+                    
+                    // iPad Air 13インチ専用: window.scrollTo()による描画バグ対策
+                    if (isIPadAir13) {
+                        console.log('[iPad init] iPad Air 13処理開始');
+                        setTimeout(() => {
+                            console.log('[iPad init] setTimeout内処理');
+                            const kakejiku = document.getElementById('kakejiku-container');
+                            const zenWordDisplay = document.getElementById('zen-word-display');
+                            if (kakejiku && zenWordDisplay) {
+                                // 強制リフロー
+                                kakejiku.offsetHeight;
+                                zenWordDisplay.offsetHeight;
+                            }
+                            
+                            // 画面を1ピクセルずらして戻す（Safari描画バグ対策）
+                            window.scrollTo(0, 1);
+                            setTimeout(() => {
+                                window.scrollTo(0, 0);
+                                console.log('[iPad init] scrollTo完了');
+                            }, 50);
+                        }, 100);
+                    }
                 });
             } else if (isChrome) {
+                console.log('[iPad init] Chrome処理開始');
                 // Chrome: より強力な対策（二段階リフロー）
                 requestAnimationFrame(() => {
                     const zenWordDisplay = document.getElementById('zen-word-display');
@@ -808,6 +839,19 @@ window.addEventListener('resize', () => {
 function applyZoom() {
     const wrapper = document.getElementById('scale-wrapper');
     if (!wrapper) return;
+
+    // iPad Air 13インチ（縦向き）では何もしない
+    // シミュレータでの window.innerWidth は 683px
+    const isIPadAir13Portrait = window.matchMedia("(orientation: portrait) and (min-width: 680px) and (max-width: 768px)").matches;
+    if (isIPadAir13Portrait) {
+        wrapper.style.transform = '';
+        const kakejiku = document.getElementById('kakejiku-container');
+        if (kakejiku) {
+            kakejiku.style.width = '';
+            kakejiku.style.height = '';
+        }
+        return;
+    }
 
     // モバイル（縦長）ではズーム無効化
     const isLandscape = window.matchMedia("(orientation: landscape)").matches;
